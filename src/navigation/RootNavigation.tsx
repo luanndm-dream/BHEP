@@ -10,7 +10,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 const BottomTabNavigation = () => {
     const Bottom = createMaterialBottomTabNavigator()
 
-    return (
+    return ( 
         <Bottom.Navigator>
             <Bottom.Screen
             name='HomeScreen'
