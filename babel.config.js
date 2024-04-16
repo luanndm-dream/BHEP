@@ -1,7 +1,6 @@
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
   plugins: [
-   
     [ 
       'module-resolver',
       {
@@ -14,13 +13,15 @@ module.exports = {
           '.tsx',
           '.json',
           '.svg',
+          ".ios.tsx"
         ],
         alias: {
           tests: ['./tests/'],
-          // '@/components': './src/components',
+          '@/components': './src/components',
           // '@/redux': './src/redux',
           '@/navigation': './src/navigation',
-          '@/screens': './src/screens/'
+          '@/screens': './src/screens/',
+          // '@/constants': './src/constants',
           // '@/styles': './src/styles',
           // '@/icons': './src/assets/icons',
           // '@/data': './src/data',

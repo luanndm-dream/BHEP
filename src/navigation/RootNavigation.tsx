@@ -6,17 +6,31 @@ import { NavigationContainer, createNavigationContainerRef } from '@react-naviga
 import { CommunityScreen, DoctorScreen, HomeScreen, LoginScreen, ProfileScreen } from '@/screens';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
+
+const myNavigationTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      notification: 'rgba(255, 255, 255, 0.5)',
+      secondaryContainer: 'transparent',
+    },
+  };
 
 const BottomTabNavigation = () => {
     const Bottom = createMaterialBottomTabNavigator()
 
     return ( 
-        <Bottom.Navigator>
+        <Bottom.Navigator
+        activeColor="#0A5BF1"
+       
+        barStyle={{backgroundColor: '#FFFFFF', paddingBottom: 0}}
+        >
             <Bottom.Screen
             name='HomeScreen'
             component={HomeScreen}
             options={{
-                tabBarLabel: 'Home',
+                tabBarLabel: 'Trang chủ',
                 tabBarIcon: ({color}) => (
                     <MaterialCommunityIcons name="home" color={color} size={26} />
                 )
@@ -26,9 +40,9 @@ const BottomTabNavigation = () => {
             name='CommunityScreen'
             component={CommunityScreen}
             options={{
-                tabBarLabel: 'Home',
+                tabBarLabel: 'Cộng đồng',
                 tabBarIcon: ({color}) => (
-                    <MaterialCommunityIcons name="home" color={color} size={26} />
+                    <MaterialCommunityIcons name="account-group" color={color} size={26} />
                 )
             }}
             />
@@ -36,9 +50,9 @@ const BottomTabNavigation = () => {
             name='DoctorScreen'
             component={DoctorScreen}
             options={{
-                tabBarLabel: 'Home',
+                tabBarLabel: 'Bác sĩ',
                 tabBarIcon: ({color}) => (
-                    <MaterialCommunityIcons name="home" color={color} size={26} />
+                    <MaterialCommunityIcons name="doctor" color={color} size={26} />
                 )
             }}
             />
@@ -46,9 +60,9 @@ const BottomTabNavigation = () => {
             name='ProfileScreen'
             component={ProfileScreen}
             options={{
-                tabBarLabel: 'Home',
+                tabBarLabel: 'Cá nhân',
                 tabBarIcon: ({color}) => (
-                    <MaterialCommunityIcons name="home" color={color} size={26} />
+                    <MaterialCommunityIcons name="account" color={color} size={26} />
                 )
             }}
             />
@@ -60,17 +74,18 @@ const BottomTabNavigation = () => {
 const Stack = createStackNavigator();
 const RootNavigation = () => {
   return (
-    <SafeAreaProvider>
+    <PaperProvider theme={myNavigationTheme}>
         <NavigationContainer>
             <Stack.Navigator
             screenOptions={{
                 headerShown: false
             }}
             >
-                <Stack.Screen name='LoginScreen' component={BottomTabNavigation}/>
+                <Stack.Screen name='LoginScreen' component={LoginScreen}/>
+                <Stack.Screen name='MainFlows' component={BottomTabNavigation}/>
             </Stack.Navigator>
         </NavigationContainer>
-    </SafeAreaProvider>
+    </PaperProvider>
   )
 }
 
