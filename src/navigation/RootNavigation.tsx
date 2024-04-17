@@ -80,6 +80,7 @@ const RootNavigation = () => {
             screenOptions={{
                 headerShown: false
             }}
+            initialRouteName='MainFlows'
             >
                 <Stack.Screen name='LoginScreen' component={LoginScreen}/>
                 <Stack.Screen name='MainFlows' component={BottomTabNavigation}/>

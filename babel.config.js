@@ -18,13 +18,13 @@ module.exports = {
         alias: {
           tests: ['./tests/'],
           '@/components': './src/components',
-          // '@/redux': './src/redux',
+          '@/redux': './src/redux',
           '@/navigation': './src/navigation',
           '@/screens': './src/screens/',
           // '@/constants': './src/constants',
           // '@/styles': './src/styles',
           // '@/icons': './src/assets/icons',
-          // '@/data': './src/data',
+          '@/data': './src/data',
           // '@/constants': './src/constants',
           // '@/hooks': './src/hooks',
           // '@/utils': './src/utils'
