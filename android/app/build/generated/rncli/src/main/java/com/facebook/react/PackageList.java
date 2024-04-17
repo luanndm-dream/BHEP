@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import com.oblador.vectoricons.VectorIconsPackage;
 // @react-native-masked-view/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// react-native-device-info
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-safe-area-context
@@ -68,6 +70,7 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new VectorIconsPackage(),
       new RNCMaskedViewPackage(),
+      new RNDeviceInfo(),
       new RNGestureHandlerPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage()

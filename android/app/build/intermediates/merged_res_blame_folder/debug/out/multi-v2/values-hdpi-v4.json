@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-33:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-35:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
                     "source": "/Users/luan/.gradle/caches/transforms-3/af07af661f19142a150455c3df7d3247/transformed/appcompat-1.5.0/res/values-hdpi-v4/values-hdpi-v4.xml",

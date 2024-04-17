@@ -2,8 +2,8 @@ import { StyleSheet, Platform } from 'react-native';
 export default StyleSheet.create({
     droidSafeArea: {
         flex: 1,
-        backgroundColor: 'white',
-        paddingTop: Platform.OS === 'android' ? 25 : 0
+        backgroundColor: '#F4F4F2',
+        paddingTop: Platform.OS === 'android' ? 0 : 0
     },
     titleText:{
         fontSize: 18,

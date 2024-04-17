@@ -1,7 +1,7 @@
 export const OutstandingFunciton  = [
     {
         id: 1,
-        name: 'Đăng ký nhân viên',
+        name: 'Đối tác',
         imgName: require('../assets/icons/partner.png')
     },
     {

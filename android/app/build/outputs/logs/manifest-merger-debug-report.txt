@@ -8,11 +8,12 @@ MERGED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-25
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /Users/luan/.gradle/caches/transforms-3/78849f144acfe48841156c5a1c4cf1ec/transformed/jetified-flipper-network-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /Users/luan/.gradle/caches/transforms-3/024dbf42cdc8215807d769da963f7240/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:8:1-18:12
+MERGED from [:react-native-vector-icons] /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-masked-view_masked-view] /Users/luan/BHEP_Git/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-device-info] /Users/luan/BHEP_Git/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] /Users/luan/BHEP_Git/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] /Users/luan/BHEP_Git/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /Users/luan/BHEP_Git/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-vector-icons] /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/luan/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.react:hermes-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/052d6f34d1f9a520e076c8571648c6f7/transformed/jetified-hermes-android-0.71.0-debug/AndroidManifest.xml:2:1-9:12
@@ -38,6 +39,11 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/luan/.grad
 MERGED from [androidx.appcompat:appcompat:1.5.0] /Users/luan/.gradle/caches/transforms-3/af07af661f19142a150455c3df7d3247/transformed/appcompat-1.5.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/luan/.gradle/caches/transforms-3/3e400e764e72267520d66e28283812a2/transformed/sqlite-framework-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.autofill:autofill:1.1.0] /Users/luan/.gradle/caches/transforms-3/8a384341752d328d6389029a8be9e815/transformed/jetified-autofill-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/luan/.gradle/caches/transforms-3/a989ae29a5cef8959991916dce957a62/transformed/jetified-play-services-stats-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/luan/.gradle/caches/transforms-3/b83b30ce681f09aaf0bfe79931fdd118/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/luan/.gradle/caches/transforms-3/4c9158d8e99590720e6250d25b3c2568/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/luan/.gradle/caches/transforms-3/009475ad1e3b80ac1111b584b7f6f8f8/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.5.0] /Users/luan/.gradle/caches/transforms-3/21eb46634460024b774dad42bd6ad44e/transformed/jetified-activity-1.5.0/AndroidManifest.xml:17:1-24:12
@@ -76,6 +82,7 @@ MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/luan/.gradle/caches/t
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/luan/.gradle/caches/transforms-3/63394afc6c8761702a867517a701863d/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/luan/.gradle/caches/transforms-3/99d779b5410bcb0ed593388cffd57f6e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/luan/.gradle/caches/transforms-3/b51bb27381c1ca95bd95d648b40df69f/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:2:1-13:12
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/luan/.gradle/caches/transforms-3/a3a558311ee849776c10e746c33d96f0/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/luan/.gradle/caches/transforms-3/b36df8da1dd3422e7688e01fe20caa41/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/luan/BHEP_Git/android/app/src/debug/AndroidManifest.xml:2:1-13:12
@@ -101,6 +108,8 @@ uses-permission#android.permission.INTERNET
 ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:3:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:15:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:15:5-67
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:3:22-64
 application
@@ -115,6 +124,16 @@ MERGED from [com.google.android.material:material:1.9.0] /Users/luan/.gradle/cac
 MERGED from [com.google.android.material:material:1.9.0] /Users/luan/.gradle/caches/transforms-3/bc984b4c216b046fb814ced4c0f10e24/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/luan/.gradle/caches/transforms-3/1675649934c94a8867736e387770555e/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/luan/.gradle/caches/transforms-3/1675649934c94a8867736e387770555e/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/luan/.gradle/caches/transforms-3/a989ae29a5cef8959991916dce957a62/transformed/jetified-play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/luan/.gradle/caches/transforms-3/a989ae29a5cef8959991916dce957a62/transformed/jetified-play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/luan/.gradle/caches/transforms-3/b83b30ce681f09aaf0bfe79931fdd118/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/luan/.gradle/caches/transforms-3/b83b30ce681f09aaf0bfe79931fdd118/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/caches/transforms-3/ae27995e6287e7fd33ae4364afb490c1/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
@@ -125,6 +144,8 @@ MERGED from [androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/4
 MERGED from [androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/4147f26a61fb6196770ea38e58daddf3/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/luan/.gradle/caches/transforms-3/c5107d5e475ee8dcd270599e360e9f6d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/luan/.gradle/caches/transforms-3/c5107d5e475ee8dcd270599e360e9f6d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/4147f26a61fb6196770ea38e58daddf3/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 	android:label
@@ -185,16 +206,18 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /Users/luan/.gr
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /Users/luan/.gradle/caches/transforms-3/024dbf42cdc8215807d769da963f7240/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:11:5-13:41
+MERGED from [:react-native-vector-icons] /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-masked-view_masked-view] /Users/luan/BHEP_Git/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-masked-view_masked-view] /Users/luan/BHEP_Git/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-device-info] /Users/luan/BHEP_Git/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-device-info] /Users/luan/BHEP_Git/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /Users/luan/BHEP_Git/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /Users/luan/BHEP_Git/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] /Users/luan/BHEP_Git/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] /Users/luan/BHEP_Git/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /Users/luan/BHEP_Git/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /Users/luan/BHEP_Git/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-vector-icons] /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-vector-icons] /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/luan/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -245,6 +268,16 @@ MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/luan/.gradle/caches/
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/luan/.gradle/caches/transforms-3/3e400e764e72267520d66e28283812a2/transformed/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.autofill:autofill:1.1.0] /Users/luan/.gradle/caches/transforms-3/8a384341752d328d6389029a8be9e815/transformed/jetified-autofill-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.autofill:autofill:1.1.0] /Users/luan/.gradle/caches/transforms-3/8a384341752d328d6389029a8be9e815/transformed/jetified-autofill-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/luan/.gradle/caches/transforms-3/a989ae29a5cef8959991916dce957a62/transformed/jetified-play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/luan/.gradle/caches/transforms-3/a989ae29a5cef8959991916dce957a62/transformed/jetified-play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/luan/.gradle/caches/transforms-3/b83b30ce681f09aaf0bfe79931fdd118/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/luan/.gradle/caches/transforms-3/b83b30ce681f09aaf0bfe79931fdd118/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/luan/.gradle/caches/transforms-3/4c9158d8e99590720e6250d25b3c2568/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/luan/.gradle/caches/transforms-3/4c9158d8e99590720e6250d25b3c2568/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/luan/.gradle/caches/transforms-3/009475ad1e3b80ac1111b584b7f6f8f8/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
@@ -321,6 +354,8 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/luan/.gradle/caches/transforms-3/99d779b5410bcb0ed593388cffd57f6e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/luan/.gradle/caches/transforms-3/b51bb27381c1ca95bd95d648b40df69f/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/luan/.gradle/caches/transforms-3/b51bb27381c1ca95bd95d648b40df69f/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/luan/.gradle/caches/transforms-3/a3a558311ee849776c10e746c33d96f0/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/luan/.gradle/caches/transforms-3/a3a558311ee849776c10e746c33d96f0/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/luan/.gradle/caches/transforms-3/b36df8da1dd3422e7688e01fe20caa41/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -347,6 +382,24 @@ uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from [com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
 	android:name
 		ADDED from [com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:23:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:23:22-79
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/caches/transforms-3/ae27995e6287e7fd33ae4364afb490c1/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
@@ -373,3 +426,7 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/cach
 		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/caches/transforms-3/ae27995e6287e7fd33ae4364afb490c1/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/caches/transforms-3/ae27995e6287e7fd33ae4364afb490c1/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:5-110
+	android:name
+		ADDED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:22-107
