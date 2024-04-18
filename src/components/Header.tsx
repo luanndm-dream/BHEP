@@ -13,9 +13,7 @@ interface HeaderProps {
 const Header:React.FC<HeaderProps> = ({headerTitle,iconName,onPressIcon,otherProp}) => {
   return (
     <>
-
-    <SafeAreaView style={{flex: 0, backgroundColor: globalColor.primaryColor }} >
-    </SafeAreaView>
+    <SafeAreaView style={{flex: 0, backgroundColor: globalColor.primaryColor }}/>
     <View style={[styles.container]}>
         <StatusBar backgroundColor={globalColor.primaryColor} barStyle={'light-content'}/>
         <TouchableOpacity onPress={onPressIcon} style={styles.icon} >
@@ -31,7 +29,8 @@ export default Header
 
 const styles = StyleSheet.create({
     container: {
-        height: 67,
+        height: 60,
+        flex: 0,
         backgroundColor: globalColor.primaryColor,
         alignItems: 'center',
         justifyContent: 'center',

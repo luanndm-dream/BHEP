@@ -22,19 +22,20 @@ import { TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import ImagePicker from "react-native-image-crop-picker";
 import { useNavigation } from "@react-navigation/native";
+import { apiPostApplicationJob } from "src/api/api_post_applicationJob";
+import useLoading from "src/hook/useLoading";
 const PartnerScreen = () => {
   const keyboardVerticalOffset = Platform.OS === "ios" ? 40 : 0;
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const navigation = useNavigation<any>()
+  const navigation = useNavigation<any>();
   const customerId = 1;
   const [fullName, setFullName] = useState<string>("");
   const [certification, setCertification] = useState<string>("");
   const [major, setMajor] = useState<any>();
-  const [avatar, setAvatar] = useState<string>();
-  const [workplace, setWorkplace] = useState<string>();
-  const [experienceYear, setExperienceYear] = useState<number>();
+  const [workplace, setWorkplace] = useState<string>("");
+  const [experienceYear, setExperienceYear] = useState<number>(0);
   const [imgBase64, setImgBase64] = React.useState<any>(null);
-  
+  const {showLoading, hideLoading} = useLoading();
   const handleSelectMajor = (majorId: number, majorName: string) => {
     const selectedMajor = { id: majorId, name: majorName };
     setMajor(selectedMajor);
@@ -51,9 +52,26 @@ const PartnerScreen = () => {
       setImgBase64(image?.data);
     });
   };
-  // const pickAvatarHandle = React.useCallback((type: any, options: any) => {
-  //   ImagePicker.launchImageLibrary(options, setImgBase64);
-  // }, []);
+  const onSendForm = () => {
+    showLoading()
+    apiPostApplicationJob(
+      customerId,
+      fullName,
+      certification,
+      major?.id,
+      imgBase64,
+      workplace,
+      experienceYear
+    ).then((res : any) => {
+      if(res.statusCode == 200) {
+        navigation.navigate('MainFlows')
+        hideLoading()
+      }else{
+      alert('Lỗi đăng kí')
+      hideLoading()
+      }
+    });
+  };
   return (
     <>
       <Header
@@ -77,8 +95,14 @@ const PartnerScreen = () => {
                 liệu cá nhân của bạn sẽ được bảo mật.
               </Text>
             </View>
-            <TextInputWithIcon label="Họ và tên" />
-            <TextInputWithIcon label="Các chứng chỉ" />
+            <TextInputWithIcon
+              label="Họ và tên"
+              onChangeText={(text) => setFullName(text)}
+            />
+            <TextInputWithIcon
+              label="Các chứng chỉ"
+              onChangeText={(text) => setCertification(text)}
+            />
             <DropDownLabel
               label="Vị trí ứng tuyển"
               value={major?.name ? major.name : "Ấn vào để chọn"}
@@ -86,8 +110,15 @@ const PartnerScreen = () => {
                 setIsVisible(!isVisible);
               }}
             />
-            <TextInputWithIcon label="Địa chỉ làm việc" />
-            <TextInputWithIcon label="Số năm kinh nghiệm" isNumber={true} />
+            <TextInputWithIcon
+              label="Địa chỉ làm việc"
+              onChangeText={(text) => setWorkplace(text)}
+            />
+            <TextInputWithIcon
+              label="Số năm kinh nghiệm"
+              isNumber={true}
+              onChangeText={(text) => setExperienceYear(text)}
+            />
             <TouchableOpacity
               style={styles.avatarContainer}
               onPress={choosePhoto}
@@ -107,16 +138,17 @@ const PartnerScreen = () => {
             </TouchableOpacity>
           </View>
           <ButtonText
-          text="Nộp đơn"
-          styleContainer={{
-            backgroundColor: globalColor.primaryColor,
-            marginHorizontal: 8,
-            height: 60,
-            borderRadius: 12,
-            marginBottom: 100
-          }}
-          styleText={{color: 'white', fontWeight: 'bold'}}
-          onPress={() => {}}/>
+            text="Nộp đơn"
+            styleContainer={{
+              backgroundColor: globalColor.primaryColor,
+              marginHorizontal: 8,
+              height: 60,
+              borderRadius: 12,
+              marginBottom: 100,
+            }}
+            styleText={{ color: "white", fontWeight: "bold" }}
+            onPress={onSendForm}
+          />
         </ScrollView>
       </KeyboardAvoidingView>
       {/* <View style={styles.buttonContainer}>
