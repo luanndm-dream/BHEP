@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-35:/values-et/values-et.xml",
+            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-36:/values-et/values-et.xml",
             "map": [
                 {
                     "source": "/Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/res/values-et/values.xml",

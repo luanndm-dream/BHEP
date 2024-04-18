@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-35:/values-fr/values-fr.xml",
+            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-36:/values-fr/values-fr.xml",
             "map": [
                 {
                     "source": "/Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/res/values-fr/values.xml",
@@ -88,6 +88,23 @@
                         "startOffsets": "11118",
                         "endColumns": "100",
                         "endOffsets": "11214"
+                    }
+                },
+                {
+                    "source": "/Users/luan/.gradle/caches/transforms-3/b0135402789451705a6260c444ce419a/transformed/jetified-ucrop-2.2.6-native/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,124,182",
+                        "endColumns": "68,57,52",
+                        "endOffsets": "119,177,230"
+                    },
+                    "to": {
+                        "startLines": "115,116,117",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "11219,11288,11346",
+                        "endColumns": "68,57,52",
+                        "endOffsets": "11283,11341,11394"
                     }
                 }
             ]

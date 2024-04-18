@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-35:/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-36:/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "/Users/luan/.gradle/caches/transforms-3/bc984b4c216b046fb814ced4c0f10e24/transformed/material-1.9.0/res/values-zh-rTW/values-zh-rTW.xml",
@@ -88,6 +88,23 @@
                         "startOffsets": "4499",
                         "endColumns": "161",
                         "endOffsets": "4656"
+                    }
+                },
+                {
+                    "source": "/Users/luan/.gradle/caches/transforms-3/b0135402789451705a6260c444ce419a/transformed/jetified-ucrop-2.2.6-native/res/values-zh-rTW/values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,132,186,240,287",
+                        "endColumns": "76,53,53,46,116",
+                        "endOffsets": "127,181,235,282,399"
+                    },
+                    "to": {
+                        "startLines": "115,116,117,118,119",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "9640,9717,9771,9825,9872",
+                        "endColumns": "76,53,53,46,116",
+                        "endOffsets": "9712,9766,9820,9867,9984"
                     }
                 }
             ]

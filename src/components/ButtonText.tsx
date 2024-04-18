@@ -19,7 +19,8 @@ export default ButtonText
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingHorizontal: 12
     },
     text:{
         fontSize: 20,

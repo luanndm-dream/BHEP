@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-
+        
     },
     icon: {
        position: 'absolute',
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     //    alignSelf: 'center'
     },
     headerTitle : {
-        fontSize: 18,
+        fontSize: 24,
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center'
