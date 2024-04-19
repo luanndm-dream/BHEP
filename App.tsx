@@ -28,18 +28,7 @@ const RootApp = () => {
   const isLoading = useAppSelector((state) => state.app.loading);
   return (
     <>
-     {Platform.OS === "ios" && (
-        <View
-          style={{
-            width: "100%",
-            height: 80, // For all devices, even X, XS Max
-            position: "absolute",
-            top: 0,
-            left: 0,
-            backgroundColor: globalColor.primaryColor,
-          }}
-        />
-      )}
+    
       <GestureHandlerRootView style={{ flex: 1 }}>
         <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"}/>
         <SafeAreaProvider>
@@ -54,9 +43,9 @@ const RootApp = () => {
 function App(): JSX.Element {
   return (
     <Provider store={store}>
-      <SafeAreaView style={globalStyle.droidSafeArea}>
+      {/* <SafeAreaView style={globalStyle.droidSafeArea}> */}
         <RootApp />
-      </SafeAreaView>
+      {/* </SafeAreaView> */}
     </Provider>
   );
 }

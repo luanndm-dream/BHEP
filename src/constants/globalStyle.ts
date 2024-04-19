@@ -17,6 +17,7 @@ export default StyleSheet.create({
         color: 'black'
     },
     contentContainer:{
-        margin: 12
+        margin: 12,
+        
     }
 });

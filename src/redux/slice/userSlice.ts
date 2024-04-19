@@ -12,7 +12,7 @@ const initialState = {
     id: 1,
     roleId: 1,
     geoLocationId: 1,
-    fullName: "Admin",
+    fullName: "Thanh Huyền",
     email: "admin@gmail.com",
     identify: "1234567890",
     phoneNumber: "0784689531",

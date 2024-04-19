@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, StatusBar, Platform } from 'react-native'
 import React from 'react'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { globalColor } from 'src/constants/color';
@@ -16,7 +16,7 @@ const Header:React.FC<HeaderProps> = ({headerTitle,iconName,otherProp}) => {
   return (
     <>
     <SafeAreaView style={{flex: 0, backgroundColor: globalColor.primaryColor }}/>
-    <View style={[styles.container]}>
+    <View style={[styles.container, {height: Platform.OS === 'ios' ? 60 : 80}]}>
         <StatusBar backgroundColor={globalColor.primaryColor} barStyle={'light-content'}/>
         <TouchableOpacity onPress={ () => navigation.goBack()} style={styles.icon} >
             <MaterialCommunityIcons name='chevron-left' size={40} color='white' />
@@ -31,7 +31,7 @@ export default Header
 
 const styles = StyleSheet.create({
     container: {
-        height: 60,
+       
         flex: 0,
         backgroundColor: globalColor.primaryColor,
         alignItems: 'center',

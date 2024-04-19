@@ -30,8 +30,8 @@ const FindLocationScreen = () => {
   const [dataMatch, setDataMatch] = useState<any[]>([]);
   const user = Platform.OS == "ios" ? "user1" : "user2";
   const roleId = Platform.OS == "ios" ? 3 : 1;
-  const fullName = Platform.OS == "ios" ? 'Nguyễn Bác Sĩ' : 'Customer';
-  const major = Platform.OS == "ios" ? 'Tim mạch' : 'Không có';
+  const fullName = Platform.OS == "ios" ? "Nguyễn Bác Sĩ" : "Customer";
+  const major = Platform.OS == "ios" ? "Tim mạch" : "Không có";
   const userData = useAppSelector((state) => state.user.userData);
   const fakeLocation = () => {
     const latitude = location.latitude;
@@ -81,8 +81,6 @@ const FindLocationScreen = () => {
       }
     });
 
-   
-
     const filteredMatchingDocs = [];
     for (const obj of arrs) {
       for (const key in obj) {
@@ -93,7 +91,7 @@ const FindLocationScreen = () => {
           const distanceInKm = distanceBetween([latitude, longitude], center);
           const distanceInM = distanceInKm * 1000;
           // if (distanceInM <= radiusInM && element.roleId === 3) {
-          if (distanceInM <= radiusInM ) {
+          if (distanceInM <= radiusInM) {
             filteredMatchingDocs.push(element);
           }
         }
@@ -164,21 +162,36 @@ const FindLocationScreen = () => {
   return (
     <>
       <Header headerTitle="Bác sĩ gần đây" />
-      <ButtonText
-        text="Tìm kiếm"
-        onPress={onFindingHandle}
-        styleContainer={{
-          width: "100%",
-          height: 60,
-          backgroundColor: globalColor.primaryColor,
-        }}
-      />
-      <SafeAreaView style={globalStyle.contentContainer}>
-        <FlatList data={dataMatch} renderItem={({item}) => {
-          return (
-            <NearByDoctorCard fullName={item.fullName} major={item.major}  lat={item.latitude} lng={item.longitude} />
-          )
-        }}/>
+      <View style={{ flex: 2, marginHorizontal: 12 }}>
+        <ButtonText
+          text="Tìm kiếm"
+          onPress={onFindingHandle}
+          styleContainer={{
+            marginTop: 30,
+            width: "100%",
+            height: 60,
+            borderRadius: 12,
+            backgroundColor: globalColor.primaryColor,
+          }}
+          styleText={{ color: "white" }}
+        />
+      </View>
+      <SafeAreaView style={styles.container}>
+        <FlatList
+          style={styles.flatlistContainer}
+          data={dataMatch}
+          renderItem={({ item }) => {
+            return (
+              <NearByDoctorCard
+                fullName={item.fullName}
+                major={item.major}
+                lat={item.latitude}
+                lng={item.longitude}
+                onPress={() => console.log("di chuyển sang màn hình detail")}
+              />
+            );
+          }}
+        />
       </SafeAreaView>
     </>
   );
@@ -186,4 +199,15 @@ const FindLocationScreen = () => {
 
 export default FindLocationScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "white",
+    flex: 9,
+    borderTopRightRadius: 12,
+    borderTopLeftRadius: 12,
+  },
+  flatlistContainer: {
+    paddingVertical: 20,
+    paddingHorizontal: 12
+  },
+});

@@ -10,6 +10,7 @@ import {
   DoctorScreen,
   FindLocationScreen,
   HomeScreen,
+  InformationScreen,
   LoginScreen,
   MatchLocationScreen,
   PartnerScreen,
@@ -103,6 +104,7 @@ const RootNavigation = () => {
           <Stack.Screen name="PartnerScreen" component={PartnerScreen} />
           <Stack.Screen name="FindLocationScreen" component={FindLocationScreen} />
           <Stack.Screen name="MatchLocationScreen" component={MatchLocationScreen} />
+          <Stack.Screen name="InformationScreen" component={InformationScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

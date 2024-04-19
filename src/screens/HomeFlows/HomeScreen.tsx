@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { FlatList, Image, StyleSheet, Text, View,SafeAreaView, StatusBar, Platform } from "react-native";
 import React from "react";
 import { globalColor } from "src/constants/color";
 import { globalStyle } from "src/constants";
@@ -33,9 +33,10 @@ const HomeScreen = () => {
           }
   }
   return (
-    <>
+    <SafeAreaView style={globalStyle.droidSafeArea}>
       <View style={styles.container}>
-        <View style={styles.header}>
+        
+        <View style={[styles.header, {marginTop: Platform.OS === 'android' ? 20 : 0}]}>
           <Text style={styles.welcomeText}>Xin Chào</Text>
           <Text style={styles.hello}>Hôm nay của bạn thế nào?</Text>
         </View>
@@ -58,7 +59,7 @@ const HomeScreen = () => {
           </View>
         </View>
       </View>
-    </>
+    </SafeAreaView>
   );
 };
 
