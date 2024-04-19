@@ -15,5 +15,8 @@ export default StyleSheet.create({
     textNormal: {
         fontSize: 18,
         color: 'black'
+    },
+    contentContainer:{
+        margin: 12
     }
 });

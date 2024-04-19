@@ -2,22 +2,24 @@ import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, StatusBar } fro
 import React from 'react'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { globalColor } from 'src/constants/color';
+import { useNavigation } from '@react-navigation/native';
 
 
 interface HeaderProps {
     headerTitle: String,
     otherProp?: any
     iconName?: any
-    onPressIcon?: () => void
+ 
 }
-const Header:React.FC<HeaderProps> = ({headerTitle,iconName,onPressIcon,otherProp}) => {
+const Header:React.FC<HeaderProps> = ({headerTitle,iconName,otherProp}) => {
+    const navigation = useNavigation<any>()
   return (
     <>
     <SafeAreaView style={{flex: 0, backgroundColor: globalColor.primaryColor }}/>
     <View style={[styles.container]}>
         <StatusBar backgroundColor={globalColor.primaryColor} barStyle={'light-content'}/>
-        <TouchableOpacity onPress={onPressIcon} style={styles.icon} >
-            <MaterialCommunityIcons name={iconName} size={40} color='white' />
+        <TouchableOpacity onPress={ () => navigation.goBack()} style={styles.icon} >
+            <MaterialCommunityIcons name='chevron-left' size={40} color='white' />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{headerTitle}</Text>
     </View>

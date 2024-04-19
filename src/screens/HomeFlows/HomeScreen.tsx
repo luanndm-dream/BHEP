@@ -20,8 +20,8 @@ const HomeScreen = () => {
               navigation.navigate('MapScreen' as never)
               break;
             }
-            case'Tạo đơn' : {
-              navigation.navigate('CreateOrderScreen' as never)
+            case'Bác sĩ gần đây' : {
+              navigation.navigate('FindLocationScreen' as never)
               break;
             }
             case 'Văn phòng gần đây' :{

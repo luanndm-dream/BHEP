@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 import {
   NavigationContainer,
   createNavigationContainerRef,
@@ -9,14 +8,17 @@ import {
 import {
   CommunityScreen,
   DoctorScreen,
+  FindLocationScreen,
   HomeScreen,
   LoginScreen,
+  MatchLocationScreen,
+  PartnerScreen,
   ProfileScreen,
 } from "@/screens";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
-import PartnerScreen from "src/screens/HomeFlows/PartnerScreen";
+
 
 const myNavigationTheme = {
   ...DefaultTheme,
@@ -99,6 +101,8 @@ const RootNavigation = () => {
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="MainFlows" component={BottomTabNavigation} />
           <Stack.Screen name="PartnerScreen" component={PartnerScreen} />
+          <Stack.Screen name="FindLocationScreen" component={FindLocationScreen} />
+          <Stack.Screen name="MatchLocationScreen" component={MatchLocationScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

@@ -36,7 +36,11 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>BHEP requies location access to take location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>BHEP requies always location access to take location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>BHEP requies all location access to take location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>BHEP requires photo library access</string>
 	<key>NSCameraUsageDescription</key>

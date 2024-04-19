@@ -22,7 +22,7 @@ module.exports = {
           '@/navigation': './src/navigation',
           '@/screens': './src/screens/',
           // '@/constants': './src/constants',
-          // '@/styles': './src/styles',
+          '@/services': './src/services',
           // '@/icons': './src/assets/icons',
           '@/data': './src/data',
           // '@/constants': './src/constants',

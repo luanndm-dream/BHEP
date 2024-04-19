@@ -76,8 +76,7 @@ const PartnerScreen = () => {
     <>
       <Header
         headerTitle="Đối tác"
-        iconName="chevron-left"
-        onPressIcon={() => navigation.goBack()}
+
       />
 
       <KeyboardAvoidingView

@@ -1,9 +1,33 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
-
+require_relative '../node_modules/react-native-permissions/scripts/setup'
 # platform :ios, min_ios_version_supported
+pod 'react-native-geolocation-service', path: '../node_modules/react-native-geolocation-service'
 platform :ios, '12.4'
 prepare_react_native_project!
+
+setup_permissions([
+  # 'AppTrackingTransparency',
+  # 'Bluetooth',
+  # 'Calendars',
+  # 'CalendarsWriteOnly',
+  # 'Camera',
+  # 'Contacts',
+  # 'FaceID',
+  # 'LocationAccuracy',
+  # 'LocationAlways',
+   'LocationWhenInUse',
+  # 'MediaLibrary',
+  # 'Microphone',
+  # 'Motion',
+  # 'Notifications',
+  # 'PhotoLibrary',
+  # 'PhotoLibraryAddOnly',
+  # 'Reminders',
+  # 'Siri',
+  # 'SpeechRecognition',
+  # 'StoreKit',
+])
 
 flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
 
@@ -50,3 +74,4 @@ target 'BHEP_Mobile_Demo_V1' do
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end
+
