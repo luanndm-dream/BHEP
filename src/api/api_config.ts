@@ -7,6 +7,7 @@ import { store } from "src/redux/store";
 
 const TIME_OUT = 60000
 
+
 export const publicAxios = axios.create({
     baseURL: BASE_URL,
     headers: {

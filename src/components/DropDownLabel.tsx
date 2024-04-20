@@ -26,7 +26,8 @@ export default DropDownLabel
 
 const styles = StyleSheet.create({
     container: {
-        marginVertical: 15
+        marginVertical: 15,
+        flex: 1
        },
        labelContainer: {
          backgroundColor: globalColor.backgroundColor, // Same color as background

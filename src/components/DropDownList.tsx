@@ -78,7 +78,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
      
         <View style={styles.container}>
           <View style={styles.indicatorTop} />
-          <View>
+          <View >
   
               <TextInput
                 placeholder={placeholderText}
@@ -87,8 +87,9 @@ const DropDownList: React.FC<DropDownListProps> = ({
                 style={styles.labelSearch}
               />
        
-            <SafeAreaView>
+            <SafeAreaView >
               <FlatList
+              style={{height: '100%'}}
                 data={filterData(dataMajor, searchValue)}
                 renderItem={({ item }) => {
                   return (
@@ -138,7 +139,8 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+   
   },
   itemBox:{
     flexDirection: "row"

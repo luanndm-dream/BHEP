@@ -7,6 +7,7 @@ import {
 } from "@react-navigation/native";
 import {
   CommunityScreen,
+  DoctorDetailScreen,
   DoctorScreen,
   FindLocationScreen,
   HomeScreen,
@@ -15,6 +16,7 @@ import {
   MatchLocationScreen,
   PartnerScreen,
   ProfileScreen,
+  WorkSpaceDoctorScreen,
 } from "@/screens";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -105,6 +107,8 @@ const RootNavigation = () => {
           <Stack.Screen name="FindLocationScreen" component={FindLocationScreen} />
           <Stack.Screen name="MatchLocationScreen" component={MatchLocationScreen} />
           <Stack.Screen name="InformationScreen" component={InformationScreen} />
+          <Stack.Screen name="WorkSpaceDoctorScreen" component={WorkSpaceDoctorScreen} />
+          <Stack.Screen name="DoctorDetailScreen" component={DoctorDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

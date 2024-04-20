@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-36:/values-uk/values-uk.xml",
+            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-37:/values-uk/values-uk.xml",
             "map": [
                 {
                     "source": "/Users/luan/.gradle/caches/transforms-3/bc984b4c216b046fb814ced4c0f10e24/transformed/material-1.9.0/res/values-uk/values-uk.xml",

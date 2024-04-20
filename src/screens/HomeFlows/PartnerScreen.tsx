@@ -47,8 +47,8 @@ const PartnerScreen = () => {
       height: 400,
       cropping: true,
       includeBase64: true,
-    }).then((image) => {
-      console.log(image.data);
+    }).then((image :any) => {
+      console.log(image?.data);
       setImgBase64(image?.data);
     });
   };
@@ -163,7 +163,6 @@ const PartnerScreen = () => {
           onPress={() => {}}
         />
       </View> */}
-
       {/* DropDownList */}
       <View style={styles.dropDownListContainer}>
         <DropDownList

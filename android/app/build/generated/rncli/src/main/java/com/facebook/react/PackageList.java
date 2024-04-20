@@ -17,6 +17,8 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import org.reactnative.maskedview.RNCMaskedViewPackage;
 // react-native-device-info
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
+// react-native-fast-image
+import com.dylanvann.fastimage.FastImageViewPackage;
 // react-native-geolocation-service
 import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 // react-native-gesture-handler
@@ -79,6 +81,7 @@ public class PackageList {
       new VectorIconsPackage(),
       new RNCMaskedViewPackage(),
       new RNDeviceInfo(),
+      new FastImageViewPackage(),
       new RNFusedLocationPackage(),
       new RNGestureHandlerPackage(),
       new PickerPackage(),

@@ -7,49 +7,55 @@ import {
   ScrollView,
   FlatList,
   TouchableOpacity,
-  Platform
+  Platform,
 } from "react-native";
 import React from "react";
 import { FeatureCard, Header, StatsBox } from "@/components";
 import { useAppSelector } from "@/redux";
 import { globalFontSize } from "src/constants/fontSize";
-import { FeatureProfileData } from "src/data/featureProfileData";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useNavigation } from "@react-navigation/native";
+import { globalStyle } from "src/constants";
+import { getFeatureProfileData } from "src/data/featureProfileData";
+
 
 const ProfileScreen = () => {
   const userData = useAppSelector((state) => state.user.userData);
   const navigation = useNavigation<any>();
-  const onPressIconHandle = (name: string)=>{
-    switch(name){
-      case 'Thông Tin Cá Nhân' :{
-        navigation.navigate('InformationScreen', {
-          data: userData
-        })
+  const onPressIconHandle = (name: string) => {
+    switch (name) {
+      case "Thông Tin Cá Nhân": {
+        navigation.navigate("InformationScreen", {
+          data: userData,
+        });
         break;
       }
-      case'Tìm Đường' : {
-        navigation.navigate('MapScreen' as never)
+      case "Làm Việc": {
+        navigation.navigate("WorkSpaceDoctorScreen");
         break;
       }
-      case'Bác sĩ gần đây' : {
-        navigation.navigate('FindLocationScreen' as never)
+      case "Bác sĩ gần đây": {
+        navigation.navigate("FindLocationScreen" as never);
         break;
       }
-      case 'Văn phòng gần đây' :{
-        navigation.navigate('OfficeMapViewScreen', {
+      case "Văn phòng gần đây": {
+        navigation.navigate("OfficeMapViewScreen", {
           // dataOffice: dataOffice
-        })
+        });
         break;
       }
     }
-}
+  };
+
+  // Lấy dữ liệu từ hàm getFeatureProfileData
+  const FeatureProfileData = getFeatureProfileData();
+
   return (
     <ScrollView style={{ flex: 1 }}>
-      <StatusBar translucent barStyle={"light-content"}/>
+      <StatusBar translucent barStyle={"light-content"} />
       <View style={styles.headerContainer}>
         <TouchableOpacity style={styles.logOutIcon}>
-          <MaterialCommunityIcons name="logout" size={40} color={'white'}/>
+          <MaterialCommunityIcons name="logout" size={40} color={"white"} />
         </TouchableOpacity>
         <View style={styles.avatarContainer}>
           <Image
@@ -58,6 +64,7 @@ const ProfileScreen = () => {
           />
           <View style={styles.nameBox}>
             <Text style={styles.name}>{userData.fullName}</Text>
+            <Text style={styles.description}>{userData.description}</Text>
           </View>
         </View>
         <Image
@@ -67,7 +74,7 @@ const ProfileScreen = () => {
       </View>
       <StatsBox valueOfPosts={12} valueOfRank={1} valueOfOrders={100} />
       <View style={styles.featureContainer}>
-        <FlatList 
+        <FlatList
           data={FeatureProfileData}
           renderItem={({ item }) => {
             return (
@@ -75,9 +82,8 @@ const ProfileScreen = () => {
                 featureName={item.name}
                 iconName={item.iconName}
                 backgroundIconColor={item.color}
-                onPress={()=>onPressIconHandle(item.name)}
+                onPress={() => onPressIconHandle(item.name)}
               />
-            
             );
           }}
           scrollEnabled={false}
@@ -105,7 +111,7 @@ const styles = StyleSheet.create({
   avatarContainer: {
     zIndex: 2,
     position: "absolute",
-    top: "30%",
+    top: "25%",
   },
   avatar: {
     width: 100,
@@ -121,7 +127,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   nameBox: {
-    marginTop: 20,
+    marginTop: 10,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -130,10 +136,15 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 16,
   },
-  logOutIcon :{
+  logOutIcon: {
     position: "absolute",
     zIndex: 3,
     top: 50,
-    right: 20
-  }
+    right: 20,
+  },
+  description: {
+    fontSize: globalFontSize.labelName,
+    color: "white",
+    marginTop: 5,
+  },
 });

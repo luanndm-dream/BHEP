@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-36:/values-b+sr+Latn/values-b+sr+Latn.xml",
+            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-37:/values-b+sr+Latn/values-b+sr+Latn.xml",
             "map": [
                 {
                     "source": "/Users/luan/.gradle/caches/transforms-3/4147f26a61fb6196770ea38e58daddf3/transformed/core-1.8.0/res/values-b+sr+Latn/values-b+sr+Latn.xml",

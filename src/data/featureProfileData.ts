@@ -1,21 +1,25 @@
+import { useAppSelector } from "@/redux";
 import { globalColor } from "src/constants/color";
 
-export const FeatureProfileData  = [
-    {
-        id: 1,
-        name: 'Thông Tin Cá Nhân',
-        iconName: "account",
-        color: globalColor.blue2,
-      
-    },
-    // {
-    //     id: 6,
-    //     name: 'Bác sĩ gần đây',
-    //     imgName: require('../assets/icons/advice.png')
-    // },
-    // {
-    //     id: 3,
-    //     name: 'Sức khoẻ của tôi',
-    //     imgName: require('../assets/icons/medical-report.png')
-    // },
-]
+export const getFeatureProfileData = () => {
+    const roleId = useAppSelector(state=>state.user.userData.roleId);
+    const data = [
+        {
+            id: 1,
+            name: 'Thông Tin Cá Nhân',
+            iconName: "account",
+            color: globalColor.blue2,
+        },
+    ];
+    
+    if (roleId === 3) {
+        data.push({
+            id: 2,
+            name: 'Làm Việc',
+            iconName: "bookmark-check",
+            color: '#01b585',
+        });
+    }
+
+    return data;
+};

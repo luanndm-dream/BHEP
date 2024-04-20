@@ -54,12 +54,13 @@ const styles = StyleSheet.create({
     height: 100,
     alignItems: "center",
     paddingHorizontal: 12,
+    marginVertical: 12
   },
   tagContainer:{
     backgroundColor: globalColor.backgroundTag,
     borderRadius: 10,
     height: 20,
-    width: '90%',
+    width: 130,
     flexDirection: "row",
     paddingHorizontal: 12,
     // justifyContent: 'space-between',

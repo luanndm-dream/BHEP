@@ -24,15 +24,22 @@ import { db } from "@/services";
 import { useAppSelector } from "@/redux";
 import { FlatList } from "react-native-gesture-handler";
 import { globalStyle } from "src/constants";
+import { useNavigation } from "@react-navigation/native";
 const FindLocationScreen = () => {
   const [location, setLocation] = useState<any>(null);
   const [permission, setPermission] = useState(false);
   const [dataMatch, setDataMatch] = useState<any[]>([]);
-  const user = Platform.OS == "ios" ? "user1" : "user2";
+  const user = Platform.OS == "ios" ? "8" : "2";
   const roleId = Platform.OS == "ios" ? 3 : 1;
   const fullName = Platform.OS == "ios" ? "Nguyễn Bác Sĩ" : "Customer";
   const major = Platform.OS == "ios" ? "Tim mạch" : "Không có";
   const userData = useAppSelector((state) => state.user.userData);
+  const navigation = useNavigation<any>()
+
+
+
+
+
   const fakeLocation = () => {
     const latitude = location.latitude;
     const longitude = location.longitude;
@@ -158,6 +165,11 @@ const FindLocationScreen = () => {
   //     setPermission(true);
   //   }
   // };
+  const onPressItem =(id: number) =>{
+      navigation.navigate('DoctorDetailScreen', {
+        userId: id
+      })
+  }
 
   return (
     <>
@@ -187,7 +199,7 @@ const FindLocationScreen = () => {
                 major={item.major}
                 lat={item.latitude}
                 lng={item.longitude}
-                onPress={() => console.log("di chuyển sang màn hình detail")}
+                onPress={() => console.log(onPressItem(item.userId))}
               />
             );
           }}

@@ -5,6 +5,7 @@ import {
   View,
   ScrollView,
   Keyboard,
+  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
 import { ButtonText, Header } from "@/components";
@@ -15,6 +16,7 @@ import { useRoute } from "@react-navigation/native";
 const InformationScreen = () => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const [password, setPassword] = useState<any>("*************");
+  const [isChangePassword, setIsChangePassWord] = useState<boolean>(false)
   const route = useRoute<any>();
   const data = route.params?.data;
   console.log(data);
@@ -22,6 +24,9 @@ const InformationScreen = () => {
   const editHandle = () => {
     setIsEdit(!isEdit);
   };
+  const onChangePassword = () => {
+    setIsChangePassWord(!isChangePassword)
+  }
   return (
     <>
       <Header headerTitle="Thông tin cá nhân" />
@@ -48,11 +53,19 @@ const InformationScreen = () => {
           <TextInput style={styles.textInput} value={data?.phoneNumber} editable={isEdit}/>
         </View>
         <View>
+          <View style={styles.passwordTitle}>
           <Text style={[globalStyle.titleText, { color: globalColor.grey }]}>
             Mật khẩu
           </Text>
+          <TouchableOpacity onPress={onChangePassword}>
+          <Text style={styles.password}>
+            Đổi mật khẩu
+          </Text>
+          </TouchableOpacity>
+          </View>
+          
           <TextInput
-          editable={isEdit}
+          editable={isChangePassword}
             style={styles.textInput}
             value={password}
             onTouchStart={() => setPassword(undefined)}
@@ -115,4 +128,13 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 16,
   },
+  password: {
+    color: globalColor.blue,
+    fontWeight: '600'
+  },
+  passwordTitle: {
+    flexDirection: 'row',
+    alignItems: "center",
+    justifyContent: 'space-between'
+  }
 });

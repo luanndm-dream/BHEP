@@ -20,7 +20,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.labelContainer}>
         <View style={[styles.iconContainer,{backgroundColor: backgroundIconColor}]}>
-          <MaterialCommunityIcons name={iconName} size={40} color={'white'} />
+          <MaterialCommunityIcons name={iconName} size={30} color={'white'} />
         </View>
 
         <Text style={styles.featureName}>{featureName}</Text>
