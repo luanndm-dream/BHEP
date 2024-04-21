@@ -5,7 +5,7 @@ interface ButtonTextProps {
     onPress: () => void,
     styleContainer?: any,
     styleText?: any,
-    disabled: any
+    disabled?: any
 }
 const ButtonText: React.FC<ButtonTextProps> = ({text, onPress,styleContainer,styleText,disabled}) => {
   return (

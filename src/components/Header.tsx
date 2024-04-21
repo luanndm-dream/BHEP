@@ -31,13 +31,11 @@ export default Header
 
 const styles = StyleSheet.create({
     container: {
-       
         flex: 0,
         backgroundColor: globalColor.primaryColor,
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        
     },
     icon: {
        position: 'absolute',

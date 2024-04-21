@@ -11,7 +11,7 @@ import { globalColor } from "src/constants/color";
 interface TextInputWithIconProps extends TextInputProps {
   label?: string;
   placeholderText?: string;
-  onChangeText : (text:any) => void,
+  onChangeText?: (text:any) => void,
   isNumber?: boolean;
 }
 const TextInputWithIcon: React.FC<TextInputWithIconProps> = ({
@@ -27,6 +27,8 @@ const TextInputWithIcon: React.FC<TextInputWithIconProps> = ({
       </View>
       <View style={styles.inputContainer}>
         <TextInput
+        style={{height: 60}}
+        autoCapitalize="none"
           placeholder={placeholderText}
           keyboardType={isNumber ? "numeric" : "default"}
           onChangeText={onChangeText}

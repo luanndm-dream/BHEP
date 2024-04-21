@@ -16,6 +16,7 @@ import {
   MatchLocationScreen,
   PartnerScreen,
   ProfileScreen,
+  RegisterScreen,
   WorkSpaceDoctorScreen,
 } from "@/screens";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
@@ -99,9 +100,10 @@ const RootNavigation = () => {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName="MainFlows"
+          initialRouteName="LoginScreen"
         >
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
+          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           <Stack.Screen name="MainFlows" component={BottomTabNavigation} />
           <Stack.Screen name="PartnerScreen" component={PartnerScreen} />
           <Stack.Screen name="FindLocationScreen" component={FindLocationScreen} />

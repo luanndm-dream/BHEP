@@ -1,30 +1,46 @@
-import { Image, StyleSheet, Text, View,KeyboardAvoidingView,SafeAreaView, Keyboard } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  KeyboardAvoidingView,
+  SafeAreaView,
+  Keyboard,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
 import { globalColor } from "src/constants/color";
 import { ButtonText, TextInputNoIcon } from "@/components";
 import { apiLogin } from "src/api/api_login";
 import { useNavigation } from "@react-navigation/native";
 import useLoading from "src/hook/useLoading";
+import { globalStyle } from "src/constants";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const navigation =useNavigation<any>()
-  const {showLoading, hideLoading} = useLoading();
+  const navigation = useNavigation<any>();
+  const { showLoading, hideLoading } = useLoading();
   const handleLogin = () => {
-    showLoading()
+    showLoading();
     apiLogin(email, password).then((res: any) => {
-      if(res.statusCode == 200) {
-        navigation.navigate('MainFlows')
-        hideLoading()
-      }else{
-      alert('Lỗi đăng nhập')
-      hideLoading()
+      if (res.statusCode == 200) {
+        navigation.navigate("MainFlows");
+        hideLoading();
+      } else {
+        alert("Lỗi đăng nhập");
+        hideLoading();
       }
     });
   };
+
+  const registerHandle = () => {
+    navigation.navigate('RegisterScreen')
+  }
+
   return (
-    <SafeAreaView onTouchStart={()=> Keyboard.dismiss()} style={{flex: 1}}>
+    <View style={{ flex: 1 }} onTouchStart={() => Keyboard.dismiss()}>
+      {/* // <SafeAreaView onTouchStart={()=> Keyboard.dismiss()} style={{flex: 1}}> */}
       {/* <Image
         source={require("../../assets/image/spidium.png")}
         style={[styles.spidium, ]}
@@ -39,7 +55,7 @@ const LoginScreen = () => {
           <Text style={styles.slogant}>Your health in your hand</Text>
         </View>
       </View>
-      
+
       <KeyboardAvoidingView style={styles.contentContainer} behavior="padding">
         <Text style={styles.textWelcome}>XIN CHÀO</Text>
         <View style={styles.textInputContainer}>
@@ -52,7 +68,7 @@ const LoginScreen = () => {
             <View style={styles.textInput}></View>
             <TextInputNoIcon
               placeholderText="Tài khoản"
-              onChangeText={(text) => setPassword(text)} 
+              onChangeText={(text) => setPassword(text)}
             />
           </View>
           <View>
@@ -62,10 +78,21 @@ const LoginScreen = () => {
               styleText={{ color: "black" }}
               onPress={handleLogin}
             />
+            <View style={styles.footerContainer}>
+              <TouchableOpacity style={{ marginTop: 15 }} onPress={registerHandle}>
+                <Text style={[globalStyle.titleText, { color: "white" }]}>
+                  Đăng kí tài khoản
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text>Quên mật khẩu?</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+      {/* </SafeAreaView> */}
+    </View>
   );
 };
 
@@ -79,7 +106,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   contentContainer: {
-    flex: 2,
+    flex: 2.5,
     backgroundColor: globalColor.secondaryColor,
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
@@ -106,6 +133,10 @@ const styles = StyleSheet.create({
     fontSize: 64,
     fontWeight: "bold",
     color: globalColor.nameLogoColor,
+  },
+  footerContainer: {
+    alignItems: "center",
+    justifyContent: "center",
   },
   slogant: {
     color: "#4871F2",

@@ -47,7 +47,7 @@ const PartnerScreen = () => {
   const keyboardVerticalOffset = Platform.OS === "ios" ? 40 : 0;
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const navigation = useNavigation<any>();
-  const customerId = 5;
+  const customerId = 11;
   const [fullName, setFullName] = useState<string>("");
   const [certification, setCertification] = useState<string>("");
   const [major, setMajor] = useState<any>();
@@ -82,13 +82,7 @@ const PartnerScreen = () => {
       workplace,
       experienceYear
     ).then((res: any) => {
-      console.log(customerId,
-        fullName,
-        certification,
-        major?.id,
-        // imgBase64,
-        workplace,
-        experienceYear)
+     console.log(res)
       if (res.statusCode == 200) {
         navigation.navigate("MainFlows");
         hideLoading();
