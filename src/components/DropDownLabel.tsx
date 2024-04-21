@@ -6,9 +6,10 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 interface DropDownLabelProps {
     label?: string,
     value?: any,
-    onPress?: ()=>void
+    onPress?: ()=>void,
+    onChangeValue?: ()=>void
 }
-const DropDownLabel:React.FC<DropDownLabelProps> = ({label,value, onPress}) => {
+const DropDownLabel:React.FC<DropDownLabelProps> = ({label,value, onPress,onChangeValue}) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
     <View style={styles.labelContainer}>

@@ -4,11 +4,12 @@ interface ButtonTextProps {
     text: string,
     onPress: () => void,
     styleContainer?: any,
-    styleText?: any
+    styleText?: any,
+    disabled: any
 }
-const ButtonText: React.FC<ButtonTextProps> = ({text, onPress,styleContainer,styleText}) => {
+const ButtonText: React.FC<ButtonTextProps> = ({text, onPress,styleContainer,styleText,disabled}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.container, styleContainer]}>
+    <TouchableOpacity onPress={onPress} style={[styles.container, styleContainer]} disabled={disabled}>
         <Text style={[styles.text, styleText]}>{text}</Text>
     </TouchableOpacity>
   )
