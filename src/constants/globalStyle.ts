@@ -10,7 +10,8 @@ export default StyleSheet.create({
     titleText:{
         fontSize: 18,
         fontWeight: 'bold',
-        color: 'black'
+        color: 'black',
+        marginVertical: 8
     },
     textNormal: {
         fontSize: 18,
