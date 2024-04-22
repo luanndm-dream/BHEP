@@ -29,15 +29,13 @@ const FindLocationScreen = () => {
   const [location, setLocation] = useState<any>(null);
   const [permission, setPermission] = useState(false);
   const [dataMatch, setDataMatch] = useState<any[]>([]);
-  const user = Platform.OS == "ios" ? "8" : "2";
+  const userData = useAppSelector((state) => state.user.userData);
+  const user = Platform.OS == "ios" ? "100" : userData.id;
   const roleId = Platform.OS == "ios" ? 3 : 1;
   const fullName = Platform.OS == "ios" ? "Nguyễn Bác Sĩ" : "Customer";
   const major = Platform.OS == "ios" ? "Tim mạch" : "Không có";
-  const userData = useAppSelector((state) => state.user.userData);
+
   const navigation = useNavigation<any>()
-
-
-
 
 
   const fakeLocation = () => {
@@ -45,12 +43,13 @@ const FindLocationScreen = () => {
     const longitude = location.longitude;
     const hash = geohashForLocation([latitude, longitude]);
     try {
+      console.log(userData.id)
       update(ref(db, "users/" + user), {
         geohash: hash,
-        fullName: fullName,
-        major: major,
+        fullName: userData.fullName,
         userId: user,
-        roleId: roleId,
+        roleId:  Platform.OS==="android"? userData.roleId :3,
+        description: userData.description,
         latitude: latitude,
         longitude: longitude,
       });
@@ -167,7 +166,8 @@ const FindLocationScreen = () => {
   // };
   const onPressItem =(id: number) =>{
       navigation.navigate('DoctorDetailScreen', {
-        userId: id
+        userId: id,
+        location: location
       })
   }
 
@@ -196,7 +196,7 @@ const FindLocationScreen = () => {
             return (
               <NearByDoctorCard
                 fullName={item.fullName}
-                major={item.major}
+                major={item.description}
                 lat={item.latitude}
                 lng={item.longitude}
                 onPress={() => console.log(onPressItem(item.userId))}

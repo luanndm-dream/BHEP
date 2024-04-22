@@ -5,9 +5,14 @@ import { globalStyle } from "src/constants";
 import { OutstandingFunciton } from "@/data";
 import { useNavigation } from "@react-navigation/native";
 import { IconFeature } from "@/components";
+import { useAppSelector } from "@/redux";
+import useLoading from "src/hook/useLoading";
 
 const HomeScreen = () => {
   const navigation = useNavigation<any>()
+  const userData = useAppSelector(state => state.user)
+  const {showLoading, hideLoading} = useLoading()
+
   const onPressIconHandle = (name: string)=>{
           switch(name){
             case 'Đối tác' :{
@@ -35,9 +40,12 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={globalStyle.droidSafeArea}>
       <View style={styles.container}>
-        
         <View style={[styles.header, {marginTop: Platform.OS === 'android' ? 20 : 0}]}>
-          <Text style={styles.welcomeText}>Xin Chào</Text>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Text style={{fontSize: 18}}>Xin chào </Text>
+          <Text style={styles.welcomeText}>{userData.userData.fullName}</Text>
+          </View>
+          
           <Text style={styles.hello}>Hôm nay của bạn thế nào?</Text>
         </View>
         <View style={{}}>
@@ -87,7 +95,7 @@ const styles = StyleSheet.create({
     borderRadius: 24,
   },
   welcomeText: {
-    fontSize: 24,
+    fontSize: 20,
     color: "black",
     fontWeight: "bold",
   },

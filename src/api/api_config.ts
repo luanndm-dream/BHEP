@@ -11,10 +11,11 @@ const TIME_OUT = 60000
 export const publicAxios = axios.create({
     baseURL: BASE_URL,
     headers: {
-        "Content-Type": "multipart/form-data"
+        "Content-Type": "multipart/form-data",
     },
     timeout: TIME_OUT
 });
+
 
 export const protectedAxios = axios.create({
     baseURL: BASE_URL,
@@ -23,6 +24,43 @@ export const protectedAxios = axios.create({
     },
     timeout: TIME_OUT
 });
+
+
+export const axiosInstance = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    'Content-Type': 'application/json'
+},
+  timeout: TIME_OUT
+})
+axiosInstance.interceptors.request.use(
+  function (config){
+    console.log('config',config)
+    return config
+    
+},
+function (error){
+    console.log('loi request')
+    return Promise.reject(error)
+}
+)
+axiosInstance.interceptors.response.use(
+  function (response) {
+    const responseObj = {
+        ...response.data,
+        statusCode: response.status,
+    };
+    return responseObj;
+},
+function (error) {
+
+    const statusCode = error.response.data
+    if (error.response && error.response.status === 400) {
+       
+    }
+    return statusCode;
+}
+)
 
 publicAxios.interceptors.request.use(
     function (config){
@@ -96,3 +134,4 @@ protectedAxios.interceptors.request.use(
       return statusCode;
     }
   );
+

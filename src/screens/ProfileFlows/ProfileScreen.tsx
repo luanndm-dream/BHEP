@@ -9,19 +9,20 @@ import {
   TouchableOpacity,
   Platform,
 } from "react-native";
-import React from "react";
-import { FeatureCard, Header, StatsBox } from "@/components";
+import React, { useEffect, useState } from "react";
+import { FeatureCard, Header, MessagePopup, StatsBox } from "@/components";
 import { useAppSelector } from "@/redux";
 import { globalFontSize } from "src/constants/fontSize";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useNavigation } from "@react-navigation/native";
 import { globalStyle } from "src/constants";
 import { getFeatureProfileData } from "src/data/featureProfileData";
-
+import { apiGetUserById } from "src/api/api_getUserById";
 
 const ProfileScreen = () => {
   const userData = useAppSelector((state) => state.user.userData);
   const navigation = useNavigation<any>();
+  const [isVisible, setIsVisible] = useState<boolean>(true);
   const onPressIconHandle = (name: string) => {
     switch (name) {
       case "Thông Tin Cá Nhân": {
@@ -34,62 +35,82 @@ const ProfileScreen = () => {
         navigation.navigate("WorkSpaceDoctorScreen");
         break;
       }
-      case "Bác sĩ gần đây": {
-        navigation.navigate("FindLocationScreen" as never);
-        break;
-      }
-      case "Văn phòng gần đây": {
-        navigation.navigate("OfficeMapViewScreen", {
-          // dataOffice: dataOffice
-        });
-        break;
-      }
+      // case "Bác sĩ gần đây": {
+      //   navigation.navigate("FindLocationScreen" as never);
+      //   break;
+      // }
+      // case "Văn phòng gần đây": {
+      //   navigation.navigate("OfficeMapViewScreen", {
+      //     // dataOffice: dataOffice
+      //   });
+      //   break;
+      // }
     }
   };
+  useEffect(() => {
+    apiGetUserById(Number(userData.id)).then((res) => console.log(res.data));
+  });
 
   // Lấy dữ liệu từ hàm getFeatureProfileData
   const FeatureProfileData = getFeatureProfileData();
 
   return (
-    <ScrollView style={{ flex: 1 }}>
-      <StatusBar translucent barStyle={"light-content"} />
-      <View style={styles.headerContainer}>
-        <TouchableOpacity style={styles.logOutIcon}>
-          <MaterialCommunityIcons name="logout" size={40} color={"white"} />
-        </TouchableOpacity>
-        <View style={styles.avatarContainer}>
-          <Image
-            source={{ uri: `data:image/jpeg;base64,${userData.avatar}` }}
-            style={styles.avatar}
-          />
-          <View style={styles.nameBox}>
-            <Text style={styles.name}>{userData.fullName}</Text>
-            <Text style={styles.description}>{userData.description}</Text>
-          </View>
-        </View>
-        <Image
-          source={require("../../assets/image/background.jpg")}
-          style={styles.image}
-        />
-      </View>
-      <StatsBox valueOfPosts={12} valueOfRank={1} valueOfOrders={100} />
-      <View style={styles.featureContainer}>
-        <FlatList
-          data={FeatureProfileData}
-          renderItem={({ item }) => {
-            return (
-              <FeatureCard
-                featureName={item.name}
-                iconName={item.iconName}
-                backgroundIconColor={item.color}
-                onPress={() => onPressIconHandle(item.name)}
+    <>
+      <ScrollView style={{ flex: 1 }}>
+        <StatusBar translucent barStyle={"light-content"} />
+        <View style={styles.headerContainer}>
+          <TouchableOpacity style={styles.logOutIcon}>
+            <MaterialCommunityIcons name="logout" size={40} color={"white"} />
+          </TouchableOpacity>
+          <View style={styles.avatarContainer}>
+            {userData.avatar ? (
+              <Image
+                source={{ uri: `data:image/jpeg;base64,${userData.avatar}` }}
+                style={styles.avatar}
               />
-            );
-          }}
-          scrollEnabled={false}
-        />
-      </View>
-    </ScrollView>
+            ) : userData.gender === 1 ? (
+              <Image
+                source={require("../../assets/image/manAvatar.png")}
+                style={styles.avatar}
+              />
+            ) : (
+              <Image
+                source={require("../../assets/image/womanAvatar.png")}
+                style={styles.avatar}
+              />
+            )}
+
+            <View style={styles.nameBox}>
+              <Text style={styles.name}>{userData.fullName}</Text>
+              <Text style={styles.description}>{userData.description}</Text>
+            </View>
+          </View>
+          <Image
+            source={require("../../assets/image/background.jpg")}
+            style={styles.image}
+          />
+        </View>
+        <StatsBox valueOfPosts={12} valueOfRank={1} valueOfOrders={100} />
+        <View style={styles.featureContainer}>
+          <FlatList
+            data={FeatureProfileData}
+            renderItem={({ item }) => {
+              return (
+                <FeatureCard
+                  featureName={item.name}
+                  iconName={item.iconName}
+                  backgroundIconColor={item.color}
+                  onPress={() => onPressIconHandle(item.name)}
+                />
+              );
+            }}
+            scrollEnabled={false}
+          />
+        </View>
+      </ScrollView>
+
+      {isVisible && <MessagePopup isVisible />}
+    </>
   );
 };
 

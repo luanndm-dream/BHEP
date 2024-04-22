@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   ScrollView,
   FlatList,
+  Platform,
+  Linking,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -23,6 +25,7 @@ const DoctorDetailScreen = () => {
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
   const userId = route.params.userId;
+  const location = route.params.location;
   const userIdFake = 8;
   const [userData, setUserData] = useState<any>();
   const [imgUrl, setImgUrl] = useState<string>("");
@@ -34,6 +37,8 @@ const DoctorDetailScreen = () => {
   const date = today.getDate();
   const [selectedDate, setSelectedDate] = useState<number>(Number(date));
 
+  // console.log('location', location)
+
   const handlePressDateSlider = (index: number, date: number) => {
     setSelectedDateIndex(index);
     setSelectedDate(date);
@@ -43,7 +48,7 @@ const DoctorDetailScreen = () => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
-    
+
     return `${day}`;
   }
 
@@ -52,7 +57,6 @@ const DoctorDetailScreen = () => {
     // Starting Monday not Sunday
     current.setDate(current.getDate() - current.getDay() + 1);
     for (var i = 0; i < 7; i++) {
-        
       const dayIndex = i === 6 ? 1 : i + 2; // Nếu i là 6 (Chủ Nhật), dayIndex sẽ là 1 (Thứ Hai)
       const formattedDate = formatDate(new Date(current));
       const thu = i === 6 ? "CN" : `T${dayIndex}`;
@@ -63,9 +67,9 @@ const DoctorDetailScreen = () => {
       };
       week.push(dayObject);
       current.setDate(current.getDate() + 1);
-    
-      if (Number(formattedDate) === date) { 
-        setSelectedDateIndex(i+1); 
+
+      if (Number(formattedDate) === date) {
+        setSelectedDateIndex(i + 1);
       }
     }
 
@@ -74,7 +78,7 @@ const DoctorDetailScreen = () => {
 
   useEffect(() => {
     console.log(year, month, date);
-    setDateInWeek(dates(new Date(year, month, date-1)));
+    setDateInWeek(dates(new Date(year, month, date - 1)));
 
     axios
       .get(`https://bhepdemoapi.azurewebsites.net/Api/V1/User/${userIdFake}`)
@@ -84,19 +88,39 @@ const DoctorDetailScreen = () => {
       });
   }, []);
 
+  const mapOpen = () => {
+    const scheme = Platform.select({
+      ios: "maps://0,0?q=",
+      android: "geo:0,0?q=",
+    });
+    const latLng = `${location.latitude},${location.longitude}`;
+    const label = "Custom Label";
+    const url:any = Platform.select({
+      ios: `${scheme}${label}@${latLng}`,
+      android: `${scheme}${latLng}(${label})`,
+    });
 
+    Linking.openURL(url);
+  };
 
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.headerContainer}>
         <TouchableOpacity
-          style={styles.logOutIcon}
+          style={styles.backIcon}
           onPress={() => navigation.goBack()}
         >
           <MaterialCommunityIcons
             name="chevron-left"
-            size={50}
+            size={40}
             color={"black"}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.mapIcon} onPress={() => mapOpen()}>
+          <MaterialCommunityIcons
+            name="map-marker-account"
+            size={40}
+            color={"white"}
           />
         </TouchableOpacity>
         <View style={styles.avatarContainer}>
@@ -135,7 +159,7 @@ const DoctorDetailScreen = () => {
           />
         </View>
         <View style={styles.scheduleContainer}>
-          <View style={styles.dateContainer}>
+          <View style={{}}>
             <Text style={globalStyle.titleText}>Lịch trình làm việc</Text>
             <FlatList
               scrollEnabled={false}
@@ -218,14 +242,14 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 16,
   },
-  logOutIcon: {
+  backIcon: {
     position: "absolute",
     zIndex: 3,
     top: 50,
     left: 20,
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
     backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
@@ -244,5 +268,10 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     // paddingHorizontal: 12
   },
-  dateContainer: {},
+  mapIcon: {
+    position: "absolute",
+    zIndex: 3,
+    top: 50,
+    right: 20,
+  },
 });

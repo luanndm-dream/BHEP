@@ -15,21 +15,34 @@ import { apiLogin } from "src/api/api_login";
 import { useNavigation } from "@react-navigation/native";
 import useLoading from "src/hook/useLoading";
 import { globalStyle } from "src/constants";
-
+import { useAppDispatch } from "@/redux";
+import { setUserInfo } from "src/redux/slice";
+import Toast from 'react-native-toast-message';
 const LoginScreen = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigation = useNavigation<any>();
+  const dispatch = useAppDispatch();
   const { showLoading, hideLoading } = useLoading();
   const handleLogin = () => {
     showLoading();
     apiLogin(email, password).then((res: any) => {
+      console.log(res)
       if (res.statusCode == 200) {
-        navigation.navigate("MainFlows");
+        dispatch(setUserInfo(res.data))
+        navigation.reset({
+          index: 0,
+          routes : [{name: "MainFlows"}]
+        })
         hideLoading();
       } else {
-        alert("Lỗi đăng nhập");
+        // alert("Lỗi đăng nhập");
         hideLoading();
+        Toast.show({
+          type: "error",
+          text1: 'Đăng nhập thất bại',
+          text2: 'Vui lòng kiểm tra tào khoản và mật khẩu'
+        })
       }
     });
   };
@@ -63,12 +76,18 @@ const LoginScreen = () => {
             <TextInputNoIcon
               placeholderText="Tài khoản"
               onChangeText={(text) => setEmail(text)}
+              textColor="white"
+              underlineColor="white"
+              autoCapitalize="none"
             />
 
             <View style={styles.textInput}></View>
             <TextInputNoIcon
-              placeholderText="Tài khoản"
+              placeholderText="Mật khẩu"
+              secureTextEntry={true}
               onChangeText={(text) => setPassword(text)}
+              style={{color: 'white'}}
+              autoCapitalize="none"
             />
           </View>
           <View>

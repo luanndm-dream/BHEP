@@ -15,9 +15,9 @@ const Header:React.FC<HeaderProps> = ({headerTitle,iconName,otherProp}) => {
     const navigation = useNavigation<any>()
   return (
     <>
+    <StatusBar backgroundColor={globalColor.primaryColor} barStyle={'light-content'}/>
     <SafeAreaView style={{flex: 0, backgroundColor: globalColor.primaryColor }}/>
-    <View style={[styles.container, {height: Platform.OS === 'ios' ? 60 : 80}]}>
-        <StatusBar backgroundColor={globalColor.primaryColor} barStyle={'light-content'}/>
+    <View style={[styles.container, {height: Platform.OS === 'ios' ? 60 : 80, marginTop: Platform.OS==='android'?20:0}]}>
         <TouchableOpacity onPress={ () => navigation.goBack()} style={styles.icon} >
             <MaterialCommunityIcons name='chevron-left' size={40} color='white' />
         </TouchableOpacity>
@@ -36,16 +36,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
+        
     },
     icon: {
        position: 'absolute',
-       left: 15
+       left: 15,
     //    alignSelf: 'center'
     },
     headerTitle : {
         fontSize: 24,
         fontWeight: 'bold',
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+      
     }
 })

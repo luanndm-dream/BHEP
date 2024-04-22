@@ -27,6 +27,7 @@ import { apiPostApplicationJob } from "src/api/api_post_applicationJob";
 import useLoading from "src/hook/useLoading";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { useHeaderHeight } from "@react-navigation/elements";
 
 const PartnerSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -40,7 +41,6 @@ const PartnerSchema = Yup.object().shape({
     .min(2, "Họ tên phải lớn hơn 2 ký tự")
     .required("Vị trí làm việc"),
   experienceYear: Yup.number().required("Số năm làm việc"),
-
 });
 
 const PartnerScreen = () => {
@@ -55,23 +55,27 @@ const PartnerScreen = () => {
   const [experienceYear, setExperienceYear] = useState<number>(0);
   const [imgBase64, setImgBase64] = React.useState<any>(null);
   const { showLoading, hideLoading } = useLoading();
+  const height = useHeaderHeight();
   const handleSelectMajor = (majorId: number, majorName: string) => {
     const selectedMajor = { id: majorId, name: majorName };
     setMajor(selectedMajor);
   };
   const choosePhoto = () => {
-
     ImagePicker.openPicker({
       width: 300,
       height: 400,
       cropping: true,
       includeBase64: true,
     }).then((image: any) => {
-
       setImgBase64(image?.data);
     });
   };
-  const onSendForm = (fullName: string, certification: string, workplace: string, experienceYear: number) => {
+  const onSendForm = (
+    fullName: string,
+    certification: string,
+    workplace: string,
+    experienceYear: number
+  ) => {
     showLoading();
     apiPostApplicationJob(
       customerId,
@@ -82,7 +86,7 @@ const PartnerScreen = () => {
       workplace,
       experienceYear
     ).then((res: any) => {
-     console.log(res)
+      console.log(res);
       if (res.statusCode == 200) {
         navigation.navigate("MainFlows");
         hideLoading();
@@ -101,7 +105,14 @@ const PartnerScreen = () => {
         experienceYear: 0,
       }}
       validationSchema={PartnerSchema}
-      onSubmit={(values)=>onSendForm(values.fullName, values.certification, values.workplace, values.experienceYear)}
+      onSubmit={(values) =>
+        onSendForm(
+          values.fullName,
+          values.certification,
+          values.workplace,
+          values.experienceYear
+        )
+      }
     >
       {({
         values,
@@ -112,13 +123,13 @@ const PartnerScreen = () => {
         isValid,
         setFieldTouched,
         setFieldValue,
-        
       }) => (
         <>
           <Header headerTitle="Đối tác" />
 
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}
+            keyboardVerticalOffset={height + 47}
           >
             <ScrollView
               style={{ backgroundColor: globalColor.backgroundColor }}
@@ -158,7 +169,7 @@ const PartnerScreen = () => {
                 )}
                 <DropDownLabel
                   label="Vị trí ứng tuyển"
-                  value={major?.name ? major?.name  : "Ấn vào để chọn"}
+                  value={major?.name ? major?.name : "Ấn vào để chọn"}
                   onPress={() => {
                     setIsVisible(!isVisible);
                   }}
@@ -213,19 +224,23 @@ const PartnerScreen = () => {
               <ButtonText
                 disabled={!isValid}
                 text="Nộp đơn"
-                styleContainer={isValid? {
-                  backgroundColor: globalColor.primaryColor,
-                  marginHorizontal: 8,
-                  height: 60,
-                  borderRadius: 12,
-                  marginBottom: 100,
-                }: {
-                  backgroundColor: '#aeb9b9',
-                  marginHorizontal: 8,
-                  height: 60,
-                  borderRadius: 12,
-                  marginBottom: 100,
-                }}
+                styleContainer={
+                  isValid
+                    ? {
+                        backgroundColor: globalColor.primaryColor,
+                        marginHorizontal: 8,
+                        height: 60,
+                        borderRadius: 12,
+                        marginBottom: 100,
+                      }
+                    : {
+                        backgroundColor: "#aeb9b9",
+                        marginHorizontal: 8,
+                        height: 60,
+                        borderRadius: 12,
+                        marginBottom: 100,
+                      }
+                }
                 styleText={{ color: "white", fontWeight: "bold" }}
                 onPress={handleSubmit}
               />

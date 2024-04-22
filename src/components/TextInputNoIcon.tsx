@@ -12,6 +12,7 @@ const TextInputNoIcon : React.FC<TextInputNoIconProps> = ({onChangeText, placeho
     <View style={styles.container}>
     <TextInput placeholder={placeholderText}  {...props} style={styles.input}
     placeholderTextColor={'white'}
+    
     onChangeText={onChangeText}/>
     </View>
   )
@@ -29,5 +30,6 @@ const styles = StyleSheet.create({
       input: {
         flex: 1,
         padding: 10,
+        color:'white'
       },
 })
