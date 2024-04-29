@@ -1,7 +1,7 @@
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 interface ButtonTextProps {
-    text: string,
+    text?: string,
     onPress: () => void,
     styleContainer?: any,
     styleText?: any,
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: 12
+        paddingHorizontal: 12,
     },
     text:{
         fontSize: 20,

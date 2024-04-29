@@ -29,7 +29,7 @@ const LoginScreen = () => {
     apiLogin(email, password).then((res: any) => {
       console.log(res)
       if (res.statusCode == 200) {
-        dispatch(setUserInfo(res.data))
+        dispatch(setUserInfo(res?.data))
         navigation.reset({
           index: 0,
           routes : [{name: "MainFlows"}]
@@ -69,7 +69,7 @@ const LoginScreen = () => {
         </View>
       </View>
 
-      <KeyboardAvoidingView style={styles.contentContainer} behavior="padding">
+      <KeyboardAvoidingView style={styles.contentContainer} behavior="padding" >
         <Text style={styles.textWelcome}>XIN CHÀO</Text>
         <View style={styles.textInputContainer}>
           <View style={styles.textInput}>

@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 8,
+    opacity: 0.8
   },
   title: {
     marginTop: 4,

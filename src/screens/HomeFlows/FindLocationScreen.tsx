@@ -30,7 +30,7 @@ const FindLocationScreen = () => {
   const [permission, setPermission] = useState(false);
   const [dataMatch, setDataMatch] = useState<any[]>([]);
   const userData = useAppSelector((state) => state.user.userData);
-  const user = Platform.OS == "ios" ? "100" : userData.id;
+  // const user = Platform.OS == "ios" ? "17" : userData.id;
   const roleId = Platform.OS == "ios" ? 3 : 1;
   const fullName = Platform.OS == "ios" ? "Nguyễn Bác Sĩ" : "Customer";
   const major = Platform.OS == "ios" ? "Tim mạch" : "Không có";
@@ -44,10 +44,10 @@ const FindLocationScreen = () => {
     const hash = geohashForLocation([latitude, longitude]);
     try {
       console.log(userData.id)
-      update(ref(db, "users/" + user), {
+      update(ref(db, "users/" + userData.id), {
         geohash: hash,
         fullName: userData.fullName,
-        userId: user,
+        userId: userData.id,
         roleId:  Platform.OS==="android"? userData.roleId :3,
         description: userData.description,
         latitude: latitude,
@@ -91,7 +91,7 @@ const FindLocationScreen = () => {
     for (const obj of arrs) {
       for (const key in obj) {
         const element = obj[key];
-        if (element.userId !== user) {
+        if (element.userId !== userData.id) {
           const latitude = element.latitude;
           const longitude = element.longitude;
           const distanceInKm = distanceBetween([latitude, longitude], center);

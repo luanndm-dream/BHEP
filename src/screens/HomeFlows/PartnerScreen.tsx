@@ -28,6 +28,7 @@ import useLoading from "src/hook/useLoading";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useHeaderHeight } from "@react-navigation/elements";
+import { useAppSelector } from "@/redux";
 
 const PartnerSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -47,7 +48,7 @@ const PartnerScreen = () => {
   const keyboardVerticalOffset = Platform.OS === "ios" ? 40 : 0;
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const navigation = useNavigation<any>();
-  const customerId = 11;
+  // const customerId = 11;
   const [fullName, setFullName] = useState<string>("");
   const [certification, setCertification] = useState<string>("");
   const [major, setMajor] = useState<any>();
@@ -56,6 +57,7 @@ const PartnerScreen = () => {
   const [imgBase64, setImgBase64] = React.useState<any>(null);
   const { showLoading, hideLoading } = useLoading();
   const height = useHeaderHeight();
+  const customerId = useAppSelector((state) => state.user.userData.id);
   const handleSelectMajor = (majorId: number, majorName: string) => {
     const selectedMajor = { id: majorId, name: majorName };
     setMajor(selectedMajor);
@@ -125,7 +127,7 @@ const PartnerScreen = () => {
         setFieldValue,
       }) => (
         <>
-          <Header headerTitle="Đối tác" />
+          <Header headerTitle="ĐỐI TÁC" />
 
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}

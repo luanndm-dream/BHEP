@@ -9,20 +9,30 @@ import {
   TouchableOpacity,
   Platform,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { FeatureCard, Header, MessagePopup, StatsBox } from "@/components";
-import { useAppSelector } from "@/redux";
+import { useAppDispatch, useAppSelector } from "@/redux";
 import { globalFontSize } from "src/constants/fontSize";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { useNavigation } from "@react-navigation/native";
+import {
+  useFocusEffect,
+  useIsFocused,
+  useNavigation,
+} from "@react-navigation/native";
 import { globalStyle } from "src/constants";
 import { getFeatureProfileData } from "src/data/featureProfileData";
 import { apiGetUserById } from "src/api/api_getUserById";
+import { globalColor } from "src/constants/color";
+import { resetUserInfo, setUserInfo } from "src/redux/slice";
+import Toast from "react-native-toast-message";
 
 const ProfileScreen = () => {
   const userData = useAppSelector((state) => state.user.userData);
   const navigation = useNavigation<any>();
-  const [isVisible, setIsVisible] = useState<boolean>(true);
+  const dispatch = useAppDispatch();
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [data, setData] = useState<any>();
+  const [featureProfileData,setFeatureProfileData] = useState<any>(getFeatureProfileData())
   const onPressIconHandle = (name: string) => {
     switch (name) {
       case "Thông Tin Cá Nhân": {
@@ -47,28 +57,69 @@ const ProfileScreen = () => {
       // }
     }
   };
-  useEffect(() => {
-    apiGetUserById(Number(userData.id)).then((res) => console.log(res.data));
-  });
+  useFocusEffect(
+    useCallback(() => {
+      apiGetUserById(Number(userData.id)).then((res) => {
+        console.log(res);
+        setData(res?.data);
+        // if(res?.data?.roleName === 'Employee'){
+        //   setFeatureProfileData((prevData:any) => [
+        //     ...prevData,
+        //     {
+        //       id: 2,
+        //       name: 'Làm Việc',
+        //       iconName: "calendar-check",
+        //       color: '#01b585',
+        //     }
+        //   ]);
+        // }
+      });
+    }, [])
+  );
+  // useEffect(()=>{
+      const resultData = getFeatureProfileData()
+  //   setFeatureProfileData(resultData)
+  // },[data])
+  console.log(featureProfileData)
+
+  const onPressConfirm = () => {
+    setIsVisible(false);
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "LoginScreen" }],
+    });
+    dispatch(resetUserInfo());
+    setTimeout(() => {
+      Toast.show({
+        type: "success",
+        text1: "Đăng xuất",
+        text2: "Chúc bạn sức khoẻ và hẹn gặp lại!",
+        visibilityTime: 3000,
+      });
+    }, 1000);
+  };
 
   // Lấy dữ liệu từ hàm getFeatureProfileData
-  const FeatureProfileData = getFeatureProfileData();
+
 
   return (
     <>
       <ScrollView style={{ flex: 1 }}>
         <StatusBar translucent barStyle={"light-content"} />
         <View style={styles.headerContainer}>
-          <TouchableOpacity style={styles.logOutIcon}>
+          <TouchableOpacity
+            style={styles.logOutIcon}
+            onPress={() => setIsVisible(!isVisible)}
+          >
             <MaterialCommunityIcons name="logout" size={40} color={"white"} />
           </TouchableOpacity>
           <View style={styles.avatarContainer}>
-            {userData.avatar ? (
+            {data?.avatar ? (
               <Image
-                source={{ uri: `data:image/jpeg;base64,${userData.avatar}` }}
+                source={{ uri: `data:image/jpeg;base64,${data?.avatar}` }}
                 style={styles.avatar}
               />
-            ) : userData.gender === 1 ? (
+            ) : data?.gender === 1 ? (
               <Image
                 source={require("../../assets/image/manAvatar.png")}
                 style={styles.avatar}
@@ -81,8 +132,8 @@ const ProfileScreen = () => {
             )}
 
             <View style={styles.nameBox}>
-              <Text style={styles.name}>{userData.fullName}</Text>
-              <Text style={styles.description}>{userData.description}</Text>
+              <Text style={styles.name}>{data?.fullName}</Text>
+              <Text style={styles.description}>{data?.description}</Text>
             </View>
           </View>
           <Image
@@ -93,9 +144,12 @@ const ProfileScreen = () => {
         <StatsBox valueOfPosts={12} valueOfRank={1} valueOfOrders={100} />
         <View style={styles.featureContainer}>
           <FlatList
-            data={FeatureProfileData}
+            data={resultData}
+            keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => {
+            
               return (
+                
                 <FeatureCard
                   featureName={item.name}
                   iconName={item.iconName}
@@ -109,7 +163,18 @@ const ProfileScreen = () => {
         </View>
       </ScrollView>
 
-      {isVisible && <MessagePopup isVisible />}
+      {isVisible && (
+        <MessagePopup
+          isVisible
+          title="Đăng xuất"
+          iconName="help-circle"
+          content="Hãy chắc chắn rằng muốn đăng xuất?"
+          iconColor={globalColor.primaryColor}
+          onPressCancel={() => setIsVisible(false)}
+          confirmText="Đăng xuất"
+          onPressConfirm={onPressConfirm}
+        />
+      )}
     </>
   );
 };

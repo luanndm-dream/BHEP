@@ -26,7 +26,6 @@ const DoctorDetailScreen = () => {
   const navigation = useNavigation<any>();
   const userId = route.params.userId;
   const location = route.params.location;
-  const userIdFake = 8;
   const [userData, setUserData] = useState<any>();
   const [imgUrl, setImgUrl] = useState<string>("");
   const [dateInWeeks, setDateInWeek] = useState<any>();
@@ -48,7 +47,7 @@ const DoctorDetailScreen = () => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
-
+    
     return `${day}`;
   }
 
@@ -81,8 +80,9 @@ const DoctorDetailScreen = () => {
     setDateInWeek(dates(new Date(year, month, date - 1)));
 
     axios
-      .get(`https://bhepdemoapi.azurewebsites.net/Api/V1/User/${userIdFake}`)
+      .get(`https://bhepapidemo.azurewebsites.net/Api/V1/User/${userId}`)
       .then((res: any) => {
+        console.log(res)
         setUserData(res.data.data);
         setImgUrl(res?.data?.data.avatar);
       });
@@ -125,7 +125,7 @@ const DoctorDetailScreen = () => {
         </TouchableOpacity>
         <View style={styles.avatarContainer}>
           <Image
-            source={{ uri: `data:image/jpeg;base64,${imgUrl}` }}
+            source={imgUrl ? { uri: `data:image/jpeg;base64,${imgUrl}` } : require("../../assets/image/manAvatar.png")}
             style={styles.avatar}
           />
           <View style={styles.nameBox}>

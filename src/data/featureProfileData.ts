@@ -16,7 +16,7 @@ export const getFeatureProfileData = () => {
         data.push({
             id: 2,
             name: 'Làm Việc',
-            iconName: "bookmark-check",
+            iconName: "calendar-check",
             color: '#01b585',
         });
     }

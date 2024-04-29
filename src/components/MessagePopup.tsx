@@ -1,17 +1,25 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import CustomModal from "./CustomModal";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { globalFontSize } from "src/constants/fontSize";
+import { globalStyle } from "src/constants";
+import ButtonText from "./ButtonText";
+import { globalColor } from "src/constants/color";
 
 interface MessagePopupProps {
   isVisible: boolean;
   onCancel?: any;
   style?: any;
-  iconName?: string;
+  iconName?: any;
   title?: string;
   content?: string;
-  color?: any;
+  iconColor?: any;
   onDelete?: any;
   onEdit?: any;
+  confirmText?: string;
+  onPressCancel: () => void;
+  onPressConfirm: () => void;
 }
 
 const MessagePopup: React.FC<MessagePopupProps> = ({
@@ -21,16 +29,35 @@ const MessagePopup: React.FC<MessagePopupProps> = ({
   iconName,
   title,
   content,
-  color,
+  iconColor,
   onDelete,
   onEdit,
+  confirmText,
+  onPressCancel,
+  onPressConfirm
 }) => {
   return (
-    <View >
-      <CustomModal visible={isVisible} onBackDropPress={onCancel?.()} >
-            <View style={styles.container}>
-
-            </View>
+    <View>
+      <CustomModal visible={isVisible} onBackDropPress={onCancel?.()}>
+        <View style={styles.container}>
+          <MaterialCommunityIcons name={iconName} size={60} color={iconColor} />
+          <Text style={globalStyle.titleText}>{title}</Text>
+          <Text style={{color: 'black'}}>{content}</Text>
+          <View style={styles.buttonContainer}>
+            <ButtonText
+              text="Huỷ"
+              onPress={onPressCancel}
+              styleContainer={styles.cancelButtonContainer}
+              styleText={styles.cancelText}
+            />
+            <ButtonText
+              text={confirmText}
+              onPress={onPressConfirm}
+              styleContainer={styles.confirmButtonContainer}
+              styleText={styles.confirmText}
+            />
+          </View>
+        </View>
       </CustomModal>
     </View>
   );
@@ -39,13 +66,37 @@ const MessagePopup: React.FC<MessagePopupProps> = ({
 export default MessagePopup;
 
 const styles = StyleSheet.create({
-    container:{
-    position: 'absolute',
+  container: {
+    position: "absolute",
     backgroundColor: "white",
-    alignSelf: 'center',
-    width: '80%',
-    height: 200,
-    top: '40%',
-    borderRadius: 16
-    }
+    alignSelf: "center",
+    width: "80%",
+    height: 220,
+    top: "40%",
+    borderRadius: 16,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  cancelButtonContainer: {
+    // width: 80
+  },
+  confirmButtonContainer: {
+    backgroundColor: globalColor.primaryColor,
+    padding: 10,
+    borderRadius: 8
+  },
+  cancelText: {
+    color: globalColor.primaryColor,
+    fontWeight: 'bold'
+  },
+  confirmText:{
+    color: 'white',
+    fontWeight: 'bold'
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20
+  },
 });
