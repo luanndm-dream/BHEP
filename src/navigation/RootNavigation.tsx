@@ -16,6 +16,7 @@ import {
   MatchLocationScreen,
   PartnerScreen,
   ProfileScreen,
+  QuestionnaireScreen,
   RegisterScreen,
   WorkSpaceDoctorScreen,
 } from "@/screens";
@@ -100,7 +101,7 @@ const RootNavigation = () => {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName="LoginScreen"
+          initialRouteName="QuestionnaireScreen"
         >
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
@@ -111,6 +112,7 @@ const RootNavigation = () => {
           <Stack.Screen name="InformationScreen" component={InformationScreen} />
           <Stack.Screen name="WorkSpaceDoctorScreen" component={WorkSpaceDoctorScreen} />
           <Stack.Screen name="DoctorDetailScreen" component={DoctorDetailScreen} />
+          <Stack.Screen name="QuestionnaireScreen" component={QuestionnaireScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

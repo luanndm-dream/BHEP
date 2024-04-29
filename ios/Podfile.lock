@@ -419,6 +419,10 @@ PODS:
     - TOCropViewController
   - RNPermissions (4.1.5):
     - React-Core
+  - RNReanimated (3.9.0):
+    - RCT-Folly (= 2021.07.22.00)
+    - React-Core
+    - ReactCommon/turbomodule/core
   - RNScreens (3.30.1):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
@@ -502,6 +506,7 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
+  - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -612,6 +617,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-image-crop-picker"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
+  RNReanimated:
+    :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   Yoga:
@@ -674,6 +681,7 @@ SPEC CHECKSUMS:
   RNGestureHandler: 69d0a928253547ef857a7be4f453220b9c472e07
   RNImageCropPicker: e7ab6fb43d2fc3e84651e786ef4a080d63b0ed3d
   RNPermissions: 655678c54391137c08a833d54f7adbcfc13f0f27
+  RNReanimated: f6463b3375b827547336016ce5516fb933a373b6
   RNScreens: bb06f14b5c352e603f2527caac02ca0d6398c6e5
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
