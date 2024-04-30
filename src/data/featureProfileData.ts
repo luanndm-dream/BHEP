@@ -10,6 +10,12 @@ export const getFeatureProfileData = () => {
             iconName: "account",
             color: globalColor.blue2,
         },
+        {
+            id: 3,
+            name: 'Sức khoẻ của tôi',
+            iconName: "application-edit",
+            color: globalColor.secondaryColor,
+        },
     ];
     
     if (roleId === 3) {

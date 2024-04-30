@@ -42,7 +42,7 @@ const MessagePopup: React.FC<MessagePopupProps> = ({
         <View style={styles.container}>
           <MaterialCommunityIcons name={iconName} size={60} color={iconColor} />
           <Text style={globalStyle.titleText}>{title}</Text>
-          <Text style={{color: 'black'}}>{content}</Text>
+          <Text style={{color: 'black', textAlign: 'center'}}>{content}</Text>
           <View style={styles.buttonContainer}>
             <ButtonText
               text="Huỷ"

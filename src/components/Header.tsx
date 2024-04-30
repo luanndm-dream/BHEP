@@ -9,7 +9,7 @@ interface HeaderProps {
     headerTitle: String,
     otherProp?: any
     iconName?: any
- 
+    
 }
 const Header:React.FC<HeaderProps> = ({headerTitle,iconName,otherProp}) => {
     const navigation = useNavigation<any>()

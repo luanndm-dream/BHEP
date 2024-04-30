@@ -4,8 +4,8 @@ import { globalColor } from "src/constants/color";
 
 interface ItemAnswerProps {
   id: number;
-  answer: string;
-  onPress: ()=>void
+  answer: string
+  onPress: any
 }
 const ItemAnswer: React.FC<ItemAnswerProps> = ({ answer, id, onPress }) => {
   const [isSelectedItem, setIsSelectedItem] = useState(false);
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    height: 50,
+    height: 45,
     backgroundColor: "white",
     marginRight: 12,
     paddingHorizontal: 12,

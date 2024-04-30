@@ -59,6 +59,7 @@ const ProfileScreen = () => {
   };
   useFocusEffect(
     useCallback(() => {
+      console.log('API');
       apiGetUserById(Number(userData.id)).then((res) => {
         console.log(res);
         setData(res?.data);
@@ -162,7 +163,6 @@ const ProfileScreen = () => {
           />
         </View>
       </ScrollView>
-
       {isVisible && (
         <MessagePopup
           isVisible
