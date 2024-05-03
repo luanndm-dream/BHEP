@@ -17,8 +17,8 @@ const Header:React.FC<HeaderProps> = ({headerTitle,iconName,otherProp}) => {
     <>
     <StatusBar backgroundColor={globalColor.primaryColor} barStyle={'light-content'}/>
     <SafeAreaView style={{flex: 0, backgroundColor: globalColor.primaryColor }}/>
-    <View style={[styles.container, {height: Platform.OS === 'ios' ? 60 : 80, marginTop: Platform.OS==='android'?0:0}]}>
-        <TouchableOpacity onPress={ () => navigation.goBack()} style={styles.icon} >
+    <View style={[styles.container, {height: Platform.OS === 'ios' ? 60 : 90, marginTop: Platform.OS==='android'?0:0}]}>
+        <TouchableOpacity  onPress={ () => navigation.goBack()} style={styles.icon}  >
             <MaterialCommunityIcons name='chevron-left' size={40} color='white' />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{headerTitle}</Text>
@@ -41,13 +41,11 @@ const styles = StyleSheet.create({
     icon: {
        position: 'absolute',
        left: 15,
-    //    alignSelf: 'center'
     },
     headerTitle : {
         fontSize: 24,
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
-      
     }
 })

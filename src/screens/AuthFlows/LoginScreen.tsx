@@ -15,7 +15,7 @@ import { apiLogin } from "src/api/api_login";
 import { useNavigation } from "@react-navigation/native";
 import useLoading from "src/hook/useLoading";
 import { globalStyle } from "src/constants";
-import { useAppDispatch } from "@/redux";
+import { useAppDispatch, useAppSelector } from "@/redux";
 import { setUserInfo } from "src/redux/slice";
 import Toast from 'react-native-toast-message';
 const LoginScreen = () => {
@@ -24,6 +24,7 @@ const LoginScreen = () => {
   const navigation = useNavigation<any>();
   const dispatch = useAppDispatch();
   const { showLoading, hideLoading } = useLoading();
+  const isChecking = useAppSelector((state) => state.userHealthRecord.isChecking); 
   const handleLogin = () => {
     showLoading();
     apiLogin(email, password).then((res: any) => {
@@ -32,7 +33,7 @@ const LoginScreen = () => {
         dispatch(setUserInfo(res?.data))
         navigation.reset({
           index: 0,
-          routes : [{name: "MainFlows"}]
+          routes : [{name: isChecking? "MainFlows" : "QuestionnaireScreen"}]
         })
         hideLoading();
       } else {

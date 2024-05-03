@@ -45,10 +45,10 @@ const ProfileScreen = () => {
         navigation.navigate("WorkSpaceDoctorScreen");
         break;
       }
-      // case "Bác sĩ gần đây": {
-      //   navigation.navigate("FindLocationScreen" as never);
-      //   break;
-      // }
+      case "Sức khoẻ của tôi": {
+        navigation.navigate("MyHealthScreen");
+        break;
+      }
       // case "Văn phòng gần đây": {
       //   navigation.navigate("OfficeMapViewScreen", {
       //     // dataOffice: dataOffice

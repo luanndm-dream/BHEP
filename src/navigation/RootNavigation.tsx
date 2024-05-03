@@ -14,15 +14,18 @@ import {
   InformationScreen,
   LoginScreen,
   MatchLocationScreen,
+  MyHealthScreen,
   PartnerScreen,
   ProfileScreen,
   QuestionnaireScreen,
   RegisterScreen,
+  TrackingHealthScreen,
   WorkSpaceDoctorScreen,
 } from "@/screens";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+import { useAppSelector } from "@/redux";
 
 
 const myNavigationTheme = {
@@ -94,6 +97,7 @@ const BottomTabNavigation = () => {
 //     </Stack.Navigator>
 // }
 const RootNavigation = () => {
+  const userToken = useAppSelector(state => state.user.accessToken)
   return (
     <PaperProvider theme={myNavigationTheme}>
       <NavigationContainer>
@@ -101,7 +105,7 @@ const RootNavigation = () => {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName="QuestionnaireScreen"
+          initialRouteName= {userToken? "MainFlows" : "LoginScreen"}
         >
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
@@ -113,6 +117,8 @@ const RootNavigation = () => {
           <Stack.Screen name="WorkSpaceDoctorScreen" component={WorkSpaceDoctorScreen} />
           <Stack.Screen name="DoctorDetailScreen" component={DoctorDetailScreen} />
           <Stack.Screen name="QuestionnaireScreen" component={QuestionnaireScreen}/>
+          <Stack.Screen name="MyHealthScreen" component={MyHealthScreen}/>
+          <Stack.Screen name="TrackingHealthScreen" component={TrackingHealthScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

@@ -17,3 +17,4 @@ export { default as DateSlider } from "./DateSlider";
 export { default as MessagePopup } from "./MessagePopup";
 export { default as ListItemQuestion } from "./ListItemQuestion";
 export { default as ItemAnswer } from "./ItemAnswer";
+export { default as OnPendingScreen } from "./OnPendingScreen";

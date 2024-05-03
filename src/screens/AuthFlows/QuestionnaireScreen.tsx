@@ -20,10 +20,12 @@ import { Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Toast from "react-native-toast-message";
+import { setUserChecking, setUserHealthRecord } from "src/redux/slice/userHealthRecordSlice";
+import { useAppDispatch } from "@/redux";
 const QuestionnaireScreen = () => {
   const data = ListQuestion;
+  const dispatch = useAppDispatch();
   const navigation = useNavigation<any>();
-  const [userResponse, setUserResponse] = useState();
   const [answers, setAnswers] = useState<{ [idQuestion: number]: number[] }>(
     {}
   );
@@ -62,8 +64,17 @@ const QuestionnaireScreen = () => {
       index: 0,
       routes: [{ name: "MainFlows" }],
     });
-    // dispatch(resetUserInfo());
+    dispatch(setUserHealthRecord(answers));
+    dispatch(setUserChecking(false));
   };
+  const onPressDone = () => {
+    console.log(answers)
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "MainFlows" }],
+    });
+    dispatch(setUserHealthRecord(answers));
+  }
 
   return (
     <>
@@ -110,7 +121,7 @@ const QuestionnaireScreen = () => {
       />
       <ButtonText
         text="Hoàn thành"
-        onPress={() => {}}
+        onPress={onPressDone}
         styleContainer={styles.buttonContainer}
         styleText={styles.buttonText}
       />

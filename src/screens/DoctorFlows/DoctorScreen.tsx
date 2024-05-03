@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { OnPendingScreen } from '@/components'
 
 const DoctorScreen = () => {
   return (
-    <View>
-      <Text>DoctorScreen</Text>
-    </View>
+    <OnPendingScreen/>
   )
 }
 

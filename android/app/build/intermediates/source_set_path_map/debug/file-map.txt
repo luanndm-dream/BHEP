@@ -47,6 +47,7 @@ com.bhep_mobile_demo_v1.app-packaged_res-45 /Users/luan/BHEP_Git/node_modules/re
 com.bhep_mobile_demo_v1.app-packaged_res-46 /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/packaged_res/debug
 com.bhep_mobile_demo_v1.app-packaged_res-47 /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/debug
 com.bhep_mobile_demo_v1.app-packaged_res-48 /Users/luan/BHEP_Git/node_modules/react-native-permissions/android/build/intermediates/packaged_res/debug
-com.bhep_mobile_demo_v1.app-packaged_res-49 /Users/luan/BHEP_Git/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
-com.bhep_mobile_demo_v1.app-packaged_res-50 /Users/luan/BHEP_Git/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
-com.bhep_mobile_demo_v1.app-packaged_res-51 /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug
+com.bhep_mobile_demo_v1.app-packaged_res-49 /Users/luan/BHEP_Git/node_modules/react-native-reanimated/android/build/intermediates/packaged_res/debug
+com.bhep_mobile_demo_v1.app-packaged_res-50 /Users/luan/BHEP_Git/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
+com.bhep_mobile_demo_v1.app-packaged_res-51 /Users/luan/BHEP_Git/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.bhep_mobile_demo_v1.app-packaged_res-52 /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug

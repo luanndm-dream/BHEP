@@ -2,7 +2,8 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 const initialState = {
-    record: []
+    record: [],
+    isChecking: false
 }
 
 const userHealthRecordSlice = createSlice({
@@ -11,6 +12,9 @@ const userHealthRecordSlice = createSlice({
     reducers: {
         setUserHealthRecord: (state, action: PayloadAction<any>) => {
             state.record = action.payload
+        },
+        setUserChecking : (state, action :PayloadAction<boolean>) =>{
+            state.isChecking = action.payload
         }
     }
 })
@@ -18,6 +22,6 @@ const userHealthRecordSlice = createSlice({
 
 type UserType = typeof userHealthRecordSlice.actions.setUserHealthRecord;
 
-export const { setUserHealthRecord } = userHealthRecordSlice.actions;
+export const { setUserHealthRecord, setUserChecking } = userHealthRecordSlice.actions;
 export const userSelector = (state: RootState) => state.userHealthRecord;
 export default userHealthRecordSlice.reducer;

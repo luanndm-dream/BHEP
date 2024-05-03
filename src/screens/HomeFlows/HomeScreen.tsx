@@ -12,7 +12,7 @@ const HomeScreen = () => {
   const navigation = useNavigation<any>()
   const userData = useAppSelector(state => state.user)
   const {showLoading, hideLoading} = useLoading()
-
+  
   const onPressIconHandle = (name: string)=>{
           switch(name){
             case 'Đối tác' :{
@@ -21,16 +21,12 @@ const HomeScreen = () => {
               })
               break;
             }
-            case'Tìm Đường' : {
-              navigation.navigate('MapScreen' as never)
-              break;
-            }
             case'Bác sĩ gần đây' : {
               navigation.navigate('FindLocationScreen' as never)
               break;
             }
-            case 'Văn phòng gần đây' :{
-              navigation.navigate('OfficeMapViewScreen', {
+            case 'Kiểm tra sức khoẻ' :{
+              navigation.navigate('TrackingHealthScreen', {
                 // dataOffice: dataOffice
               })
               break;

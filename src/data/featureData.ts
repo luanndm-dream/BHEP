@@ -11,7 +11,7 @@ export const OutstandingFunciton  = [
     },
     {
         id: 3,
-        name: 'Sức khoẻ của tôi',
+        name: 'Kiểm tra sức khoẻ',
         imgName: require('../assets/icons/medical-report.png')
     },
 ]

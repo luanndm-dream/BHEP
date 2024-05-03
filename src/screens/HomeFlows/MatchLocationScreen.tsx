@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { OnPendingScreen } from '@/components'
 
 const MatchLocationScreen = () => {
   return (
-    <View>
-      <Text>MatchLocationScreen</Text>
-    </View>
+    <OnPendingScreen/>
   )
 }
 
