@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import {
   NavigationContainer,
@@ -26,6 +26,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { useAppSelector } from "@/redux";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const myNavigationTheme = {
@@ -42,7 +43,7 @@ const BottomTabNavigation = () => {
   return (
     <Bottom.Navigator
       activeColor="#0A5BF1"
-      barStyle={{ backgroundColor: "#FFFFFF", paddingBottom: 0 }}
+      barStyle={{ backgroundColor: "transparent", paddingBottom: 0,  }}
     >
       <Bottom.Screen
         name="HomeScreen"
@@ -97,6 +98,22 @@ const BottomTabNavigation = () => {
 //     </Stack.Navigator>
 // }
 const RootNavigation = () => {
+
+  const [token, setToken]= useState<string>()
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('token');
+      if (value !== null) {
+        setToken(value);
+      }
+    } catch (e) {
+      console.log('lỗi lấy token từ storage',)
+    }
+  };
+  
+  useEffect(()=>{
+    getData()
+  },[])
   const userToken = useAppSelector(state => state.user.accessToken)
   return (
     <PaperProvider theme={myNavigationTheme}>
@@ -105,7 +122,8 @@ const RootNavigation = () => {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName= {userToken? "MainFlows" : "LoginScreen"}
+          initialRouteName= {token? "MainFlows" : "LoginScreen"}
+          //{userToken? "MainFlows" : "LoginScreen"}
         >
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />

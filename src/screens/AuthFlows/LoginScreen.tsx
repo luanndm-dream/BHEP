@@ -18,6 +18,7 @@ import { globalStyle } from "src/constants";
 import { useAppDispatch, useAppSelector } from "@/redux";
 import { setUserInfo } from "src/redux/slice";
 import Toast from 'react-native-toast-message';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 const LoginScreen = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -31,6 +32,7 @@ const LoginScreen = () => {
       console.log(res)
       if (res.statusCode == 200) {
         dispatch(setUserInfo(res?.data))
+        storeData(res?.data?.accessToken)
         navigation.reset({
           index: 0,
           routes : [{name: isChecking? "MainFlows" : "QuestionnaireScreen"}]
@@ -51,6 +53,15 @@ const LoginScreen = () => {
   const registerHandle = () => {
     navigation.navigate('RegisterScreen')
   }
+
+
+  const storeData = async (value:string) => {
+    try {
+      await AsyncStorage.setItem('token', value);
+    } catch (e) {
+      // saving error
+    }
+  };
 
   return (
     <View style={{ flex: 1 }} onTouchStart={() => Keyboard.dismiss()}>

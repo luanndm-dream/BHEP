@@ -201,7 +201,7 @@ const RegisterScreen = () => {
                     ]}
                     onPress={() => handleSelectGender(1)}
                   />
-                  <Text style={{ marginRight: 50 }}> Nam</Text>
+                  <Text style={{ marginRight: 50,color:"black" }}> Nam</Text>
                   <TouchableOpacity
                     style={[
                       styles.checkBox,
@@ -211,7 +211,7 @@ const RegisterScreen = () => {
                     ]}
                     onPress={() => handleSelectGender(2)}
                   />
-                  <Text> Nữ</Text>
+                  <Text style={{color: 'black'}}> Nữ</Text>
                 </View>
               </View>
               <ButtonText

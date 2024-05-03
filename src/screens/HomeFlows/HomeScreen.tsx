@@ -38,7 +38,7 @@ const HomeScreen = () => {
       <View style={styles.container}>
         <View style={[styles.header, {marginTop: Platform.OS === 'android' ? 20 : 0}]}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Text style={{fontSize: 18}}>Xin chào </Text>
+          <Text style={{fontSize: 18, color: 'black'}}>Xin chào </Text>
           <Text style={styles.welcomeText}>{userData.userData.fullName}</Text>
           </View>
           

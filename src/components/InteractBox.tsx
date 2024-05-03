@@ -12,7 +12,7 @@ const InteractBox:React.FC<InteractBoxProps> = ({iconName,label}) => {
   return (
    
       <TouchableOpacity style={styles.iteractContainer}>
-        <MaterialCommunityIcons name={iconName} size={30} color={'#3058A6'}/>
+        <MaterialCommunityIcons name={iconName} size={25} color={'#3058A6'}/>
         <Text style={styles.text}>{label}</Text>
       </TouchableOpacity>
   

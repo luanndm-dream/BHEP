@@ -29,7 +29,7 @@ const TextInputWithIcon: React.FC<TextInputWithIconProps> = ({
       </View>
       <View style={styles.inputContainer}>
         <TextInput
-        style={{height: 60}}
+        style={{height: 60, color: 'black'}}
         autoCapitalize="none"
         secureTextEntry={isPassword}
           placeholder={placeholderText}

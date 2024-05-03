@@ -57,7 +57,7 @@ const PartnerScreen = () => {
   const [imgBase64, setImgBase64] = React.useState<any>(null);
   const { showLoading, hideLoading } = useLoading();
   const height = useHeaderHeight();
-  const customerId = useAppSelector((state) => state.user.userData.id);
+  const customerId = useAppSelector((state) => state?.user?.userData?.id);
   const handleSelectMajor = (majorId: number, majorName: string) => {
     const selectedMajor = { id: majorId, name: majorName };
     setMajor(selectedMajor);
@@ -145,6 +145,45 @@ const PartnerScreen = () => {
                     dữ liệu cá nhân của bạn sẽ được bảo mật.
                   </Text>
                 </View>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    width: "80%",
+                  }}
+                >
+                  <TouchableOpacity
+                    style={styles.avatarContainer}
+                    onPress={choosePhoto}
+                  >
+                    {imgBase64 ? (
+                      <Image
+                        source={{ uri: `data:image/jpeg;base64,${imgBase64}` }}
+                        resizeMode="cover"
+                        style={{
+                          height: "100",
+                          width: "100",
+                          borderRadius: 12,
+                        }}
+                      />
+                    ) : (
+                      <View style={{ alignItems: "center" }}>
+                        <MaterialCommunityIcons
+                          name="plus"
+                          size={20}
+                          color={"black"}
+                        />
+                        <Text style={{ color: "black" }}>Thêm ảnh</Text>
+                      </View>
+                    )}
+                  </TouchableOpacity>
+                  <Text
+                    style={{ marginHorizontal: 12, color: globalColor.grey }}
+                  >
+                    Vui lòng chọn ảnh thật xinh đẹp, vì ảnh này mọi người có thể
+                    thấy được!
+                  </Text>
+                </View>
                 <TextInputWithIcon
                   label="Họ và tên"
                   onChangeText={(text) => {
@@ -201,27 +240,6 @@ const PartnerScreen = () => {
                 {touched.experienceYear && errors.experienceYear && (
                   <Text style={styles.errorText}>{errors.experienceYear}</Text>
                 )}
-                <TouchableOpacity
-                  style={styles.avatarContainer}
-                  onPress={choosePhoto}
-                >
-                  {imgBase64 ? (
-                    <Image
-                      source={{ uri: `data:image/jpeg;base64,${imgBase64}` }}
-                      resizeMode="cover"
-                      style={{
-                        height: "100%",
-                        width: "100%",
-                        borderRadius: 12,
-                      }}
-                    />
-                  ) : (
-                    <View style={{ alignItems: "center" }}>
-                      <MaterialCommunityIcons name="plus" size={30} />
-                      <Text>Thêm ảnh</Text>
-                    </View>
-                  )}
-                </TouchableOpacity>
               </View>
               <ButtonText
                 disabled={!isValid}
@@ -285,11 +303,13 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   titleContainer: {},
-  avatarContainer: {
+    avatarContainer: {
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 12,
-    height: 200,
+    marginVertical: 12,
+    borderRadius: 40,
+    height: 80,
+    width: 80,
     borderWidth: 1,
   },
   buttonContainer: {
