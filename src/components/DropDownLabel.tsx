@@ -16,7 +16,7 @@ const DropDownLabel:React.FC<DropDownLabelProps> = ({label,value, onPress,onChan
       <Text style={{color: 'black'}}>{label}</Text>
     </View>
     <View style={styles.valueContainer}>
-      <Text>{value}</Text>
+      <Text style={{color: 'black'}}>{value}</Text>
       <MaterialCommunityIcons name="chevron-down" color={globalColor.grey} size={26} />
     </View>
   </TouchableOpacity>

@@ -29,11 +29,15 @@ const NearByDoctorCard: React.FC<NearByDoctorProps> = ({
         style={styles.img}
       />
       <View style={styles.valueContainer}>
-        <View style={styles.tagContainer}>
+        {/* <View style={styles.tagContainer}>
           <MaterialCommunityIcons name="check-decagram" color={'blue'} size={15}/>
-          <Text style={{color: globalColor.blue}}> Đã xác thực</Text>
-        </View>
+          <Text style={{color: globalColor.blue,}}> Đã xác thực</Text>
+        </View> */}
+        <View style={{flexDirection: 'row', alignItems: "center"}}>
         <Text style={styles.textName}>{fullName}</Text>
+        
+        <MaterialCommunityIcons name="check-decagram" color={'blue'} size={15} style={{marginLeft: 5}}/>
+        </View>
         <Text style={styles.textMajor}>{major}</Text>
         <View style={styles.footerContainer}>
           <Text style={{fontSize: globalFontSize.tag, color: globalColor.grey}}>{lat}</Text>
@@ -63,6 +67,7 @@ const styles = StyleSheet.create({
     width: 130,
     flexDirection: "row",
     paddingHorizontal: 12,
+    marginTop: 5,
     // justifyContent: 'space-between',
     alignItems: "center"
   },

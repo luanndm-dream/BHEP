@@ -100,7 +100,7 @@ const QuestionnaireScreen = () => {
             onPress={()=>onSkip()}
             style={styles.headerIcon}
           >
-            <Text style={{ color: "white" }}>Bỏ qua</Text>
+            <Text style={{ color: "white", paddingTop: 12 }}>Bỏ qua</Text>
           </TouchableOpacity>
         </View>
      
@@ -157,6 +157,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   headerContainer: {
+    paddingTop: 12,
     flex: 0,
     backgroundColor: globalColor.primaryColor,
     alignItems: "center",

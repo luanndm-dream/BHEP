@@ -106,7 +106,6 @@ const ProfileScreen = () => {
   return (
     <>
       <ScrollView style={{ flex: 1 }}>
-        <StatusBar translucent barStyle={"light-content"} />
         <View style={styles.headerContainer}>
           <TouchableOpacity
             style={styles.logOutIcon}

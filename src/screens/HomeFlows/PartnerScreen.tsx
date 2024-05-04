@@ -161,9 +161,9 @@ const PartnerScreen = () => {
                         source={{ uri: `data:image/jpeg;base64,${imgBase64}` }}
                         resizeMode="cover"
                         style={{
-                          height: "100",
-                          width: "100",
-                          borderRadius: 12,
+                          height: "100%",
+                          width: "100%",
+                          borderRadius: 40
                         }}
                       />
                     ) : (

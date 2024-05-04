@@ -6,12 +6,12 @@ export const OutstandingFunciton  = [
     },
     {
         id: 6,
-        name: 'Bác sĩ gần đây',
+        name: 'Bác sĩ gần chổ tôi',
         imgName: require('../assets/icons/advice.png')
     },
     {
         id: 3,
-        name: 'Kiểm tra sức khoẻ',
+        name: 'Sức khoẻ của tôi',
         imgName: require('../assets/icons/medical-report.png')
     },
 ]

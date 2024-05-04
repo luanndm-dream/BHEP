@@ -31,7 +31,7 @@ const RootApp = () => {
     <>
     
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"}/>
+        <StatusBar backgroundColor="transparent" barStyle={"dark-content"} translucent/>
         <SafeAreaProvider>
           <RootNavigation />
           <Toast />
@@ -46,6 +46,7 @@ function App(): JSX.Element {
   return (
     <Provider store={store}>
       {/* <SafeAreaView style={globalStyle.droidSafeArea}> */}
+      <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"}/>
         <RootApp />
       {/* </SafeAreaView> */}
     </Provider>

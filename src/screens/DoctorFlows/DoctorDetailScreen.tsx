@@ -104,6 +104,7 @@ const DoctorDetailScreen = () => {
   };
 
   return (
+    <>
     <View style={{ flex: 1 }}>
       <View style={styles.headerContainer}>
         <TouchableOpacity
@@ -190,6 +191,7 @@ const DoctorDetailScreen = () => {
         </View>
       </ScrollView>
     </View>
+    </>
   );
 };
 
@@ -200,6 +202,7 @@ const styles = StyleSheet.create({
     // height: 200
     justifyContent: "center",
     alignItems: "center",
+    
   },
   image: {
     height: 300,

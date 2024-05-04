@@ -1,4 +1,4 @@
-import { Platform, StyleSheet, SafeAreaView, View } from "react-native";
+import { Platform, StyleSheet, SafeAreaView, View,Text } from "react-native";
 import { ButtonText, Header, NearByDoctorCard } from "@/components";
 import { globalColor } from "src/constants/color";
 import React, { useEffect, useState } from "react";
@@ -25,7 +25,9 @@ import { useAppSelector } from "@/redux";
 import { FlatList } from "react-native-gesture-handler";
 import { globalStyle } from "src/constants";
 import { useNavigation } from "@react-navigation/native";
+import useLoading from "src/hook/useLoading";
 const FindLocationScreen = () => {
+  const { showLoading, hideLoading } = useLoading();
   const [location, setLocation] = useState<any>(null);
   const [permission, setPermission] = useState(false);
   const [dataMatch, setDataMatch] = useState<any[]>([]);
@@ -60,8 +62,8 @@ const FindLocationScreen = () => {
     const center: Geopoint = [location.latitude, location.longitude];
     const radiusInM = 5 * 10000; // 5km
     const bounds = geohashQueryBounds(center, radiusInM);
-
     const promises = [];
+
     try {
       for (const b of bounds) {
         const q = query(
@@ -73,6 +75,7 @@ const FindLocationScreen = () => {
 
         promises.push(await get(q));
       }
+   
     } catch (error) {
       console.log("Lôi", error);
     }
@@ -104,7 +107,7 @@ const FindLocationScreen = () => {
       }
     }
     setDataMatch(filteredMatchingDocs);
-
+    hideLoading()
     console.log("arrs", dataMatch);
   };
   useEffect(() => {
@@ -116,6 +119,7 @@ const FindLocationScreen = () => {
   }, [location]);
 
   const onFindingHandle = () => {
+    showLoading();
     Geolocation.getCurrentPosition(
       (position) => {
         const result = {
@@ -124,8 +128,10 @@ const FindLocationScreen = () => {
         };
 
         setLocation(result);
+    
       },
       (error) => {
+        hideLoading()
         // See error code charts below.
         console.log(error.code, error.message);
       },
@@ -187,6 +193,7 @@ const FindLocationScreen = () => {
           }}
           styleText={{ color: "white" }}
         />
+        <Text style={{color: globalColor.grey, textAlign: 'center', marginTop: 8}}>Ấn để tìm kiếm bác sĩ xung quanh đây</Text>
       </View>
       <SafeAreaView style={styles.container}>
         <FlatList

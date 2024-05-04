@@ -1,7 +1,7 @@
 import { publicAxios } from "./api_config";
 
 export async function apiPostApplicationJob(
-  customerId: number,
+  customerId: number|undefined,
   fullName: string,
   certification: string,
   major: number,

@@ -1,4 +1,13 @@
-import { FlatList, Image, StyleSheet, Text, View,SafeAreaView, StatusBar, Platform } from "react-native";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  StatusBar,
+  Platform,
+} from "react-native";
 import React from "react";
 import { globalColor } from "src/constants/color";
 import { globalStyle } from "src/constants";
@@ -9,39 +18,49 @@ import { useAppSelector } from "@/redux";
 import useLoading from "src/hook/useLoading";
 
 const HomeScreen = () => {
-  const navigation = useNavigation<any>()
-  const userData = useAppSelector(state => state.user)
-  const {showLoading, hideLoading} = useLoading()
-  
-  const onPressIconHandle = (name: string)=>{
-          switch(name){
-            case 'Đối tác' :{
-              navigation.navigate('PartnerScreen', {
-                // data: dataStation
-              })
-              break;
-            }
-            case'Bác sĩ gần đây' : {
-              navigation.navigate('FindLocationScreen' as never)
-              break;
-            }
-            case 'Kiểm tra sức khoẻ' :{
-              navigation.navigate('TrackingHealthScreen', {
-                // dataOffice: dataOffice
-              })
-              break;
-            }
-          }
-  }
+  const navigation = useNavigation<any>();
+  const userData = useAppSelector((state) => state.user);
+  const { showLoading, hideLoading } = useLoading();
+
+  const onPressIconHandle = (name: string) => {
+    switch (name) {
+      case "Đối tác": {
+        navigation.navigate("PartnerScreen", {
+          // data: dataStation
+        });
+        break;
+      }
+      case "Bác sĩ gần chổ tôi": {
+        navigation.navigate("FindLocationScreen" as never);
+        break;
+      }
+      case "Kiểm tra sức khoẻ": {
+        navigation.navigate("TrackingHealthScreen", {
+          // dataOffice: dataOffice
+        });
+        break;
+      }
+    }
+  };
   return (
     <SafeAreaView style={globalStyle.droidSafeArea}>
+      <StatusBar
+        backgroundColor="transparent"
+        translucent
+        barStyle={"dark-content"}
+      />
       <View style={styles.container}>
-        <View style={[styles.header, {marginTop: Platform.OS === 'android' ? 20 : 0}]}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Text style={{fontSize: 18, color: 'black'}}>Xin chào </Text>
-          <Text style={styles.welcomeText}>{userData.userData.fullName}</Text>
+        <View
+          style={[
+            styles.header,
+            { marginTop: Platform.OS === "android" ? 20 : 0 },
+          ]}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Text style={{ fontSize: 18, color: "black" }}>Xin chào </Text>
+            <Text style={styles.welcomeText}>{userData.userData.fullName}</Text>
           </View>
-          
+
           <Text style={styles.hello}>Hôm nay của bạn thế nào?</Text>
         </View>
         <View style={{}}>
@@ -54,11 +73,17 @@ const HomeScreen = () => {
           <Text style={globalStyle.titleText}>Tính năng nổi bật</Text>
           <View style={styles.featureContainer}>
             <FlatList
+          
               data={OutstandingFunciton}
               numColumns={3}
-              renderItem={({ item }) => {
-                return <IconFeature name={item.name} imgUrl={item.imgName} onPress={()=>onPressIconHandle(item.name)}/>;
-              }}
+              renderItem={({ item }) => (
+                <IconFeature
+                  name={item.name}
+                  imgUrl={item.imgName}
+                  onPress={() => onPressIconHandle(item.name)}
+                 
+                />
+              )}
             />
           </View>
         </View>

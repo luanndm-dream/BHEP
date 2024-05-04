@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import {
@@ -41,6 +41,7 @@ const Stack = createStackNavigator();
 const Bottom = createMaterialBottomTabNavigator();
 const BottomTabNavigation = () => {
   return (
+    <>
     <Bottom.Navigator
       activeColor="#0A5BF1"
       barStyle={{ backgroundColor: "transparent", paddingBottom: 0,  }}
@@ -90,6 +91,7 @@ const BottomTabNavigation = () => {
         }}
       />
     </Bottom.Navigator>
+    </>
   );
 };
 // const Screens = () =>{
@@ -116,13 +118,14 @@ const RootNavigation = () => {
   },[])
   const userToken = useAppSelector(state => state.user.accessToken)
   return (
+
     <PaperProvider theme={myNavigationTheme}>
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName= {token? "MainFlows" : "LoginScreen"}
+          initialRouteName= {userToken? "MainFlows" : "LoginScreen"}
           //{userToken? "MainFlows" : "LoginScreen"}
         >
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -139,7 +142,8 @@ const RootNavigation = () => {
           <Stack.Screen name="TrackingHealthScreen" component={TrackingHealthScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
-    </PaperProvider>
+      </PaperProvider>
+
   );
 };
 
