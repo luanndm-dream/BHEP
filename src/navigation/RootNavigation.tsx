@@ -15,6 +15,7 @@ import {
   LoginScreen,
   MatchLocationScreen,
   MyHealthScreen,
+  OnBoardingScreen,
   PartnerScreen,
   ProfileScreen,
   QuestionnaireScreen,
@@ -125,9 +126,11 @@ const RootNavigation = () => {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName= {userToken? "MainFlows" : "LoginScreen"}
+          initialRouteName="OnBoardingScreen"
+          // initialRouteName= {userToken? "MainFlows" : "LoginScreen"}
           //{userToken? "MainFlows" : "LoginScreen"}
         >
+          <Stack.Screen name="OnBoardingScreen" component={OnBoardingScreen} />
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           <Stack.Screen name="MainFlows" component={BottomTabNavigation} />

@@ -45,10 +45,9 @@ const RootApp = () => {
 function App(): JSX.Element {
   return (
     <Provider store={store}>
-      {/* <SafeAreaView style={globalStyle.droidSafeArea}> */}
       <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"}/>
         <RootApp />
-      {/* </SafeAreaView> */}
+
     </Provider>
   );
 }
