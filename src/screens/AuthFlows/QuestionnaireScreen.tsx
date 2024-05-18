@@ -81,7 +81,7 @@ const QuestionnaireScreen = () => {
       
         <StatusBar
           backgroundColor={globalColor.primaryColor}
-          barStyle={"light-content"}
+          barStyle={"dark-content"}
         />
         <SafeAreaView
           style={{ flex: 0, backgroundColor: globalColor.primaryColor }}

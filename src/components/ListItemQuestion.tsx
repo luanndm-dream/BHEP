@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   question: {
     color: globalColor.grey,
     marginVertical: 12,
-    marginTop: -5,
+    marginTop: 0,
     marginBottom: 25,
   },
 });
