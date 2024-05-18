@@ -26,29 +26,34 @@ const LoginScreen = () => {
   const dispatch = useAppDispatch();
   const { showLoading, hideLoading } = useLoading();
   const isChecking = useAppSelector((state) => state.userHealthRecord.isChecking); 
-  const handleLogin = () => {
+ const handleLogin = async () => {
+  try {
     showLoading();
-    apiLogin(email, password).then((res: any) => {
-      console.log(res)
-      if (res.statusCode == 200) {
-        dispatch(setUserInfo(res?.data))
-        storeData(res?.data?.accessToken)
-        navigation.reset({
-          index: 0,
-          routes : [{name: isChecking? "MainFlows" : "QuestionnaireScreen"}]
-        })
-        hideLoading();
-      } else {
-        // alert("Lỗi đăng nhập");
-        hideLoading();
-        Toast.show({
-          type: "error",
-          text1: 'Đăng nhập thất bại',
-          text2: 'Vui lòng kiểm tra tào khoản và mật khẩu'
-        })
-      }
+    
+    const res:any = await apiLogin(email, password);     
+    if (res.statusCode === 200) {
+      dispatch(setUserInfo(res?.data));
+      await AsyncStorage.setItem('auth', JSON.stringify(res?.data)); 
+    } else {
+      // alert("Lỗi đăng nhập");
+      Toast.show({
+        type: "error",
+        text1: 'Đăng nhập thất bại',
+        text2: 'Vui lòng kiểm tra tài khoản và mật khẩu'
+      });
+    }
+  } catch (error) {
+    console.error(error); // Handle errors here
+    Toast.show({
+      type: "error",
+      text1: 'Đăng nhập thất bại',
+      text2: 'Đã xảy ra lỗi, vui lòng thử lại'
     });
-  };
+  } finally {
+    hideLoading(); // Ensure loading is hidden in both success and error cases
+  }
+};
+
 
   const registerHandle = () => {
     navigation.navigate('RegisterScreen')

@@ -21,6 +21,7 @@ MERGED from [:react-native-permissions] /Users/luan/BHEP/node_modules/react-nati
 MERGED from [:react-native-reanimated] /Users/luan/BHEP/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] /Users/luan/BHEP/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /Users/luan/BHEP/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-svg] /Users/luan/BHEP/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/luan/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.fresco:animated-base-support:1.3.0] /Users/luan/.gradle/caches/transforms-3/89b2296725dab058b488752a62946606/transformed/jetified-animated-base-support-1.3.0/AndroidManifest.xml:2:1-9:12
@@ -296,6 +297,8 @@ MERGED from [:react-native-safe-area-context] /Users/luan/BHEP/node_modules/reac
 MERGED from [:react-native-safe-area-context] /Users/luan/BHEP/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /Users/luan/BHEP/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /Users/luan/BHEP/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /Users/luan/BHEP/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /Users/luan/BHEP/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/luan/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41

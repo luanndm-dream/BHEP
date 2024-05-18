@@ -25,6 +25,7 @@ import { apiGetUserById } from "src/api/api_getUserById";
 import { globalColor } from "src/constants/color";
 import { resetUserInfo, setUserInfo } from "src/redux/slice";
 import Toast from "react-native-toast-message";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const ProfileScreen = () => {
   const userData = useAppSelector((state) => state.user.userData);
@@ -83,13 +84,14 @@ const ProfileScreen = () => {
   // },[data])
   console.log(featureProfileData)
 
-  const onPressConfirm = () => {
+  const onPressConfirm = async () => {
     setIsVisible(false);
-    navigation.reset({
-      index: 0,
-      routes: [{ name: "LoginScreen" }],
-    });
     dispatch(resetUserInfo());
+    // navigation.reset({
+    //   index: 0,
+    //   routes: [{ name: "LoginScreen" }],
+    // });
+    await AsyncStorage.removeItem('auth')
     setTimeout(() => {
       Toast.show({
         type: "success",

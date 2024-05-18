@@ -19,7 +19,7 @@ export const slidesData = [
     },
     {
         id: 4,
-        title: 'Tích điểm trên mỗi giao dịch, tạo giá trị cho cộng đồng',
+        title: 'Tích điểm mỗi giao dịch',
         description: 'Dùng BHEP Coin để quyên góp vào các hoạt động xã hội mà BHEP hợp tác cùng các tổ chức',
         img: require('../assets/slides/Onboarding5.png')
     }

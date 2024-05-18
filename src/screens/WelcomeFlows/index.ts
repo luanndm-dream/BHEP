@@ -1,2 +1,5 @@
 export {default as OnBoardingScreen} from './OnBoardingScreen'
 export {default as OnBoardingItem} from './OnBoardingItem'
+export {default as Paginator} from './Paginator'
+export {default as NextButton} from './NextButton'
+export {default as SplashScreen} from './SplashScreen'
