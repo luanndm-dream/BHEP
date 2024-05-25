@@ -73,9 +73,9 @@ const HomeScreen = () => {
           <Text style={globalStyle.titleText}>Tính năng nổi bật</Text>
           <View style={styles.featureContainer}>
             <FlatList
-          
               data={OutstandingFunciton}
               numColumns={3}
+              columnWrapperStyle={{justifyContent: 'space-between', flex: 1, alignItems:'center',}}
               renderItem={({ item }) => (
                 <IconFeature
                   name={item.name}
@@ -84,6 +84,8 @@ const HomeScreen = () => {
                  
                 />
               )}
+           contentContainerStyle={{flexGrow: 1,
+            justifyContent: 'center',}}
             />
           </View>
         </View>
@@ -106,9 +108,7 @@ const styles = StyleSheet.create({
     marginVertical: 12,
   },
   featureContainer: {
-    // justifyContent: "center",
-    // alignItems: "center",
-    // margin: 8,
+   
   },
   bannerImage: {
     height: 173,

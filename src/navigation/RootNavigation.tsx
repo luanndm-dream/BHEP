@@ -9,6 +9,7 @@ import {
   CommunityScreen,
   DoctorDetailScreen,
   DoctorScreen,
+  EditWorkProfileScreen,
   FindLocationScreen,
   HomeScreen,
   InformationScreen,
@@ -160,6 +161,7 @@ const RootNavigation = () => {
       <Stack.Screen name="DoctorDetailScreen" component={DoctorDetailScreen} />
 
       <Stack.Screen name="MyHealthScreen" component={MyHealthScreen} />
+      <Stack.Screen name="EditWorkProfileScreen" component={EditWorkProfileScreen} />
       <Stack.Screen
         name="TrackingHealthScreen"
         component={TrackingHealthScreen}
@@ -170,7 +172,7 @@ const RootNavigation = () => {
   return (
     <PaperProvider theme={myNavigationTheme}>
       <NavigationContainer>
-         {/* <SplashScreen /> */}
+       
         {isShowSplash ? (
           <SplashScreen />
         ) : accessToken == null ? (

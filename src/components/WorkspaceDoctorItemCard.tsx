@@ -7,14 +7,16 @@ interface DoctorWorkspaceItemCardProps {
   imgUrl?: any;
   label?: string;
   iconLastName?: any;
+  onPress? : () => any
 }
 const WorkspaceDoctorItemCard: React.FC<DoctorWorkspaceItemCardProps> = ({
     imgUrl,
   label,
   iconLastName,
+  onPress
 }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.titleContainer}>
       <Image source={imgUrl} style={styles.image}/>
       <Text style={styles.label}>{label}</Text>
