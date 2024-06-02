@@ -24,14 +24,17 @@ import { useAppSelector } from "@/redux";
 import { LoadingOverlay } from "./src/components";
 import { globalColor } from "./src/constants/color";
 import DeviceInfo from "react-native-device-info";
-import Toast from 'react-native-toast-message';
+import Toast from "react-native-toast-message";
 const RootApp = () => {
   const isLoading = useAppSelector((state) => state.app.loading);
   return (
     <>
-    
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <StatusBar backgroundColor="transparent" barStyle={"dark-content"} translucent/>
+        <StatusBar
+          backgroundColor="transparent"
+          barStyle={"dark-content"}
+          translucent
+        />
         <SafeAreaProvider>
           <RootNavigation />
           <Toast />
@@ -45,9 +48,8 @@ const RootApp = () => {
 function App(): JSX.Element {
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"}/>
-        <RootApp />
-
+      <StatusBar backgroundColor={"transparent"} barStyle={"dark-content"} />
+      <RootApp />
     </Provider>
   );
 }

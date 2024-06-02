@@ -93,6 +93,7 @@ const PartnerScreen = () => {
         navigation.navigate("MainFlows");
         hideLoading();
       } else {
+        
         alert("Lỗi đăng kí");
         hideLoading();
       }

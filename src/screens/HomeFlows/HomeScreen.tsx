@@ -84,8 +84,7 @@ const HomeScreen = () => {
                  
                 />
               )}
-           contentContainerStyle={{flexGrow: 1,
-            justifyContent: 'center',}}
+          
             />
           </View>
         </View>

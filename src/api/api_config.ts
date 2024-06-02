@@ -29,13 +29,13 @@ export const protectedAxios = axios.create({
 export const axiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'multipart/form-data'
 },
   timeout: TIME_OUT
 })
 axiosInstance.interceptors.request.use(
   function (config){
-    console.log('config',config)
+    // console.log('config instance', config)
     return config
     
 },
@@ -46,15 +46,18 @@ function (error){
 )
 axiosInstance.interceptors.response.use(
   function (response) {
+    console.log('response axios instance', response)
     const responseObj = {
-        ...response.data,
+        ...response,
         statusCode: response.status,
     };
+
     return responseObj;
 },
 function (error) {
-
-    const statusCode = error.response.data
+  const statusCode = error
+  console.log('error axios instance', error.message)
+    // const statusCode = error.response.data
     if (error.response && error.response.status === 400) {
        
     }
@@ -64,7 +67,6 @@ function (error) {
 
 publicAxios.interceptors.request.use(
     function (config){
-        // console.log('config',config)
         return config
         
     },
@@ -76,10 +78,12 @@ publicAxios.interceptors.request.use(
 
 publicAxios.interceptors.response.use(
     function (response) {
+      
         const responseObj = {
             ...response.data,
             statusCode: response.status,
         };
+        console.log('response api', responseObj)
         return responseObj;
     },
     function (error) {

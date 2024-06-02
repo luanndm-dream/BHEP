@@ -6,6 +6,5 @@ export async function apiLogin(email: string, password: string ){
         email: email,
         password: password
     }
-    console.log(dataSend)
     return publicAxios.post(url,dataSend)
 }

@@ -14,11 +14,8 @@ import { FeatureCard, Header, MessagePopup, StatsBox } from "@/components";
 import { useAppDispatch, useAppSelector } from "@/redux";
 import { globalFontSize } from "src/constants/fontSize";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import {
-  useFocusEffect,
-  useIsFocused,
-  useNavigation,
-} from "@react-navigation/native";
+import ImagePicker from "react-native-image-crop-picker";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { globalStyle } from "src/constants";
 import { getFeatureProfileData } from "src/data/featureProfileData";
 import { apiGetUserById } from "src/api/api_getUserById";
@@ -26,14 +23,20 @@ import { globalColor } from "src/constants/color";
 import { resetUserInfo, setUserInfo } from "src/redux/slice";
 import Toast from "react-native-toast-message";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { apiPostImage } from "src/api/api_post_image";
+import mime from "mime";
 
 const ProfileScreen = () => {
   const userData = useAppSelector((state) => state.user.userData);
   const navigation = useNavigation<any>();
+  const form = new FormData();
+  const os = Platform.OS;
   const dispatch = useAppDispatch();
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [data, setData] = useState<any>();
-  const [featureProfileData,setFeatureProfileData] = useState<any>(getFeatureProfileData())
+  const [featureProfileData, setFeatureProfileData] = useState<any>(
+    getFeatureProfileData()
+  );
   const onPressIconHandle = (name: string) => {
     switch (name) {
       case "Thông Tin Cá Nhân": {
@@ -60,9 +63,7 @@ const ProfileScreen = () => {
   };
   useFocusEffect(
     useCallback(() => {
-      console.log('API');
       apiGetUserById(Number(userData.id)).then((res) => {
-        console.log(res);
         setData(res?.data);
         // if(res?.data?.roleName === 'Employee'){
         //   setFeatureProfileData((prevData:any) => [
@@ -79,10 +80,9 @@ const ProfileScreen = () => {
     }, [])
   );
   // useEffect(()=>{
-      const resultData = getFeatureProfileData()
+  const resultData = getFeatureProfileData();
   //   setFeatureProfileData(resultData)
   // },[data])
-  console.log(featureProfileData)
 
   const onPressConfirm = async () => {
     setIsVisible(false);
@@ -91,7 +91,7 @@ const ProfileScreen = () => {
     //   index: 0,
     //   routes: [{ name: "LoginScreen" }],
     // });
-    await AsyncStorage.removeItem('auth')
+    await AsyncStorage.removeItem("auth");
     setTimeout(() => {
       Toast.show({
         type: "success",
@@ -102,9 +102,31 @@ const ProfileScreen = () => {
     }, 1000);
   };
 
-  // Lấy dữ liệu từ hàm getFeatureProfileData
+  const handleChangeAvatar = () => {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 400,
+      cropping: true,
+      includeBase64: true,
+    }).then((image: any) => {
+      console.log('uri',image.path)
+      const form = new FormData();
+      form.append("file", {
+        // uri: Platform.OS === 'android'? image?.path: image?.path.replace('file://',''),
+        uri: image?.path,
+        type: "image/jpg",
+        name: "image.jpg",
+      });
+     
+      apiPostImage("luan111111", form).then((res) => {
+        console.log("form", res);
+      });
+    });
+  };
+  //  useEffect(()=>{
 
-
+  //  },[handleChangeAvatar])
+  https://bhepstorage.blob.core.windows.net/bhepallimage/avatars/bacsi-1714974660459-1714974660
   return (
     <>
       <ScrollView style={{ flex: 1 }}>
@@ -116,7 +138,21 @@ const ProfileScreen = () => {
             <MaterialCommunityIcons name="logout" size={40} color={"white"} />
           </TouchableOpacity>
           <View style={styles.avatarContainer}>
-            {data?.avatar ? (
+            <TouchableOpacity onPress={handleChangeAvatar}>
+              <Image
+                source={require("../../assets/image/womanAvatar.png")}
+                style={styles.avatar}
+              />
+              <View style={styles.camera}>
+                <MaterialCommunityIcons
+                  name="camera"
+                  size={30}
+                  color={"white"}
+                />
+              </View>
+
+              {/* Logic nguyên bản */}
+              {/* {data?.avatar ? (
               <Image
                 source={{ uri: `data:image/jpeg;base64,${data?.avatar}` }}
                 style={styles.avatar}
@@ -131,8 +167,8 @@ const ProfileScreen = () => {
                 source={require("../../assets/image/womanAvatar.png")}
                 style={styles.avatar}
               />
-            )}
-
+            )} */}
+            </TouchableOpacity>
             <View style={styles.nameBox}>
               <Text style={styles.name}>{data?.fullName}</Text>
               <Text style={styles.description}>{data?.description}</Text>
@@ -149,9 +185,7 @@ const ProfileScreen = () => {
             data={resultData}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => {
-            
               return (
-                
                 <FeatureCard
                   featureName={item.name}
                   iconName={item.iconName}
@@ -233,5 +267,10 @@ const styles = StyleSheet.create({
     fontSize: globalFontSize.labelName,
     color: "white",
     marginTop: 5,
+  },
+  camera: {
+    position: "absolute",
+    right: 12,
+    bottom: 1,
   },
 });
