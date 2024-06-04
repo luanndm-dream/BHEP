@@ -6,6 +6,7 @@ import Paginator from "./Paginator";
 import NextButton from "./NextButton";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { STACK_NAVIGATOR_SCREENS } from "src/constants";
 const OnBoardingScreen = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -34,7 +35,7 @@ const OnBoardingScreen = () => {
 
         navigation.reset({
           index: 0,
-          routes: [{ name: "LoginScreen"}]
+          routes: [{ name: STACK_NAVIGATOR_SCREENS?.LOGINSCREEN}]
         });
     } else {
     }

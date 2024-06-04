@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import React from "react";
 import { globalColor } from "src/constants/color";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { OutstandingFunciton } from "@/data";
 import { useNavigation } from "@react-navigation/native";
 import { IconFeature } from "@/components";
@@ -25,17 +25,17 @@ const HomeScreen = () => {
   const onPressIconHandle = (name: string) => {
     switch (name) {
       case "Đối tác": {
-        navigation.navigate("PartnerScreen", {
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.PARTNERSCREEN, {
           // data: dataStation
         });
         break;
       }
       case "Bác sĩ gần chổ tôi": {
-        navigation.navigate("FindLocationScreen" as never);
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.FINDLOCATIONSCREEN as never);
         break;
       }
       case "Kiểm tra sức khoẻ": {
-        navigation.navigate("TrackingHealthScreen", {
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.TRACKINGHEALTHSCREEN, {
           // dataOffice: dataOffice
         });
         break;

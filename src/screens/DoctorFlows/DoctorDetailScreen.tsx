@@ -25,7 +25,7 @@ const DoctorDetailScreen = () => {
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
   const userId = route.params.userId;
-  const location = route.params.location;
+  const location = route?.params?.location;
   const [userData, setUserData] = useState<any>();
   const [imgUrl, setImgUrl] = useState<string>("");
   const [dateInWeeks, setDateInWeek] = useState<any>();
@@ -47,7 +47,7 @@ const DoctorDetailScreen = () => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
-    
+
     return `${day}`;
   }
 
@@ -82,7 +82,7 @@ const DoctorDetailScreen = () => {
     axios
       .get(`https://bhepapidemo.azurewebsites.net/Api/V1/User/${userId}`)
       .then((res: any) => {
-        console.log(res)
+        console.log(res);
         setUserData(res.data.data);
         setImgUrl(res?.data?.data.avatar);
       });
@@ -95,7 +95,7 @@ const DoctorDetailScreen = () => {
     });
     const latLng = `${location.latitude},${location.longitude}`;
     const label = "Custom Label";
-    const url:any = Platform.select({
+    const url: any = Platform.select({
       ios: `${scheme}${label}@${latLng}`,
       android: `${scheme}${latLng}(${label})`,
     });
@@ -105,92 +105,98 @@ const DoctorDetailScreen = () => {
 
   return (
     <>
-    <View style={{ flex: 1 }}>
-      <View style={styles.headerContainer}>
-        <TouchableOpacity
-          style={styles.backIcon}
-          onPress={() => navigation.goBack()}
-        >
-          <MaterialCommunityIcons
-            name="chevron-left"
-            size={40}
-            color={"black"}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.mapIcon} onPress={() => mapOpen()}>
-          <MaterialCommunityIcons
-            name="map-marker-account"
-            size={40}
-            color={"white"}
-          />
-        </TouchableOpacity>
-        <View style={styles.avatarContainer}>
-          <Image
-            source={imgUrl ? { uri: `data:image/jpeg;base64,${imgUrl}` } : require("../../assets/image/manAvatar.png")}
-            style={styles.avatar}
-          />
-          <View style={styles.nameBox}>
-            <Text style={styles.name}>{userData?.fullName}</Text>
-            <Text style={styles.description}>{userData?.description}</Text>
+      <View style={{ flex: 1 }}>
+        <View style={styles.headerContainer}>
+          <TouchableOpacity
+            style={styles.backIcon}
+            onPress={() => navigation.goBack()}
+          >
+            <MaterialCommunityIcons
+              name="chevron-left"
+              size={40}
+              color={"black"}
+            />
+          </TouchableOpacity>
+          {location && (
+            <TouchableOpacity style={styles.mapIcon} onPress={() => mapOpen()}>
+              <MaterialCommunityIcons
+                name="map-marker-account"
+                size={40}
+                color={"white"}
+              />
+            </TouchableOpacity>
+          )}
+          <View style={styles.avatarContainer}>
+            <Image
+              source={
+                imgUrl
+                  ? { uri: `data:image/jpeg;base64,${imgUrl}` }
+                  : require("../../assets/image/manAvatar.png")
+              }
+              style={styles.avatar}
+            />
+            <View style={styles.nameBox}>
+              <Text style={styles.name}>{userData?.fullName}</Text>
+              <Text style={styles.description}>{userData?.description}</Text>
+            </View>
           </View>
-        </View>
-        <Image
-          source={require("../../assets/image/doctorBackground.jpg")}
-          style={styles.image}
-        />
-      </View>
-      <ScrollView style={styles.contentContainer}>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <FlatList
-            scrollEnabled={false}
-            data={InteractData}
-            horizontal={true}
-            style={styles.interactionBox}
-            contentContainerStyle={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-            renderItem={({ item }) => {
-              return (
-                <InteractBox iconName={item.iconName} label={item.label} />
-              );
-            }}
+          <Image
+            source={require("../../assets/image/doctorBackground.jpg")}
+            style={styles.image}
           />
         </View>
-        <View style={styles.scheduleContainer}>
-          <View style={{}}>
-            <Text style={globalStyle.titleText}>Lịch trình làm việc</Text>
+        <ScrollView style={styles.contentContainer}>
+          <View
+            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          >
             <FlatList
               scrollEnabled={false}
-              //   numColumns={7}
+              data={InteractData}
               horizontal={true}
+              style={styles.interactionBox}
               contentContainerStyle={{
+                flexDirection: "row",
                 justifyContent: "space-between",
-                alignItems: "center",
-                flex: 1,
               }}
-              data={dateInWeeks}
               renderItem={({ item }) => {
                 return (
-                  <DateSlider
-                    thu={item.thu}
-                    date={item.date}
-                    onPress={() => handlePressDateSlider(item.id, item.date)}
-                    backgroundColor={
-                      selectedDateIndex === item.id
-                        ? { backgroundColor: globalColor.primaryColor }
-                        : undefined
-                    }
-                  />
+                  <InteractBox iconName={item.iconName} label={item.label} />
                 );
               }}
             />
           </View>
-        </View>
-      </ScrollView>
-    </View>
+          <View style={styles.scheduleContainer}>
+            <View style={{}}>
+              <Text style={globalStyle.titleText}>Lịch trình làm việc</Text>
+              <FlatList
+                scrollEnabled={false}
+                //   numColumns={7}
+                horizontal={true}
+                contentContainerStyle={{
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  flex: 1,
+                }}
+                data={dateInWeeks}
+                renderItem={({ item }) => {
+                  return (
+                    <DateSlider
+                      thu={item.thu}
+                      date={item.date}
+                      onPress={() => handlePressDateSlider(item.id, item.date)}
+                      backgroundColor={
+                        selectedDateIndex === item.id
+                          ? { backgroundColor: globalColor.primaryColor }
+                          : undefined
+                      }
+                    />
+                  );
+                }}
+              />
+            </View>
+          </View>
+        </ScrollView>
+      </View>
     </>
   );
 };
@@ -202,7 +208,6 @@ const styles = StyleSheet.create({
     // height: 200
     justifyContent: "center",
     alignItems: "center",
-    
   },
   image: {
     height: 300,

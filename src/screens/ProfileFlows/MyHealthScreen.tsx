@@ -6,6 +6,7 @@ import { Header } from "@/components";
 import { globalFontSize } from "src/constants/fontSize";
 import { globalColor } from "src/constants/color";
 import { useNavigation } from "@react-navigation/native";
+import { STACK_NAVIGATOR_SCREENS } from "src/constants";
 
 interface HealthRecord {
   question: string;
@@ -57,7 +58,7 @@ const MyHealthScreen = () => {
   }, [answers]);
 
   const onPressChecking = () => {
-    navigation.navigate("QuestionnaireScreen");
+    navigation.navigate(STACK_NAVIGATOR_SCREENS?.QUESTIONNAIRESCREEN);
   }
 
   return (

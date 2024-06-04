@@ -3,6 +3,7 @@ import React from 'react'
 import { Header, OnPendingScreen, WorkspaceDoctorItemCard } from '@/components'
 import { WorkSpaceDoctorData } from 'src/data/workspaceDoctorData'
 import { useNavigation } from '@react-navigation/native'
+import { STACK_NAVIGATOR_SCREENS } from 'src/constants'
 
 
 const WorkSpaceDoctorScreen = () => {
@@ -10,7 +11,7 @@ const WorkSpaceDoctorScreen = () => {
   const onPressIconHandle = (name: string) => {
     switch (name) {
       case "Chỉnh sửa hồ sơ": {
-        navigation.navigate("EditWorkProfileScreen", {
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.EDITWORKPROFILESCREEN, {
           // data: dataStation
         });
         break;

@@ -21,7 +21,7 @@ module.exports = {
           '@/redux': './src/redux',
           '@/navigation': './src/navigation',
           '@/screens': './src/screens/',
-          // '@/constants': './src/constants',
+          '@/constants': './src/constants',
           '@/services': './src/services',
           // '@/icons': './src/assets/icons',
           '@/data': './src/data',

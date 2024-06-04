@@ -16,7 +16,7 @@ import { globalFontSize } from "src/constants/fontSize";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import ImagePicker from "react-native-image-crop-picker";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { getFeatureProfileData } from "src/data/featureProfileData";
 import { apiGetUserById } from "src/api/api_getUserById";
 import { globalColor } from "src/constants/color";
@@ -40,17 +40,17 @@ const ProfileScreen = () => {
   const onPressIconHandle = (name: string) => {
     switch (name) {
       case "Thông Tin Cá Nhân": {
-        navigation.navigate("InformationScreen", {
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.INFORMATIONSCREEN, {
           data: userData,
         });
         break;
       }
       case "Làm Việc": {
-        navigation.navigate("WorkSpaceDoctorScreen");
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.WORKSPACEDOCTORSCREEN);
         break;
       }
       case "Sức khoẻ của tôi": {
-        navigation.navigate("MyHealthScreen");
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.MYHEALTHSCREEN);
         break;
       }
       // case "Văn phòng gần đây": {

@@ -21,6 +21,7 @@ import {
   ProfileScreen,
   QuestionnaireScreen,
   RegisterScreen,
+  ScheduleScreen,
   SplashScreen,
   TrackingHealthScreen,
   WorkSpaceDoctorScreen,
@@ -33,6 +34,7 @@ import AsyncStorage, {
   useAsyncStorage,
 } from "@react-native-async-storage/async-storage";
 import userSlice, { setUserInfo } from "src/redux/slice/userSlice";
+import { BOTTOM_NAVIGATOR_SCREENS, STACK_NAVIGATOR_SCREENS } from "src/constants";
 
 const myNavigationTheme = {
   ...DefaultTheme,
@@ -42,85 +44,79 @@ const myNavigationTheme = {
     secondaryContainer: "transparent",
   },
 };
+
 const Stack = createStackNavigator();
 const Bottom = createMaterialBottomTabNavigator();
+
 const BottomTabNavigation = () => {
   return (
-    <>
-      <Bottom.Navigator
-        activeColor="#0A5BF1"
-        barStyle={{ backgroundColor: "white", paddingBottom: 0 , }}
-      >
-        <Bottom.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{
-            tabBarLabel: "Trang chủ",
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="home" color={color} size={26} />
-            ),
-          }}
-        />
-        <Bottom.Screen
-          name="CommunityScreen"
-          component={CommunityScreen}
-          options={{
-            tabBarLabel: "Cộng đồng",
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons
-                name="account-group"
-                color={color}
-                size={26}
-              />
-            ),
-          }}
-        />
-        <Bottom.Screen
-          name="DoctorScreen"
-          component={DoctorScreen}
-          options={{
-            tabBarLabel: "Bác sĩ",
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="doctor" color={color} size={26} />
-            ),
-          }}
-        />
-        <Bottom.Screen
-          name="ProfileScreen"
-          component={ProfileScreen}
-          options={{
-            tabBarLabel: "Cá nhân",
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="account" color={color} size={26} />
-            ),
-          }}
-        />
-      </Bottom.Navigator>
-    </>
+    <Bottom.Navigator
+      activeColor="#0A5BF1"
+      barStyle={{ backgroundColor: "white", paddingBottom: 0 }}
+    >
+      <Bottom.Screen
+        name={BOTTOM_NAVIGATOR_SCREENS?.HOMESCREEN}
+        component={HomeScreen}
+        options={{
+          tabBarLabel: "Trang chủ",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Bottom.Screen
+        name={BOTTOM_NAVIGATOR_SCREENS?.COMMUNITYSCREEN}
+        component={CommunityScreen}
+        options={{
+          tabBarLabel: "Cộng đồng",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="account-group"
+              color={color}
+              size={26}
+            />
+          ),
+        }}
+      />
+      <Bottom.Screen
+        name={BOTTOM_NAVIGATOR_SCREENS?.DOCTORSCREEN}
+        component={DoctorScreen}
+        options={{
+          tabBarLabel: "Bác sĩ",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="doctor" color={color} size={26} />
+          ),
+        }}
+      />
+      <Bottom.Screen
+        name={BOTTOM_NAVIGATOR_SCREENS?.PROFILESCREEN}
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: "Cá nhân",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={26} />
+          ),
+        }}
+      />
+    </Bottom.Navigator>
   );
 };
-// const Screens = () =>{
-//     <Stack.Navigator>
-//         <Stack.Screen name="PartnerScreen" component={PartnerScreen} />
-//     </Stack.Navigator>
-// }
+
 const RootNavigation = () => {
   const dispatch = useAppDispatch();
   const [isShowSplash, setIsShowPlash] = useState<boolean>(true);
   const accessToken = useAppSelector((state) => state.user.accessToken);
-  console.log("accessToken", accessToken);
 
   useEffect(() => {
     checkLogin();
-    const timeout = setTimeout(()=>{
-      setIsShowPlash(false)
-    },1500)
+    const timeout = setTimeout(() => {
+      setIsShowPlash(false);
+    }, 1500);
   }, [accessToken]);
 
   const { getItem } = useAsyncStorage("auth");
   const checkLogin = async () => {
     const res: any = await getItem();
-    console.log("token", res);
     res && dispatch(setUserInfo(JSON.parse(res)));
   };
 
@@ -130,11 +126,20 @@ const RootNavigation = () => {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="OnBoardingScreen" component={OnBoardingScreen} />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
       <Stack.Screen
-        name="QuestionnaireScreen"
+        name={STACK_NAVIGATOR_SCREENS.ONBOARDINGSCREEN}
+        component={OnBoardingScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.LOGINSCREEN}
+        component={LoginScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.REGISTERSCREEN}
+        component={RegisterScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.QUESTIONNAIRESCREEN}
         component={QuestionnaireScreen}
       />
     </Stack.Navigator>
@@ -146,25 +151,49 @@ const RootNavigation = () => {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="MainFlows" component={BottomTabNavigation} />
-      <Stack.Screen name="PartnerScreen" component={PartnerScreen} />
-      <Stack.Screen name="FindLocationScreen" component={FindLocationScreen} />
       <Stack.Screen
-        name="MatchLocationScreen"
+        name={STACK_NAVIGATOR_SCREENS?.MAINFLOWS}
+        component={BottomTabNavigation}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.PARTNERSCREEN}
+        component={PartnerScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.FINDLOCATIONSCREEN}
+        component={FindLocationScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.MATCHLOCATIONSCREEN}
         component={MatchLocationScreen}
       />
-      <Stack.Screen name="InformationScreen" component={InformationScreen} />
       <Stack.Screen
-        name="WorkSpaceDoctorScreen"
+        name={STACK_NAVIGATOR_SCREENS?.INFORMATIONSCREEN}
+        component={InformationScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.WORKSPACEDOCTORSCREEN}
         component={WorkSpaceDoctorScreen}
       />
-      <Stack.Screen name="DoctorDetailScreen" component={DoctorDetailScreen} />
-
-      <Stack.Screen name="MyHealthScreen" component={MyHealthScreen} />
-      <Stack.Screen name="EditWorkProfileScreen" component={EditWorkProfileScreen} />
       <Stack.Screen
-        name="TrackingHealthScreen"
+        name={STACK_NAVIGATOR_SCREENS?.DOCTORDETAILSCREEN}
+        component={DoctorDetailScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.MYHEALTHSCREEN}
+        component={MyHealthScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.EDITWORKPROFILESCREEN}
+        component={EditWorkProfileScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.TRACKINGHEALTHSCREEN}
         component={TrackingHealthScreen}
+      />
+       <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.SCHEDULESCREEN}
+        component={ScheduleScreen}
       />
     </Stack.Navigator>
   );
@@ -172,7 +201,6 @@ const RootNavigation = () => {
   return (
     <PaperProvider theme={myNavigationTheme}>
       <NavigationContainer>
-       
         {isShowSplash ? (
           <SplashScreen />
         ) : accessToken == null ? (

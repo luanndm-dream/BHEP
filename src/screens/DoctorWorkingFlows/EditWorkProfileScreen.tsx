@@ -22,6 +22,7 @@ const EditWorkProfileScreen = () => {
   const [editable, setEditable] = useState<boolean>(false);
 
   useEffect(() => {
+    console.log(" call api res");
     apiGetWorkProfileById(userId).then((res: any) => {
       console.log("res", res);
       setUserData(res);

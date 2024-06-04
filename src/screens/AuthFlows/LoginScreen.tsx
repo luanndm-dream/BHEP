@@ -14,7 +14,7 @@ import { ButtonText, TextInputNoIcon } from "@/components";
 import { apiLogin } from "src/api/api_login";
 import { useNavigation } from "@react-navigation/native";
 import useLoading from "src/hook/useLoading";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { useAppDispatch, useAppSelector } from "@/redux";
 import { setUserInfo } from "src/redux/slice";
 import Toast from 'react-native-toast-message';
@@ -56,7 +56,7 @@ const LoginScreen = () => {
 
 
   const registerHandle = () => {
-    navigation.navigate('RegisterScreen')
+    navigation.navigate(STACK_NAVIGATOR_SCREENS?.REGISTERSCREEN)
   }
 
 

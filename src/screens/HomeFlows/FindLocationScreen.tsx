@@ -23,7 +23,7 @@ import {
 import { db } from "@/services";
 import { useAppSelector } from "@/redux";
 import { FlatList } from "react-native-gesture-handler";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { useNavigation } from "@react-navigation/native";
 import useLoading from "src/hook/useLoading";
 const FindLocationScreen = () => {
@@ -171,7 +171,7 @@ const FindLocationScreen = () => {
   //   }
   // };
   const onPressItem =(id: number) =>{
-      navigation.navigate('DoctorDetailScreen', {
+      navigation.navigate(STACK_NAVIGATOR_SCREENS?.DOCTORDETAILSCREEN, {
         userId: id,
         location: location
       })

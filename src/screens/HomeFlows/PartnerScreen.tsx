@@ -17,7 +17,7 @@ import {
   Header,
   TextInputWithIcon,
 } from "@/components";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { globalColor } from "src/constants/color";
 import { TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -90,7 +90,7 @@ const PartnerScreen = () => {
     ).then((res: any) => {
       console.log(res);
       if (res.statusCode == 200) {
-        navigation.navigate("MainFlows");
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.MAINFLOWS);
         hideLoading();
       } else {
         

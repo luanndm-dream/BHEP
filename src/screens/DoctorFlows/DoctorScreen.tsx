@@ -9,7 +9,7 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import { IconFeature, OnPendingScreen } from "@/components";
 import { SafeAreaView } from "react-native";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { specialistData } from "@/data";
 import { useNavigation } from "@react-navigation/native";
 import { apiGetUserByRole } from "src/api/api_get_AllUserByRole";
@@ -21,6 +21,7 @@ import Animated, {
 import { CARD_DOCTOR_LENGTH, SPACING } from "src/constants/size";
 import SuggestDoctorItem from "./SuggestDoctorItem";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import {apiGetDoctors } from "src/api/api_get_Doctor";
 
 const DoctorScreen = () => {
   const insets = useSafeAreaInsets();
@@ -31,17 +32,17 @@ const DoctorScreen = () => {
   const onPressIconHandle = (name: string) => {
     switch (name) {
       case "Đối tác": {
-        navigation.navigate("PartnerScreen", {
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.PARTNERSCREEN, {
           // data: dataStation
         });
         break;
       }
       case "Bác sĩ gần chổ tôi": {
-        navigation.navigate("FindLocationScreen" as never);
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.FINDLOCATIONSCREEN as never);
         break;
       }
       case "Kiểm tra sức khoẻ": {
-        navigation.navigate("TrackingHealthScreen", {
+        navigation.navigate(STACK_NAVIGATOR_SCREENS?.TRACKINGHEALTHSCREEN, {
           // dataOffice: dataOffice
         });
         break;
@@ -51,8 +52,8 @@ const DoctorScreen = () => {
   // console.log()
 
   useEffect(() => {
-    apiGetUserByRole(3, 5).then((res: any) => {
-      console.log(res.statusCode);
+    apiGetDoctors(5).then((res: any) => {
+      console.log('res', res);
       if (res.statusCode === 200) {
         setSuggestDoctorData(res.data.items);
       }
@@ -90,6 +91,14 @@ const DoctorScreen = () => {
   const scrollHandler = useAnimatedScrollHandler((event) => {
     scrollX.value = event.contentOffset.x;
   });
+
+  const onPressDoctorSuggest = (id: number) => {
+    console.log('id doctor', id)
+    navigation.navigate(STACK_NAVIGATOR_SCREENS?.DOCTORDETAILSCREEN, {
+      userId: id,
+      // location: location
+    })
+  }
 
   return (
     <SafeAreaView style={[globalStyle.droidSafeArea, styles.container]}>
@@ -164,6 +173,8 @@ const DoctorScreen = () => {
                   <SuggestDoctorItem
                     name={item?.fullName}
                     specialist={item?.description}
+                    rate={item?.rate}
+                    onPress={()=>onPressDoctorSuggest(item.id)}
                   />
                 )}
               />
