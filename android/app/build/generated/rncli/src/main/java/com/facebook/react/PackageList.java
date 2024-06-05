@@ -17,6 +17,8 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-masked-view/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// react-native-date-picker
+import com.henninghall.date_picker.DatePickerPackage;
 // react-native-device-info
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 // react-native-fast-image
@@ -87,6 +89,7 @@ public class PackageList {
       new VectorIconsPackage(),
       new AsyncStoragePackage(),
       new RNCMaskedViewPackage(),
+      new DatePickerPackage(),
       new RNDeviceInfo(),
       new FastImageViewPackage(),
       new RNFusedLocationPackage(),

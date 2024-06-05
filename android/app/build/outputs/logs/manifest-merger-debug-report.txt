@@ -11,6 +11,7 @@ MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/tr
 MERGED from [:react-native-vector-icons] /Users/luan/BHEP/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-async-storage_async-storage] /Users/luan/BHEP/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-masked-view_masked-view] /Users/luan/BHEP/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-date-picker] /Users/luan/BHEP/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-device-info] /Users/luan/BHEP/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-fast-image] /Users/luan/BHEP/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-geolocation-service] /Users/luan/BHEP/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -104,6 +105,7 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/luan/.gradle/cache
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/luan/.gradle/caches/transforms-3/99d779b5410bcb0ed593388cffd57f6e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/luan/.gradle/caches/transforms-3/b51bb27381c1ca95bd95d648b40df69f/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/luan/.gradle/caches/transforms-3/a3a558311ee849776c10e746c33d96f0/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:2:1-9:12
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/luan/.gradle/caches/transforms-3/b36df8da1dd3422e7688e01fe20caa41/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/luan/BHEP/android/app/src/debug/AndroidManifest.xml:2:1-13:12
@@ -211,6 +213,8 @@ MERGED from [androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/4
 MERGED from [androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/4147f26a61fb6196770ea38e58daddf3/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/luan/.gradle/caches/transforms-3/c5107d5e475ee8dcd270599e360e9f6d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/luan/.gradle/caches/transforms-3/c5107d5e475ee8dcd270599e360e9f6d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:11:5-20
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:11:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
 	android:appComponentFactory
@@ -281,6 +285,8 @@ MERGED from [:react-native-async-storage_async-storage] /Users/luan/BHEP/node_mo
 MERGED from [:react-native-async-storage_async-storage] /Users/luan/BHEP/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-masked-view_masked-view] /Users/luan/BHEP/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-masked-view_masked-view] /Users/luan/BHEP/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-date-picker] /Users/luan/BHEP/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-date-picker] /Users/luan/BHEP/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-device-info] /Users/luan/BHEP/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-device-info] /Users/luan/BHEP/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-fast-image] /Users/luan/BHEP/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -467,6 +473,8 @@ MERGED from [androidx.print:print:1.0.0] /Users/luan/.gradle/caches/transforms-3
 MERGED from [androidx.print:print:1.0.0] /Users/luan/.gradle/caches/transforms-3/b51bb27381c1ca95bd95d648b40df69f/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/luan/.gradle/caches/transforms-3/a3a558311ee849776c10e746c33d96f0/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/luan/.gradle/caches/transforms-3/a3a558311ee849776c10e746c33d96f0/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:7:5-9:41
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/luan/.gradle/caches/transforms-3/b36df8da1dd3422e7688e01fe20caa41/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
