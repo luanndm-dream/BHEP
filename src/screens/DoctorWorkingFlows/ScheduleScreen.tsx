@@ -1,38 +1,45 @@
-import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  View,
-  Image,
-  FlatList, // Import FlatList
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View,ScrollView } from "react-native";
 import React, { useState } from "react";
-import DatePicker from "react-native-date-picker";
-import CalendarPicker from "react-native-calendar-picker";
-import { globalStyle } from "src/constants";
 import { Calendar } from "react-native-calendars";
-import { Header, TimePickerComponent } from "@/components";
+import { globalStyle } from "src/constants";
+import { ButtonComponent, Header, TimePickerComponent } from "@/components";
+import TimeBox from "./TimeBox";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { globalColor } from "src/constants/color";
 
 const ScheduleScreen = () => {
   const [selected, setSelected] = useState("");
   const [timeSlots, setTimeSlots] = useState<{ [date: string]: string[] }>({});
   const [isVisible, setIsVisible] = useState(false);
-  const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState<string>();
+  const [fromTime, setFromTime] = useState<any>();
+  const [toTime, setToTime] = useState<any>();
 
-  const addMoreHandle = () => {
-    setIsVisible(!isVisible);
+  const [activeComponent, setActiveComponent] = useState<String>();
+
+  const onPressTimePicker = (type: String) => {
+    setIsVisible(true);
+    setActiveComponent(type);
   };
 
   const onConfirm = (time: string) => {
-    setTime(time);
     setIsVisible(false);
-    if (selected) {
+    if (activeComponent === "fromTime") {
+      setFromTime(time);
+    } else {
+      setToTime(time);
+    }
+  };
+
+  const onAddTimeSlot = () => {
+    if (fromTime && toTime && selected) {
+      const timeSlot = `${fromTime} - ${toTime}`;
       setTimeSlots((prevTimeSlots) => ({
         ...prevTimeSlots,
-        [selected]: [...(prevTimeSlots[selected] || []), time],
+        [selected]: [...(prevTimeSlots[selected] || []), timeSlot],
       }));
+      // Reset the times
+      setFromTime(null);
+      setToTime(null);
     }
   };
 
@@ -51,33 +58,49 @@ const ScheduleScreen = () => {
           />
         </View>
         <View>
-          <Text style={globalStyle.titleText}>Chọn giờ</Text>
-          <View style={styles.timeSlotsContainer}>
-            {/* Hiển thị danh sách khe giờ */}
-            <FlatList
-              data={Object.entries(timeSlots)}
-              renderItem={({ item }) => (
-                <View>
-                  <Text style={styles.dateText}>{item[0]}</Text>
-                  {item[1].map((timeSlot, index) => (
-                    <Text key={index} style={styles.timeSlotText}>
-                      {timeSlot}
-                    </Text>
-                  ))}
-                </View>
-              )}
-              keyExtractor={(item, index) => index.toString()}
+          <Text style={globalStyle.titleText}>
+            Chọn giờ:{" "}
+            {selected && (
+              <Text style={styles.selectedDateText}>{selected}</Text>
+            )}
+          </Text>
+          <View style={styles.timeBoxContainer}>
+            <TimeBox
+              text={fromTime ? fromTime : "Từ giờ"}
+              onPress={() => onPressTimePicker("fromTime")}
+            />
+            <MaterialCommunityIcons name="arrow-right" size={30} />
+            <TimeBox
+              text={toTime ? toTime : "Đến giờ"}
+              onPress={() => onPressTimePicker("toTime")}
+            />
+            <ButtonComponent
+              buttonText="Thêm"
+              onPress={onAddTimeSlot}
+              colorButton={globalColor.primaryColor}
+              style={{ height: 60, paddingHorizontal: 8 }}
             />
           </View>
-
-          <TouchableOpacity
-            style={styles.moreContainer}
-            onPress={addMoreHandle}
+          <ScrollView style={styles.timeSlotsContainer}
+          nestedScrollEnabled={true}
           >
-            <Text style={[globalStyle.textNormal, { color: "grey" }]}>
-              Thêm khung giờ
-            </Text>
-          </TouchableOpacity>
+            {timeSlots[selected]?.map((slot, index) => (
+              <View
+                style={{
+                  borderRadius: 8,
+                  borderWidth: 1,
+                  height: 60,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginVertical: 40
+                }}
+              >
+                <Text style={styles.timeSlotText}>
+                  {slot}
+                </Text>
+              </View>
+            ))}
+          </ScrollView>
         </View>
       </View>
       {isVisible && (
@@ -119,5 +142,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "black",
     marginBottom: 4,
+  },
+  timeBoxContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  selectedDateText: {
+    fontSize: 18,
+    color: "black",
+    fontWeight: "bold",
+    marginBottom: 8,
+    textAlign: "center",
   },
 });
