@@ -1,4 +1,11 @@
-import { StyleSheet, Text, TouchableOpacity, View,ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  ScrollView,
+  Button,
+} from "react-native";
 import React, { useState } from "react";
 import { Calendar } from "react-native-calendars";
 import { globalStyle } from "src/constants";
@@ -6,7 +13,8 @@ import { ButtonComponent, Header, TimePickerComponent } from "@/components";
 import TimeBox from "./TimeBox";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { globalColor } from "src/constants/color";
-
+import { apiPostSchedule } from "src/api/api_post_Schedule";
+import Toast from 'react-native-toast-message';
 const ScheduleScreen = () => {
   const [selected, setSelected] = useState("");
   const [timeSlots, setTimeSlots] = useState<{ [date: string]: string[] }>({});
@@ -41,6 +49,60 @@ const ScheduleScreen = () => {
       setFromTime(null);
       setToTime(null);
     }
+  };
+  const onPressRemove = (index: number) => {
+    setTimeSlots((prevTimeSlots) => {
+      const updatedSlots = [...(prevTimeSlots[selected] || [])];
+      updatedSlots.splice(index, 1);
+
+      // Create a new copy of the object
+      const newTimeSlots = { ...prevTimeSlots };
+
+      // If the updatedSlots array is empty, delete the key
+      if (updatedSlots.length === 0) {
+        delete newTimeSlots[selected];
+      } else {
+        // Otherwise, update the array for the selected date
+        newTimeSlots[selected] = updatedSlots;
+      }
+
+      return newTimeSlots;
+    });
+  };
+
+  const formatDateToDDMMYYYY = (dateString: string) => {
+    const [year, month, day] = dateString.split("-");
+    return `${day}-${month}-${year}`;
+  };
+
+  const transformToApiFormat = () => {
+    const schedules = Object.keys(timeSlots).map((date) => ({
+      date: formatDateToDDMMYYYY(date),
+      time: timeSlots[date],
+    }));
+    console.log(schedules);
+    return schedules;
+  };
+
+  const updateHandle = () => {
+    const data = transformToApiFormat();
+    apiPostSchedule(5, data).then((res:any) => {
+      if(res.statusCode === 200){
+        Toast.show({
+          type: "success",
+          text1: 'Cập nhật thành công',
+          // text2: 'Vui lòng kiểm tra tài khoản và mật khẩu'
+          
+        });
+      }else{
+        Toast.show({
+          type: "error",
+          text1: 'Cập nhật thất bại',
+          text2: res.message
+        });
+      }
+      
+    });
   };
 
   return (
@@ -81,30 +143,60 @@ const ScheduleScreen = () => {
               style={{ height: 60, paddingHorizontal: 8 }}
             />
           </View>
-          <ScrollView style={styles.timeSlotsContainer}
-          nestedScrollEnabled={true}
-          >
-            {timeSlots[selected]?.map((slot, index) => (
-              <View
-                style={{
-                  borderRadius: 8,
-                  borderWidth: 1,
-                  height: 60,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginVertical: 40
-                }}
-              >
-                <Text style={styles.timeSlotText}>
-                  {slot}
-                </Text>
-              </View>
-            ))}
-          </ScrollView>
+          <View style={{ height: 170 }}>
+            <ScrollView
+              style={styles.timeSlotsContainer}
+              nestedScrollEnabled={true}
+              scrollEnabled={true}
+            >
+              {timeSlots[selected]?.map((slot, index) => (
+                <View
+                  key={index}
+                  style={{
+                    borderRadius: 8,
+                    borderWidth: 1,
+                    height: 40,
+                    width: "50%",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginVertical: 10, // Adjust margin for better layout
+                    flexDirection: "row",
+                    paddingHorizontal: 12,
+                  }}
+                >
+                  <Text style={styles.timeSlotText}>{slot}</Text>
+                  <TouchableOpacity onPress={() => onPressRemove(index)}>
+                    <MaterialCommunityIcons
+                      name="minus-circle"
+                      color={"red"}
+                      size={25}
+                    />
+                  </TouchableOpacity>
+                </View>
+              ))}
+            </ScrollView>
+          </View>
+          <ButtonComponent
+            buttonText="Cập nhật"
+            style={[
+              {
+                width: "100%",
+                backgroundColor: globalColor.primaryColor,
+                marginBottom: 610, // Tăng giá trị nếu cần
+              },
+              // Nếu bạn có thêm style, hãy đặt chúng ở đây
+            ]}
+            onPress={updateHandle}
+          />
+
+          {/* <Button title="Send to API" onPress={() => updateHandle()} /> */}
         </View>
       </View>
       {isVisible && (
-        <TimePickerComponent onConfirm={(time) => onConfirm(time)} />
+        <TimePickerComponent
+          onConfirm={(time) => onConfirm(time)}
+          onCancel={() => setIsVisible(false)}
+        />
       )}
     </>
   );
@@ -131,6 +223,8 @@ const styles = StyleSheet.create({
   },
   timeSlotsContainer: {
     marginVertical: 12,
+    // Correct the typo
+    height: 100,
   },
   dateText: {
     fontSize: 18,
@@ -139,7 +233,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   timeSlotText: {
-    fontSize: 16,
+    fontSize: 18,
     color: "black",
     marginBottom: 4,
   },
