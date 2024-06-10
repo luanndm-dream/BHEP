@@ -25,6 +25,9 @@ interface DropDownListProps {
   visible: boolean;
   placeholderText?: string;
   onSelectMajor?: (majorId: number, majorIdName: string) => void;
+  dataList?: any;
+  multiSelect?: boolean;
+  onConfirmMultiSelected?: ((indexArray: any) => void) | undefined;
 }
 
 const DropDownList: React.FC<DropDownListProps> = ({
@@ -33,21 +36,12 @@ const DropDownList: React.FC<DropDownListProps> = ({
   visible,
   onSelectMajor,
   placeholderText,
+  dataList,
+  multiSelect,
+  onConfirmMultiSelected,
 }) => {
-  const [dataMajor, setDataMajor] = useState<any>(MajorData);
   const [searchValue, setSearchValue] = useState<string>("");
-  const { showLoading, hideLoading } = useLoading();
-  // useEffect(() => {
-  //     showLoading()
-  //     getStationApi().then((res: any) => {
-  //         if(res?.statusCode === 200){
-  //             setDataOffice(res.data.items);
-  //             hideLoading()
-  //         }
-  //         console.log('res', res?.data.items)
-
-  //     });
-  //   }, []);
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const filterData = (data: any[], query: string) => {
     if (!query) return data;
     return data?.filter((item: any) =>
@@ -56,63 +50,107 @@ const DropDownList: React.FC<DropDownListProps> = ({
   };
 
   const onPressItem = (itemId: number, itemName: string) => {
-    setSearchValue(itemName);
-    onSelectMajor && onSelectMajor(itemId, itemName);
-    onCancel?.();
+    if (multiSelect) {
+      const isSelected = selectedItems.includes(itemId);
+      if (isSelected) {
+        setSelectedItems(selectedItems.filter((item) => item !== itemId));
+      } else {
+        setSelectedItems([...selectedItems, itemId]);
+      }
+    } else {
+      onSelectMajor && onSelectMajor(itemId, itemName);
+      onCancel?.();
+    }
   };
+
   return (
     <KeyboardAvoidingView
-    style={{ flex: 1 }}
-    behavior={Platform.OS === "ios" ? "padding" : undefined}
-    keyboardVerticalOffset={Platform.OS === "ios" ? 64 : 0}
-    contentContainerStyle={{ flexGrow: 1 }}
-  >
-    <CustomModal
-      onBackDropPress={() => {
-        onCancel?.();
-      }}
-      visible={visible}
-      animationType="slide"
-      onTouchStart={()=>Keyboard.dismiss()}
+      style={{ flex: 1 }}
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 64 : 0}
+      contentContainerStyle={{ flexGrow: 1 }}
     >
-     
+      <CustomModal
+        onBackDropPress={() => {
+          onCancel?.();
+        }}
+        visible={visible}
+        animationType="slide"
+        onTouchStart={() => Keyboard.dismiss()}
+      >
         <View style={styles.container}>
           <View style={styles.indicatorTop} />
-          <View >
-  
-              <TextInput
-                placeholder={placeholderText}
-                onChangeText={(text) => setSearchValue(text)}
-                value={searchValue}
-                style={styles.labelSearch}
-              />
-       
-            <SafeAreaView >
+          <View>
+            <TextInput
+              placeholder={placeholderText}
+              onChangeText={(text) => setSearchValue(text)}
+              value={searchValue}
+              style={styles.labelSearch}
+            />
+
+            <SafeAreaView>
               <FlatList
-              style={{height: '100%'}}
-                data={filterData(dataMajor, searchValue)}
+                style={
+                  multiSelect
+                    ? { height: 230, marginBottom: 10 }
+                    : { height: 200 }
+                }
+                data={filterData(dataList, searchValue)}
                 renderItem={({ item }) => {
+                  const isSelected = selectedItems.includes(item.id);
                   return (
                     <TouchableOpacity
                       onPress={() => onPressItem(item.id, item.name)}
                     >
                       <View style={styles.itemContainer}>
                         <View style={styles.itemBox}>
-                          <Text style={styles.item}>{item.id}. </Text>
-                          <Text style={styles.item}>{item.name}</Text>
+                          <Text
+                            style={[
+                              styles.item,
+                              isSelected && styles.selectedItem,
+                            ]}
+                          >
+                            {item.id}.{" "}
+                          </Text>
+                          <Text
+                            style={[
+                              styles.item,
+                              isSelected && styles.selectedItem,
+                            ]}
+                          >
+                            {item.name}
+                          </Text>
                         </View>
-                        <MaterialCommunityIcons name="chevron-down" size={30} />
+                        <MaterialCommunityIcons
+                          name="chevron-right"
+                          size={30}
+                        />
                       </View>
                     </TouchableOpacity>
                   );
                 }}
               />
+              {multiSelect && (
+                <ButtonText
+                  onPress={() => {
+                    if (onConfirmMultiSelected) {
+                      onConfirmMultiSelected(selectedItems);
+                      onCancel?.();
+                    }
+                  }}
+                  text="Chọn"
+                  styleText={{ fontWeight: "bold" }}
+                  styleContainer={{
+                    backgroundColor: globalColor.primaryColor,
+                    height: 60,
+                    borderRadius: 12,
+                  }}
+                />
+              )}
             </SafeAreaView>
           </View>
         </View>
-      
-      
-    </CustomModal>
+      </CustomModal>
     </KeyboardAvoidingView>
   );
 };
@@ -140,15 +178,15 @@ const styles = StyleSheet.create({
   itemContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-   
   },
-  itemBox:{
-    flexDirection: "row"
+  itemBox: {
+    flexDirection: "row",
+    marginVertical: 6,
   },
-  item:{
+  item: {
     fontSize: globalFontSize.lableFont,
-    fontWeight: 'bold',
-    color: 'black'
+    fontWeight: "bold",
+    color: "black",
   },
   labelSearch: {
     height: 50,
@@ -158,6 +196,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginVertical: 12,
-    paddingHorizontal: 12
+    paddingHorizontal: 12,
+  },
+  selectedItem: {
+    color: globalColor.primaryColor,
   },
 });

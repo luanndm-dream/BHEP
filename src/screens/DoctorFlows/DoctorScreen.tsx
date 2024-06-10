@@ -21,7 +21,7 @@ import Animated, {
 import { CARD_DOCTOR_LENGTH, SPACING } from "src/constants/size";
 import SuggestDoctorItem from "./SuggestDoctorItem";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import {apiGetDoctors } from "src/api/api_get_Doctor";
+import { apiGetDoctors } from "src/api/api_get_Doctor";
 
 const DoctorScreen = () => {
   const insets = useSafeAreaInsets();
@@ -38,7 +38,9 @@ const DoctorScreen = () => {
         break;
       }
       case "Bác sĩ gần chổ tôi": {
-        navigation.navigate(STACK_NAVIGATOR_SCREENS?.FINDLOCATIONSCREEN as never);
+        navigation.navigate(
+          STACK_NAVIGATOR_SCREENS?.FINDLOCATIONSCREEN as never
+        );
         break;
       }
       case "Kiểm tra sức khoẻ": {
@@ -53,7 +55,7 @@ const DoctorScreen = () => {
 
   useEffect(() => {
     apiGetDoctors(5).then((res: any) => {
-      console.log('res', res);
+      console.log("res", res);
       if (res.statusCode === 200) {
         setSuggestDoctorData(res.data.items);
       }
@@ -93,12 +95,12 @@ const DoctorScreen = () => {
   });
 
   const onPressDoctorSuggest = (id: number) => {
-    console.log('id doctor', id)
+    console.log("id doctor", id);
     navigation.navigate(STACK_NAVIGATOR_SCREENS?.DOCTORDETAILSCREEN, {
       userId: id,
       // location: location
-    })
-  }
+    });
+  };
 
   return (
     <SafeAreaView style={[globalStyle.droidSafeArea, styles.container]}>
@@ -107,82 +109,83 @@ const DoctorScreen = () => {
         translucent
         barStyle={"dark-content"}
       />
-     
-        <View style={styles.titleContainer}>
-          <Text style={globalStyle.titleText}>Chuyên khoa</Text>
-          <Text style={{ color: "grey" }}>Xem thêm</Text>
-        </View>
+
+      <View style={styles.titleContainer}>
+        <Text style={globalStyle.titleText}>Chuyên khoa</Text>
+        <Text style={{ color: "grey" }}>Xem thêm</Text>
+      </View>
+      <View>
+        <FlatList
+          data={specialistData}
+          scrollEnabled={false}
+          numColumns={4}
+          key={specialistData.length}
+          columnWrapperStyle={{
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+          renderItem={({ item }) => (
+            <IconFeature
+              name={item.name}
+              imgUrl={item.imgName}
+              onPress={() => onPressIconHandle(item.name)}
+            />
+          )}
+        />
+      </View>
+      <View>
+        <Text style={globalStyle.titleText}>Bác sĩ thịnh hành</Text>
         <View>
-          <FlatList
-            data={specialistData}
-            scrollEnabled={false}
-            numColumns={4}
-            key={specialistData.length}
-            columnWrapperStyle={{
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-            renderItem={({ item }) => (
-              <IconFeature
-                name={item.name}
+          <Animated.FlatList
+            data={data}
+            renderItem={({ item, index }) => (
+              <ItemDoctor
                 imgUrl={item.imgName}
-                onPress={() => onPressIconHandle(item.name)}
+                index={index}
+                scrollX={scrollX}
               />
             )}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            scrollEventThrottle={16}
+            decelerationRate="fast"
+            snapToInterval={
+              Platform.OS === "ios"
+                ? CARD_DOCTOR_LENGTH + SPACING * 3.1
+                : CARD_DOCTOR_LENGTH + SPACING * 3
+            }
+            disableIntervalMomentum
+            snapToAlignment="center"
+            onScroll={scrollHandler}
           />
         </View>
         <View>
-          <Text style={globalStyle.titleText}>Bác sĩ thịnh hành</Text>
-          <View>
-            <Animated.FlatList
-              data={data}
+          <Text style={[globalStyle.titleText]}>
+            Danh sách gợi ý{""}
+            <Text style={{ color: "red", textAlign: "center" }}>
+              {suggestDoctorData?.length
+                ? `(${suggestDoctorData.length})`
+                : "0"}
+            </Text>
+          </Text>
+          <View style={{ height: 300 }}>
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              // scrollEnabled={true}
+              data={suggestDoctorData}
               renderItem={({ item, index }) => (
-                <ItemDoctor
-                  imgUrl={item.imgName}
-                  index={index}
-                  scrollX={scrollX}
+                <SuggestDoctorItem
+                  name={item?.fullName}
+                  specialist={item?.description}
+                  rate={item?.rate}
+                  onPress={() => onPressDoctorSuggest(item.id)}
                 />
               )}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              scrollEventThrottle={16}
-              decelerationRate="fast"
-              snapToInterval={
-                Platform.OS === "ios"
-                  ? CARD_DOCTOR_LENGTH + SPACING * 3.1
-                  : CARD_DOCTOR_LENGTH + SPACING * 3
-              }
-              disableIntervalMomentum
-              snapToAlignment="center"
-              onScroll={scrollHandler}
             />
           </View>
-          <View>
-            <Text style={[globalStyle.titleText]}>
-              Danh sách gợi ý{" "}
-              <Text style={{ color: "red", textAlign: "center" }}>
-                ({suggestDoctorData?.length})
-              </Text>
-            </Text>
-            <View style={{height: 300}}>
-              <FlatList
-              showsVerticalScrollIndicator={false}
-                // scrollEnabled={true}
-                data={suggestDoctorData}
-                renderItem={({ item, index }) => (
-                  <SuggestDoctorItem
-                    name={item?.fullName}
-                    specialist={item?.description}
-                    rate={item?.rate}
-                    onPress={()=>onPressDoctorSuggest(item.id)}
-                  />
-                )}
-              />
-            </View>
-          </View>
         </View>
-      </SafeAreaView>
-   
+      </View>
+    </SafeAreaView>
   );
 };
 

@@ -14,10 +14,10 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import axios from "axios";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { globalFontSize } from "src/constants/fontSize";
-import { DateSlider, Header, InteractBox } from "@/components";
+import { ButtonText, DateSlider, Header, InteractBox } from "@/components";
 import FastImage from "react-native-fast-image";
 import { InteractData } from "src/data/interactData";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import moment from "moment";
 import { globalColor } from "src/constants/color";
 import { apiGetUserById } from "src/api/api_getUserById";
@@ -40,14 +40,13 @@ const DoctorDetailScreen = () => {
   const [schedules, setSchedules] = useState<any>([]);
   const [selectedTimes, setSelectedTimes] = useState<any[]>([]);
   const [selectedTimeIndex, setSelectedTimeIndex] = useState<number>(-1);
-  // console.log('location', location)
+  const [price, setPrice] = useState<number>(200000);
 
   const handlePressDateSlider = (index: number, date: number) => {
     setSelectedDateIndex(index);
     setSelectedDate(date);
     setSelectedTimeIndex(-1);
 
-    
     const formattedDate = `${String(date).padStart(2, "0")}-${String(
       month + 1
     ).padStart(2, "0")}-${year}`;
@@ -96,21 +95,22 @@ const DoctorDetailScreen = () => {
   }
 
   const handlePressTimeSlot = (index: number, time: string) => {
-    setSelectedTimeIndex(index === selectedTimeIndex ? -1 : index)
-    console.log('time', time); // Nếu đã chọn thì hủy chọn, nếu chưa chọn thì chọn
+    setSelectedTimeIndex(index === selectedTimeIndex ? -1 : index);
+    console.log("time", time); // Nếu đã chọn thì hủy chọn, nếu chưa chọn thì chọn
   };
 
   useEffect(() => {
     apiGetScheduleById(userId).then((res: any) => {
-      console.log("schedules", res.data);
+      // console.log("schedules", res.data);
       setSchedules(res.data.weekSchedule);
     });
 
     setDateInWeek(dates(new Date(year, month, date - 1)));
     apiGetUserById(userId).then((res: any) => {
-      console.log(res);
+      
       setUserData(res.data);
       setImgUrl(res?.data?.avatar);
+      console.log("user data", userData);
     });
   }, []);
 
@@ -127,6 +127,15 @@ const DoctorDetailScreen = () => {
     });
 
     Linking.openURL(url);
+  };
+  const onPressConfirm = () => {
+    navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTSCREEN,{
+      employee: {
+        employeeId: userData?.id,
+        employeeName: userData?.fullName,
+        price: price
+      }
+    })
   };
 
   return (
@@ -251,6 +260,26 @@ const DoctorDetailScreen = () => {
           </View>
         </ScrollView>
       </View>
+      <View style={styles.priceContainer}>
+        <Text style={globalStyle.titleText}>
+          {selectedDate && selectedTimeIndex !== -1
+            ? `Chi phí: ${price}`
+            : undefined}
+        </Text>
+      </View>
+      <ButtonText
+        disabled={!selectedDate || selectedTimeIndex === -1}
+        text="Đặt lịch"
+        onPress={() => onPressConfirm()}
+        styleContainer={{
+          height: 60,
+          backgroundColor: globalColor.primaryColor,
+          marginBottom: 25,
+          marginHorizontal: 12,
+          borderRadius: 8,
+        }}
+        styleText={{ fontWeight: "bold" }}
+      />
     </>
   );
 };
@@ -353,9 +382,14 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: "white",
     width: 140,
-    margin: 12,
+    marginRight: 12,
+    marginVertical: 12,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 8,
+  },
+  priceContainer: {
+    alignItems: "flex-end",
+    marginRight: 20,
   },
 });

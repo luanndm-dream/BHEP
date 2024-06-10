@@ -83,7 +83,7 @@ publicAxios.interceptors.response.use(
             ...response.data,
             statusCode: response.status,
         };
-        console.log('response api', responseObj)
+        // console.log('response api', responseObj)
         return responseObj;
     },
     function (error) {

@@ -29,6 +29,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { useAppSelector } from "@/redux";
+import { MajorData } from "src/data/majorData";
 
 const PartnerSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -93,7 +94,6 @@ const PartnerScreen = () => {
         navigation.navigate(STACK_NAVIGATOR_SCREENS?.MAINFLOWS);
         hideLoading();
       } else {
-        
         alert("Lỗi đăng kí");
         hideLoading();
       }
@@ -164,7 +164,7 @@ const PartnerScreen = () => {
                         style={{
                           height: "100%",
                           width: "100%",
-                          borderRadius: 40
+                          borderRadius: 40,
                         }}
                       />
                     ) : (
@@ -283,6 +283,7 @@ const PartnerScreen = () => {
           {/* DropDownList */}
           <View style={styles.dropDownListContainer}>
             <DropDownList
+              dataList={MajorData}
               visible={isVisible}
               onCancel={() => setIsVisible(!isVisible)}
               onSelectMajor={handleSelectMajor}
@@ -304,7 +305,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   titleContainer: {},
-    avatarContainer: {
+  avatarContainer: {
     justifyContent: "center",
     alignItems: "center",
     marginVertical: 12,
