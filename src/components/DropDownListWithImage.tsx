@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Keyboard,
+  Image,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import CustomModal from "./CustomModal";
@@ -19,22 +20,22 @@ import { globalColor } from "src/constants/color";
 import { TouchableOpacity } from "react-native";
 import { globalFontSize } from "src/constants/fontSize";
 
-interface DropDownListProps {
+interface DropDownListWithImageProps {
   onConfirm?: Function;
   onCancel: () => void;
   visible: boolean;
   placeholderText?: string;
-  onSelectMajor?: (majorId: number, majorIdName: string) => void;
+  onSelectItem?: (itemId: number, itemName: string, image?: string) => void;
   dataList?: any;
   multiSelect?: boolean;
   onConfirmMultiSelected?: ((indexArray: any) => void) | undefined;
 }
 
-const DropDownList: React.FC<DropDownListProps> = ({
+const DropDownListWithImage: React.FC<DropDownListWithImageProps> = ({
   onConfirm,
   onCancel,
   visible,
-  onSelectMajor,
+  onSelectItem,
   placeholderText,
   dataList,
   multiSelect,
@@ -49,7 +50,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
     );
   };
 
-  const onPressItem = (itemId: number, itemName: string) => {
+  const onPressItem = (itemId: number, itemName: string, image?: string) => {
     if (multiSelect) {
       const isSelected = selectedItems.includes(itemId);
       if (isSelected) {
@@ -58,7 +59,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
         setSelectedItems([...selectedItems, itemId]);
       }
     } else {
-      onSelectMajor && onSelectMajor(itemId, itemName);
+      onSelectItem && onSelectItem(itemId, itemName, image);
       onCancel?.();
     }
   };
@@ -81,13 +82,6 @@ const DropDownList: React.FC<DropDownListProps> = ({
         <View style={styles.container}>
           <View style={styles.indicatorTop} />
           <View>
-            <TextInput
-              placeholder={placeholderText}
-              onChangeText={(text) => setSearchValue(text)}
-              value={searchValue}
-              style={styles.labelSearch}
-            />
-
             <SafeAreaView>
               <FlatList
                 style={
@@ -100,18 +94,11 @@ const DropDownList: React.FC<DropDownListProps> = ({
                   const isSelected = selectedItems.includes(item.id);
                   return (
                     <TouchableOpacity
-                      onPress={() => onPressItem(item.id, item.name)}
+                      onPress={() => onPressItem(item.id, item.name, item.img)}
                     >
                       <View style={styles.itemContainer}>
                         <View style={styles.itemBox}>
-                          <Text
-                            style={[
-                              styles.item,
-                              isSelected && styles.selectedItem,
-                            ]}
-                          >
-                            {item.id}.{" "}
-                          </Text>
+                          <Image source={item.img} style={{width: 30, height: 30, marginRight: 20}}/>
                           <Text
                             style={[
                               styles.item,
@@ -124,6 +111,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
                         <MaterialCommunityIcons
                           name="chevron-right"
                           size={30}
+                          color='white'
                         />
                       </View>
                     </TouchableOpacity>
@@ -155,7 +143,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
   );
 };
 
-export default DropDownList;
+export default DropDownListWithImage;
 
 const styles = StyleSheet.create({
   container: {
@@ -174,19 +162,25 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     alignSelf: "center",
     marginTop: 4,
+    marginBottom: 12,
   },
   itemContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: 'center',
+    backgroundColor: globalColor.secondaryColor,
+    padding: 16,
+    borderRadius: 8
   },
   itemBox: {
     flexDirection: "row",
     marginVertical: 6,
+    alignItems: 'center'
   },
   item: {
     fontSize: globalFontSize.lableFont,
     fontWeight: "bold",
-    color: "black",
+    color: "white",
   },
   labelSearch: {
     height: 50,

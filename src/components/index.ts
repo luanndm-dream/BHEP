@@ -6,6 +6,7 @@ export { default as IconFeature } from "./IconFeature";
 export { default as Header } from "./Header";
 export { default as TextInputWithIcon } from "./TextInputWithIcon";
 export { default as DropDownList } from "./DropDownList";
+export { default as DropDownListWithImage } from "./DropDownListWithImage";
 export { default as DropDownLabel } from "./DropDownLabel";
 export { default as NearByDoctorCard } from "./NearByDoctorCard";
 export { default as HeaderProfileCard } from "./HeaderProfileCard";
