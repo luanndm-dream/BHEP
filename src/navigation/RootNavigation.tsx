@@ -6,6 +6,7 @@ import {
   createNavigationContainerRef,
 } from "@react-navigation/native";
 import {
+  AppointmentDetailScreen,
   AppointmentScreen,
   CommunityScreen,
   DoctorDetailScreen,
@@ -17,8 +18,10 @@ import {
   LoginScreen,
   MatchLocationScreen,
   MyHealthScreen,
+  MyScheduleScreen,
   OnBoardingScreen,
   PartnerScreen,
+  PaymentScreen,
   ProfileScreen,
   QuestionnaireScreen,
   RegisterScreen,
@@ -200,6 +203,19 @@ const RootNavigation = () => {
         name={STACK_NAVIGATOR_SCREENS?.APPOINTMENTSCREEN}
         component={AppointmentScreen}
       />
+       <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.APPOINTMENTDETAILSCREEN}
+        component={AppointmentDetailScreen}
+      />
+       <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.MYSCHEDULESCREEN}
+        component={MyScheduleScreen}
+      />
+     <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.PAYMENTSCREEN}
+        component={PaymentScreen}
+      />
+
     </Stack.Navigator>
   );
 

@@ -1,3 +1,7 @@
 export {default as ProfileScreen} from './ProfileScreen'
 export {default as InformationScreen} from './InformationScreen'
 export {default as MyHealthScreen} from './MyHealthScreen'
+export {default as MyScheduleScreen} from './MyScheduleScreen'
+export {default as PaymentScreen} from './PaymentScreen'
+export {default as ScheduleItem} from './ScheduleItem'
+export {default as AppointmentDetailScreen} from './AppointmentDetailScreen'

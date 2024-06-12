@@ -1,4 +1,5 @@
 import { useAppSelector } from "@/redux";
+import { STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { globalColor } from "src/constants/color";
 
 export const getFeatureProfileData = () => {
@@ -9,12 +10,28 @@ export const getFeatureProfileData = () => {
             name: 'Thông Tin Cá Nhân',
             iconName: "account",
             color: globalColor.blue2,
+            screen: STACK_NAVIGATOR_SCREENS.INFORMATIONSCREEN
         },
         {
             id: 3,
             name: 'Sức khoẻ của tôi',
             iconName: "application-edit",
             color: globalColor.secondaryColor,
+            screen: STACK_NAVIGATOR_SCREENS.MYHEALTHSCREEN
+        },
+        {
+            id: 4,
+            name: 'Lịch hẹn của tôi',
+            iconName: "clock-outline",
+            color: '#F3B580',
+            screen: STACK_NAVIGATOR_SCREENS.MYSCHEDULESCREEN
+        },
+        {
+            id: 5,
+            name: 'Thanh toán',
+            iconName: "credit-card-outline",
+            color: '#51829B',
+            screen: STACK_NAVIGATOR_SCREENS.PAYMENTSCREEN,
         },
     ];
     
@@ -24,6 +41,7 @@ export const getFeatureProfileData = () => {
             name: 'Làm Việc',
             iconName: "calendar-check",
             color: '#01b585',
+            screen: STACK_NAVIGATOR_SCREENS.WORKSPACEDOCTORSCREEN
         });
     }
 

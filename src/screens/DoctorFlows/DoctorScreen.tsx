@@ -22,8 +22,10 @@ import { CARD_DOCTOR_LENGTH, SPACING } from "src/constants/size";
 import SuggestDoctorItem from "./SuggestDoctorItem";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { apiGetDoctors } from "src/api/api_get_Doctor";
+import useLoading from "src/hook/useLoading";
 
 const DoctorScreen = () => {
+  const {showLoading, hideLoading} = useLoading();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation<any>();
   const scrollX = useSharedValue(0);
@@ -54,11 +56,14 @@ const DoctorScreen = () => {
   // console.log()
 
   useEffect(() => {
+    showLoading()
     apiGetDoctors(5).then((res: any) => {
       console.log("res", res);
       if (res.statusCode === 200) {
+        hideLoading()
         setSuggestDoctorData(res.data.items);
       }
+      hideLoading()
     });
   }, []);
 

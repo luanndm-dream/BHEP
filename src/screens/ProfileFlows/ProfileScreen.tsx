@@ -37,60 +37,22 @@ const ProfileScreen = () => {
   const [featureProfileData, setFeatureProfileData] = useState<any>(
     getFeatureProfileData()
   );
-  const onPressIconHandle = (name: string) => {
-    switch (name) {
-      case "Thông Tin Cá Nhân": {
-        navigation.navigate(STACK_NAVIGATOR_SCREENS?.INFORMATIONSCREEN, {
-          data: userData,
-        });
-        break;
-      }
-      case "Làm Việc": {
-        navigation.navigate(STACK_NAVIGATOR_SCREENS?.WORKSPACEDOCTORSCREEN);
-        break;
-      }
-      case "Sức khoẻ của tôi": {
-        navigation.navigate(STACK_NAVIGATOR_SCREENS?.MYHEALTHSCREEN);
-        break;
-      }
-      // case "Văn phòng gần đây": {
-      //   navigation.navigate("OfficeMapViewScreen", {
-      //     // dataOffice: dataOffice
-      //   });
-      //   break;
-      // }
-    }
+  const onPressIconHandle = (screen: string) => {
+    navigation.navigate(screen);
   };
   useFocusEffect(
     useCallback(() => {
       apiGetUserById(Number(userData.id)).then((res) => {
         setData(res?.data);
-        // if(res?.data?.roleName === 'Employee'){
-        //   setFeatureProfileData((prevData:any) => [
-        //     ...prevData,
-        //     {
-        //       id: 2,
-        //       name: 'Làm Việc',
-        //       iconName: "calendar-check",
-        //       color: '#01b585',
-        //     }
-        //   ]);
-        // }
       });
     }, [])
   );
-  // useEffect(()=>{
   const resultData = getFeatureProfileData();
-  //   setFeatureProfileData(resultData)
-  // },[data])
+
 
   const onPressConfirm = async () => {
     setIsVisible(false);
     dispatch(resetUserInfo());
-    // navigation.reset({
-    //   index: 0,
-    //   routes: [{ name: "LoginScreen" }],
-    // });
     await AsyncStorage.removeItem("auth");
     setTimeout(() => {
       Toast.show({
@@ -109,7 +71,7 @@ const ProfileScreen = () => {
       cropping: true,
       includeBase64: true,
     }).then((image: any) => {
-      console.log('uri',image.path)
+      console.log("uri", image.path);
       const form = new FormData();
       form.append("file", {
         // uri: Platform.OS === 'android'? image?.path: image?.path.replace('file://',''),
@@ -117,17 +79,13 @@ const ProfileScreen = () => {
         type: "image/jpg",
         name: "image.jpg",
       });
-     
+
       apiPostImage("luan111111", form).then((res) => {
         console.log("form", res);
       });
     });
   };
-  //  useEffect(()=>{
-
-  //  },[handleChangeAvatar])
-  https://bhepstorage.blob.core.windows.net/bhepallimage/avatars/bacsi-1714974660459-1714974660
-  return (
+  https: return (
     <>
       <ScrollView style={{ flex: 1 }}>
         <View style={styles.headerContainer}>
@@ -190,7 +148,7 @@ const ProfileScreen = () => {
                   featureName={item.name}
                   iconName={item.iconName}
                   backgroundIconColor={item.color}
-                  onPress={() => onPressIconHandle(item.name)}
+                  onPress={() => onPressIconHandle(item.screen)}
                 />
               );
             }}

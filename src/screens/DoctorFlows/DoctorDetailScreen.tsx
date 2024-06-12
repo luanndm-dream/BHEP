@@ -107,7 +107,6 @@ const DoctorDetailScreen = () => {
 
     setDateInWeek(dates(new Date(year, month, date - 1)));
     apiGetUserById(userId).then((res: any) => {
-      
       setUserData(res.data);
       setImgUrl(res?.data?.avatar);
       console.log("user data", userData);
@@ -129,13 +128,18 @@ const DoctorDetailScreen = () => {
     Linking.openURL(url);
   };
   const onPressConfirm = () => {
-    navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTSCREEN,{
+    const formattedDate = `${String(selectedDate).padStart(2, "0")}-${String(
+      month + 1
+    ).padStart(2, "0")}-${year}`;
+    navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTSCREEN, {
       employee: {
         employeeId: userData?.id,
         employeeName: userData?.fullName,
-        price: price
-      }
-    })
+        price: price,
+        date: formattedDate,
+        time: selectedTimes,
+      },
+    });
   };
 
   return (
