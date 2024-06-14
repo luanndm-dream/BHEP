@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { globalColor } from "src/constants/color";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { globalStyle } from "src/constants";
 interface ScheduleItemProps {
   name?: string;
   date: any;
   status?: number;
+  image?: string,
   onPress?: () => void;
 }
 const ScheduleItem: React.FC<ScheduleItemProps> = ({
@@ -13,6 +15,7 @@ const ScheduleItem: React.FC<ScheduleItemProps> = ({
   name,
   onPress,
   status,
+  image
 }) => {
   const [datePart, timePart] = date.split(" ");
   const renderIconStatus = () => {
@@ -27,22 +30,30 @@ const ScheduleItem: React.FC<ScheduleItemProps> = ({
       case 0:
         return (
           <View style={styles.statusContainer}>
-            <Text style={styles.statusText}>Đang chờ xác nhận</Text>
+            <Text style={styles.statusText}>Đang chờ</Text>
             <MaterialCommunityIcons name="sync" size={30} color="orange" />
           </View>
         );
       case 1:
         return (
           <View style={styles.statusContainer}>
-            <Text style={styles.statusText}>Đã chấp nhận</Text>
-            <MaterialCommunityIcons name="heart-circle" size={30} color="#31ffba" />
+            <Text style={styles.statusText}>Chấp nhận</Text>
+            <MaterialCommunityIcons
+              name="heart-circle"
+              size={30}
+              color="#31ffba"
+            />
           </View>
         );
       case 2:
         return (
           <View style={styles.statusContainer}>
             <Text style={styles.statusText}>Đã hoàn thành</Text>
-            <MaterialCommunityIcons name="check-circle" size={30} color="#01c80b" />
+            <MaterialCommunityIcons
+              name="check-circle"
+              size={30}
+              color="#01c80b"
+            />
           </View>
         );
       case 3:
@@ -60,7 +71,11 @@ const ScheduleItem: React.FC<ScheduleItemProps> = ({
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.contentContainer}>
-        <View></View>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Image source={{uri: image}} style={{height: 30, width: 30, borderRadius: 15}}/>
+        <Text style={[globalStyle.textNormal,{marginLeft: 12, color: 'white', fontWeight: '600'}]}>{name}</Text>
+        </View>
+      
         <View>{renderIconStatus()}</View>
       </View>
       <View style={styles.dateTimeContainer}>
@@ -95,13 +110,13 @@ const styles = StyleSheet.create({
     margin: 6,
     backgroundColor: globalColor.secondaryColor,
     borderRadius: 12,
-    padding: 6
+    padding: 6,
   },
   contentContainer: {
-    justifyContent: 'space-between',
-    flexDirection: 'row',
+    justifyContent: "space-between",
+    flexDirection: "row",
     marginHorizontal: 8,
-    flex: 1,
+    // flex: 1,
   },
   dateTimeContainer: {
     flexDirection: "row",
@@ -113,6 +128,7 @@ const styles = StyleSheet.create({
     opacity: 1,
     padding: 8,
     borderRadius: 8,
+    marginTop: 40
   },
   lable: {
     flexDirection: "row",
@@ -125,12 +141,12 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   statusContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   statusText: {
     marginRight: 8,
     fontSize: 16,
-    color: 'white',
+    color: "white",
   },
 });

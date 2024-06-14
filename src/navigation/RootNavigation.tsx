@@ -28,6 +28,7 @@ import {
   ScheduleScreen,
   SplashScreen,
   TrackingHealthScreen,
+  WebViewScreen,
   WorkSpaceDoctorScreen,
 } from "@/screens";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
@@ -214,6 +215,10 @@ const RootNavigation = () => {
      <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.PAYMENTSCREEN}
         component={PaymentScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.WEBVIEWSCREEN}
+        component={WebViewScreen}
       />
 
     </Stack.Navigator>

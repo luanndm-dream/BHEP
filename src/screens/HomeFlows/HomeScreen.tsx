@@ -53,7 +53,7 @@ const HomeScreen = () => {
         <View
           style={[
             styles.header,
-            { marginTop: Platform.OS === "android" ? 20 : 0 },
+            { marginTop: Platform.OS === "android" ? 0 : 0 },
           ]}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>

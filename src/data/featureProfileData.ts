@@ -7,7 +7,7 @@ export const getFeatureProfileData = () => {
     const data = [
         {
             id: 1,
-            name: 'Thông Tin Cá Nhân',
+            name: 'Thông tin cá nhân',
             iconName: "account",
             color: globalColor.blue2,
             screen: STACK_NAVIGATOR_SCREENS.INFORMATIONSCREEN
@@ -38,7 +38,7 @@ export const getFeatureProfileData = () => {
     if (roleId === 3) {
         data.push({
             id: 2,
-            name: 'Làm Việc',
+            name: 'Làm việc',
             iconName: "calendar-check",
             color: '#01b585',
             screen: STACK_NAVIGATOR_SCREENS.WORKSPACEDOCTORSCREEN

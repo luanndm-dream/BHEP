@@ -16,11 +16,13 @@ const AppointmentDetailScreen = () => {
       <Header headerTitle="Chi tiết lịch hẹn" />
       <SafeAreaView style={styles.container}>
         <View style={styles.labelContainer}>
-          <Text style={[globalStyle.titleText, { color: "grey" }]}>Bác sĩ</Text>
+          <Text style={[globalStyle.titleText, { color: "grey" }]}>
+            {userRoleId === 2 ? "Bác sĩ" : "Người dùng"}
+          </Text>
           <Text style={globalStyle.titleText}>
             {userRoleId === 2
-              ? appoinmentData?.employeeId
-              : userRoleId === 3 && appoinmentData?.customerId}
+              ? appoinmentData?.employeeName
+              : userRoleId === 3 && appoinmentData?.customerName}
           </Text>
         </View>
       </SafeAreaView>

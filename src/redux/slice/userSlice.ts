@@ -1,6 +1,7 @@
 // userSlice.ts
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { Platform } from "react-native";
 // import { RootState } from "redux/store";
 
 const initialState = {
@@ -10,7 +11,7 @@ const initialState = {
   refreshTokenExpiryTime: undefined,
   userData: {
       id: 5,
-      roleId: 3,
+      roleId: Platform.OS === 'android'? 2 : 3,
       geoLocationId: undefined,
       fullName: undefined,
       email: undefined,

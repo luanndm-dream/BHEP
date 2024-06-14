@@ -19,6 +19,7 @@ const MySchedule = () => {
       if (res.statusCode === 200) {
         hideLoading();
         setAppointment(res?.data?.appointments);
+        console.log("appointment", appointment)
       }
       hideLoading();
     });
@@ -37,6 +38,8 @@ const MySchedule = () => {
         <FlatList data={appointment} renderItem={({item,index})=>{
           return (
             <ScheduleItem date={item?.date} status={item?.status} 
+            name={userData.roleId === 2? item.employeeName : item.customerName}
+            image={userData.roleId === 2? item.employeeAvatar : item.customerAvatar}
             onPress={()=>onPressItemHandle(item.id, index)}
             />
           )
