@@ -6,5 +6,9 @@ export const globalColor = {
     grey: '#8F8D91',
     backgroundTag: '#DBEAFE',
     blue: '#0A5BF1',
-    blue2: '#002ebe'
+    blue2: '#002ebe',
+    approveBg: '#baf6d0',
+    approve:'#15803d',
+    cancelBg: '#fecaca',
+    cancel: '#BF2D2B'
 }

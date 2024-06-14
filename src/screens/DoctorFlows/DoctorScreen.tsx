@@ -25,7 +25,7 @@ import { apiGetDoctors } from "src/api/api_get_Doctor";
 import useLoading from "src/hook/useLoading";
 
 const DoctorScreen = () => {
-  const {showLoading, hideLoading} = useLoading();
+  const { showLoading, hideLoading } = useLoading();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation<any>();
   const scrollX = useSharedValue(0);
@@ -56,14 +56,14 @@ const DoctorScreen = () => {
   // console.log()
 
   useEffect(() => {
-    showLoading()
+    showLoading();
     apiGetDoctors(5).then((res: any) => {
       console.log("res", res);
       if (res.statusCode === 200) {
-        hideLoading()
+        hideLoading();
         setSuggestDoctorData(res.data.items);
       }
-      hideLoading()
+      hideLoading();
     });
   }, []);
 
@@ -164,30 +164,29 @@ const DoctorScreen = () => {
             onScroll={scrollHandler}
           />
         </View>
-        <View>
-          <Text style={[globalStyle.titleText]}>
-            Danh sách gợi ý{""}
-            <Text style={{ color: "red", textAlign: "center" }}>
-              {suggestDoctorData?.length
-                ? `(${suggestDoctorData.length})`
-                : "0"}
-            </Text>
+      </View>
+      <View style={{ flex: 1, marginBottom: 40 }}>
+        <Text style={[globalStyle.titleText]}>
+          Danh sách gợi ý
+          <Text style={{ color: "red", textAlign: "center" }}>
+            {suggestDoctorData?.length ? `(${suggestDoctorData.length})` : "0"}
           </Text>
-          <View style={{ height: 300 }}>
-            <FlatList
-              showsVerticalScrollIndicator={false}
-              // scrollEnabled={true}
-              data={suggestDoctorData}
-              renderItem={({ item, index }) => (
-                <SuggestDoctorItem
-                  name={item?.fullName}
-                  specialist={item?.description}
-                  rate={item?.rate}
-                  onPress={() => onPressDoctorSuggest(item.id)}
-                />
-              )}
-            />
-          </View>
+        </Text>
+        <View >
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            // scrollEnabled={true}
+            data={suggestDoctorData}
+            renderItem={({ item, index }) => (
+              <SuggestDoctorItem
+                name={item?.fullName}
+                image={item?.avatar}
+                specialist={item?.description}
+                rate={item?.rate}
+                onPress={() => onPressDoctorSuggest(item.id)}
+              />
+            )}
+          />
         </View>
       </View>
     </SafeAreaView>
@@ -198,7 +197,7 @@ export default DoctorScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     marginHorizontal: 8,
   },
   titleContainer: {

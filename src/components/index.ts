@@ -23,3 +23,4 @@ export { default as WheelPicker } from "./WheelPicker";
 export { default as DatePicker } from "./DatePicker";
 export { default as ButtonComponent } from "./ButtonComponent";
 export { default as TimePickerComponent } from "./TimePickerComponent";
+export { default as LabelComponent } from "./LabelComponent";

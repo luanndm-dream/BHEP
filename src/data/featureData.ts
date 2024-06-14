@@ -6,7 +6,7 @@ export const OutstandingFunciton  = [
     },
     {
         id: 6,
-        name: 'Bác sĩ gần chổ tôi',
+        name: 'Bác sĩ gần tôi',
         imgName: require('../assets/icons/advice.png')
     },
     {

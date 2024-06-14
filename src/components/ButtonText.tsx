@@ -1,11 +1,12 @@
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, StyleProp, StyleSheet, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import React from 'react';
+import { TextStyle } from 'react-native';
 
 interface ButtonTextProps {
     text?: string,
     onPress: () => void,
-    styleContainer?: any,
-    styleText?: any,
+    styleContainer?: StyleProp<ViewStyle>,
+    styleText?: StyleProp<TextStyle>,
     disabled?: boolean
 }
 
