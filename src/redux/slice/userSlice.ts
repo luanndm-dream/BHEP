@@ -13,7 +13,7 @@ const initialState = {
       id: 5,
       roleId: Platform.OS === 'android'? 2 : 3,
       geoLocationId: undefined,
-      fullName: undefined,
+      fullName: 'Thành Phú',
       email: undefined,
       identify: undefined,
       phoneNumber: undefined,

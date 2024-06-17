@@ -33,6 +33,13 @@ export const getFeatureProfileData = () => {
             color: '#51829B',
             screen: STACK_NAVIGATOR_SCREENS.PAYMENTSCREEN,
         },
+        {
+            id: 6,
+            name: 'Mua gói dịch vụ',
+            iconName: "cart-outline",
+            color: '#e0afd1',
+            screen: STACK_NAVIGATOR_SCREENS.SERVICESCREEN,
+        },
     ];
     
     if (roleId === 3) {

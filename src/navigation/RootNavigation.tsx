@@ -26,7 +26,10 @@ import {
   QuestionnaireScreen,
   RegisterScreen,
   ScheduleScreen,
+  ServiceDetailScreen,
+  ServiceScreen,
   SplashScreen,
+  TestScreen,
   TrackingHealthScreen,
   WebViewScreen,
   WorkSpaceDoctorScreen,
@@ -219,6 +222,14 @@ const RootNavigation = () => {
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.WEBVIEWSCREEN}
         component={WebViewScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.SERVICESCREEN}
+        component={ServiceScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.SERVICEDETAILSCREEN}
+        component={ServiceDetailScreen}
       />
 
     </Stack.Navigator>
