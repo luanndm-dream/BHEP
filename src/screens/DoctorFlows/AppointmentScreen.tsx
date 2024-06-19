@@ -13,16 +13,19 @@ import Toast from "react-native-toast-message";
 
 const AppointmentScreen = () => {
   const route = useRoute<any>();
-  const navigation = useNavigation<any>()
+  const navigation = useNavigation<any>();
   const userId = useAppSelector((state) => state.user.userData.id);
   const employeeData = route?.params.employee;
+  const price = route?.params.price;
   const [visible, setVisible] = useState<boolean>(false);
   const [visiblePopup, setVisiblePopup] = useState<boolean>(false);
   console.log(employeeData);
   const [symptom, setSymptom] = useState<any[]>();
   const [indexSymptom, setIndexSymptom] = useState<any[]>([]);
   const [note, setNote] = useState<string>();
+  const [charCount, setCharCount] = useState<number>(0);
   useEffect(() => {
+   console.log('time picked', employeeData?.time,)
     apiGetSymptom().then((res: any) => {
       console.log("res symtomp", res);
       setSymptom(res.data);
@@ -38,32 +41,32 @@ const AppointmentScreen = () => {
       userId,
       employeeData?.employeeId,
       employeeData.date,
+      employeeData?.time,
+      employeeData?.price,
       "undefined", // Address
       "undefined", // Latitude
       "undefined", // Longitude
-      `Time: ${employeeData?.time}`, // Description
+      "undefined", // Description
       note,
       indexSymptom
-    )
-      .then((res: any) => {
-        if(res.statusCode === 200){
-          Toast.show({
-            type: "success",
-            text1: 'Đặt lịch thành công',
-            text2: 'BHEP chúc bạn thật nhiều sức khoẻ!'
-          })
-          setVisiblePopup(!visiblePopup)
-          navigation.goBack();
-        }else{
-          Toast.show({
-            type: "error",
-            text1: 'Đặt lịch thất bại',
-            text2: 'Vui lòng kiểm tra lại thông tin của bạn'
-          })
-          setVisiblePopup(!visiblePopup)
-        }
-      })
-      
+    ).then((res: any) => {
+      if (res.statusCode === 200) {
+        Toast.show({
+          type: "success",
+          text1: "Đặt lịch thành công",
+          text2: "BHEP chúc bạn thật nhiều sức khoẻ!",
+        });
+        setVisiblePopup(!visiblePopup);
+        navigation.goBack();
+      } else {
+        Toast.show({
+          type: "error",
+          text1: "Đặt lịch thất bại",
+          text2: `Đã xảy ra lỗi ${res.message}`,
+        });
+        setVisiblePopup(!visiblePopup);
+      }
+    });
   };
   return (
     <>
@@ -77,9 +80,13 @@ const AppointmentScreen = () => {
           <Text style={[globalStyle.titleText, { color: "grey" }]}>
             Ngày đặt lịch
           </Text>
-          <Text style={globalStyle.titleText}>
-            {employeeData?.date} | {employeeData?.time}
+          <Text style={globalStyle.titleText}>{employeeData?.date}</Text>
+        </View>
+        <View style={styles.labelContainer}>
+          <Text style={[globalStyle.titleText, { color: "grey" }]}>
+            Thời gian
           </Text>
+          <Text style={globalStyle.titleText}>{employeeData?.time}</Text>
         </View>
         <View>
           <View style={styles.labelContainer}>
@@ -91,7 +98,7 @@ const AppointmentScreen = () => {
               text="Chọn"
               styleContainer={{
                 width: 80,
-                backgroundColor: globalColor.primaryColor,
+                backgroundColor: globalColor.secondaryColor,
                 borderRadius: 8,
               }}
             />
@@ -130,15 +137,17 @@ const AppointmentScreen = () => {
             </Text>
             <View style={styles.textInput}>
               <TextInput
-                style={{ height: 140, textAlignVertical: "top" }}
+                style={{ height: 140, textAlignVertical: "top", color: 'grey' }}
                 placeholder="Chi tiết không quá 200 kí tự..."
                 placeholderTextColor={"grey"}
                 multiline
                 maxLength={200}
                 onChangeText={(text: string) => {
                   setNote(text);
+                  setCharCount(text.length);
                 }}
               />
+              <Text style={styles.charCountText}>{charCount}/200</Text>
             </View>
           </View>
         </View>
@@ -215,5 +224,11 @@ const styles = StyleSheet.create({
     borderColor: "grey",
     padding: 10, // Ensure padding is added
     // textAlignVertical: "top",
+  },
+  charCountText: {
+    position: 'absolute', // added
+    bottom: 10, // added
+    right: 10, // added
+    color: 'grey',
   },
 });

@@ -25,7 +25,7 @@ interface DropDownListWithImageProps {
   onCancel: () => void;
   visible: boolean;
   placeholderText?: string;
-  onSelectItem?: (itemId: number, itemName: string, image?: string) => void;
+  onSelectItem?: (itemId: number, itemName: string, image?: string, typeMethod?: string) => void;
   dataList?: any;
   multiSelect?: boolean;
   onConfirmMultiSelected?: ((indexArray: any) => void) | undefined;
@@ -50,7 +50,7 @@ const DropDownListWithImage: React.FC<DropDownListWithImageProps> = ({
     );
   };
 
-  const onPressItem = (itemId: number, itemName: string, image?: string) => {
+  const onPressItem = (itemId: number, itemName: string, image?: string,typeMethod?: string) => {
     if (multiSelect) {
       const isSelected = selectedItems.includes(itemId);
       if (isSelected) {
@@ -94,7 +94,7 @@ const DropDownListWithImage: React.FC<DropDownListWithImageProps> = ({
                   const isSelected = selectedItems.includes(item.id);
                   return (
                     <TouchableOpacity
-                      onPress={() => onPressItem(item.id, item.name, item.img)}
+                      onPress={() => onPressItem(item.id, item.name, item.img, item.type)}
                     >
                       <View style={styles.itemContainer}>
                         <View style={styles.itemBox}>
@@ -170,7 +170,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: globalColor.secondaryColor,
     padding: 16,
-    borderRadius: 8
+    borderRadius: 8,
+    marginVertical: 6
   },
   itemBox: {
     flexDirection: "row",

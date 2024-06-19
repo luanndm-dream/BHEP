@@ -32,6 +32,7 @@ const LoginScreen = () => {
     
     const res:any = await apiLogin(email, password);     
     if (res.statusCode === 200) {
+    
       dispatch(setUserInfo(res?.data));
       await AsyncStorage.setItem('auth', JSON.stringify(res?.data)); 
     } else {

@@ -60,6 +60,9 @@ const ServiceDetailScreen = () => {
       }
     });
   };
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('vi-VN').format(price);
+  };
   return (
     <>
       <ImageBackground
@@ -113,7 +116,7 @@ const ServiceDetailScreen = () => {
                 <View style={{ marginLeft: 12 }}>
                   <Text style={styles.itemName}>{item.name}</Text>
                   <Text style={styles.itemPrice}>
-                    {item.price}đ/ {item.duration} Tháng
+                    {formatPrice(item.price)}đ/ {item.duration} Tháng
                   </Text>
                 </View>
               </TouchableOpacity>

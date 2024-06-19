@@ -9,24 +9,38 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { ButtonText, Header } from "@/components";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { globalColor } from "src/constants/color";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { apiUpdateUser } from "src/api/api_put_user";
 
 const InformationScreen = () => {
-  const [isEdit, setIsEdit] = useState<boolean>(false);
-  const [password, setPassword] = useState<any>("*************");
-  const [isChangePassword, setIsChangePassWord] = useState<boolean>(false)
   const route = useRoute<any>();
-  const data = route.params?.data;
-  console.log(data);
+  const data = route?.params?.data;
+  const [isEdit, setIsEdit] = useState<boolean>(false);
+  
+  const [isChangePassword, setIsChangePassWord] = useState<boolean>(false);
+  const [fullName, setFullName] = useState<string>(data?.fullName);
+  const [email, setEmail] = useState<string>(data?.email);
+  const [phoneNumber, setPhoneNumber] = useState<string>(data?.phoneNumber);
+  const navigate = useNavigation<any>()
 
   const editHandle = () => {
+    if (isEdit) {
+      apiUpdateUser(data?.id, fullName, email, phoneNumber, data?.gender).then(
+        (res: any) => {
+          console.log(res);
+        }
+      );
+
+      // Sau khi lưu thành công, có thể thực hiện các hành động cần thiết khác
+    }
     setIsEdit(!isEdit);
   };
   const onChangePassword = () => {
-    setIsChangePassWord(!isChangePassword)
-  }
+    // setIsChangePassWord(!isChangePassword);
+    navigate.navigate(STACK_NAVIGATOR_SCREENS.CHANGEPASSWORDSCREEN)
+  };
   return (
     <>
       <Header headerTitle="Thông tin cá nhân" />
@@ -38,38 +52,52 @@ const InformationScreen = () => {
           <Text style={[globalStyle.titleText, { color: globalColor.grey }]}>
             Họ và tên
           </Text>
-          <TextInput style={styles.textInput} value={data?.fullName} editable={isEdit}/>
+          <TextInput
+            style={styles.textInput}
+            value={fullName}
+            editable={isEdit}
+            onChangeText={(text) => setFullName(text)}
+          />
         </View>
         <View>
           <Text style={[globalStyle.titleText, { color: globalColor.grey }]}>
             Email
           </Text>
-          <TextInput style={styles.textInput} value={data?.email} editable={isEdit}/>
+          <TextInput
+            style={styles.textInput}
+            value={email}
+            editable={isEdit}
+            onChangeText={(text) => setEmail(text)}
+          />
         </View>
         <View>
           <Text style={[globalStyle.titleText, { color: globalColor.grey }]}>
             Số điện thoại
           </Text>
-          <TextInput style={styles.textInput} value={data?.phoneNumber} editable={isEdit}/>
+          <TextInput
+            style={styles.textInput}
+            value={phoneNumber}
+            editable={isEdit}
+            onChangeText={(text) => setPhoneNumber(text)}
+          />
         </View>
+
         <View>
           <View style={styles.passwordTitle}>
-          <Text style={[globalStyle.titleText, { color: globalColor.grey }]}>
-            Mật khẩu
-          </Text>
-          <TouchableOpacity onPress={onChangePassword}>
-          <Text style={styles.password}>
-            Đổi mật khẩu
-          </Text>
-          </TouchableOpacity>
+            <Text style={[globalStyle.titleText, { color: globalColor.grey }]}>
+              Mật khẩu
+            </Text>
+            <TouchableOpacity onPress={onChangePassword}>
+              <Text style={styles.password}>Đổi mật khẩu</Text>
+            </TouchableOpacity>
           </View>
-          
-          <TextInput
-          editable={isChangePassword}
+
+          {/* <TextInput
+            editable={isChangePassword}
             style={styles.textInput}
             value={password}
             onTouchStart={() => setPassword(undefined)}
-          />
+          /> */}
         </View>
         {/* <View>
           <Text style={[globalStyle.titleText, {color: globalColor.grey}]}>Giới thiệu bản thân</Text>
@@ -83,7 +111,7 @@ const InformationScreen = () => {
           styleContainer={isEdit ? styles.editButton : styles.confirmButton}
           styleText={{
             color: "white",
-            fontWeight: 'bold'
+            fontWeight: "bold",
           }}
         />
       </View>
@@ -130,11 +158,11 @@ const styles = StyleSheet.create({
   },
   password: {
     color: globalColor.blue,
-    fontWeight: '600'
+    fontWeight: "600",
   },
   passwordTitle: {
-    flexDirection: 'row',
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: 'space-between'
-  }
+    justifyContent: "space-between",
+  },
 });

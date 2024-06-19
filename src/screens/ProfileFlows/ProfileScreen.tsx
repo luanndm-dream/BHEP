@@ -25,8 +25,11 @@ import Toast from "react-native-toast-message";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { apiPostImage } from "src/api/api_post_image";
 import mime from "mime";
+import { apiUpdateUser } from "src/api/api_put_user";
+import useLoading from "src/hook/useLoading";
 
 const ProfileScreen = () => {
+  const { showLoading, hideLoading } = useLoading();
   const userData = useAppSelector((state) => state.user.userData);
   const navigation = useNavigation<any>();
   const form = new FormData();
@@ -38,17 +41,15 @@ const ProfileScreen = () => {
     getFeatureProfileData()
   );
   const onPressIconHandle = (screen: string) => {
-    navigation.navigate(screen);
+    navigation.navigate(
+      screen,
+      screen === STACK_NAVIGATOR_SCREENS.INFORMATIONSCREEN
+        ? { data: data }
+        : undefined
+    );
   };
-  useFocusEffect(
-    useCallback(() => {
-      apiGetUserById(Number(userData.id)).then((res) => {
-        setData(res?.data);
-      });
-    }, [])
-  );
-  const resultData = getFeatureProfileData();
 
+  const resultData = getFeatureProfileData();
 
   const onPressConfirm = async () => {
     setIsVisible(false);
@@ -71,20 +72,44 @@ const ProfileScreen = () => {
       cropping: true,
       includeBase64: true,
     }).then((image: any) => {
-      console.log("uri", image.path);
-      const form = new FormData();
-      form.append("file", {
-        // uri: Platform.OS === 'android'? image?.path: image?.path.replace('file://',''),
-        uri: image?.path,
-        type: "image/jpg",
-        name: "image.jpg",
-      });
-
-      apiPostImage("luan111111", form).then((res) => {
-        console.log("form", res);
+      showLoading();
+      apiUpdateUser(
+        data.id,
+        data.fullName,
+        data.email,
+        data.phoneNumber,
+        data.gender,
+        {
+          uri:
+            Platform.OS === "android"
+              ? image?.path
+              : image?.path.replace("file://", ""),
+          type: "image/jpg",
+          name: "image.jpg",
+        }
+      ).then((res: any) => {
+        if (res.statusCode === 200) {
+          hideLoading();
+        }
+        hideLoading();
       });
     });
   };
+
+  useFocusEffect(
+    
+    useCallback(() => {
+      // showLoading();
+      apiGetUserById(Number(userData.id)).then((res:any) => {
+        if(res.statusCode === 200){
+          setData(res?.data);
+          hideLoading()
+        }
+        hideLoading()
+      });
+    }, [data, handleChangeAvatar])
+  );
+
   https: return (
     <>
       <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
@@ -97,10 +122,19 @@ const ProfileScreen = () => {
           </TouchableOpacity>
           <View style={styles.avatarContainer}>
             <TouchableOpacity onPress={handleChangeAvatar}>
-              <Image
-                source={require("../../assets/image/womanAvatar.png")}
-                style={styles.avatar}
-              />
+              {data?.avatar ? (
+                <Image source={{ uri: data?.avatar }} style={styles.avatar} />
+              ) : data?.gender === 1 ? (
+                <Image
+                  source={require("../../assets/image/manAvatar.png")}
+                  style={styles.avatar}
+                />
+              ) : (
+                <Image
+                  source={require("../../assets/image/womanAvatar.png")}
+                  style={styles.avatar}
+                />
+              )}
               <View style={styles.camera}>
                 <MaterialCommunityIcons
                   name="camera"
@@ -110,22 +144,6 @@ const ProfileScreen = () => {
               </View>
 
               {/* Logic nguyên bản */}
-              {/* {data?.avatar ? (
-              <Image
-                source={{ uri: `data:image/jpeg;base64,${data?.avatar}` }}
-                style={styles.avatar}
-              />
-            ) : data?.gender === 1 ? (
-              <Image
-                source={require("../../assets/image/manAvatar.png")}
-                style={styles.avatar}
-              />
-            ) : (
-              <Image
-                source={require("../../assets/image/womanAvatar.png")}
-                style={styles.avatar}
-              />
-            )} */}
             </TouchableOpacity>
             <View style={styles.nameBox}>
               <Text style={styles.name}>{data?.fullName}</Text>

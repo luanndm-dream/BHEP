@@ -15,9 +15,14 @@ import { paymentData } from "src/data/paymentData";
 import { globalColor } from "src/constants/color";
 import { WebView } from "react-native-webview";
 import { useNavigation } from "@react-navigation/native";
-import { apiPostPayment } from "src/api/api_post_payment";
+import {
+
+  apiPostPaymentVNPay,
+} from "src/api/api_post_payment_VNPay";
 import { useAppSelector } from "@/redux";
 import Toast from "react-native-toast-message";
+import { apiPostPaymentPayOS } from "src/api/api_post_payment_PayOS";
+import { apiPutPayment } from "src/api/api_put_Payment";
 
 const PaymentScreen = () => {
   const navigate = useNavigation<any>();
@@ -28,7 +33,7 @@ const PaymentScreen = () => {
   const [selectedMethod, setSelectedMethod] = useState<string>("");
   const [imageUrl, setImageUrl] = useState<any>();
   const [paymentUrl, setPaymentUrl] = useState<string>("");
-
+  const [paymentId, setPaymentId] = useState<number>(0)
   const onChangeValue = (value: string) => {
     // Remove non-numeric characters
     const numericValue = value.replace(/[^0-9]/g, "");
@@ -51,28 +56,50 @@ const PaymentScreen = () => {
   const onConfirm = () => {
     const numericValue = inputValue.replace(/[^0-9]/g, "");
     const paymentAmount = Number(numericValue);
+    if (selectedMethod.trim() === "Thanh toán qua VNPay") {
+      apiPostPaymentVNPay(userId, paymentAmount).then((res: any) => {
+        console.log("payment res ", res);
+        setPaymentUrl(res?.data?.paymentUrl);
+        setPaymentId(res?.data?.id)
+      });
+    } else if (selectedMethod.trim() === "Thanh toán qua PayOS") {
+      apiPostPaymentPayOS(
+        userId,
+        paymentAmount,
+        "Nạp tiền hệ thống",
+        [{
+          name: "Nạp tiền hệ thống",
+          quantity: 1,
+          price: 2000,
+        }],
+        "https://www.google.com/",
+        "https://www.google.com/",
+        Math.floor(Date.now() / 1000) + 600
+      ).then((res: any)=>{
+        console.log(res)
+        setPaymentUrl(res?.data?.checkoutUrl);
 
-    apiPostPayment(userId, paymentAmount).then((res: any) => {
-      console.log("payment res ", res);
-      setPaymentUrl(res?.data?.paymentUrl);
-    });
+      })
+    }
   };
-  
 
   const onNavigationStateChange = (navState: any) => {
     const { url } = navState;
-
+    console.log(navState)
     // Kiểm tra URL để xác định thanh toán thành công
-    if (url.includes("vnp_TransactionStatus=00")) {
+    if (url.includes("vnp_TransactionStatus=00") || navState.canGoBack) {
+      const amount = Number(inputValue.replace(/[^0-9]/g, ""));
+      const formattedAmount = amount.toLocaleString("vi-VN");
+      apiPutPayment()
       Toast.show({
         type: "success",
         text1: "Thanh toán thành công",
-        text2: `Bạn đã thanh toán thành công ${Number(inputValue.replace(/[^0-9]/g, "")) / 100} VND`, // Assuming amount is in smallest currency unit
-      });
+        text2: `Bạn đã thanh toán thành công ${formattedAmount} VND`, // Định dạng số tiền theo VND
+      })
+      
       navigate.goBack();
       setPaymentUrl("");
     } else {
-      // setPaymentUrl("");
     }
   };
   return (
@@ -131,7 +158,7 @@ const PaymentScreen = () => {
               styleText={{ fontWeight: "bold" }}
               disabled={
                 !selectedMethod ||
-                Number(inputValue.replace(/[^0-9]/g, "")) < 50000
+                Number(inputValue.replace(/[^0-9]/g, "")) < 1000
               }
             />
           </View>
@@ -142,7 +169,7 @@ const PaymentScreen = () => {
           visible={visible}
           dataList={payment}
           onCancel={() => setVisible(!visible)}
-          onSelectItem={(item, name, image) => {
+          onSelectItem={(item, name, image, typeMethod) => {
             setSelectedMethod(name);
             setImageUrl(image);
           }}
@@ -185,6 +212,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     width: "80%",
     textAlign: "center",
+    color: "black",
   },
   methodButton: {
     padding: 12,

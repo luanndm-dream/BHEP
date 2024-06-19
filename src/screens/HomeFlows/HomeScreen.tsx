@@ -78,8 +78,10 @@ const HomeScreen = () => {
           <Text style={globalStyle.titleText}>Tính năng nổi bật</Text>
           <View>
             <FlatList
+            scrollEnabled={false}
               data={OutstandingFunciton}
-              numColumns={3}
+              keyExtractor={(item)=>item.id.toString()}
+              numColumns={4}
               columnWrapperStyle={{
                 justifyContent: "space-between",
                 flex: 1,

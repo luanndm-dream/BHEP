@@ -40,7 +40,7 @@ const ScheduleScreen = () => {
 
   const onAddTimeSlot = () => {
     if (fromTime && toTime && selected) {
-      const timeSlot = `${fromTime} - ${toTime}`;
+      const timeSlot = `${fromTime}-${toTime}`;
       setTimeSlots((prevTimeSlots) => ({
         ...prevTimeSlots,
         [selected]: [...(prevTimeSlots[selected] || []), timeSlot],
@@ -156,12 +156,12 @@ const ScheduleScreen = () => {
                     borderRadius: 8,
                     borderWidth: 1,
                     height: 40,
-                    width: "50%",
+                    width: "40%",
                     alignItems: "center",
                     justifyContent: "space-between",
                     marginVertical: 10, // Adjust margin for better layout
                     flexDirection: "row",
-                    paddingHorizontal: 12,
+                    paddingHorizontal: 8,
                   }}
                 >
                   <Text style={styles.timeSlotText}>{slot}</Text>

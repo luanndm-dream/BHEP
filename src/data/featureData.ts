@@ -19,6 +19,12 @@ export const OutstandingFunciton  = [
         imgName: require('../assets/icons/medical-report.png'),
         screen: STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN
     },
+    {
+        id: 5,
+        name: 'Đo sức khoẻ',
+        imgName: require('../assets/icons/monitor.png'),
+        screen: STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN
+    },
     // {
     //     id: 4,
     //     name: 'Test',

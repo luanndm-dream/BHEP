@@ -39,8 +39,9 @@ const DoctorDetailScreen = () => {
   const [selectedDate, setSelectedDate] = useState<number>(Number(date));
   const [schedules, setSchedules] = useState<any>([]);
   const [selectedTimes, setSelectedTimes] = useState<any[]>([]);
+  const [selectedTime, setSelectedTime] = useState<any>();
   const [selectedTimeIndex, setSelectedTimeIndex] = useState<number>(-1);
-  const [price, setPrice] = useState<number>(200000);
+  const [price, setPrice] = useState<number>(0);
 
   const handlePressDateSlider = (index: number, date: number) => {
     setSelectedDateIndex(index);
@@ -50,10 +51,9 @@ const DoctorDetailScreen = () => {
     const formattedDate = `${String(date).padStart(2, "0")}-${String(
       month + 1
     ).padStart(2, "0")}-${year}`;
-    const scheduleForDate = schedules.find(
+    const scheduleForDate = schedules?.find(
       (schedule: any) => schedule.date === formattedDate
     );
-
     if (scheduleForDate) {
       setSelectedTimes(scheduleForDate.time);
     } else {
@@ -96,20 +96,23 @@ const DoctorDetailScreen = () => {
 
   const handlePressTimeSlot = (index: number, time: string) => {
     setSelectedTimeIndex(index === selectedTimeIndex ? -1 : index);
-    console.log("time", time); // Nếu đã chọn thì hủy chọn, nếu chưa chọn thì chọn
+    console.log("time", time);
+    setSelectedTime(time)
+    // setSelectedTimes(time) // Nếu đã chọn thì hủy chọn, nếu chưa chọn thì chọn
   };
 
   useEffect(() => {
     apiGetScheduleById(userId).then((res: any) => {
       // console.log("schedules", res.data);
-      setSchedules(res.data.weekSchedule);
+      setSchedules(res?.data?.weekSchedule);
     });
 
     setDateInWeek(dates(new Date(year, month, date - 1)));
     apiGetUserById(userId).then((res: any) => {
       setUserData(res.data);
       setImgUrl(res?.data?.avatar);
-      console.log("user data", userData);
+      setPrice(res?.data?.workProfile?.price)
+      console.log("user data", );
     });
   }, []);
 
@@ -137,7 +140,7 @@ const DoctorDetailScreen = () => {
         employeeName: userData?.fullName,
         price: price,
         date: formattedDate,
-        time: selectedTimes,
+        time: selectedTime,
       },
     });
   };
@@ -381,11 +384,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "grey",
     paddingVertical: 4,
+    textAlign: 'center',
+    justifyContent: 'center'
   },
   timeLabel: {
     height: 40,
     backgroundColor: "white",
-    width: 140,
+    paddingHorizontal: 6,
     marginRight: 12,
     marginVertical: 12,
     justifyContent: "center",

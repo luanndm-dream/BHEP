@@ -71,27 +71,27 @@ const DoctorScreen = () => {
     {
       id: 1,
       name: "Đa khoa",
-      imgName: require("../../assets/image/doctor.jpeg"),
+      imgName: require("../../assets/image/doctor.png"),
     },
     {
       id: 2,
       name: "Tim mạch",
-      imgName: require("../../assets/image/doctor.jpeg"),
+      imgName: require("../../assets/image/doctor.png"),
     },
     {
       id: 3,
       name: "Thần kinh",
-      imgName: require("../../assets/image/doctor.jpeg"),
+      imgName: require("../../assets/image/doctor.png"),
     },
     {
       id: 4,
       name: "Khoa nhi",
-      imgName: require("../../assets/image/doctor.jpeg"),
+      imgName: require("../../assets/image/doctor.png"),
     },
     {
       id: 5,
       name: "Khoa nhi",
-      imgName: require("../../assets/image/doctor.jpeg"),
+      imgName: require("../../assets/image/doctor.png"),
     },
   ];
 
@@ -142,11 +142,15 @@ const DoctorScreen = () => {
         <Text style={globalStyle.titleText}>Bác sĩ thịnh hành</Text>
         <View>
           <Animated.FlatList
-            data={data}
+            data={suggestDoctorData}
             renderItem={({ item, index }) => (
               <ItemDoctor
-                imgUrl={item.imgName}
+              onPress={()=>onPressDoctorSuggest(item.id)}
+                imgUrl={item?.avatar}
                 index={index}
+                rate={item?.rate}
+                fullName={item?.fullName}
+                specialistId={item?.specialistId}
                 scrollX={scrollX}
               />
             )}
