@@ -6,6 +6,9 @@ import {
   createNavigationContainerRef,
 } from "@react-navigation/native";
 import {
+  AppointmentDetailScreen,
+  AppointmentScreen,
+  ChangePasswordScreen,
   CommunityScreen,
   DoctorDetailScreen,
   DoctorScreen,
@@ -16,14 +19,20 @@ import {
   LoginScreen,
   MatchLocationScreen,
   MyHealthScreen,
+  MyScheduleScreen,
   OnBoardingScreen,
   PartnerScreen,
+  PaymentScreen,
   ProfileScreen,
   QuestionnaireScreen,
   RegisterScreen,
   ScheduleScreen,
+  ServiceDetailScreen,
+  ServiceScreen,
   SplashScreen,
+  TestScreen,
   TrackingHealthScreen,
+  WebViewScreen,
   WorkSpaceDoctorScreen,
 } from "@/screens";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
@@ -34,7 +43,10 @@ import AsyncStorage, {
   useAsyncStorage,
 } from "@react-native-async-storage/async-storage";
 import userSlice, { setUserInfo } from "src/redux/slice/userSlice";
-import { BOTTOM_NAVIGATOR_SCREENS, STACK_NAVIGATOR_SCREENS } from "src/constants";
+import {
+  BOTTOM_NAVIGATOR_SCREENS,
+  STACK_NAVIGATOR_SCREENS,
+} from "src/constants";
 
 const myNavigationTheme = {
   ...DefaultTheme,
@@ -104,8 +116,13 @@ const BottomTabNavigation = () => {
 
 const RootNavigation = () => {
   const dispatch = useAppDispatch();
-  const [isShowSplash, setIsShowPlash] = useState<boolean>(true);
+  const [isShowSplash, setIsShowPlash] = useState<boolean>(
+    useAppSelector((state) => state.user.isSplash)
+  );
   const accessToken = useAppSelector((state) => state.user.accessToken);
+
+    console.log(isShowSplash)
+
 
   useEffect(() => {
     checkLogin();
@@ -126,10 +143,12 @@ const RootNavigation = () => {
         headerShown: false,
       }}
     >
+    {isShowSplash && (
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS.ONBOARDINGSCREEN}
         component={OnBoardingScreen}
       />
+    )}
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.LOGINSCREEN}
         component={LoginScreen}
@@ -191,9 +210,41 @@ const RootNavigation = () => {
         name={STACK_NAVIGATOR_SCREENS?.TRACKINGHEALTHSCREEN}
         component={TrackingHealthScreen}
       />
-       <Stack.Screen
+      <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.SCHEDULESCREEN}
         component={ScheduleScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.APPOINTMENTSCREEN}
+        component={AppointmentScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.APPOINTMENTDETAILSCREEN}
+        component={AppointmentDetailScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.MYSCHEDULESCREEN}
+        component={MyScheduleScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.PAYMENTSCREEN}
+        component={PaymentScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.WEBVIEWSCREEN}
+        component={WebViewScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.SERVICESCREEN}
+        component={ServiceScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.SERVICEDETAILSCREEN}
+        component={ServiceDetailScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.CHANGEPASSWORDSCREEN}
+        component={ChangePasswordScreen}
       />
     </Stack.Navigator>
   );

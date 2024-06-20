@@ -1,19 +1,36 @@
+import { STACK_NAVIGATOR_SCREENS } from "src/constants"
+
 export const OutstandingFunciton  = [
     {
         id: 1,
         name: 'Đối tác',
-        imgName: require('../assets/icons/partner.png')
+        imgName: require('../assets/icons/partner.png'),
+        screen: STACK_NAVIGATOR_SCREENS.PARTNERSCREEN
     },
     {
         id: 6,
-        name: 'Bác sĩ gần chổ tôi',
-        imgName: require('../assets/icons/advice.png')
+        name: 'Bác sĩ gần tôi',
+        imgName: require('../assets/icons/advice.png'),
+        screen: STACK_NAVIGATOR_SCREENS.FINDLOCATIONSCREEN
     },
     {
         id: 3,
         name: 'Sức khoẻ của tôi',
-        imgName: require('../assets/icons/medical-report.png')
+        imgName: require('../assets/icons/medical-report.png'),
+        screen: STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN
     },
+    {
+        id: 5,
+        name: 'Đo sức khoẻ',
+        imgName: require('../assets/icons/monitor.png'),
+        screen: STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN
+    },
+    // {
+    //     id: 4,
+    //     name: 'Test',
+    //     imgName: require('../assets/icons/medical-report.png'),
+    //     screen: STACK_NAVIGATOR_SCREENS.TESTSCREEN
+    // },
 ]
 
 export const specialistData  = [

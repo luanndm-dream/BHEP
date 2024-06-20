@@ -14,12 +14,14 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import axios from "axios";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { globalFontSize } from "src/constants/fontSize";
-import { DateSlider, Header, InteractBox } from "@/components";
+import { ButtonText, DateSlider, Header, InteractBox } from "@/components";
 import FastImage from "react-native-fast-image";
 import { InteractData } from "src/data/interactData";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import moment from "moment";
 import { globalColor } from "src/constants/color";
+import { apiGetUserById } from "src/api/api_getUserById";
+import { apiGetScheduleById } from "src/api/api_get_scheduleById";
 
 const DoctorDetailScreen = () => {
   const route = useRoute<any>();
@@ -35,13 +37,30 @@ const DoctorDetailScreen = () => {
   const month = today.getMonth(); // Lấy tháng hiện tại (chú ý: từ 0 đến 11)
   const date = today.getDate();
   const [selectedDate, setSelectedDate] = useState<number>(Number(date));
-
-  // console.log('location', location)
+  const [schedules, setSchedules] = useState<any>([]);
+  const [selectedTimes, setSelectedTimes] = useState<any[]>([]);
+  const [selectedTime, setSelectedTime] = useState<any>();
+  const [selectedTimeIndex, setSelectedTimeIndex] = useState<number>(-1);
+  const [price, setPrice] = useState<number>(0);
 
   const handlePressDateSlider = (index: number, date: number) => {
     setSelectedDateIndex(index);
     setSelectedDate(date);
+    setSelectedTimeIndex(-1);
+
+    const formattedDate = `${String(date).padStart(2, "0")}-${String(
+      month + 1
+    ).padStart(2, "0")}-${year}`;
+    const scheduleForDate = schedules?.find(
+      (schedule: any) => schedule.date === formattedDate
+    );
+    if (scheduleForDate) {
+      setSelectedTimes(scheduleForDate.time);
+    } else {
+      setSelectedTimes([]);
+    }
   };
+
   function formatDate(dateString: any) {
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -75,17 +94,26 @@ const DoctorDetailScreen = () => {
     return week;
   }
 
-  useEffect(() => {
-    console.log(year, month, date);
-    setDateInWeek(dates(new Date(year, month, date - 1)));
+  const handlePressTimeSlot = (index: number, time: string) => {
+    setSelectedTimeIndex(index === selectedTimeIndex ? -1 : index);
+    console.log("time", time);
+    setSelectedTime(time)
+    // setSelectedTimes(time) // Nếu đã chọn thì hủy chọn, nếu chưa chọn thì chọn
+  };
 
-    axios
-      .get(`https://bhepapidemo.azurewebsites.net/Api/V1/User/${userId}`)
-      .then((res: any) => {
-        console.log(res);
-        setUserData(res.data.data);
-        setImgUrl(res?.data?.data.avatar);
-      });
+  useEffect(() => {
+    apiGetScheduleById(userId).then((res: any) => {
+      // console.log("schedules", res.data);
+      setSchedules(res?.data?.weekSchedule);
+    });
+
+    setDateInWeek(dates(new Date(year, month, date - 1)));
+    apiGetUserById(userId).then((res: any) => {
+      setUserData(res.data);
+      setImgUrl(res?.data?.avatar);
+      setPrice(res?.data?.workProfile?.price)
+      console.log("user data", );
+    });
   }, []);
 
   const mapOpen = () => {
@@ -101,6 +129,20 @@ const DoctorDetailScreen = () => {
     });
 
     Linking.openURL(url);
+  };
+  const onPressConfirm = () => {
+    const formattedDate = `${String(selectedDate).padStart(2, "0")}-${String(
+      month + 1
+    ).padStart(2, "0")}-${year}`;
+    navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTSCREEN, {
+      employee: {
+        employeeId: userData?.id,
+        employeeName: userData?.fullName,
+        price: price,
+        date: formattedDate,
+        time: selectedTime,
+      },
+    });
   };
 
   return (
@@ -130,7 +172,7 @@ const DoctorDetailScreen = () => {
             <Image
               source={
                 imgUrl
-                  ? { uri: `data:image/jpeg;base64,${imgUrl}` }
+                  ? { uri: imgUrl }
                   : require("../../assets/image/manAvatar.png")
               }
               style={styles.avatar}
@@ -194,9 +236,57 @@ const DoctorDetailScreen = () => {
                 }}
               />
             </View>
+            <Text style={globalStyle.titleText}>Giờ làm việc</Text>
+            <FlatList
+              data={selectedTimes}
+              scrollEnabled={false}
+              numColumns={2}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item, index }) => (
+                <TouchableOpacity
+                  onPress={() => handlePressTimeSlot(index, item)} // Gọi hàm khi khung giờ được chọn
+                  style={[
+                    styles.timeLabel,
+                    {
+                      backgroundColor:
+                        selectedTimeIndex === index
+                          ? globalColor.primaryColor
+                          : "white",
+                    }, // Thay đổi màu nền dựa trên chỉ số của khung giờ đã chọn
+                  ]}
+                >
+                  <Text style={styles.timeSlotText}>{item}</Text>
+                </TouchableOpacity>
+              )}
+              ListEmptyComponent={
+                <Text style={styles.noScheduleText}>
+                  Không có lịch trình cho ngày này
+                </Text>
+              }
+            />
           </View>
         </ScrollView>
       </View>
+      <View style={styles.priceContainer}>
+        <Text style={globalStyle.titleText}>
+          {selectedDate && selectedTimeIndex !== -1
+            ? `Chi phí: ${price}`
+            : undefined}
+        </Text>
+      </View>
+      <ButtonText
+        disabled={!selectedDate || selectedTimeIndex === -1}
+        text="Đặt lịch"
+        onPress={() => onPressConfirm()}
+        styleContainer={{
+          height: 60,
+          backgroundColor: globalColor.primaryColor,
+          marginBottom: 25,
+          marginHorizontal: 12,
+          borderRadius: 8,
+        }}
+        styleText={{ fontWeight: "bold" }}
+      />
     </>
   );
 };
@@ -221,6 +311,7 @@ const styles = StyleSheet.create({
   },
   scheduleContainer: {
     paddingHorizontal: 12,
+    flex: 1,
   },
   avatar: {
     width: 100,
@@ -281,5 +372,33 @@ const styles = StyleSheet.create({
     zIndex: 3,
     top: 50,
     right: 20,
+  },
+  timeSlotText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "black",
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+  },
+  noScheduleText: {
+    fontSize: 16,
+    color: "grey",
+    paddingVertical: 4,
+    textAlign: 'center',
+    justifyContent: 'center'
+  },
+  timeLabel: {
+    height: 40,
+    backgroundColor: "white",
+    paddingHorizontal: 6,
+    marginRight: 12,
+    marginVertical: 12,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 8,
+  },
+  priceContainer: {
+    alignItems: "flex-end",
+    marginRight: 20,
   },
 });

@@ -54,3 +54,4 @@ com.bhep_mobile_demo_v1.app-packaged_res-52 /Users/luan/BHEP/node_modules/react-
 com.bhep_mobile_demo_v1.app-packaged_res-53 /Users/luan/BHEP/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
 com.bhep_mobile_demo_v1.app-packaged_res-54 /Users/luan/BHEP/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
 com.bhep_mobile_demo_v1.app-packaged_res-55 /Users/luan/BHEP/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug
+com.bhep_mobile_demo_v1.app-packaged_res-56 /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/packaged_res/debug

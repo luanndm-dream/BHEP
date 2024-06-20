@@ -7,6 +7,8 @@ import NextButton from "./NextButton";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { STACK_NAVIGATOR_SCREENS } from "src/constants";
+import { useAppDispatch } from "@/redux";
+import { setUserIsSplash } from "src/redux/slice";
 const OnBoardingScreen = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -17,26 +19,25 @@ const OnBoardingScreen = () => {
   const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
   const slidesRef = useRef<any>(null);
   const navigation = useNavigation<any>();
-
-  const storeData = async (value:string) => {
+  const dispatch = useAppDispatch()
+  const storeData = async (value: string) => {
     try {
-      await AsyncStorage.setItem('onBoarding', value);
-      console.log(value)
+      await AsyncStorage.setItem("onBoarding", value);
+      console.log(value);
     } catch (e) {
-      console.log('lỗi storeData onboarding')
-
+      console.log("lỗi storeData onboarding");
     }
   };
   const scrollTo = () => {
     if (currentIndex < slidesData.length - 1) {
       slidesRef.current.scrollToIndex({ index: currentIndex + 1 });
-    } else if (currentIndex === slidesData.length-1) {
-        storeData('true');
-
-        navigation.reset({
-          index: 0,
-          routes: [{ name: STACK_NAVIGATOR_SCREENS?.LOGINSCREEN}]
-        });
+    } else if (currentIndex === slidesData.length - 1) {
+      storeData("true");
+      dispatch(setUserIsSplash(false))
+      navigation.reset({
+        index: 0,
+        routes: [{ name: STACK_NAVIGATOR_SCREENS?.LOGINSCREEN }],
+      });
     } else {
     }
   };
@@ -61,6 +62,7 @@ const OnBoardingScreen = () => {
           ref={slidesRef}
         />
       </View>
+
       <Paginator data={slidesData} scrollX={scrollX} />
       <NextButton
         percentage={(currentIndex + 1) * (100 / slidesData.length)}

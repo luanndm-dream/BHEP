@@ -76,7 +76,7 @@ const RegisterScreen = () => {
         Toast.show({
           type: "error",
           text1: 'Đăng kí thất bại',
-          text2: 'Vui lòng liên hệ BHEP để được hỗ trợ thêm.'
+          text2: `Xảy ra lỗi khi đăng kí ${res.message}`
         })
       }
     });

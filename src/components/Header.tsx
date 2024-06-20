@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 interface HeaderProps {
-    headerTitle: String,
+    headerTitle: string,
     otherProp?: any
     iconName?: any
     

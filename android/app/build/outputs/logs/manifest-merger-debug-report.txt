@@ -23,6 +23,7 @@ MERGED from [:react-native-reanimated] /Users/luan/BHEP/node_modules/react-nativ
 MERGED from [:react-native-safe-area-context] /Users/luan/BHEP/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /Users/luan/BHEP/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-svg] /Users/luan/BHEP/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/luan/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.fresco:animated-base-support:1.3.0] /Users/luan/.gradle/caches/transforms-3/89b2296725dab058b488752a62946606/transformed/jetified-animated-base-support-1.3.0/AndroidManifest.xml:2:1-9:12
@@ -82,6 +83,7 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] /Users/lua
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/luan/.gradle/caches/transforms-3/7b1925d4b3d3a88545c29d53f79815ad/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.8.0] /Users/luan/.gradle/caches/transforms-3/0063812cd4d48f43c88c29c0441ce2d9/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] /Users/luan/.gradle/caches/transforms-3/406d929e20c23da27f998fdee54ae835/transformed/coordinatorlayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/luan/.gradle/caches/transforms-3/808118655e6d6c10f485c52e3bd0daea/transformed/webkit-1.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/luan/.gradle/caches/transforms-3/0e4a93563ee96f055b81efc3af32138e/transformed/sqlite-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/luan/.gradle/caches/transforms-3/c694886bc350cf1c8f52cc5a7dd91b16/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/luan/.gradle/caches/transforms-3/6ff713961176329d6793f41384a425fa/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -175,6 +177,8 @@ MERGED from [:react-native-image-crop-picker] /Users/luan/BHEP/node_modules/reac
 MERGED from [:react-native-image-crop-picker] /Users/luan/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:5-31:19
 MERGED from [:react-native-image-picker] /Users/luan/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [:react-native-image-picker] /Users/luan/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.4] /Users/luan/.gradle/caches/transforms-3/849a2bfd51db2f8814130636457ff317/transformed/jetified-soloader-0.10.4/AndroidManifest.xml:11:5-20
@@ -309,6 +313,8 @@ MERGED from [:react-native-screens] /Users/luan/BHEP/node_modules/react-native-s
 MERGED from [:react-native-screens] /Users/luan/BHEP/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-svg] /Users/luan/BHEP/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-svg] /Users/luan/BHEP/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/4c335a7cb848ac016fa17586f2ae149d/transformed/jetified-react-android-0.71.0-debug/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/luan/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -427,6 +433,8 @@ MERGED from [androidx.core:core-ktx:1.8.0] /Users/luan/.gradle/caches/transforms
 MERGED from [androidx.core:core-ktx:1.8.0] /Users/luan/.gradle/caches/transforms-3/0063812cd4d48f43c88c29c0441ce2d9/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] /Users/luan/.gradle/caches/transforms-3/406d929e20c23da27f998fdee54ae835/transformed/coordinatorlayout-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] /Users/luan/.gradle/caches/transforms-3/406d929e20c23da27f998fdee54ae835/transformed/coordinatorlayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/luan/.gradle/caches/transforms-3/808118655e6d6c10f485c52e3bd0daea/transformed/webkit-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/luan/.gradle/caches/transforms-3/808118655e6d6c10f485c52e3bd0daea/transformed/webkit-1.4.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/luan/.gradle/caches/transforms-3/0e4a93563ee96f055b81efc3af32138e/transformed/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/luan/.gradle/caches/transforms-3/0e4a93563ee96f055b81efc3af32138e/transformed/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/luan/.gradle/caches/transforms-3/c694886bc350cf1c8f52cc5a7dd91b16/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -545,6 +553,16 @@ ADDED from [:react-native-image-picker] /Users/luan/BHEP/node_modules/react-nati
 		ADDED from [:react-native-image-picker] /Users/luan/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
 	android:name
 		ADDED from [:react-native-image-picker] /Users/luan/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+provider#com.reactnativecommunity.webview.RNCWebViewFileProvider
+ADDED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-64
+	android:exported
+		ADDED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-webview] /Users/luan/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-83
 meta-data#com.bumptech.glide.integration.okhttp3.OkHttpGlideModule
 ADDED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/luan/.gradle/caches/transforms-3/c6d9b035aeec0f3942a55bb4cc6cf0fc/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:11:9-13:43
 	android:value

@@ -26,6 +26,7 @@ import { globalColor } from "./src/constants/color";
 import DeviceInfo from "react-native-device-info";
 import Toast from "react-native-toast-message";
 const RootApp = () => {
+  console.log('start')
   const isLoading = useAppSelector((state) => state.app.loading);
   return (
     <>

@@ -11,7 +11,7 @@ const TIME_OUT = 60000
 export const publicAxios = axios.create({
     baseURL: BASE_URL,
     headers: {
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
     },
     timeout: TIME_OUT
 });
@@ -20,7 +20,7 @@ export const publicAxios = axios.create({
 export const protectedAxios = axios.create({
     baseURL: BASE_URL,
     headers:{
-        "Content-Type": "multipart/form-data"
+        "Content-Type": "application/json"
     },
     timeout: TIME_OUT
 });
@@ -83,7 +83,7 @@ publicAxios.interceptors.response.use(
             ...response.data,
             statusCode: response.status,
         };
-        console.log('response api', responseObj)
+        // console.log('response api', responseObj)
         return responseObj;
     },
     function (error) {
