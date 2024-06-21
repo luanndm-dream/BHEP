@@ -32,7 +32,20 @@
     </queries>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- required for API 18 - 30 -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30" /> <!-- required for API 23 - 30, no android:maxSdkVersion because of a potential breaking change -->
+    <!-- TODO: add android:maxSdkVersion on 2.0.0 -->
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- API 31+ -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
     <application

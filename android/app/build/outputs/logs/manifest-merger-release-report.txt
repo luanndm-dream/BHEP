@@ -1,22 +1,27 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
-MERGED from [:react-native-vector-icons] /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-async-storage_async-storage] /Users/luan/BHEP_Git/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-masked-view_masked-view] /Users/luan/BHEP_Git/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-device-info] /Users/luan/BHEP_Git/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-fast-image] /Users/luan/BHEP_Git/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-geolocation-service] /Users/luan/BHEP_Git/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-gesture-handler] /Users/luan/BHEP_Git/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-33:12
-MERGED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-21:12
-MERGED from [:react-native-permissions] /Users/luan/BHEP_Git/node_modules/react-native-permissions/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-reanimated] /Users/luan/BHEP_Git/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-safe-area-context] /Users/luan/BHEP_Git/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-screens] /Users/luan/BHEP_Git/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
+MERGED from [:react-native-vector-icons] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-async-storage_async-storage] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-masked-view_masked-view] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-ble-plx] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-date-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-device-info] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-fast-image] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-geolocation-service] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-gesture-handler] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-33:12
+MERGED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-21:12
+MERGED from [:react-native-permissions] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-permissions/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-quick-base64] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-quick-base64/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-reanimated] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-safe-area-context] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-screens] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-svg] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-svg/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-21:12
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/93c5e1965db597203e164e0c000beafb/transformed/jetified-react-android-0.71.0-release/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/luan/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.fresco:animated-base-support:1.3.0] /Users/luan/.gradle/caches/transforms-3/89b2296725dab058b488752a62946606/transformed/jetified-animated-base-support-1.3.0/AndroidManifest.xml:2:1-9:12
@@ -70,9 +75,11 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/luan/.gradl
 MERGED from [androidx.loader:loader:1.0.0] /Users/luan/.gradle/caches/transforms-3/2aa5987ed7ceb6fab4e61af5ddf101bc/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] /Users/luan/.gradle/caches/transforms-3/3ce79538d1a0e23133705e7b567d850e/transformed/lifecycle-viewmodel-2.5.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] /Users/luan/.gradle/caches/transforms-3/b785cd3da04cefbc518262ddcdada35c/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:2:1-27:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/luan/.gradle/caches/transforms-3/7b1925d4b3d3a88545c29d53f79815ad/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.8.0] /Users/luan/.gradle/caches/transforms-3/0063812cd4d48f43c88c29c0441ce2d9/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] /Users/luan/.gradle/caches/transforms-3/406d929e20c23da27f998fdee54ae835/transformed/coordinatorlayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/luan/.gradle/caches/transforms-3/808118655e6d6c10f485c52e3bd0daea/transformed/webkit-1.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/luan/.gradle/caches/transforms-3/c694886bc350cf1c8f52cc5a7dd91b16/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/luan/.gradle/caches/transforms-3/6ff713961176329d6793f41384a425fa/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/luan/.gradle/caches/transforms-3/3e2b4c788abb6fc5087e7b1692af88fd/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:2:1-11:12
@@ -95,65 +102,72 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/luan/.gradle/cache
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/luan/.gradle/caches/transforms-3/99d779b5410bcb0ed593388cffd57f6e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/luan/.gradle/caches/transforms-3/b51bb27381c1ca95bd95d648b40df69f/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fbcore:2.5.0] /Users/luan/.gradle/caches/transforms-3/b37408244074db2438256f0e4179afc0/transformed/jetified-fbcore-2.5.0/AndroidManifest.xml:2:1-9:12
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/luan/.gradle/caches/transforms-3/b36df8da1dd3422e7688e01fe20caa41/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
 	package
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:1-31:12
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:3:5-67
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:3:5-67
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:3:22-64
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:3:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:4:5-79
+	android:name
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:4:22-76
 uses-permission#android.permission.CAMERA
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:4:5-64
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:5:5-64
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:4:22-62
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:5:22-62
 uses-permission#android.permission.READ_MEDIA_IMAGES
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:5:5-75
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:6:5-75
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:5:22-73
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:6:22-73
 uses-feature#android.hardware.camera
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:6:5-85
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:7:5-85
 	android:required
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:6:58-82
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:7:58-82
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:6:19-57
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:7:19-57
 uses-feature#android.hardware.camera.front
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:7:5-91
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:8:5-91
 	android:required
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:7:64-88
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:8:64-88
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:7:19-63
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:8:19-63
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:8:5-81
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:8:22-78
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:9:5-79
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:9:22-76
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:10:22-76
 application
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:10:5-30:19
-MERGED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:5-31:19
-MERGED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:5-31:19
-MERGED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
-MERGED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:11:5-31:19
+MERGED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:5-31:19
+MERGED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:5-31:19
+MERGED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/93c5e1965db597203e164e0c000beafb/transformed/jetified-react-android-0.71.0-release/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/93c5e1965db597203e164e0c000beafb/transformed/jetified-react-android-0.71.0-release/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.9.0] /Users/luan/.gradle/caches/transforms-3/bc984b4c216b046fb814ced4c0f10e24/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
@@ -192,78 +206,90 @@ MERGED from [androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/4
 MERGED from [androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/4147f26a61fb6196770ea38e58daddf3/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/luan/.gradle/caches/transforms-3/c5107d5e475ee8dcd270599e360e9f6d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/luan/.gradle/caches/transforms-3/c5107d5e475ee8dcd270599e360e9f6d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:11:5-20
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:11:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/4147f26a61fb6196770ea38e58daddf3/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:12:7-39
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:13:7-39
 	android:roundIcon
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:14:7-52
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:15:7-52
 	android:icon
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:13:7-41
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:14:7-41
 	android:allowBackup
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:15:7-34
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:16:7-34
 	android:theme
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:16:7-38
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:17:7-38
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:11:7-38
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:12:7-38
 activity#com.bhep_mobile_demo_v1.MainActivity
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:17:7-29:18
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:18:7-30:18
 	android:label
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:19:9-41
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:20:9-41
 	android:launchMode
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:21:9-40
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:22:9-40
 	android:windowSoftInputMode
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:22:9-51
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:23:9-51
 	android:exported
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:24:9-32
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:25:9-32
 	android:configChanges
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:20:9-118
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:21:9-118
 	android:enableOnBackInvokedCallback
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:23:9-51
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:24:9-51
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:18:9-37
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:19:9-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:25:9-28:25
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:26:9-29:25
 action#android.intent.action.MAIN
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:26:13-65
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:27:13-65
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:26:21-62
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:27:21-62
 category#android.intent.category.LAUNCHER
-ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:27:13-73
+ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:28:13-73
 	android:name
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml:27:23-70
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:28:23-70
 uses-sdk
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-MERGED from [:react-native-vector-icons] /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-vector-icons] /Users/luan/BHEP_Git/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-async-storage_async-storage] /Users/luan/BHEP_Git/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-async-storage_async-storage] /Users/luan/BHEP_Git/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-masked-view_masked-view] /Users/luan/BHEP_Git/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-masked-view_masked-view] /Users/luan/BHEP_Git/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-device-info] /Users/luan/BHEP_Git/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-device-info] /Users/luan/BHEP_Git/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-fast-image] /Users/luan/BHEP_Git/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-fast-image] /Users/luan/BHEP_Git/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-geolocation-service] /Users/luan/BHEP_Git/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-geolocation-service] /Users/luan/BHEP_Git/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-gesture-handler] /Users/luan/BHEP_Git/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-gesture-handler] /Users/luan/BHEP_Git/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-permissions] /Users/luan/BHEP_Git/node_modules/react-native-permissions/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-permissions] /Users/luan/BHEP_Git/node_modules/react-native-permissions/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-reanimated] /Users/luan/BHEP_Git/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-reanimated] /Users/luan/BHEP_Git/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-safe-area-context] /Users/luan/BHEP_Git/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-safe-area-context] /Users/luan/BHEP_Git/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-screens] /Users/luan/BHEP_Git/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-screens] /Users/luan/BHEP_Git/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-vector-icons] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-async-storage_async-storage] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-async-storage_async-storage] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-masked-view_masked-view] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-masked-view_masked-view] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-ble-plx] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-ble-plx] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-date-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-date-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-device-info] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-device-info] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-fast-image] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-fast-image] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-geolocation-service] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-geolocation-service] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-gesture-handler] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-gesture-handler] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-permissions] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-permissions/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-permissions] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-permissions/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-quick-base64] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-quick-base64/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-quick-base64] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-quick-base64/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-reanimated] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-reanimated] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-screens] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-screens] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-svg/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-svg/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/93c5e1965db597203e164e0c000beafb/transformed/jetified-react-android-0.71.0-release/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.0] /Users/luan/.gradle/caches/transforms-3/93c5e1965db597203e164e0c000beafb/transformed/jetified-react-android-0.71.0-release/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/luan/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -370,12 +396,16 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] /Users/luan/.gradle/c
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] /Users/luan/.gradle/caches/transforms-3/3ce79538d1a0e23133705e7b567d850e/transformed/lifecycle-viewmodel-2.5.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] /Users/luan/.gradle/caches/transforms-3/b785cd3da04cefbc518262ddcdada35c/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] /Users/luan/.gradle/caches/transforms-3/b785cd3da04cefbc518262ddcdada35c/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:6:5-8:41
+MERGED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/luan/.gradle/caches/transforms-3/7b1925d4b3d3a88545c29d53f79815ad/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/luan/.gradle/caches/transforms-3/7b1925d4b3d3a88545c29d53f79815ad/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.8.0] /Users/luan/.gradle/caches/transforms-3/0063812cd4d48f43c88c29c0441ce2d9/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.8.0] /Users/luan/.gradle/caches/transforms-3/0063812cd4d48f43c88c29c0441ce2d9/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] /Users/luan/.gradle/caches/transforms-3/406d929e20c23da27f998fdee54ae835/transformed/coordinatorlayout-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] /Users/luan/.gradle/caches/transforms-3/406d929e20c23da27f998fdee54ae835/transformed/coordinatorlayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/luan/.gradle/caches/transforms-3/808118655e6d6c10f485c52e3bd0daea/transformed/webkit-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/luan/.gradle/caches/transforms-3/808118655e6d6c10f485c52e3bd0daea/transformed/webkit-1.4.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/luan/.gradle/caches/transforms-3/c694886bc350cf1c8f52cc5a7dd91b16/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/luan/.gradle/caches/transforms-3/c694886bc350cf1c8f52cc5a7dd91b16/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/luan/.gradle/caches/transforms-3/6ff713961176329d6793f41384a425fa/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -420,64 +450,76 @@ MERGED from [androidx.print:print:1.0.0] /Users/luan/.gradle/caches/transforms-3
 MERGED from [androidx.print:print:1.0.0] /Users/luan/.gradle/caches/transforms-3/b51bb27381c1ca95bd95d648b40df69f/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.fresco:fbcore:2.5.0] /Users/luan/.gradle/caches/transforms-3/b37408244074db2438256f0e4179afc0/transformed/jetified-fbcore-2.5.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.5.0] /Users/luan/.gradle/caches/transforms-3/b37408244074db2438256f0e4179afc0/transformed/jetified-fbcore-2.5.0/AndroidManifest.xml:5:5-7:41
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:7:5-9:41
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/luan/.gradle/caches/transforms-3/ad474f9ab9c59ed514ffedac7aedd465/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/luan/.gradle/caches/transforms-3/b36df8da1dd3422e7688e01fe20caa41/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/luan/.gradle/caches/transforms-3/b36df8da1dd3422e7688e01fe20caa41/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/luan/BHEP_Git/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml
 queries
-ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-13:15
+ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-13:15
 intent#action:name:android.media.action.IMAGE_CAPTURE
-ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-12:18
+ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-12:18
 action#android.media.action.IMAGE_CAPTURE
-ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-73
+ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-73
 	android:name
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:21-70
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:21-70
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-81
+ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-81
 	android:name
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:22-78
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:22-78
 provider#com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider
-ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:18:9-26:20
+ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:18:9-26:20
 	android:grantUriPermissions
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-47
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-47
 	android:authorities
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-60
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-60
 	android:exported
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-37
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-37
 	android:name
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-94
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-94
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-25:78
+ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-25:78
 	android:resource
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:25:17-75
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:25:17-75
 	android:name
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:24:17-67
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:24:17-67
 activity#com.yalantis.ucrop.UCropActivity
-ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:28:9-30:72
+ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:28:9-30:72
 	android:theme
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:30:13-69
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:30:13-69
 	android:name
-		ADDED from [:react-native-image-crop-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:29:13-60
+		ADDED from [:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:29:13-60
 provider#com.imagepicker.ImagePickerProvider
-ADDED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+ADDED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
 	android:grantUriPermissions
-		ADDED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+		ADDED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
 	android:authorities
-		ADDED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-71
+		ADDED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-71
 	android:exported
-		ADDED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+		ADDED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
 	android:name
-		ADDED from [:react-native-image-picker] /Users/luan/BHEP_Git/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-63
+		ADDED from [:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-63
+provider#com.reactnativecommunity.webview.RNCWebViewFileProvider
+ADDED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-64
+	android:exported
+		ADDED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-83
 meta-data#com.bumptech.glide.integration.okhttp3.OkHttpGlideModule
 ADDED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/luan/.gradle/caches/transforms-3/c6d9b035aeec0f3942a55bb4cc6cf0fc/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:11:9-13:43
 	android:value
@@ -528,6 +570,38 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/cach
 		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/caches/transforms-3/ae27995e6287e7fd33ae4364afb490c1/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/caches/transforms-3/ae27995e6287e7fd33ae4364afb490c1/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+uses-permission#android.permission.BLUETOOTH
+ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:10:5-12:38
+	android:maxSdkVersion
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:12:9-35
+	android:name
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:11:9-52
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:13:5-15:38
+	android:maxSdkVersion
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:15:9-35
+	android:name
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:14:9-58
+uses-permission-sdk-23#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:18:5-88
+	android:name
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:18:29-85
+uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
+ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:19:5-86
+	android:name
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:19:29-83
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:21:5-76
+	android:name
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:21:22-73
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:22:5-25:31
+	android:usesPermissionFlags
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:24:9-55
+	tools:targetApi
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:25:9-28
+	android:name
+		ADDED from [com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:23:9-57
 uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
 ADDED from [com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:5-110
 	android:name

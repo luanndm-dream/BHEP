@@ -8,17 +8,14 @@ import {
   TextInput,
   Keyboard,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ButtonText, DropDownListWithImage, Header } from "@/components";
 import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { paymentData } from "src/data/paymentData";
 import { globalColor } from "src/constants/color";
 import { WebView } from "react-native-webview";
 import { useNavigation } from "@react-navigation/native";
-import {
-
-  apiPostPaymentVNPay,
-} from "src/api/api_post_payment_VNPay";
+import { apiPostPaymentVNPay } from "src/api/api_post_payment_VNPay";
 import { useAppSelector } from "@/redux";
 import Toast from "react-native-toast-message";
 import { apiPostPaymentPayOS } from "src/api/api_post_payment_PayOS";
@@ -33,20 +30,16 @@ const PaymentScreen = () => {
   const [selectedMethod, setSelectedMethod] = useState<string>("");
   const [imageUrl, setImageUrl] = useState<any>();
   const [paymentUrl, setPaymentUrl] = useState<string>("");
-  const [paymentId, setPaymentId] = useState<number>(0)
+  const [paymentId, setPaymentId] = useState<number>(0);
+  const textInputRef = useRef<TextInput>(null);
+
+  const formatNumber = (value: string) => {
+    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   const onChangeValue = (value: string) => {
-    // Remove non-numeric characters
     const numericValue = value.replace(/[^0-9]/g, "");
-    if (numericValue) {
-      // Convert to number and format as currency
-      const formattedValue = new Intl.NumberFormat("vi-VN", {
-        style: "currency",
-        currency: "VND",
-      }).format(Number(numericValue));
-      setInputValue(formattedValue);
-    } else {
-      setInputValue("");
-    }
+    setInputValue(formatNumber(numericValue));
   };
 
   const onChooseMethodPress = () => {
@@ -60,48 +53,50 @@ const PaymentScreen = () => {
       apiPostPaymentVNPay(userId, paymentAmount).then((res: any) => {
         console.log("payment res ", res);
         setPaymentUrl(res?.data?.paymentUrl);
-        setPaymentId(res?.data?.id)
+        setPaymentId(res?.data?.id);
       });
     } else if (selectedMethod.trim() === "Thanh toán qua PayOS") {
       apiPostPaymentPayOS(
         userId,
         paymentAmount,
         "Nạp tiền hệ thống",
-        [{
-          name: "Nạp tiền hệ thống",
-          quantity: 1,
-          price: 2000,
-        }],
+        [
+          {
+            name: "Nạp tiền hệ thống",
+            quantity: 1,
+            price: 2000,
+          },
+        ],
         "https://www.google.com/",
         "https://www.google.com/",
         Math.floor(Date.now() / 1000) + 600
-      ).then((res: any)=>{
-        console.log(res)
+      ).then((res: any) => {
+        console.log(res);
         setPaymentUrl(res?.data?.checkoutUrl);
-
-      })
+      });
     }
   };
 
   const onNavigationStateChange = (navState: any) => {
     const { url } = navState;
-    console.log(navState)
+    console.log(navState);
     // Kiểm tra URL để xác định thanh toán thành công
     if (url.includes("vnp_TransactionStatus=00") || navState.canGoBack) {
       const amount = Number(inputValue.replace(/[^0-9]/g, ""));
       const formattedAmount = amount.toLocaleString("vi-VN");
-      apiPutPayment()
+      // apiPutPayment();
       Toast.show({
         type: "success",
         text1: "Thanh toán thành công",
         text2: `Bạn đã thanh toán thành công ${formattedAmount} VND`, // Định dạng số tiền theo VND
-      })
-      
+      });
+
       navigate.goBack();
       setPaymentUrl("");
     } else {
     }
   };
+
   return (
     <>
       <Header headerTitle="Thanh toán" />
@@ -121,15 +116,19 @@ const PaymentScreen = () => {
               <Text style={globalStyle.titleText}>
                 Vui lòng nhập số tiền cần nạp
               </Text>
-              <TextInput
-                placeholder="₫"
-                autoFocus
-                style={styles.textInput}
-                maxLength={15}
-                keyboardType="numeric"
-                value={inputValue}
-                onChangeText={onChangeValue}
-              />
+              <View style={styles.inputContainer}>
+                <TextInput
+                  ref={textInputRef}
+                  placeholder="₫"
+                  autoFocus
+                  style={styles.textInput}
+                  maxLength={15}
+                  keyboardType="numeric"
+                  value={inputValue}
+                  onChangeText={onChangeValue}
+                />
+                {/* <Text style={styles.currencySymbol}>đ</Text> */}
+              </View>
               <TouchableOpacity
                 style={styles.methodButton}
                 onPress={onChooseMethodPress}
@@ -193,6 +192,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 20,
   },
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textInput: {
+    height: 100,
+    fontSize: 50,
+    width: "80%",
+    textAlign: "center",
+    color: "black",
+  },
+  currencySymbol: {
+    fontSize: 40,
+    color: 'grey',
+    marginLeft: -10, // Adjust as needed
+  },
   methodContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -206,13 +222,6 @@ const styles = StyleSheet.create({
     color: "black",
     fontWeight: "600",
     marginLeft: 20,
-  },
-  textInput: {
-    height: 100,
-    fontSize: 50,
-    width: "80%",
-    textAlign: "center",
-    color: "black",
   },
   methodButton: {
     padding: 12,

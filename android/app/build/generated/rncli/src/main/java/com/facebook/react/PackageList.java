@@ -17,6 +17,8 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-masked-view/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// react-native-ble-plx
+import com.bleplx.BlePlxPackage;
 // react-native-date-picker
 import com.henninghall.date_picker.DatePickerPackage;
 // react-native-device-info
@@ -33,6 +35,8 @@ import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.imagepicker.ImagePickerPackage;
 // react-native-permissions
 import com.zoontek.rnpermissions.RNPermissionsPackage;
+// react-native-quick-base64
+import com.reactnativequickbase64.QuickBase64Package;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -91,6 +95,7 @@ public class PackageList {
       new VectorIconsPackage(),
       new AsyncStoragePackage(),
       new RNCMaskedViewPackage(),
+      new BlePlxPackage(),
       new DatePickerPackage(),
       new RNDeviceInfo(),
       new FastImageViewPackage(),
@@ -99,6 +104,7 @@ public class PackageList {
       new PickerPackage(),
       new ImagePickerPackage(),
       new RNPermissionsPackage(),
+      new QuickBase64Package(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

@@ -31,6 +31,7 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Dela med"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Dela med <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Komprimera"</string>
+    <string name="ampm_description">Välj am/pm</string>
     <string name="bottomsheet_action_collapse">Komprimera arket på nedre delen av skärmen</string>
     <string name="bottomsheet_action_expand">Utöka arket på nedre delen av skärmen</string>
     <string name="bottomsheet_action_expand_halfway">Utöka till hälften</string>
@@ -57,8 +58,12 @@
     <string msgid="5201977337835724196" name="common_open_on_phone">"Öppna på mobilen"</string>
     <string msgid="3441753203274453993" name="common_signin_button_text">"Logga in"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Logga in med Google"</string>
+    <string name="date_description">Välj ett datum</string>
+    <string name="day_description">Välj en dag</string>
     <string name="error_icon_content_description">Fel</string>
     <string name="exposed_dropdown_menu_content_description">Visa rullgardinsmenyn</string>
+    <string name="hour_description">Välj en timme</string>
+    <string name="hour_tag">Timme:</string>
     <string name="icon_content_description">Dialogikon</string>
     <string name="item_view_role_description">Flik</string>
     <string name="material_clock_toggle_content_description">Välj mellan FM och EM</string>
@@ -74,6 +79,9 @@
     <string name="material_timepicker_pm">EM</string>
     <string name="material_timepicker_select_time">Välj tid</string>
     <string name="material_timepicker_text_input_mode_description">Byt till textinmatningsläget och ange tid.</string>
+    <string name="minutes_description">Välj minuter</string>
+    <string name="minutes_tag">Minuter</string>
+    <string name="month_description">Välj en månad</string>
     <string name="mtrl_badge_numberless_content_description">Ny avisering</string>
     <string name="mtrl_chip_close_icon_content_description">Ta bort (%1$s)</string>
     <string name="mtrl_exceed_max_badge_number_content_description" ns2:ignore="PluralsCandidate">Fler än %1$d nya aviseringar</string>
@@ -110,7 +118,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">Byt till att välja ett år genom att trycka</string>
     <string name="mtrl_timepicker_cancel">Avbryt</string>
     <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="overlay">Datumväljare på</string>
     <string name="password_toggle_content_description">Visa lösenord</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Sök"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="time_tag">Tiden är</string>
+    <string name="year_description">Välj ett år</string>
 </resources>

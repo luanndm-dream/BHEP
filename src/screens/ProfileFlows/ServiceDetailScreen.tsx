@@ -47,7 +47,7 @@ const ServiceDetailScreen = () => {
       if (res.statusCode === 200) {
         Toast.show({
           type: "success",
-          text1: "Đặt lịch thành công",
+          text1: "Mua dịch vụ thành công",
           text2: "BHEP chúc bạn thật nhiều sức khoẻ!",
         });
         navigate.goBack()
