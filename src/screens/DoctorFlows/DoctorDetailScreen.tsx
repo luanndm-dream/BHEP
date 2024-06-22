@@ -41,6 +41,7 @@ const DoctorDetailScreen = () => {
   const [selectedTimes, setSelectedTimes] = useState<any[]>([]);
   const [selectedTime, setSelectedTime] = useState<any>();
   const [selectedTimeIndex, setSelectedTimeIndex] = useState<number>(-1);
+  const [isNextWeekPressed, setIsNextWeekPressed] = useState<boolean>(false); 
   const [price, setPrice] = useState<number>(0);
 
   const handlePressDateSlider = (index: number, date: number) => {
@@ -72,7 +73,6 @@ const DoctorDetailScreen = () => {
 
   function dates(current: any) {
     var week = [];
-    // Starting Monday not Sunday
     current.setDate(current.getDate() - current.getDay() + 1);
     for (var i = 0; i < 7; i++) {
       const dayIndex = i === 6 ? 1 : i + 2; // Nếu i là 6 (Chủ Nhật), dayIndex sẽ là 1 (Thứ Hai)
@@ -97,8 +97,20 @@ const DoctorDetailScreen = () => {
   const handlePressTimeSlot = (index: number, time: string) => {
     setSelectedTimeIndex(index === selectedTimeIndex ? -1 : index);
     console.log("time", time);
-    setSelectedTime(time)
+    setSelectedTime(time);
     // setSelectedTimes(time) // Nếu đã chọn thì hủy chọn, nếu chưa chọn thì chọn
+  };
+  const handleNextWeek = () => {
+    const nextWeekStartDate = new Date(year, month, date + 7);
+    setDateInWeek(dates(nextWeekStartDate));
+    setSelectedDateIndex(1);
+    setSelectedTimes([]);
+    setSelectedTimeIndex(-1);
+    setIsNextWeekPressed(true);
+  };
+  const handleReturn = () => {
+    setDateInWeek(dates(new Date(year, month, date - 1)));
+    setIsNextWeekPressed(false);
   };
 
   useEffect(() => {
@@ -111,8 +123,8 @@ const DoctorDetailScreen = () => {
     apiGetUserById(userId).then((res: any) => {
       setUserData(res.data);
       setImgUrl(res?.data?.avatar);
-      setPrice(res?.data?.workProfile?.price)
-      console.log("user data", );
+      setPrice(res?.data?.workProfile?.price);
+      console.log("user data");
     });
   }, []);
 
@@ -153,6 +165,7 @@ const DoctorDetailScreen = () => {
             style={styles.backIcon}
             onPress={() => navigation.goBack()}
           >
+            
             <MaterialCommunityIcons
               name="chevron-left"
               size={40}
@@ -209,7 +222,34 @@ const DoctorDetailScreen = () => {
           </View>
           <View style={styles.scheduleContainer}>
             <View style={{}}>
-              <Text style={globalStyle.titleText}>Lịch trình làm việc</Text>
+              <View style={{flexDirection:"row", alignItems: 'center', justifyContent: 'space-between'}}>
+                <Text
+                  style={globalStyle.titleText}
+                >{`Lịch trình làm việc tháng ${month + 1}`}</Text>
+                <View style={{flexDirection: 'row'}}>
+                <TouchableOpacity
+                style={isNextWeekPressed?styles.nextWeekButton:styles.notEnableWeekButton}
+                onPress={handleReturn}
+                disabled={!isNextWeekPressed}
+              >
+                 <MaterialCommunityIcons
+                name="chevron-left"
+                size={20}
+                color={"white"}
+              />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.nextWeekButton}
+                onPress={handleNextWeek}
+              >
+                 <MaterialCommunityIcons
+                name="chevron-right"
+                size={20}
+                color={"white"}
+              />
+              </TouchableOpacity>
+                </View>
+              </View>
               <FlatList
                 scrollEnabled={false}
                 //   numColumns={7}
@@ -235,6 +275,7 @@ const DoctorDetailScreen = () => {
                   );
                 }}
               />
+             
             </View>
             <Text style={globalStyle.titleText}>Giờ làm việc</Text>
             <FlatList
@@ -384,8 +425,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "grey",
     paddingVertical: 4,
-    textAlign: 'center',
-    justifyContent: 'center'
+    textAlign: "center",
+    justifyContent: "center",
   },
   timeLabel: {
     height: 40,
@@ -400,5 +441,24 @@ const styles = StyleSheet.create({
   priceContainer: {
     alignItems: "flex-end",
     marginRight: 20,
+  },
+  nextWeekButton: {
+    // alignSelf: "center",
+    marginVertical: 6,
+    backgroundColor: globalColor.primaryColor,
+    paddingHorizontal: 6,
+    borderRadius: 8,
+  },
+  notEnableWeekButton: {
+    // alignSelf: "center",
+    marginVertical: 6,
+    backgroundColor: 'grey',
+    paddingHorizontal: 6,
+    borderRadius: 8,
+  },
+  nextWeekButtonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

@@ -9,13 +9,15 @@ interface ScheduleItemProps {
   status?: number;
   image?: string,
   onPress?: () => void;
+  time?: string
 }
 const ScheduleItem: React.FC<ScheduleItemProps> = ({
   date,
   name,
   onPress,
   status,
-  image
+  image,
+  time
 }) => {
   const [datePart, timePart] = date.split(" ");
   const renderIconStatus = () => {
@@ -93,7 +95,7 @@ const ScheduleItem: React.FC<ScheduleItemProps> = ({
             size={20}
             color="white"
           />
-          <Text style={styles.value}>Time nè</Text>
+          <Text style={styles.value}>{time}</Text>
         </View>
       </View>
       {/* <Text>{name}</Text> */}

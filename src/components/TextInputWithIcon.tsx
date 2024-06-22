@@ -47,8 +47,7 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: 15,
   },
-  labelContainer: {
-    backgroundColor: globalColor.backgroundColor, // Same color as background
+  labelContainer: { // Same color as background
     alignSelf: "flex-start", // Have View be same width as Text inside
     paddingHorizontal: 3, // Amount of spacing between border and first/last letter
     marginStart: 10, // How far right do you want the label to start
@@ -65,6 +64,5 @@ const styles = StyleSheet.create({
     zIndex: 0,
     height: 55,
     justifyContent: "center",
-    // Ensure border has z-index of 0
   },
 });

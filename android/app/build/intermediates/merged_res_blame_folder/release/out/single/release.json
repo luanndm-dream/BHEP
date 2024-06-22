@@ -104,6 +104,10 @@
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_bannerfamily.png"
     },
     {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_image_pendingicon.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_pendingicon.png"
+    },
+    {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_image_manavatar.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_manavatar.png"
     },

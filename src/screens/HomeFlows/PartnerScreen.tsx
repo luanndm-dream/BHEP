@@ -30,11 +30,12 @@ import * as Yup from "yup";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { useAppSelector } from "@/redux";
 import { MajorData } from "src/data/majorData";
+import Toast from "react-native-toast-message";
 
 const PartnerSchema = Yup.object().shape({
   fullName: Yup.string()
     .min(2, "Họ tên phải lớn hơn 2 ký tự")
-    .required("Required"),
+    .required("Bắt buộc"),
   certification: Yup.string()
     .min(2, "Họ tên phải lớn hơn 2 ký tự")
     .required("Không được bỏ trống"),
@@ -55,7 +56,8 @@ const PartnerScreen = () => {
   const [major, setMajor] = useState<any>();
   const [workplace, setWorkplace] = useState<string>("");
   const [experienceYear, setExperienceYear] = useState<number>(0);
-  const [imgBase64, setImgBase64] = React.useState<any>(null);
+  const [avatar, setAvatar] = useState<any>();
+  const [imageBase64, setImageBase64]= useState<string>("")
   const { showLoading, hideLoading } = useLoading();
   const height = useHeaderHeight();
   const customerId = useAppSelector((state) => state?.user?.userData?.id);
@@ -70,7 +72,16 @@ const PartnerScreen = () => {
       cropping: true,
       includeBase64: true,
     }).then((image: any) => {
-      setImgBase64(image?.data);
+      console.log(image)
+      setImageBase64(image.data)
+      setAvatar({
+        uri:
+          Platform.OS === "android"
+            ? image?.path
+            : image?.path.replace("file://", ""),
+        type: "image/jpg",
+        name: "image.jpg",
+      })
     });
   };
   const onSendForm = (
@@ -85,16 +96,25 @@ const PartnerScreen = () => {
       fullName,
       certification,
       major?.id,
-      imgBase64,
+      avatar,
       workplace,
       experienceYear
     ).then((res: any) => {
       console.log(res);
       if (res.statusCode == 200) {
+        Toast.show({
+          type: "success",
+          text1: "Đăng kí đối tác thành công",
+          text2: "Vui lòng chờ kết quả từ đội ngũ quản lí",
+        });
         navigation.navigate(STACK_NAVIGATOR_SCREENS?.MAINFLOWS);
         hideLoading();
       } else {
-        alert("Lỗi đăng kí");
+        Toast.show({
+          type: "error",
+          text1: "Đăng kí thất bại",
+          text2: `Đã xảy ra lỗi ${res.message}`,
+        });
         hideLoading();
       }
     });
@@ -157,9 +177,9 @@ const PartnerScreen = () => {
                     style={styles.avatarContainer}
                     onPress={choosePhoto}
                   >
-                    {imgBase64 ? (
+                    {imageBase64 ? (
                       <Image
-                        source={{ uri: `data:image/jpeg;base64,${imgBase64}` }}
+                        source={{ uri: `data:image/jpeg;base64,${imageBase64}` }}
                         resizeMode="cover"
                         style={{
                           height: "100%",

@@ -5,7 +5,7 @@ const OnPendingScreen = () => {
   return (
     <View style={styles.outerContainer}>
       <View style={styles.innerContainer}>
-        <Image source={require('../assets/image/pending.png')} style={{width: 100, height: 100}}/>
+        <Image source={require('../assets/image/pendingIcon.png')} style={{width: 100, height: 100}}/>
         <Text style={{color: 'black'}}>Tính năng đang được phát triển!</Text>
       </View>
     </View>

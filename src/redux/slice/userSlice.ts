@@ -6,14 +6,14 @@ import { Platform } from "react-native";
 
 const initialState = {
   //  accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJzdGFmZjFAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiU3RhZmYiLCJleHAiOjE3NDAyMDM3MTksImlzcyI6ImJ1c2RlbGl2ZXJ5LWF1dGgtYXBpIiwiYXVkIjoiYnVzZGVsaXZlcnktY2xpZW50In0.lCo_zLaOpRLinbowy5z02ozSr9GBkwRcsEDcYhh7kPM",
-  // accessToken: undefined,
+  accessToken: undefined,
   refreshToken: undefined,
   refreshTokenExpiryTime: undefined,
   userData: {
       id: 5,
       roleId: Platform.OS === 'android'? 2 : 3,
       geoLocationId: undefined,
-      fullName: 'Thành Phú',
+      fullName: 'David Phú',
       email: undefined,
       identify: undefined,
       phoneNumber: undefined,

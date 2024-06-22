@@ -17,6 +17,7 @@ import { IconFeature } from "@/components";
 import { useAppSelector } from "@/redux";
 import useLoading from "src/hook/useLoading";
 import { apiGetUserById } from "src/api/api_getUserById";
+import Toast from "react-native-toast-message";
 
 const HomeScreen = () => {
   const navigation = useNavigation<any>();
@@ -30,6 +31,7 @@ const HomeScreen = () => {
   useEffect(() => {
     showLoading();
     apiGetUserById(userData.userData.id).then((res: any) => {
+      console.log(res)
       if (res.statusCode === 200) {
         setUser(res.data);
         hideLoading();

@@ -25,14 +25,13 @@ const LoginScreen = () => {
   const navigation = useNavigation<any>();
   const dispatch = useAppDispatch();
   const { showLoading, hideLoading } = useLoading();
-  const isChecking = useAppSelector((state) => state.userHealthRecord.isChecking); 
+ 
  const handleLogin = async () => {
-  try {
     showLoading();
-    
     const res:any = await apiLogin(email, password);     
+    console.log(res)
     if (res.statusCode === 200) {
-    
+      hideLoading();
       dispatch(setUserInfo(res?.data));
       await AsyncStorage.setItem('auth', JSON.stringify(res?.data)); 
     } else {
@@ -42,17 +41,11 @@ const LoginScreen = () => {
         text1: 'Đăng nhập thất bại',
         text2: 'Vui lòng kiểm tra tài khoản và mật khẩu'
       });
+      hideLoading();
     }
-  } catch (error) {
-    console.error(error); // Handle errors here
-    Toast.show({
-      type: "error",
-      text1: 'Đăng nhập thất bại',
-      text2: 'Đã xảy ra lỗi, vui lòng thử lại'
-    });
-  } finally {
-    hideLoading(); // Ensure loading is hidden in both success and error cases
-  }
+  
+     // Ensure loading is hidden in both success and error cases
+  
 };
 
 

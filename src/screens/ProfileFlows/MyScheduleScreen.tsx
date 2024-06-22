@@ -40,6 +40,7 @@ const MySchedule = () => {
             <ScheduleItem date={item?.date} status={item?.status} 
             name={userData.roleId === 2? item.employeeName : item.customerName}
             image={userData.roleId === 2? item.employeeAvatar : item.customerAvatar}
+            time={item.time}
             onPress={()=>onPressItemHandle(item.id, index)}
             />
           )

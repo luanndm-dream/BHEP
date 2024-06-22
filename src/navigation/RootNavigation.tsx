@@ -119,10 +119,17 @@ const RootNavigation = () => {
   const [isShowSplash, setIsShowPlash] = useState<boolean>(
     useAppSelector((state) => state.user.isSplash)
   );
+  const [isChecking, setIsChecking] = useState<boolean>(
+    useAppSelector((state) => state.userHealthRecord.isChecking)
+  );
+
+  console.log("isChecking", isChecking);
   const accessToken = useAppSelector((state) => state.user.accessToken);
 
-    console.log(isShowSplash)
-
+  const initialRouteName =
+    isChecking === false
+      ? STACK_NAVIGATOR_SCREENS.QUESTIONNAIRESCREEN
+      : STACK_NAVIGATOR_SCREENS.MAINFLOWS;
 
   useEffect(() => {
     checkLogin();
@@ -143,12 +150,10 @@ const RootNavigation = () => {
         headerShown: false,
       }}
     >
-    {isShowSplash && (
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS.ONBOARDINGSCREEN}
         component={OnBoardingScreen}
       />
-    )}
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.LOGINSCREEN}
         component={LoginScreen}
@@ -156,10 +161,6 @@ const RootNavigation = () => {
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.REGISTERSCREEN}
         component={RegisterScreen}
-      />
-      <Stack.Screen
-        name={STACK_NAVIGATOR_SCREENS?.QUESTIONNAIRESCREEN}
-        component={QuestionnaireScreen}
       />
     </Stack.Navigator>
   );
@@ -169,7 +170,13 @@ const RootNavigation = () => {
       screenOptions={{
         headerShown: false,
       }}
+      initialRouteName={initialRouteName}
     >
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.QUESTIONNAIRESCREEN}
+        component={QuestionnaireScreen}
+      />
+
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.MAINFLOWS}
         component={BottomTabNavigation}

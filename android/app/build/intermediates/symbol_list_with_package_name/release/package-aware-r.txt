@@ -3130,6 +3130,7 @@ drawable src_assets_image_doctorbackground
 drawable src_assets_image_logo
 drawable src_assets_image_manavatar
 drawable src_assets_image_pending
+drawable src_assets_image_pendingicon
 drawable src_assets_image_womanavatar
 drawable src_assets_slides_onboarding1
 drawable src_assets_slides_onboarding2
