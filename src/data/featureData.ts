@@ -37,21 +37,25 @@ export const specialistData  = [
     {
         id: 1,
         name: 'Đa khoa',
-        imgName: require('../assets/icons/polyclinic.png')
+        imgName: require('../assets/icons/polyclinic.png'),
+        screen: STACK_NAVIGATOR_SCREENS.DOCTORSPECIALISTSCREEN
     },
     {
         id: 2,
         name: 'Tim mạch',
-        imgName: require('../assets/icons/cardiology.png')
+        imgName: require('../assets/icons/cardiology.png'),
+        screen: STACK_NAVIGATOR_SCREENS.DOCTORSPECIALISTSCREEN
     },
     {
         id: 3,
         name: 'Thần kinh',
-        imgName: require('../assets/icons/neurology.png')
+        imgName: require('../assets/icons/neurology.png'),
+        screen: STACK_NAVIGATOR_SCREENS.DOCTORSPECIALISTSCREEN
     },
     {
         id: 4,
         name: 'Khoa nhi',
-        imgName: require('../assets/icons/pediatrics.png')
+        imgName: require('../assets/icons/pediatrics.png'),
+        screen: STACK_NAVIGATOR_SCREENS.DOCTORSPECIALISTSCREEN
     }
 ]

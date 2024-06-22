@@ -66,10 +66,10 @@ const DropDownListWithImage: React.FC<DropDownListWithImageProps> = ({
 
   return (
     <KeyboardAvoidingView
-      style={{ flex: 1 }}
+      style={{ flex: 1, height: 400 }}
       behavior={Platform.OS === "ios" ? "padding" : undefined}
       keyboardVerticalOffset={Platform.OS === "ios" ? 64 : 0}
-      contentContainerStyle={{ flexGrow: 1 }}
+      // contentContainerStyle={{ flexGrow: 1 }}
     >
       <CustomModal
         onBackDropPress={() => {
@@ -84,10 +84,12 @@ const DropDownListWithImage: React.FC<DropDownListWithImageProps> = ({
           <View>
             <SafeAreaView>
               <FlatList
+              showsVerticalScrollIndicator={false}
                 style={
                   multiSelect
-                    ? { height: 230, marginBottom: 10 }
-                    : { height: 200 }
+                    ? { height: 380, marginBottom: 10 }
+                    : { height: 350, }
+                    
                 }
                 data={filterData(dataList, searchValue)}
                 renderItem={({ item }) => {
@@ -111,7 +113,7 @@ const DropDownListWithImage: React.FC<DropDownListWithImageProps> = ({
                         <MaterialCommunityIcons
                           name="chevron-right"
                           size={30}
-                          color='white'
+                          color='black'
                         />
                       </View>
                     </TouchableOpacity>
@@ -168,10 +170,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: 'center',
-    backgroundColor: globalColor.secondaryColor,
+    backgroundColor: '#f2f4f5',
     padding: 16,
     borderRadius: 8,
-    marginVertical: 6
+    marginVertical: 6,
+    opacity: 0.7
   },
   itemBox: {
     flexDirection: "row",
@@ -181,7 +184,7 @@ const styles = StyleSheet.create({
   item: {
     fontSize: globalFontSize.lableFont,
     fontWeight: "bold",
-    color: "white",
+    color: "black",
   },
   labelSearch: {
     height: 50,

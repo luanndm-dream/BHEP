@@ -12,6 +12,7 @@ import {
   CommunityScreen,
   DoctorDetailScreen,
   DoctorScreen,
+  DoctorSpecialistScreen,
   EditWorkProfileScreen,
   FindLocationScreen,
   HomeScreen,
@@ -204,7 +205,10 @@ const RootNavigation = () => {
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.DOCTORDETAILSCREEN}
         component={DoctorDetailScreen}
-      />
+      /><Stack.Screen
+      name={STACK_NAVIGATOR_SCREENS?.DOCTORSPECIALISTSCREEN}
+      component={DoctorSpecialistScreen}
+    />
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.MYHEALTHSCREEN}
         component={MyHealthScreen}
