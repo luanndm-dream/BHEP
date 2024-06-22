@@ -10,5 +10,8 @@ export const globalColor = {
     approveBg: '#baf6d0',
     approve:'#15803d',
     cancelBg: '#fecaca',
-    cancel: '#BF2D2B'
+    cancel: '#BF2D2B',
+    greenBhep : '#8AF188',
+    yellowBhep: '#FFED6F',
+    redBhep: '#EC3F41'
 }

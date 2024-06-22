@@ -71,11 +71,14 @@ const PaymentScreen = () => {
         "https://www.google.com/",
         Math.floor(Date.now() / 1000) + 600
       ).then((res: any) => {
-        console.log(res);
+        console.log('payOS', res);
         setPaymentUrl(res?.data?.checkoutUrl);
+        setPaymentId(res.data.id)
       });
     }
   };
+
+  console.log(paymentId)
 
   const onNavigationStateChange = (navState: any) => {
     const { url } = navState;
@@ -84,7 +87,9 @@ const PaymentScreen = () => {
     if (url.includes("vnp_TransactionStatus=00") || navState.canGoBack === true) {
       const amount = Number(inputValue.replace(/[^0-9]/g, ""));
       const formattedAmount = amount.toLocaleString("vi-VN");
-      // apiPutPayment();
+      apiPutPayment(paymentId,2).then((res:any)=>{
+        console.log('res update balance', res)
+      });
       Toast.show({
         type: "success",
         text1: "Thanh toán thành công",
@@ -94,6 +99,7 @@ const PaymentScreen = () => {
       navigate.goBack();
       setPaymentUrl("");
     } else {
+      apiPutPayment(paymentId,1);
     }
   };
 

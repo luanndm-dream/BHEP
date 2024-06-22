@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 require_relative '../node_modules/react-native-permissions/scripts/setup'
 # platform :ios, min_ios_version_supported
 pod 'react-native-geolocation-service', path: '../node_modules/react-native-geolocation-service'
-platform :ios, '12.4'
+platform :ios, '13'
 prepare_react_native_project!
 
 setup_permissions([

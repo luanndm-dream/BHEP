@@ -11,6 +11,7 @@ MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/tr
 MERGED from [:react-native-vector-icons] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-async-storage_async-storage] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-masked-view_masked-view] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:shopify_react-native-skia] /Users/luan/Documents/GitHub/BHEP/node_modules/@shopify/react-native-skia/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:3:1-10:12
 MERGED from [:react-native-ble-plx] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-date-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-device-info] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -292,6 +293,8 @@ MERGED from [:react-native-async-storage_async-storage] /Users/luan/Documents/Gi
 MERGED from [:react-native-async-storage_async-storage] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-masked-view_masked-view] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-masked-view_masked-view] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-masked-view/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:shopify_react-native-skia] /Users/luan/Documents/GitHub/BHEP/node_modules/@shopify/react-native-skia/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-8:41
+MERGED from [:shopify_react-native-skia] /Users/luan/Documents/GitHub/BHEP/node_modules/@shopify/react-native-skia/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-8:41
 MERGED from [:react-native-ble-plx] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-ble-plx] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-date-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41

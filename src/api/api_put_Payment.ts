@@ -1,6 +1,6 @@
 import { publicAxios } from "./api_config";
 
-export async function apiPutPayment(paymentId: number,userId: number, status: number) {
+export async function apiPutPayment(paymentId: number, status: number) {
   const url = `Payment/${paymentId}`;
   const dataSend = {
     paymentId,
