@@ -240,6 +240,7 @@ const styles = StyleSheet.create({
   labelText: {
     marginLeft: 5,
     maxWidth: "80%",
+    color: 'black'
   },
   bhepText: {
     color : globalColor.primaryColor,

@@ -130,6 +130,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="/Users/luan/Documents/GitHub/BHEP/android@@:shopify_react-native-skia::release"
+      jars="/Users/luan/Documents/GitHub/BHEP/node_modules/@shopify/react-native-skia/android/build/.transforms/a78de81e20a933e61db69b556408d85a/transformed/out/jars/classes.jar:/Users/luan/Documents/GitHub/BHEP/node_modules/@shopify/react-native-skia/android/build/.transforms/a78de81e20a933e61db69b556408d85a/transformed/out/jars/libs/R.jar"
+      resolved="BHEP_Mobile_Demo_V1:shopify_react-native-skia:unspecified"
+      folder="/Users/luan/Documents/GitHub/BHEP/node_modules/@shopify/react-native-skia/android/build/.transforms/a78de81e20a933e61db69b556408d85a/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="/Users/luan/Documents/GitHub/BHEP/android@@:react-native-ble-plx::release"
       jars="/Users/luan/Documents/GitHub/BHEP/node_modules/react-native-ble-plx/android/build/.transforms/80a9578f34cd765591f8494efdc16882/transformed/out/jars/classes.jar:/Users/luan/Documents/GitHub/BHEP/node_modules/react-native-ble-plx/android/build/.transforms/80a9578f34cd765591f8494efdc16882/transformed/out/jars/libs/R.jar"
       resolved="BHEP_Mobile_Demo_V1:react-native-ble-plx:unspecified"

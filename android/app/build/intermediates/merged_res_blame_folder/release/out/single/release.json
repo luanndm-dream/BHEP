@@ -32,12 +32,20 @@
         "source": "com.bhep_mobile_demo_v1.app-main-40:/mipmap-hdpi/ic_launcher.png"
     },
     {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_image_bhepzone.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_bhepzone.png"
+    },
+    {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_node_modules_reactnativecalendars_src_img_down.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/node_modules_reactnativecalendars_src_img_down.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_slides_onboarding3.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_slides_onboarding3.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_nutrition.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_nutrition.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_polyclinic.png.flat",
@@ -52,8 +60,16 @@
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/node_modules_reactnativecalendars_src_img_up.png"
     },
     {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_ent.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_ent.png"
+    },
+    {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_obstetrics.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_obstetrics.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/mipmap-hdpi_ic_launcher_round.png.flat",
@@ -74,6 +90,10 @@
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-xxhdpi_node_modules_reactnativecalendars_src_img_up.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-xxhdpi/node_modules_reactnativecalendars_src_img_up.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_joint.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_joint.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_paymentcard1.png.flat",
@@ -104,12 +124,16 @@
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_bannerfamily.png"
     },
     {
-        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_image_pendingicon.png.flat",
-        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_pendingicon.png"
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_image_bannerhome.jpg.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_bannerhome.jpg"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_image_manavatar.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_manavatar.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_image_pendingicon.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_pendingicon.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_workspace.png.flat",
@@ -140,6 +164,10 @@
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_image_pending.png"
     },
     {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_internal.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_internal.png"
+    },
+    {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-hdpi_node_modules_reactnativecalendars_src_img_up.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-hdpi/node_modules_reactnativecalendars_src_img_up.png"
     },
@@ -150,6 +178,10 @@
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_neurology.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_neurology.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_respiratory.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_respiratory.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/mipmap-xxhdpi_ic_launcher.png.flat",
@@ -174,6 +206,10 @@
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_monitor.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_monitor.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_parasite.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_parasite.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_slides_onboarding5.png.flat",
@@ -240,6 +276,10 @@
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-xhdpi/node_modules_reactnativecalendars_src_calendar_img_next.png"
     },
     {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_default.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_default.png"
+    },
+    {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-main-40:/mipmap-xhdpi/ic_launcher_round.png"
     },
@@ -266,6 +306,10 @@
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_dentistry.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-34:/drawable-mdpi/src_assets_icons_dentistry.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-39:/drawable-mdpi_src_assets_icons_pediatrics.png.flat",

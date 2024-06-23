@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
     elevation: 0.5, // Needed for android
     shadowColor: "white", // Same as background color because elevation: 1 creates a shadow that we don't want
     position: "absolute", // Needed to be able to precisely overlap label with border
-    top: -12, // Vertical
+    top: -12,
+    backgroundColor: globalColor.backgroundColor // Vertical
   },
   inputContainer: {
     borderWidth: 1, // Create border
