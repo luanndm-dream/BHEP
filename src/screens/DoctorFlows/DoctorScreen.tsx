@@ -1,5 +1,6 @@
 import {
   FlatList,
+  Image,
   Platform,
   StatusBar,
   StyleSheet,
@@ -54,6 +55,7 @@ const DoctorScreen = () => {
     apiGetSpecialist().then((res: any) => {
       if (res.statusCode === 200) {
         const dataFromApi = res.data.items;
+        console.log('res specialist', dataFromApi)
         const mappedSpecialistData = dataFromApi.map((item: any) => {
           let imgName;
           switch (item.name) {
@@ -154,7 +156,6 @@ const DoctorScreen = () => {
             renderItem={({ item }: any) => (
               <IconFeature
                 name={item.name}
-                imgUrl={item.imgName}
                 onPress={() =>
                   onPressIconHandle(item.screen, item.name, item.id)
                 }
@@ -211,13 +212,14 @@ const DoctorScreen = () => {
                 <SuggestDoctorItem
                   name={item?.fullName}
                   image={item?.avatar}
-                  specialist={item?.description}
+                  specialistId={item?.specialistId}
                   rate={item?.rate}
                   onPress={() => onPressDoctorSuggest(item.id)}
                 />
               )}
             />
           </View>
+          
         </View>
       </SafeAreaView>
       {isOpen && (

@@ -7,9 +7,8 @@ import {
 } from "src/constants/size";
 import Animated, {
   interpolate,
-  Extrapolate,
-  useAnimatedStyle,
   Extrapolation,
+  useAnimatedStyle,
 } from "react-native-reanimated";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Text } from "react-native";
@@ -48,8 +47,6 @@ const ItemDoctor: React.FC<ItemDoctorProps> = ({
       inputRange,
       [0.8, 1, 0.8],
       Extrapolation.CLAMP
-      // Extrapolate.CLAMP
-      
     );
     return {
       transform: [{ scaleY: scale }],
@@ -57,12 +54,11 @@ const ItemDoctor: React.FC<ItemDoctorProps> = ({
   });
 
   useEffect(() => {
-    apiGetSpecialist().then((res: any) => {
-      console.log(res.data);
-      if (res.statusCodde === 200) {
+    apiGetSpecialist().then((res:any)=>{
+      if (res.statusCode === 200) {
         setSpecialist(res.data.items);
       }
-    });
+    })
   }, []);
 
   const getSpecialistName = (id: number): string => {
@@ -93,7 +89,7 @@ const ItemDoctor: React.FC<ItemDoctorProps> = ({
         <Image
           source={{ uri: imgUrl }}
           style={styles.image}
-          // resizeMode="contain"
+          resizeMode="repeat"
         />
         <View style={styles.inforContainer}>
           <Text style={[globalStyle.textNormal, styles.fullName]}>

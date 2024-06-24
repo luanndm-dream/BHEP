@@ -32,8 +32,6 @@ const ProfileScreen = () => {
   const { showLoading, hideLoading } = useLoading();
   const userData = useAppSelector((state) => state.user.userData);
   const navigation = useNavigation<any>();
-  const form = new FormData();
-  const os = Platform.OS;
   const dispatch = useAppDispatch();
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [data, setData] = useState<any>();
@@ -95,12 +93,11 @@ const ProfileScreen = () => {
       });
     });
   };
-
   useFocusEffect(
-    
     useCallback(() => {
-      // showLoading();
+      
       apiGetUserById(Number(userData.id)).then((res:any) => {
+        showLoading();
         if(res.statusCode === 200){
           setData(res?.data);
           hideLoading()

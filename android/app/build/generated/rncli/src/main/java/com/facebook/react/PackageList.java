@@ -17,8 +17,6 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-masked-view/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
-// @shopify/react-native-skia
-import com.shopify.reactnative.skia.RNSkiaPackage;
 // react-native-ble-plx
 import com.bleplx.BlePlxPackage;
 // react-native-date-picker
@@ -97,7 +95,6 @@ public class PackageList {
       new VectorIconsPackage(),
       new AsyncStoragePackage(),
       new RNCMaskedViewPackage(),
-      new RNSkiaPackage(),
       new BlePlxPackage(),
       new DatePickerPackage(),
       new RNDeviceInfo(),

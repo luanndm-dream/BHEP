@@ -124,7 +124,6 @@ const RootNavigation = () => {
     useAppSelector((state) => state.userHealthRecord.isChecking)
   );
 
-  console.log("isChecking", isChecking);
   const accessToken = useAppSelector((state) => state.user.accessToken);
 
   const initialRouteName =

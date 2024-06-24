@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 require_relative '../node_modules/react-native-permissions/scripts/setup'
 # platform :ios, min_ios_version_supported
 pod 'react-native-geolocation-service', path: '../node_modules/react-native-geolocation-service'
-platform :ios, '13'
+platform :ios, '12.4'
 prepare_react_native_project!
 
 setup_permissions([
@@ -16,7 +16,7 @@ setup_permissions([
   # 'FaceID',
   # 'LocationAccuracy',
   # 'LocationAlways',
-   'LocationWhenInUse',
+  #'LocationWhenInUse',
   # 'MediaLibrary',
   # 'Microphone',
   # 'Motion',

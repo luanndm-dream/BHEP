@@ -1,22 +1,40 @@
 import { Image, StyleSheet, Text, View,TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { globalStyle } from "src/constants";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { apiGetSpecialist } from "src/api/api_get_Specialist";
 
 interface SuggestDoctorItemProps {
   name: string;
-  specialist: string;
+  specialistId: number;
   rate?: number,
   image?: any,
   onPress: (id: any) => void
 }
 const SuggestDoctorItem: React.FC<SuggestDoctorItemProps> = ({
   name,
-  specialist,
+  specialistId,
   rate,
   image,
   onPress
 }) => {
+  const [specialist, setSpecialist] = useState<any[]>([]);
+
+  useEffect(() => {
+    apiGetSpecialist().then((res:any)=>{
+      if (res.statusCode === 200) {
+        setSpecialist(res.data.items);
+      }
+    })
+  }, []);
+
+  const getSpecialistName = (id: number): string => {
+    const foundSpecialist = specialist.find((item) => item.id === id);
+    return foundSpecialist ? foundSpecialist.name : "Không xác định";
+  };
+
+
+
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image
@@ -25,9 +43,9 @@ const SuggestDoctorItem: React.FC<SuggestDoctorItemProps> = ({
         resizeMode="contain"
       />
       <View style={styles.subContainer}>
-        <View>
+        <View style={{justifyContent: 'space-between', flex: 1}}>
           <Text style={[globalStyle.textNormal, {fontWeight: 'bold'}]}>{name}</Text>
-          <Text style={globalStyle.textNormal}>{specialist}</Text>
+          <Text style={[globalStyle.textNormal,styles.specialist]}>Chuyên khoa: {getSpecialistName(specialistId)}</Text>
         </View>
         <View style={styles.rateContainer}>
           <View style={{flexDirection:'row', alignItems: 'center'}}>
@@ -60,5 +78,12 @@ const styles = StyleSheet.create({
   rateContainer: {
     justifyContent: 'center',
     alignItems: 'flex-end'
-  }
+  },
+  specialist: {
+    fontWeight: "400",
+    color: "grey",
+    marginTop: 4,
+    fontSize: 14,
+    paddingTop: 6
+  },
 });

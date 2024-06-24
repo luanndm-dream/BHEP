@@ -69,7 +69,7 @@ const HomeScreen = () => {
                 style={styles.bhepCoin}
               />
               <Text style={{ color: "white", fontWeight: "500" }}>
-                {user?.balance}
+                {user?.balance?user?.balance:0}
               </Text>
             </View>
           </View>

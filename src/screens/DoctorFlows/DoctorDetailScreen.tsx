@@ -41,9 +41,10 @@ const DoctorDetailScreen = () => {
   const [selectedTimes, setSelectedTimes] = useState<any[]>([]);
   const [selectedTime, setSelectedTime] = useState<any>();
   const [selectedTimeIndex, setSelectedTimeIndex] = useState<number>(-1);
-  const [isNextWeekPressed, setIsNextWeekPressed] = useState<boolean>(false); 
+  const [isNextWeekPressed, setIsNextWeekPressed] = useState<boolean>(false);
   const [price, setPrice] = useState<number>(0);
-
+  const [currentMonth, setCurrentMonth] = useState(month + 1);
+  const [canGoForward, setCanGoForward] = useState(true);
   const handlePressDateSlider = (index: number, date: number) => {
     setSelectedDateIndex(index);
     setSelectedDate(date);
@@ -74,6 +75,8 @@ const DoctorDetailScreen = () => {
   function dates(current: any) {
     var week = [];
     current.setDate(current.getDate() - current.getDay() + 1);
+    const firstDayOfWeek = new Date(current);
+    setCurrentMonth(firstDayOfWeek.getMonth() + 1);
     for (var i = 0; i < 7; i++) {
       const dayIndex = i === 6 ? 1 : i + 2; // Nếu i là 6 (Chủ Nhật), dayIndex sẽ là 1 (Thứ Hai)
       const formattedDate = formatDate(new Date(current));
@@ -107,10 +110,13 @@ const DoctorDetailScreen = () => {
     setSelectedTimes([]);
     setSelectedTimeIndex(-1);
     setIsNextWeekPressed(true);
+    setCanGoForward(false); // Disable nút "Next Week" sau khi ấn
   };
   const handleReturn = () => {
-    setDateInWeek(dates(new Date(year, month, date - 1)));
+    const currentWeekStartDate = new Date(year, month, date - 1);
+    setDateInWeek(dates(currentWeekStartDate));
     setIsNextWeekPressed(false);
+    setCanGoForward(true); // Enable lại nút "Next Week"
   };
 
   useEffect(() => {
@@ -165,7 +171,6 @@ const DoctorDetailScreen = () => {
             style={styles.backIcon}
             onPress={() => navigation.goBack()}
           >
-            
             <MaterialCommunityIcons
               name="chevron-left"
               size={40}
@@ -222,32 +227,47 @@ const DoctorDetailScreen = () => {
           </View>
           <View style={styles.scheduleContainer}>
             <View style={{}}>
-              <View style={{flexDirection:"row", alignItems: 'center', justifyContent: 'space-between'}}>
-                <Text
-                  style={globalStyle.titleText}
-                >{`Lịch trình làm việc tháng ${month + 1}`}</Text>
-                <View style={{flexDirection: 'row'}}>
-                <TouchableOpacity
-                style={isNextWeekPressed?styles.nextWeekButton:styles.notEnableWeekButton}
-                onPress={handleReturn}
-                disabled={!isNextWeekPressed}
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
               >
-                 <MaterialCommunityIcons
-                name="chevron-left"
-                size={20}
-                color={"white"}
-              />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.nextWeekButton}
-                onPress={handleNextWeek}
-              >
-                 <MaterialCommunityIcons
-                name="chevron-right"
-                size={20}
-                color={"white"}
-              />
-              </TouchableOpacity>
+                <Text style={globalStyle.titleText}>
+                  {`Lịch trình làm việc tháng ${currentMonth}`}
+                </Text>
+                <View style={{ flexDirection: "row" }}>
+                  <TouchableOpacity
+                    style={
+                      isNextWeekPressed
+                        ? styles.nextWeekButton
+                        : styles.notEnableWeekButton
+                    }
+                    onPress={handleReturn}
+                    disabled={!isNextWeekPressed}
+                  >
+                    <MaterialCommunityIcons
+                      name="chevron-left"
+                      size={20}
+                      color={"white"}
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={
+                      canGoForward
+                        ? styles.nextWeekButton
+                        : styles.notEnableWeekButton
+                    }
+                    onPress={handleNextWeek}
+                    disabled={!canGoForward}
+                  >
+                    <MaterialCommunityIcons
+                      name="chevron-right"
+                      size={20}
+                      color={"white"}
+                    />
+                  </TouchableOpacity>
                 </View>
               </View>
               <FlatList
@@ -275,7 +295,6 @@ const DoctorDetailScreen = () => {
                   );
                 }}
               />
-             
             </View>
             <Text style={globalStyle.titleText}>Giờ làm việc</Text>
             <FlatList
@@ -452,7 +471,7 @@ const styles = StyleSheet.create({
   notEnableWeekButton: {
     // alignSelf: "center",
     marginVertical: 6,
-    backgroundColor: 'grey',
+    backgroundColor: "grey",
     paddingHorizontal: 6,
     borderRadius: 8,
   },

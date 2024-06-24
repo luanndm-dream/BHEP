@@ -46,6 +46,7 @@ const PaymentScreen = () => {
     setVisible(!visible);
   };
 
+  console.log('userId', userId)
   const onConfirm = () => {
     const numericValue = inputValue.replace(/[^0-9]/g, "");
     const paymentAmount = Number(numericValue);
@@ -78,8 +79,7 @@ const PaymentScreen = () => {
     }
   };
 
-  console.log(paymentId)
-
+  
   const onNavigationStateChange = (navState: any) => {
     const { url } = navState;
     console.log(navState);
