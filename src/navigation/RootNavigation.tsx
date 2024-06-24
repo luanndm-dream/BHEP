@@ -24,6 +24,8 @@ import {
   OnBoardingScreen,
   PartnerScreen,
   PaymentScreen,
+  ProductDetailScreen,
+  ProductScreen,
   ProfileScreen,
   QuestionnaireScreen,
   RegisterScreen,
@@ -247,6 +249,14 @@ const RootNavigation = () => {
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.SERVICESCREEN}
         component={ServiceScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.PRODUCTSCREEN}
+        component={ProductScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.PRODUCTDETAILSCREEN}
+        component={ProductDetailScreen}
       />
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.SERVICEDETAILSCREEN}

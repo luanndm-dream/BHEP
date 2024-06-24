@@ -48,7 +48,9 @@ const ServiceScreen = () => {
       type: type
     });
   };
-
+  const onPressItemSpirit = () => {
+    navigate.navigate(STACK_NAVIGATOR_SCREENS.PRODUCTSCREEN)
+  };
   return (
     <>
       <Header headerTitle="Mua gói dịch vụ" />
@@ -80,6 +82,21 @@ const ServiceScreen = () => {
               <Text style={styles.description}>
                 Hãy đăng ký ngay để chăm sóc sức khỏe của bạn và gia đình ngay bây
                 giờ.
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.section} onPress={onPressItemSpirit}>
+          <View style={styles.imageContainer}>
+            <Image
+              source={require("../../assets/image/bannerDevice.png")}
+              style={styles.image}
+              // resizeMode="contain"
+            />
+            <View style={styles.textContainer}>
+              <Text style={styles.titleSpirit}>Thiết bị SPIRIT</Text>
+              <Text style={styles.descriptionSpirit}>
+                Thiết bị đo lường các chỉ số sinh tồn sức khoẻ
               </Text>
             </View>
           </View>
@@ -129,4 +146,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "black",
   },
+  titleSpirit: {
+    fontSize: 23,
+    fontWeight: "700",
+    color: "white",
+    marginBottom: 10,
+  },
+  descriptionSpirit: {
+    fontSize: 16,
+    color: "white",
+  }
 });

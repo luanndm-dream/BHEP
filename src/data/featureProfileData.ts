@@ -35,7 +35,7 @@ export const getFeatureProfileData = () => {
         },
         {
             id: 6,
-            name: 'Mua gói dịch vụ',
+            name: 'Mua dịch vụ',
             iconName: "cart-outline",
             color: '#e0afd1',
             screen: STACK_NAVIGATOR_SCREENS.SERVICESCREEN,
