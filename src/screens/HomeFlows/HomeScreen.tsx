@@ -140,23 +140,21 @@ const HomeScreen = () => {
                 </Text>
               </View>
               <ButtonText
-                onPress={() => {navigation.navigate(STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN)}}
-                text="Xem chi tiết"
-                styleContainer={{
-                  backgroundColor: globalColor.primaryColor,
-                  borderRadius: 12,
-                  height: 45,
-                  width: '80%',
-                  marginTop: 5
+                onPress={() => {
+                  navigation.navigate(
+                    STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN
+                  );
                 }}
+                text="Xem chi tiết"
+                styleContainer={styles.buttonContainer}
               />
             </View>
-            <View style={{alignSelf: 'center'}}>
-            <Image
-              source={require("../../assets/image/bhepZone.png")}
-              style={styles.bhepZoneImage}
-            />
-            <Text style={styles.bhepText}>Vùng sức khoẻ BHEP</Text>
+            <View style={styles.bhepZoneImageContainer}>
+              <Image
+                source={require("../../assets/image/bhepZone.png")}
+                style={styles.bhepZoneImage}
+              />
+              <Text style={styles.bhepText}>Vùng sức khoẻ BHEP</Text>
             </View>
           </View>
         </View>
@@ -246,5 +244,16 @@ const styles = StyleSheet.create({
     color : globalColor.primaryColor,
     fontSize: 16,
     fontWeight: 'bold'
-  }
+  },
+  buttonContainer: {
+    backgroundColor: globalColor.primaryColor,
+    borderRadius: 12,
+    height: 45,
+    width: "80%",
+    marginTop: 10,
+    // alignSelf: "center",
+  },
+  bhepZoneImageContainer: {
+    alignSelf: "center",
+  },
 });

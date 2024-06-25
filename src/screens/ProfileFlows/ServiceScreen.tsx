@@ -19,29 +19,28 @@ const ServiceScreen = () => {
   const [familyPackages, setFamilyPackages] = useState([]);
   const {showLoading, hideLoading} = useLoading()
   useEffect(() => {
-    showLoading()
+    showLoading();
     apiGetService()
       .then((res: any) => {
         const services = res.data.items;
-
-        // Tạo mảng riêng cho gói dịch vụ cá nhân và gia đình
         const personal = services.filter(
           (item: any) => item.name === "Gói dịch vụ cá nhân"
         );
         const family = services.filter(
           (item: any) => item.name === "Gói dịch vụ gia đình"
         );
-
+  
         setPersonalPackages(personal);
         setFamilyPackages(family);
-        hideLoading();
       })
       .catch((error) => {
-        hideLoading();
         console.error("Failed to fetch services:", error);
+      })
+      .finally(() => {
+        hideLoading();
       });
   }, []);
-
+  
   const onPressItem = (type: number) => {
     navigate.navigate(STACK_NAVIGATOR_SCREENS.SERVICEDETAILSCREEN, {
       data: type === 1 ? personalPackages : familyPackages,

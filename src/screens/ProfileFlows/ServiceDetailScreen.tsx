@@ -6,6 +6,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  TextInput,
 } from "react-native";
 import React, { useState } from "react";
 import { ButtonText, Header } from "@/components";
@@ -99,7 +100,28 @@ const ServiceDetailScreen = () => {
             }}
           />
           <View style={styles.dashedLine} />
-
+          {type === 2 && <View>
+          <Text style={styles.requirementTitle}>
+            Bắt buộc phải có Family mới được sử dụng gói gia đình
+          </Text>
+          <View style={styles.requirementContainer}>
+            <Text style={styles.requirementItem}>
+              • Nếu bạn chưa có Family. Phí thành lập 500.000đ/ 1 năm. Mua 1 lần
+              sử dụng cho cả Family.
+            </Text>
+            <Text style={styles.requirementItem}>
+              • Nếu bạn đã có Family. Vui lòng nhập Mã Family (do chủ Family
+              cung cấp) vào bên dưới.
+            </Text>
+            <Text style={styles.codeRequired}>
+            Điền mã Family của bạn nếu có.
+            </Text>
+          </View> 
+          <TextInput style={styles.textInput} 
+          placeholder="Mã family"
+          />
+          </View>}
+          
           <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
             {data?.map((item: any, index: any) => (
               <TouchableOpacity
@@ -108,7 +130,7 @@ const ServiceDetailScreen = () => {
                   styles.itemContainer,
                   {
                     backgroundColor:
-                      selectedItem === item ? "#3FD69F" : "#a6a6a6",
+                      selectedItem === item ? "#85c4ee" : "#a6a6a6",
                   },
                 ]}
                 onPress={() => onPressItem(item)}
@@ -208,4 +230,31 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  noteText: {
+    fontSize: 14,
+    color: "black",
+  },
+  requirementContainer: {
+    marginBottom: 10,
+  },
+  requirementItem: {
+    fontSize: 14,
+    marginBottom: 10,
+  },
+  requirementTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginVertical: 10,
+  },
+  codeRequired : {
+    color: 'red',
+    fontSize: 18
+  }, 
+  textInput: {
+    height: 40,
+    borderWidth: 1,
+    borderRadius: 8, 
+    borderColor: 'red',
+    width: 150,
+  }
 });

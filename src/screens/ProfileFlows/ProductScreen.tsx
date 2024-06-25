@@ -12,7 +12,7 @@ const ProductScreen = () => {
   useEffect(() => {
     apiGetProduct().then((res: any) => {
       if (res.statusCode === 200) {
-        setProducts(res.data.items);
+        setProducts(res?.data?.items);
       }
     });
   }, []);

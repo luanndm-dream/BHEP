@@ -35,17 +35,13 @@ const LoginScreen = () => {
       dispatch(setUserInfo(res?.data));
       await AsyncStorage.setItem('auth', JSON.stringify(res?.data)); 
     } else {
-      // alert("Lỗi đăng nhập");
       Toast.show({
         type: "error",
         text1: 'Đăng nhập thất bại',
         text2: 'Vui lòng kiểm tra tài khoản và mật khẩu'
       });
       hideLoading();
-    }
-  
-     // Ensure loading is hidden in both success and error cases
-  
+    }  
 };
 
 

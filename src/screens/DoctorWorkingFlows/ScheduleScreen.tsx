@@ -111,7 +111,7 @@ const ScheduleScreen = () => {
       <View style={styles.container}>
         <View style={styles.calendar}>
           <Calendar
-            onDayPress={(day) => {
+            onDayPress={(day:any) => {
               setSelected(day.dateString);
             }}
             markedDates={{

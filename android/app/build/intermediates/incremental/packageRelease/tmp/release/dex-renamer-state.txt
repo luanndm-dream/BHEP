@@ -1,4 +1,4 @@
-#Tue Jun 25 00:36:50 ICT 2024
+#Tue Jun 25 11:04:55 ICT 2024
 base.1=/Users/luan/Documents/GitHub/BHEP/android/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
 path.1=classes2.dex
 base.0=/Users/luan/Documents/GitHub/BHEP/android/app/build/intermediates/dex/release/mergeDexRelease/classes.dex

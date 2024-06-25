@@ -2,7 +2,7 @@ import { publicAxios } from "./api_config";
 
 interface CoinTransactionConfig {
     userId: number;
-    amount: number;
+    amount: number; 
     isMinus: boolean;
     title?: string;
     description?: string;
@@ -10,7 +10,7 @@ interface CoinTransactionConfig {
     code?: string;
     vouchers?: number[];
     services?: number[];
-    products?: number[];
+    products?: { id: number; quantity: number }[];
   }
   
   export async function apiPostCoinTransaction(config: CoinTransactionConfig) {
