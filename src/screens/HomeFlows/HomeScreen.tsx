@@ -146,6 +146,7 @@ const HomeScreen = () => {
                   );
                 }}
                 text="Xem chi tiết"
+                styleText={{fontWeight: 'bold'}}
                 styleContainer={styles.buttonContainer}
               />
             </View>
@@ -233,7 +234,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "80%",
     alignItems: "center",
-    marginVertical: 6,
+    marginTop: 6,
   },
   labelText: {
     marginLeft: 5,

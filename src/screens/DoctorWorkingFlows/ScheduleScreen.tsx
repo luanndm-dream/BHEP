@@ -15,13 +15,14 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { globalColor } from "src/constants/color";
 import { apiPostSchedule } from "src/api/api_post_Schedule";
 import Toast from 'react-native-toast-message';
+import { useAppSelector } from "@/redux";
 const ScheduleScreen = () => {
   const [selected, setSelected] = useState("");
   const [timeSlots, setTimeSlots] = useState<{ [date: string]: string[] }>({});
   const [isVisible, setIsVisible] = useState(false);
   const [fromTime, setFromTime] = useState<any>();
   const [toTime, setToTime] = useState<any>();
-
+  const userId = useAppSelector(state => state.user.userData.id)
   const [activeComponent, setActiveComponent] = useState<String>();
 
   const onPressTimePicker = (type: String) => {
@@ -86,7 +87,8 @@ const ScheduleScreen = () => {
 
   const updateHandle = () => {
     const data = transformToApiFormat();
-    apiPostSchedule(5, data).then((res:any) => {
+    apiPostSchedule(userId, data).then((res:any) => {
+      console.log('res', res)
       if(res.statusCode === 200){
         Toast.show({
           type: "success",
