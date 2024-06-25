@@ -92,12 +92,6 @@ const ServiceScreen = () => {
               style={styles.image}
               // resizeMode="contain"
             />
-            <View style={styles.textContainer}>
-              <Text style={styles.titleSpirit}>Thiết bị SPIRIT</Text>
-              <Text style={styles.descriptionSpirit}>
-                Thiết bị đo lường các chỉ số sinh tồn sức khoẻ
-              </Text>
-            </View>
           </View>
         </TouchableOpacity>
       </SafeAreaView>

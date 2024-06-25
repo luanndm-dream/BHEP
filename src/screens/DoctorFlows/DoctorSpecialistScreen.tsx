@@ -5,16 +5,17 @@ import { Header } from "@/components";
 import { apiGetDoctorsWithSpecialistId } from "src/api/api_get_Doctor";
 import SuggestDoctorItem from "./SuggestDoctorItem";
 import useLoading from "src/hook/useLoading";
+import { STACK_NAVIGATOR_SCREENS } from "src/constants";
 
 const DoctorSpecialistScreen = () => {
   const route = useRoute<any>();
   const nameHeader = route.params.data;
-  const specialistId = route.params.id;
+  const specialistId = route.params.itemId;
   const navigation = useNavigation<any>();
   const { showLoading, hideLoading } = useLoading();
   const [doctor, setDoctor] = useState<any[]>([]); // Initialize as an empty array
   const [isLoading, setIsLoading] = useState(true); // State to track loading status
-
+  console.log('specialist id', specialistId, 'route', route)
   useEffect(() => {
     showLoading();
     apiGetDoctorsWithSpecialistId(specialistId).then((res: any) => {
@@ -28,6 +29,14 @@ const DoctorSpecialistScreen = () => {
     });
   }, []);
 
+
+  const onPressDoctorSuggest = (id: number) => {
+    console.log("id doctor", id);
+    navigation.navigate(STACK_NAVIGATOR_SCREENS?.DOCTORDETAILSCREEN, {
+      userId: id,
+      // location: location
+    });
+  };
   // Render function when there are no doctors
   const renderNoDoctors = () => {
     return (
@@ -53,8 +62,8 @@ const DoctorSpecialistScreen = () => {
             renderItem={({ item, index }) => (
               <SuggestDoctorItem
                 name={item?.fullName}
-                onPress={() => {}}
-                specialist={nameHeader}
+                onPress={() => onPressDoctorSuggest(item.id)}
+                specialistId={nameHeader}
                 image={item?.avatar}
                 rate={item?.rate}
               />

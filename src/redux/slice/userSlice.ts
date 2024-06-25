@@ -57,12 +57,15 @@ const userSlice = createSlice({
       // Reset all user info to initial state
       Object.assign(state, initialState);
     },
+    changeInfo: (state, action: PayloadAction<any>) =>{
+      state.userData = action.payload.user;
+    }
   },
 });
 
 // Corrected userType
 type UserType = typeof userSlice.actions.setUserInfo;
 
-export const { setUserInfo, resetUserInfo, setUserIsSplash } = userSlice.actions;
+export const { setUserInfo, resetUserInfo, setUserIsSplash,changeInfo } = userSlice.actions;
 export const userSelector = (state: RootState) => state.user;
 export default userSlice.reducer;

@@ -89,7 +89,7 @@ const ItemDoctor: React.FC<ItemDoctorProps> = ({
         <Image
           source={{ uri: imgUrl }}
           style={styles.image}
-          resizeMode="contain"
+          resizeMode="stretch"
         />
         <View style={styles.inforContainer}>
           <Text style={[globalStyle.textNormal, styles.fullName]}>
@@ -108,20 +108,22 @@ export default ItemDoctor;
 
 const styles = StyleSheet.create({
   card: {
-    height: 220,
+    height: 280,
     overflow: "hidden",
     borderRadius: 12,
     backgroundColor: "#EFF9FB",
     position: "relative",
     alignItems: "center",
     justifyContent: "center",
+    paddingBottom: 8
   },
   image: {
-    height: "80%",
+    height: "100%",
     width: "100%",
     alignSelf: "center",
     padding: 8,
-    borderRadius: 12, // Add padding here
+    borderRadius: 12,
+    flex: 1 // Add padding here
   },
   rateContainer: {
     position: "absolute",

@@ -60,7 +60,7 @@ const HomeScreen = () => {
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text style={{ fontSize: 18, color: "black" }}>Xin chào </Text>
               <Text style={styles.welcomeText}>
-                {userData.userData.fullName}
+                {user?.fullName}
               </Text>
             </View>
             <View style={styles.balanceContainer}>

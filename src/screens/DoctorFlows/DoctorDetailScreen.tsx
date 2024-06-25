@@ -22,12 +22,15 @@ import moment from "moment";
 import { globalColor } from "src/constants/color";
 import { apiGetUserById } from "src/api/api_getUserById";
 import { apiGetScheduleById } from "src/api/api_get_scheduleById";
+import { useAppSelector } from "@/redux";
 
 const DoctorDetailScreen = () => {
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
-  const userId = route.params.userId;
+  const emloyeeId = route.params.userId;
+  const userId = useAppSelector(state => state.user.userData.id)
   const location = route?.params?.location;
+  const [employeeData, setEmployeeData] = useState<any>();
   const [userData, setUserData] = useState<any>();
   const [imgUrl, setImgUrl] = useState<string>("");
   const [dateInWeeks, setDateInWeek] = useState<any>();
@@ -120,16 +123,20 @@ const DoctorDetailScreen = () => {
   };
 
   useEffect(() => {
-    apiGetScheduleById(userId).then((res: any) => {
+    apiGetScheduleById(emloyeeId).then((res: any) => {
       // console.log("schedules", res.data);
       setSchedules(res?.data?.weekSchedule);
     });
 
     setDateInWeek(dates(new Date(year, month, date - 1)));
-    apiGetUserById(userId).then((res: any) => {
-      setUserData(res.data);
+    apiGetUserById(emloyeeId).then((res: any) => {
+      setEmployeeData(res.data);
       setImgUrl(res?.data?.avatar);
       setPrice(res?.data?.workProfile?.price);
+      console.log("user data");
+    });
+    apiGetUserById(userId).then((res: any) => {
+      setUserData(res.data);
       console.log("user data");
     });
   }, []);
@@ -154,15 +161,14 @@ const DoctorDetailScreen = () => {
     ).padStart(2, "0")}-${year}`;
     navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTSCREEN, {
       employee: {
-        employeeId: userData?.id,
-        employeeName: userData?.fullName,
+        employeeId: employeeData?.id,
+        employeeName: employeeData?.fullName,
         price: price,
         date: formattedDate,
         time: selectedTime,
       },
     });
   };
-
   return (
     <>
       <View style={{ flex: 1 }}>
@@ -196,8 +202,8 @@ const DoctorDetailScreen = () => {
               style={styles.avatar}
             />
             <View style={styles.nameBox}>
-              <Text style={styles.name}>{userData?.fullName}</Text>
-              <Text style={styles.description}>{userData?.description}</Text>
+              <Text style={styles.name}>{employeeData?.fullName}</Text>
+              <Text style={styles.description}>{employeeData?.description}</Text>
             </View>
           </View>
           <Image
@@ -335,8 +341,12 @@ const DoctorDetailScreen = () => {
         </Text>
       </View>
       <ButtonText
-        disabled={!selectedDate || selectedTimeIndex === -1}
-        text="Đặt lịch"
+        disabled={
+          !selectedDate ||
+          selectedTimeIndex === -1 ||
+          (userData?.balance < price)
+        }
+        text={(userData?.balance < price) ? "Không đủ tiền" : "Đặt lịch"}
         onPress={() => onPressConfirm()}
         styleContainer={{
           height: 60,

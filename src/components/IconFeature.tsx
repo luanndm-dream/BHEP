@@ -57,7 +57,7 @@ export default IconFeature;
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    width:80,
+    width:90,
   },
   iconContainer: {
     width: 60,
@@ -73,12 +73,11 @@ const styles = StyleSheet.create({
     height: "80%",
   },
   name: {
-    fontSize: 14,
+    fontSize: 12,
     color: "#333",
     fontWeight: "bold",
     textAlign: "center",
     marginTop: 8,
-   
     paddingHorizontal: 4, // Add padding for better text wrap
   },
 });

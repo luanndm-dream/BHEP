@@ -40,22 +40,22 @@ const DoctorScreen = () => {
   const [specialistDataFromApi, setSpecialistDataFromApi] = useState([]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const onPressIconHandle = (screen: string, name: string, id: number) => {
-    navigation.navigate(screen, { data: name, id });
+    navigation.navigate(screen, { data: name, itemId: id });
   };
-  const selectedSpecialistDropDown = (itemId:any, itemName:any) => {
-    navigation.navigate('DOCTORSPECIALISTSCREEN', {
+  const selectedSpecialistDropDown = (itemId: any, itemName: any) => {
+    console.log(itemId)
+    navigation.navigate("DOCTORSPECIALISTSCREEN", {
       data: itemName,
       itemId,
     });
   };
-
 
   useEffect(() => {
     showLoading();
     apiGetSpecialist().then((res: any) => {
       if (res.statusCode === 200) {
         const dataFromApi = res.data.items;
-        console.log('res specialist', dataFromApi)
+        console.log("res specialist", dataFromApi);
         const mappedSpecialistData = dataFromApi.map((item: any) => {
           let imgName;
           switch (item.name) {
@@ -219,7 +219,6 @@ const DoctorScreen = () => {
               )}
             />
           </View>
-          
         </View>
       </SafeAreaView>
       {isOpen && (
@@ -227,7 +226,9 @@ const DoctorScreen = () => {
           onCancel={() => setIsOpen(false)}
           visible={isOpen}
           dataList={specialistDataFromApi}
-          onSelectItem={selectedSpecialistDropDown}
+          onSelectItem={(itemId, itemName) => {
+            selectedSpecialistDropDown(itemId, itemName);
+          }}
         />
       )}
     </>

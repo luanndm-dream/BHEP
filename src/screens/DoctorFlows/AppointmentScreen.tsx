@@ -19,13 +19,11 @@ const AppointmentScreen = () => {
   const price = route?.params.price;
   const [visible, setVisible] = useState<boolean>(false);
   const [visiblePopup, setVisiblePopup] = useState<boolean>(false);
-  console.log(employeeData);
   const [symptom, setSymptom] = useState<any[]>();
   const [indexSymptom, setIndexSymptom] = useState<any[]>([]);
   const [note, setNote] = useState<string>();
   const [charCount, setCharCount] = useState<number>(0);
   useEffect(() => {
-   console.log('time picked', employeeData?.time,)
     apiGetSymptom().then((res: any) => {
       console.log("res symtomp", res);
       setSymptom(res.data);
