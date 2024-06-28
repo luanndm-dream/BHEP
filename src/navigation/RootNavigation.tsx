@@ -50,6 +50,7 @@ import {
   BOTTOM_NAVIGATOR_SCREENS,
   STACK_NAVIGATOR_SCREENS,
 } from "src/constants";
+import NotificationScreen from "src/screens/HomeFlows/NotificationScreen";
 
 const myNavigationTheme = {
   ...DefaultTheme,
@@ -266,6 +267,11 @@ const RootNavigation = () => {
         name={STACK_NAVIGATOR_SCREENS?.CHANGEPASSWORDSCREEN}
         component={ChangePasswordScreen}
       />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.NOTIFICATIONSCREEN}
+        component={NotificationScreen}
+      />
+
     </Stack.Navigator>
   );
 

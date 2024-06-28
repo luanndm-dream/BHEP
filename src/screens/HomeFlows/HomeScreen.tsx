@@ -7,19 +7,19 @@ import {
   SafeAreaView,
   StatusBar,
   Platform,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import React, { useCallback, useEffect, useState } from "react";
 import { globalColor } from "src/constants/color";
 import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { OutstandingFunciton } from "@/data";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
-import { ButtonText, IconFeature } from "@/components";
+import { ButtonText, CircleComponent, IconFeature } from "@/components";
 import { useAppSelector } from "@/redux";
 import useLoading from "src/hook/useLoading";
 import { apiGetUserById } from "src/api/api_getUserById";
 import Toast from "react-native-toast-message";
-
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 const HomeScreen = () => {
   const navigation = useNavigation<any>();
   const userData = useAppSelector((state) => state.user);
@@ -28,6 +28,7 @@ const HomeScreen = () => {
   const onPressIconHandle = (screen: string) => {
     navigation.navigate(screen);
   };
+
 
   useFocusEffect(
     useCallback(() => {
@@ -42,6 +43,9 @@ const HomeScreen = () => {
     }, [userData])
   );
 
+  const onPressNotification = () => {
+    navigation.navigate(STACK_NAVIGATOR_SCREENS.NOTIFICATIONSCREEN);
+  };
   return (
     <SafeAreaView style={globalStyle.droidSafeArea}>
       <StatusBar
@@ -59,18 +63,29 @@ const HomeScreen = () => {
           <View style={styles.titleContainer}>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text style={{ fontSize: 18, color: "black" }}>Xin chào </Text>
-              <Text style={styles.welcomeText}>
-                {user?.fullName}
-              </Text>
+              <Text style={styles.welcomeText}>{user?.fullName}</Text>
             </View>
-            <View style={styles.balanceContainer}>
-              <Image
-                source={require("../../assets/image/bhepCoin.png")}
-                style={styles.bhepCoin}
-              />
-              <Text style={{ color: "white", fontWeight: "500" }}>
-                {user?.balance?user?.balance:0}
-              </Text>
+            <View style={{ flexDirection: "row" }}>
+              <View style={styles.balanceContainer}>
+                <Image
+                  source={require("../../assets/image/bhepCoin.png")}
+                  style={styles.bhepCoin}
+                />
+                <Text style={{ color: "white", fontWeight: "bold" }}>
+                  {user?.balance ? user?.balance : 0}
+                </Text>
+              </View>
+              <CircleComponent
+                size={40}
+                backgroundColor={globalColor.secondaryColor}
+                onPress={onPressNotification}
+              >
+                <MaterialCommunityIcons
+                  name="bell-badge-outline"
+                  size={30}
+                  color={"#efefefdd"}
+                />
+              </CircleComponent>
             </View>
           </View>
           <Text style={styles.hello}>Hôm nay của bạn thế nào?</Text>
@@ -146,7 +161,7 @@ const HomeScreen = () => {
                   );
                 }}
                 text="Xem chi tiết"
-                styleText={{fontWeight: 'bold'}}
+                styleText={{ fontWeight: "bold" }}
                 styleContainer={styles.buttonContainer}
               />
             </View>
@@ -185,6 +200,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 8,
+    marginRight: 8,
   },
   titleContainer: {
     flexDirection: "row",
@@ -239,12 +255,12 @@ const styles = StyleSheet.create({
   labelText: {
     marginLeft: 5,
     maxWidth: "80%",
-    color: 'black'
+    color: "black",
   },
   bhepText: {
-    color : globalColor.primaryColor,
+    color: globalColor.primaryColor,
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: "bold",
   },
   buttonContainer: {
     backgroundColor: globalColor.primaryColor,
