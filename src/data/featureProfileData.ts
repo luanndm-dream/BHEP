@@ -3,7 +3,7 @@ import { STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { globalColor } from "src/constants/color";
 
 export const getFeatureProfileData = () => {
-    const roleId = useAppSelector(state=>state.user.userData.roleId);
+    const roleId = useAppSelector(state => state.user.userData.roleId);
     const data = [
         {
             id: 1,
@@ -50,7 +50,7 @@ export const getFeatureProfileData = () => {
     ];
     
     if (roleId === 3) {
-        data.push({
+        data.unshift({
             id: 2,
             name: 'Làm việc',
             iconName: "calendar-check",
