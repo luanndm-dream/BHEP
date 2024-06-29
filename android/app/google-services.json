@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "46057334140",
+    "firebase_url": "https://bhep-iot-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bhep-iot",
+    "storage_bucket": "bhep-iot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46057334140:android:eaf8d0d31ced02dee430f9",
+        "android_client_info": {
+          "package_name": "com.bhep_mobile_demo_v1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "46057334140-0k7bqbe7qbmpp8bbg6c36cfetgbvid9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAAECIpd64psyJUJa_DohcyB9r5VfkSTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "46057334140-0k7bqbe7qbmpp8bbg6c36cfetgbvid9p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "46057334140-ukivnjhcqh05btu8pmcinu1c833o47n0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.BHEP-Mobile-Demo-V1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

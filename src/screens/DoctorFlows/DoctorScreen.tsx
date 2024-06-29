@@ -43,7 +43,7 @@ const DoctorScreen = () => {
     navigation.navigate(screen, { data: name, itemId: id });
   };
   const selectedSpecialistDropDown = (itemId: any, itemName: any) => {
-    console.log(itemId)
+    // navigation.removeListener
     navigation.navigate("DOCTORSPECIALISTSCREEN", {
       data: itemName,
       itemId,

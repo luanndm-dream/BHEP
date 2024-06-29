@@ -15,6 +15,10 @@ import java.util.ArrayList;
 import com.oblador.vectoricons.VectorIconsPackage;
 // @react-native-async-storage/async-storage
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+// @react-native-firebase/app
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
+// @react-native-firebase/firestore
+import io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage;
 // @react-native-masked-view/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
 // react-native-ble-plx
@@ -94,6 +98,8 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new VectorIconsPackage(),
       new AsyncStoragePackage(),
+      new ReactNativeFirebaseAppPackage(),
+      new ReactNativeFirebaseFirestorePackage(),
       new RNCMaskedViewPackage(),
       new BlePlxPackage(),
       new DatePickerPackage(),

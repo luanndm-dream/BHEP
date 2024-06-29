@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-37:/values-he/values-he.xml",
+            "outputFile": "com.bhep_mobile_demo_v1.app-mergeDebugResources-40:/values-he/values-he.xml",
             "map": [
                 {
                     "source": "/Users/luan/Documents/GitHub/BHEP/node_modules/react-native-date-picker/android/build/intermediates/packaged_res/debug/values-he/values-he.xml",

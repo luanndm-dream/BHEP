@@ -20,19 +20,22 @@ import useLoading from "src/hook/useLoading";
 import { apiGetUserById } from "src/api/api_getUserById";
 import Toast from "react-native-toast-message";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import firestore from "@react-native-firebase/firestore";
+
 const HomeScreen = () => {
   const navigation = useNavigation<any>();
   const userData = useAppSelector((state) => state.user);
   const { showLoading, hideLoading } = useLoading();
   const [user, setUser] = useState<any>();
+  const [unReadNotifications, setUnReadNotifications] = useState([]);
+
   const onPressIconHandle = (screen: string) => {
     navigation.navigate(screen);
   };
 
-
   useFocusEffect(
     useCallback(() => {
-      // showLoading();
+      showLoading();
       apiGetUserById(Number(userData.userData.id)).then((res: any) => {
         if (res.statusCode === 200) {
           setUser(res.data);
@@ -40,8 +43,30 @@ const HomeScreen = () => {
         }
         hideLoading();
       });
+
+      const unsubscribe = firestore()
+        .collection("notification")
+        .where("isRead", "==", false)
+        .where("uid", "==", userData.userData.id)
+        .onSnapshot((snap) => {
+          if (snap.empty) {
+            setUnReadNotifications([]);
+          } else {
+            const items: any = [];
+            snap.forEach((item) =>
+              items.push({
+                id: item.id,
+                ...item.data(),
+              })
+            );
+            setUnReadNotifications(items);
+          }
+        });
+
+      return () => unsubscribe();
     }, [userData])
   );
+  console.log(unReadNotifications);
 
   const onPressNotification = () => {
     navigation.navigate(STACK_NAVIGATOR_SCREENS.NOTIFICATIONSCREEN);
@@ -75,17 +100,26 @@ const HomeScreen = () => {
                   {user?.balance ? user?.balance : 0}
                 </Text>
               </View>
-              <CircleComponent
-                size={40}
-                backgroundColor={globalColor.secondaryColor}
-                onPress={onPressNotification}
-              >
-                <MaterialCommunityIcons
-                  name="bell-badge-outline"
-                  size={30}
-                  color={"#efefefdd"}
-                />
-              </CircleComponent>
+              <View style={styles.notificationIconContainer}>
+                <CircleComponent
+                  size={40}
+                  backgroundColor={globalColor.secondaryColor}
+                  onPress={onPressNotification}
+                >
+                  <MaterialCommunityIcons
+                    name="bell-outline"
+                    size={30}
+                    color="#efefefdd"
+                  />
+                </CircleComponent>
+                {unReadNotifications.length > 0 && (
+                  <View style={styles.badge}>
+                    <Text style={styles.badgeText}>
+                      {unReadNotifications.length}
+                    </Text>
+                  </View>
+                )}
+              </View>
             </View>
           </View>
           <Text style={styles.hello}>Hôm nay của bạn thế nào?</Text>
@@ -161,7 +195,7 @@ const HomeScreen = () => {
                   );
                 }}
                 text="Xem chi tiết"
-                styleText={{ fontWeight: "bold" }}
+                styleText={{ fontWeight: "bold", color: globalColor.primaryColor }}
                 styleContainer={styles.buttonContainer}
               />
             </View>
@@ -263,14 +297,33 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   buttonContainer: {
-    backgroundColor: globalColor.primaryColor,
+    // backgroundColor: globalColor.primaryColor,
     borderRadius: 12,
     height: 45,
     width: "80%",
-    marginTop: 10,
+    marginTop: 12,
     // alignSelf: "center",
   },
   bhepZoneImageContainer: {
     alignSelf: "center",
+  },
+  notificationIconContainer: {
+    position: 'relative',
+  },
+  badge: {
+    position: 'absolute',
+    right: -5,
+    top: -5,
+    backgroundColor: 'red',
+    borderRadius: 9,
+    width: 18,
+    height: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  badgeText: {
+    color: 'white',
+    fontSize: 12,
+    fontWeight: 'bold',
   },
 });

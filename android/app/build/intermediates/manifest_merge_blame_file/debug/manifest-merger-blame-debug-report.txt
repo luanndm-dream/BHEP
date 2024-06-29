@@ -44,8 +44,8 @@
 25-->/Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:10:5-79
 25-->/Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:10:22-76
 26    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-26-->[com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
-26-->[com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+26-->[com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/87e9e28f7203a27b2f2a5f52d412de1f/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+26-->[com.facebook.flipper:flipper:0.125.0] /Users/luan/.gradle/caches/transforms-3/87e9e28f7203a27b2f2a5f52d412de1f/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
 27
 28    <queries>
 28-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-13:15
@@ -61,39 +61,39 @@
 34-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-81
 34-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:22-78
 35    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- required for API 18 - 30 -->
-35-->[com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:23:5-82
-35-->[com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/aa15ce03c52c435589e2bfad426f36e0/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:23:22-79
+35-->[com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/481dc29721caed0573831bcfdd8ccf63/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:23:5-82
+35-->[com.google.android.gms:play-services-iid:17.0.0] /Users/luan/.gradle/caches/transforms-3/481dc29721caed0573831bcfdd8ccf63/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:23:22-79
 36    <uses-permission
-36-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:10:5-12:38
+36-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:10:5-12:38
 37        android:name="android.permission.BLUETOOTH"
-37-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:11:9-52
+37-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:11:9-52
 38        android:maxSdkVersion="30" />
-38-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:12:9-35
+38-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:12:9-35
 39    <uses-permission
-39-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:13:5-15:38
+39-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:13:5-15:38
 40        android:name="android.permission.BLUETOOTH_ADMIN"
-40-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:14:9-58
+40-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:14:9-58
 41        android:maxSdkVersion="30" /> <!-- required for API 23 - 30, no android:maxSdkVersion because of a potential breaking change -->
-41-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:15:9-35
+41-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:15:9-35
 42    <!-- TODO: add android:maxSdkVersion on 2.0.0 -->
 43    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
-43-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:18:5-88
-43-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:18:29-85
+43-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:18:5-88
+43-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:18:29-85
 44    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- API 31+ -->
-44-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:19:5-86
-44-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:19:29-83
+44-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:19:5-86
+44-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:19:29-83
 45    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-45-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:21:5-76
-45-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:21:22-73
+45-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:21:5-76
+45-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:21:22-73
 46    <uses-permission
-46-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:22:5-25:31
+46-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:22:5-25:31
 47        android:name="android.permission.BLUETOOTH_SCAN"
-47-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:23:9-57
+47-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:23:9-57
 48        android:usesPermissionFlags="neverForLocation" />
-48-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/578e48a2a4bde994d12f3256c010242d/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:24:9-55
+48-->[com.polidea.rxandroidble2:rxandroidble:1.17.2] /Users/luan/.gradle/caches/transforms-3/654a0b1dc1c802185b0fcc8c42a96886/transformed/jetified-rxandroidble-1.17.2/AndroidManifest.xml:24:9-55
 49    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-49-->[com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:5-110
-49-->[com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/33f778786e855dbb28b152a09657a3b6/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:22-107
+49-->[com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/44c6fcf38a2cd09990fe979d5595215e/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:5-110
+49-->[com.android.installreferrer:installreferrer:1.1.2] /Users/luan/.gradle/caches/transforms-3/44c6fcf38a2cd09990fe979d5595215e/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:22-107
 50
 51    <application
 51-->/Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:11:5-31:19
@@ -102,7 +102,7 @@
 53        android:allowBackup="false"
 53-->/Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:16:7-34
 54        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-54-->[androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/4147f26a61fb6196770ea38e58daddf3/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+54-->[androidx.core:core:1.8.0] /Users/luan/.gradle/caches/transforms-3/61379e7b5073b720c4cf40ddfaa5d61b/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 55        android:debuggable="true"
 56        android:icon="@mipmap/ic_launcher"
 56-->/Users/luan/Documents/GitHub/BHEP/android/app/src/main/AndroidManifest.xml:14:7-41
@@ -148,110 +148,205 @@
 76            </intent-filter>
 77        </activity>
 78
-79        <provider
-79-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-26:20
-80            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
-80-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-94
-81            android:authorities="com.bhep_mobile_demo_v1.provider"
-81-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-60
-82            android:exported="false"
-82-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
-83            android:grantUriPermissions="true" >
-83-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-47
-84            <meta-data
-84-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
-85                android:name="android.support.FILE_PROVIDER_PATHS"
-85-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
-86                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
-86-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
-87        </provider>
-88
-89        <activity
-89-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:72
-90            android:name="com.yalantis.ucrop.UCropActivity"
-90-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-60
-91            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-91-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-69
-92
-93        <provider
-93-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
-94            android:name="com.imagepicker.ImagePickerProvider"
-94-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
-95            android:authorities="com.bhep_mobile_demo_v1.imagepickerprovider"
-95-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
-96            android:exported="false"
-96-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
-97            android:grantUriPermissions="true" >
-97-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
-98            <meta-data
-98-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
-99                android:name="android.support.FILE_PROVIDER_PATHS"
-99-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
-100                android:resource="@xml/imagepicker_provider_paths" />
-100-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
-101        </provider>
-102        <provider
-102-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
-103            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
-103-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-83
-104            android:authorities="com.bhep_mobile_demo_v1.fileprovider"
-104-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-64
-105            android:exported="false"
-105-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
-106            android:grantUriPermissions="true" >
-106-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
-107            <meta-data
-107-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
-108                android:name="android.support.FILE_PROVIDER_PATHS"
-108-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
-109                android:resource="@xml/file_provider_paths" />
-109-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
-110        </provider>
-111
-112        <meta-data
-112-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/luan/.gradle/caches/transforms-3/c6d9b035aeec0f3942a55bb4cc6cf0fc/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:11:9-13:43
-113            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
-113-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/luan/.gradle/caches/transforms-3/c6d9b035aeec0f3942a55bb4cc6cf0fc/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:12:13-84
-114            android:value="GlideModule" />
-114-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/luan/.gradle/caches/transforms-3/c6d9b035aeec0f3942a55bb4cc6cf0fc/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:13:13-40
-115
-116        <activity
-116-->[com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-117            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-117-->[com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-118            android:exported="false"
-118-->[com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-119            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-119-->[com.google.android.gms:play-services-base:17.0.0] /Users/luan/.gradle/caches/transforms-3/9750fdf11d04840edb4b2953fa4a5628/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-120
-121        <meta-data
-121-->[com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-122            android:name="com.google.android.gms.version"
-122-->[com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-123            android:value="@integer/google_play_services_version" />
-123-->[com.google.android.gms:play-services-basement:17.0.0] /Users/luan/.gradle/caches/transforms-3/2fb9c160b591406cfe0c4069185d5f34/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-124
-125        <provider
-125-->[androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-126            android:name="androidx.startup.InitializationProvider"
-126-->[androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-127            android:authorities="com.bhep_mobile_demo_v1.androidx-startup"
-127-->[androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
-128            android:exported="false" >
-128-->[androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
-129            <meta-data
-129-->[androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-130                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-130-->[androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
-131                android:value="androidx.startup" />
-131-->[androidx.emoji2:emoji2:1.2.0] /Users/luan/.gradle/caches/transforms-3/1465c8141f1cc97f21281a34d8e68734/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
-132            <meta-data
-132-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/caches/transforms-3/ae27995e6287e7fd33ae4364afb490c1/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-133                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-133-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/caches/transforms-3/ae27995e6287e7fd33ae4364afb490c1/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-134                android:value="androidx.startup" />
-134-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/luan/.gradle/caches/transforms-3/ae27995e6287e7fd33ae4364afb490c1/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-135        </provider>
-136    </application>
-137
-138</manifest>
+79        <meta-data
+79-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:9-13:36
+80            android:name="app_data_collection_default_enabled"
+80-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-63
+81            android:value="true" />
+81-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-33
+82
+83        <service
+83-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-23:19
+84            android:name="com.google.firebase.components.ComponentDiscoveryService"
+84-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-84
+85            android:directBootAware="true"
+85-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-43
+86            android:exported="false" >
+86-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+87            <meta-data
+87-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:85
+88                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+88-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-120
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:17-82
+90            <meta-data
+90-->[com.google.firebase:firebase-firestore:25.0.0] /Users/luan/.gradle/caches/transforms-3/95f93990cdcc0ebec58955fe6774592b/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:17:13-19:85
+91                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+91-->[com.google.firebase:firebase-firestore:25.0.0] /Users/luan/.gradle/caches/transforms-3/95f93990cdcc0ebec58955fe6774592b/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:18:17-122
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[com.google.firebase:firebase-firestore:25.0.0] /Users/luan/.gradle/caches/transforms-3/95f93990cdcc0ebec58955fe6774592b/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:19:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-firestore:25.0.0] /Users/luan/.gradle/caches/transforms-3/95f93990cdcc0ebec58955fe6774592b/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:20:13-22:85
+94                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+94-->[com.google.firebase:firebase-firestore:25.0.0] /Users/luan/.gradle/caches/transforms-3/95f93990cdcc0ebec58955fe6774592b/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:21:17-111
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-firestore:25.0.0] /Users/luan/.gradle/caches/transforms-3/95f93990cdcc0ebec58955fe6774592b/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:22:17-82
+96            <meta-data
+96-->[com.google.firebase:firebase-common:21.0.0] /Users/luan/.gradle/caches/transforms-3/160b6a17a2676fd4b63d6748d224784f/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+97                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+97-->[com.google.firebase:firebase-common:21.0.0] /Users/luan/.gradle/caches/transforms-3/160b6a17a2676fd4b63d6748d224784f/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+98                android:value="com.google.firebase.components.ComponentRegistrar" />
+98-->[com.google.firebase:firebase-common:21.0.0] /Users/luan/.gradle/caches/transforms-3/160b6a17a2676fd4b63d6748d224784f/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+99            <meta-data
+99-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/luan/.gradle/caches/transforms-3/b152fdb0a61aa110a27d68dcc6342404/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+100                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+100-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/luan/.gradle/caches/transforms-3/b152fdb0a61aa110a27d68dcc6342404/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+101                android:value="com.google.firebase.components.ComponentRegistrar" />
+101-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/luan/.gradle/caches/transforms-3/b152fdb0a61aa110a27d68dcc6342404/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+102        </service>
+103
+104        <provider
+104-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-29:38
+105            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+105-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-88
+106            android:authorities="com.bhep_mobile_demo_v1.reactnativefirebaseappinitprovider"
+106-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-86
+107            android:exported="false"
+107-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-37
+108            android:initOrder="99" />
+108-->[:react-native-firebase_app] /Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-35
+109        <provider
+109-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-26:20
+110            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
+110-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-94
+111            android:authorities="com.bhep_mobile_demo_v1.provider"
+111-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-60
+112            android:exported="false"
+112-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+113            android:grantUriPermissions="true" >
+113-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-47
+114            <meta-data
+114-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+115                android:name="android.support.FILE_PROVIDER_PATHS"
+115-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+116                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
+116-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+117        </provider>
+118
+119        <activity
+119-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:72
+120            android:name="com.yalantis.ucrop.UCropActivity"
+120-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-60
+121            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+121-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-69
+122
+123        <provider
+123-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+124            android:name="com.imagepicker.ImagePickerProvider"
+124-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+125            android:authorities="com.bhep_mobile_demo_v1.imagepickerprovider"
+125-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
+126            android:exported="false"
+126-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+127            android:grantUriPermissions="true" >
+127-->[:react-native-image-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+128            <meta-data
+128-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+129                android:name="android.support.FILE_PROVIDER_PATHS"
+129-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+130                android:resource="@xml/imagepicker_provider_paths" />
+130-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+131        </provider>
+132        <provider
+132-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+133            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+133-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-83
+134            android:authorities="com.bhep_mobile_demo_v1.fileprovider"
+134-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-64
+135            android:exported="false"
+135-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+136            android:grantUriPermissions="true" >
+136-->[:react-native-webview] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+137            <meta-data
+137-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+138                android:name="android.support.FILE_PROVIDER_PATHS"
+138-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+139                android:resource="@xml/file_provider_paths" />
+139-->[:react-native-image-crop-picker] /Users/luan/Documents/GitHub/BHEP/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+140        </provider>
+141
+142        <activity
+142-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:23:9-27:75
+143            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+143-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:24:13-93
+144            android:excludeFromRecents="true"
+144-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:25:13-46
+145            android:exported="false"
+145-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:26:13-37
+146            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+146-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:27:13-72
+147        <!--
+148            Service handling Google Sign-In user revocation. For apps that do not integrate with
+149            Google Sign-In, this service will never be started.
+150        -->
+151        <service
+151-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:33:9-37:51
+152            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+152-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:34:13-89
+153            android:exported="true"
+153-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:35:13-36
+154            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+154-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:36:13-107
+155            android:visibleToInstantApps="true" />
+155-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:37:13-48
+156
+157        <meta-data
+157-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/luan/.gradle/caches/transforms-3/8ba485cacaf5af10f15738d7959f232f/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:11:9-13:43
+158            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
+158-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/luan/.gradle/caches/transforms-3/8ba485cacaf5af10f15738d7959f232f/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:12:13-84
+159            android:value="GlideModule" />
+159-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/luan/.gradle/caches/transforms-3/8ba485cacaf5af10f15738d7959f232f/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:13:13-40
+160
+161        <activity
+161-->[com.google.android.gms:play-services-base:18.3.0] /Users/luan/.gradle/caches/transforms-3/1eb273236d2c29066f4df26bba5fcb56/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:9-22:45
+162            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+162-->[com.google.android.gms:play-services-base:18.3.0] /Users/luan/.gradle/caches/transforms-3/1eb273236d2c29066f4df26bba5fcb56/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:19-85
+163            android:exported="false"
+163-->[com.google.android.gms:play-services-base:18.3.0] /Users/luan/.gradle/caches/transforms-3/1eb273236d2c29066f4df26bba5fcb56/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:22:19-43
+164            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+164-->[com.google.android.gms:play-services-base:18.3.0] /Users/luan/.gradle/caches/transforms-3/1eb273236d2c29066f4df26bba5fcb56/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:21:19-78
+165
+166        <provider
+166-->[com.google.firebase:firebase-common:21.0.0] /Users/luan/.gradle/caches/transforms-3/160b6a17a2676fd4b63d6748d224784f/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+167            android:name="com.google.firebase.provider.FirebaseInitProvider"
+167-->[com.google.firebase:firebase-common:21.0.0] /Users/luan/.gradle/caches/transforms-3/160b6a17a2676fd4b63d6748d224784f/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+168            android:authorities="com.bhep_mobile_demo_v1.firebaseinitprovider"
+168-->[com.google.firebase:firebase-common:21.0.0] /Users/luan/.gradle/caches/transforms-3/160b6a17a2676fd4b63d6748d224784f/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+169            android:directBootAware="true"
+169-->[com.google.firebase:firebase-common:21.0.0] /Users/luan/.gradle/caches/transforms-3/160b6a17a2676fd4b63d6748d224784f/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+170            android:exported="false"
+170-->[com.google.firebase:firebase-common:21.0.0] /Users/luan/.gradle/caches/transforms-3/160b6a17a2676fd4b63d6748d224784f/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+171            android:initOrder="100" />
+171-->[com.google.firebase:firebase-common:21.0.0] /Users/luan/.gradle/caches/transforms-3/160b6a17a2676fd4b63d6748d224784f/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+172
+173        <meta-data
+173-->[com.google.android.gms:play-services-basement:18.3.0] /Users/luan/.gradle/caches/transforms-3/26a9b82b48e911917eaad5102fe924b8/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
+174            android:name="com.google.android.gms.version"
+174-->[com.google.android.gms:play-services-basement:18.3.0] /Users/luan/.gradle/caches/transforms-3/26a9b82b48e911917eaad5102fe924b8/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
+175            android:value="@integer/google_play_services_version" />
+175-->[com.google.android.gms:play-services-basement:18.3.0] /Users/luan/.gradle/caches/transforms-3/26a9b82b48e911917eaad5102fe924b8/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
+176
+177        <provider
+177-->[androidx.emoji2:emoji2:1.0.0] /Users/luan/.gradle/caches/transforms-3/398da0935e55812eeaf3e3466d76c932/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+178            android:name="androidx.startup.InitializationProvider"
+178-->[androidx.emoji2:emoji2:1.0.0] /Users/luan/.gradle/caches/transforms-3/398da0935e55812eeaf3e3466d76c932/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+179            android:authorities="com.bhep_mobile_demo_v1.androidx-startup"
+179-->[androidx.emoji2:emoji2:1.0.0] /Users/luan/.gradle/caches/transforms-3/398da0935e55812eeaf3e3466d76c932/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+180            android:exported="false" >
+180-->[androidx.emoji2:emoji2:1.0.0] /Users/luan/.gradle/caches/transforms-3/398da0935e55812eeaf3e3466d76c932/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+181            <meta-data
+181-->[androidx.emoji2:emoji2:1.0.0] /Users/luan/.gradle/caches/transforms-3/398da0935e55812eeaf3e3466d76c932/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+182                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+182-->[androidx.emoji2:emoji2:1.0.0] /Users/luan/.gradle/caches/transforms-3/398da0935e55812eeaf3e3466d76c932/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+183                android:value="androidx.startup" />
+183-->[androidx.emoji2:emoji2:1.0.0] /Users/luan/.gradle/caches/transforms-3/398da0935e55812eeaf3e3466d76c932/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+184            <meta-data
+184-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/luan/.gradle/caches/transforms-3/a8d825aa5c67a2e11cb49f3161e63776/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+185                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+185-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/luan/.gradle/caches/transforms-3/a8d825aa5c67a2e11cb49f3161e63776/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+186                android:value="androidx.startup" />
+186-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/luan/.gradle/caches/transforms-3/a8d825aa5c67a2e11cb49f3161e63776/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+187        </provider>
+188    </application>
+189
+190</manifest>

@@ -21,7 +21,9 @@ import { globalColor } from "src/constants/color";
 import { apiPostSchedule } from "src/api/api_post_Schedule";
 import Toast from "react-native-toast-message";
 import { useAppSelector } from "@/redux";
+import { useNavigation } from "@react-navigation/native";
 const ScheduleScreen = () => {
+  const navigation = useNavigation();
   const [selected, setSelected] = useState("");
   const [timeSlots, setTimeSlots] = useState<{ [date: string]: string[] }>({});
   const [isVisible, setIsVisible] = useState(false);
@@ -143,6 +145,7 @@ const ScheduleScreen = () => {
           text1: "Cập nhật thành công",
           // text2: 'Vui lòng kiểm tra tài khoản và mật khẩu'
         });
+        navigation.goBack()
       } else {
         Toast.show({
           type: "error",

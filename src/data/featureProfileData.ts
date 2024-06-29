@@ -40,6 +40,13 @@ export const getFeatureProfileData = () => {
             color: '#e0afd1',
             screen: STACK_NAVIGATOR_SCREENS.SERVICESCREEN,
         },
+        {
+            id: 7,
+            name: 'Lịch sử giao dịch',
+            iconName: "history",
+            color: '#39a6b8',
+            screen: STACK_NAVIGATOR_SCREENS.HISTORYTRANSACTIONSCREEN,
+        },
     ];
     
     if (roleId === 3) {

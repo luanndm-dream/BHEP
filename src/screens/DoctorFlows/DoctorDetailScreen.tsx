@@ -155,10 +155,13 @@ const DoctorDetailScreen = () => {
 
     Linking.openURL(url);
   };
+ 
   const onPressConfirm = () => {
     const formattedDate = `${String(selectedDate).padStart(2, "0")}-${String(
       month + 1
     ).padStart(2, "0")}-${year}`;
+    
+  
     navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTSCREEN, {
       employee: {
         employeeId: employeeData?.id,

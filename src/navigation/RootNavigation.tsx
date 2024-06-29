@@ -15,6 +15,7 @@ import {
   DoctorSpecialistScreen,
   EditWorkProfileScreen,
   FindLocationScreen,
+  HistoryTransactionScreen,
   HomeScreen,
   InformationScreen,
   LoginScreen,
@@ -270,6 +271,10 @@ const RootNavigation = () => {
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.NOTIFICATIONSCREEN}
         component={NotificationScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.HISTORYTRANSACTIONSCREEN}
+        component={HistoryTransactionScreen}
       />
 
     </Stack.Navigator>

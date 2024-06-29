@@ -10,11 +10,12 @@ import { Button } from "react-native-paper";
 import { apiPostAppointment } from "src/api/api_post_appointment";
 import { useAppSelector } from "@/redux";
 import Toast from "react-native-toast-message";
+import firestore from '@react-native-firebase/firestore';
 
 const AppointmentScreen = () => {
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
-  const userId = useAppSelector((state) => state.user.userData.id);
+  const user = useAppSelector((state) => state.user.userData);
   const employeeData = route?.params.employee;
   const price = route?.params.price;
   const [visible, setVisible] = useState<boolean>(false);
@@ -31,29 +32,43 @@ const AppointmentScreen = () => {
   }, []);
 
   const onConfirmHandle = () => {
-    // const combinedDateTime = `${employeeData?.date}`;
     setVisiblePopup(!visiblePopup);
   };
-  const onConfirmPopup = () => {
-    apiPostAppointment(
-      userId,
-      employeeData?.employeeId,
-      employeeData.date,
-      employeeData?.time,
-      employeeData?.price,
-      "undefined", // Address
-      "undefined", // Latitude
-      "undefined", // Longitude
-      "undefined", // Description
-      note,
-      indexSymptom
-    ).then((res: any) => {
+  const onConfirmPopup = async () => {
+    
+    try {
+      const res: any = await apiPostAppointment(
+        user.id,
+        employeeData?.employeeId,
+        employeeData?.date,
+        employeeData?.time,
+        employeeData?.price,
+        "undefined", // Address
+        "undefined", // Latitude
+        "undefined", // Longitude
+        "undefined", // Description
+        note,
+        indexSymptom
+      );
+  
       if (res.statusCode === 200) {
         Toast.show({
           type: "success",
           text1: "Đặt lịch thành công",
           text2: "BHEP chúc bạn thật nhiều sức khoẻ!",
         });
+        
+        const dataSendNotification: any = {
+          fromUserId: user.id,
+          toUserId: employeeData?.employeeId,
+          createdAt: Date.now(),
+          content: `Muốn đặt lịch hẹn vào ngày ${employeeData.date} : ${employeeData?.time}`,
+          appointmentId: res?.data?.id,
+          isRead: false,
+        };
+        console.log('dataSendNotification',dataSendNotification);
+        await firestore().collection('notification').add({...dataSendNotification, uid: employeeData?.employeeId});
+        
         setVisiblePopup(!visiblePopup);
         navigation.goBack();
       } else {
@@ -64,7 +79,15 @@ const AppointmentScreen = () => {
         });
         setVisiblePopup(!visiblePopup);
       }
-    });
+    } catch (error) {
+      console.error("Error in onConfirmPopup:", error);
+      Toast.show({
+        type: "error",
+        text1: "Đặt lịch thất bại",
+        text2: "Đã xảy ra lỗi không xác định",
+      });
+      setVisiblePopup(!visiblePopup);
+    }
   };
   return (
     <>
