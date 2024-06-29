@@ -19,13 +19,13 @@ import { useAppDispatch, useAppSelector } from "@/redux";
 import { setUserInfo } from "src/redux/slice";
 import Toast from 'react-native-toast-message';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 const LoginScreen = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigation = useNavigation<any>();
   const dispatch = useAppDispatch();
   const { showLoading, hideLoading } = useLoading();
- 
  const handleLogin = async () => {
     showLoading();
     const res:any = await apiLogin(email, password);     
@@ -91,11 +91,12 @@ const LoginScreen = () => {
             <View style={styles.textInput}></View>
             <TextInputNoIcon
               placeholderText="Mật khẩu"
-              secureTextEntry={true}
               onChangeText={(text) => setPassword(text)}
               style={{color: 'white'}}
               autoCapitalize="none"
+              isPassword={true}
             />
+         
           </View>
           <View>
             <ButtonText
