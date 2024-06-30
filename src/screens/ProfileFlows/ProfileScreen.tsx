@@ -95,14 +95,13 @@ const ProfileScreen = () => {
   };
   useFocusEffect(
     useCallback(() => {
-      
-      apiGetUserById(Number(userData.id)).then((res:any) => {
+      apiGetUserById(Number(userData.id)).then((res: any) => {
         showLoading();
-        if(res.statusCode === 200){
+        if (res.statusCode === 200) {
           setData(res?.data);
-          hideLoading()
+          hideLoading();
         }
-        hideLoading()
+        hideLoading();
       });
     }, [data, handleChangeAvatar])
   );
@@ -139,12 +138,20 @@ const ProfileScreen = () => {
                   color={"white"}
                 />
               </View>
-
-              {/* Logic nguyên bản */}
             </TouchableOpacity>
+
             <View style={styles.nameBox}>
-              <Text style={styles.name}>{data?.fullName}</Text>
-              <Text style={styles.description}>{data?.description}</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={styles.name}>{data?.fullName}</Text>
+                {/* {data.} */}
+                {/* <MaterialCommunityIcons
+                  name="crown-circle"
+                  color={"yellow"}
+                  size={30}
+                /> */}
+              </View>
+
+              {/* <Text style={styles.description}>{data?.description}</Text> */}
             </View>
           </View>
           <Image
@@ -195,6 +202,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  vipText: {
+    color: "white",
+    textAlign: "center",
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 8,
+    marginTop: 8,
+    fontWeight: "bold",
+    fontSize: 16,
+  },
   image: {
     borderBottomLeftRadius: 180,
     borderBottomRightRadius: 180,
@@ -219,6 +236,7 @@ const styles = StyleSheet.create({
     fontSize: globalFontSize.name,
     fontWeight: "bold",
     color: "white",
+    marginRight: 6
   },
   nameBox: {
     marginTop: 10,

@@ -8,6 +8,7 @@ import {
   StatusBar,
   Platform,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import React, { useCallback, useEffect, useState } from "react";
 import { globalColor } from "src/constants/color";
@@ -188,7 +189,29 @@ const HomeScreen = () => {
                   Vùng khẩn cấp: Cần đến bệnh viện ngay
                 </Text>
               </View>
-              <ButtonText
+              <TouchableOpacity
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flex: 1,
+                }}
+                onPress={() => {
+                  navigation.navigate(
+                    STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN
+                  );
+                }}
+              >
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    color: globalColor.primaryColor,
+                    fontSize: 18,
+                  }}
+                >
+                  Xem chi tiết
+                </Text>
+              </TouchableOpacity>
+              {/* <ButtonText
                 onPress={() => {
                   navigation.navigate(
                     STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN
@@ -197,7 +220,7 @@ const HomeScreen = () => {
                 text="Xem chi tiết"
                 styleText={{ fontWeight: "bold", color: globalColor.primaryColor }}
                 styleContainer={styles.buttonContainer}
-              />
+              /> */}
             </View>
             <View style={styles.bhepZoneImageContainer}>
               <Image
@@ -308,22 +331,22 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   notificationIconContainer: {
-    position: 'relative',
+    position: "relative",
   },
   badge: {
-    position: 'absolute',
+    position: "absolute",
     right: -5,
     top: -5,
-    backgroundColor: 'red',
+    backgroundColor: "red",
     borderRadius: 9,
     width: 18,
     height: 18,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   badgeText: {
-    color: 'white',
+    color: "white",
     fontSize: 12,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });

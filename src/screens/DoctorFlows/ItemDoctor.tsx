@@ -89,7 +89,7 @@ const ItemDoctor: React.FC<ItemDoctorProps> = ({
         <Image
           source={{ uri: imgUrl }}
           style={styles.image}
-          resizeMode="stretch"
+          resizeMode="cover"
         />
         <View style={styles.inforContainer}>
           <Text style={[globalStyle.textNormal, styles.fullName]}>
