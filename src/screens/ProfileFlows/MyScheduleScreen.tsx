@@ -18,7 +18,7 @@ const MySchedule = () => {
     apiGetUserById(userData.id).then((res: any) => {
       if (res.statusCode === 200) {
         hideLoading();
-        setAppointment(res?.data?.appointments);
+        setAppointment(userData.roleId === 3 ? res?.data?.appointmentsReceived : res?.data?.appointments);
         console.log("appointment", appointment)
       }
       hideLoading();

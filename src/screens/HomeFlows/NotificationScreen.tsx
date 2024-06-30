@@ -9,19 +9,20 @@ import {
 import React, { useEffect, useState } from "react";
 import { ButtonText, Header, SpaceComponent } from "@/components";
 import { useAppSelector } from "@/redux";
-import { globalStyle } from "src/constants";
+import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { globalColor } from "src/constants/color";
 import firestore from "@react-native-firebase/firestore";
 import NotificationItem from "./NotificationItem";
+import { useNavigation } from "@react-navigation/native";
 
 const NotificationScreen = () => {
+  const navigation = useNavigation<any>()
   const user = useAppSelector((state) => state.user.userData);
-  const [notifications, setNotifications] = useState([]);
+  const [notifications, setNotifications] = useState<any>([]);
 
   useEffect(() => {
     firestore()
       .collection("notification")
-      // .where("isRead", "==", false)
       .where("uid", "==", user.id)
       .onSnapshot((snap) => {
         if (snap && !snap.empty) {
@@ -36,7 +37,9 @@ const NotificationScreen = () => {
       });
   }, []);
 
-  console.log(notifications)
+  const handlePressItem = (id: number, item: any) => {
+    navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTDETAILSCREEN, {id: id, data: item})
+  }
   return (
     <>
       <Header headerTitle="Thông báo" />
@@ -46,7 +49,9 @@ const NotificationScreen = () => {
             data={notifications}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item, index }) => (
-              <NotificationItem item={item} key={index} />
+              <NotificationItem item={item} key={index} 
+              onPress={()=>{handlePressItem(item.appointmentId, item)}}
+              />
             )}
           />
         ) : (
@@ -68,6 +73,7 @@ export default NotificationScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginVertical: 8
   },
   noNotificationContainer: {
     flex: 1,

@@ -13,14 +13,17 @@ interface TextInputWithIconProps extends TextInputProps {
   placeholderText?: string;
   onChangeText?: (text:any) => void,
   isNumber?: boolean;
-  isPassword?: boolean
+  isPassword?: boolean, 
+  height?: number
 }
 const TextInputWithIcon: React.FC<TextInputWithIconProps> = ({
   label,
   onChangeText,
   isNumber,
   placeholderText,
-  isPassword
+  isPassword,
+  height,
+  ...props
 }) => {
   return (
     <View style={styles.container}>
@@ -29,12 +32,13 @@ const TextInputWithIcon: React.FC<TextInputWithIconProps> = ({
       </View>
       <View style={styles.inputContainer}>
         <TextInput
-        style={{height: 60, color: 'black'}}
+        style={{height: height? height : 60, color: 'black'}}
         autoCapitalize="none"
         secureTextEntry={isPassword}
           placeholder={placeholderText}
           keyboardType={isNumber ? "numeric" : "default"}
           onChangeText={onChangeText}
+          {...props}
         />
       </View>
     </View>

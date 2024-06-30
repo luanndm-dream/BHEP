@@ -50,7 +50,7 @@ const AppointmentScreen = () => {
         note,
         indexSymptom
       );
-  
+        console.log('res sauu khi dat lich', res)
       if (res.statusCode === 200) {
         Toast.show({
           type: "success",
@@ -67,7 +67,7 @@ const AppointmentScreen = () => {
           isRead: false,
         };
         console.log('dataSendNotification',dataSendNotification);
-        await firestore().collection('notification').add({...dataSendNotification, uid: employeeData?.employeeId});
+        await firestore().collection('notification').doc(`${res?.data?.id}`).set({...dataSendNotification, uid: employeeData?.employeeId});
         
         setVisiblePopup(!visiblePopup);
         navigation.goBack();

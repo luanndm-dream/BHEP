@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import { ButtonText, SpaceComponent } from "@/components";
 import { globalStyle } from "src/constants";
@@ -7,52 +7,94 @@ import { apiGetUserById } from "src/api/api_getUserById";
 import getElapsedTime from "src/constants/DateFormater";
 import firestore from "@react-native-firebase/firestore";
 import { apiPutAppointmentWithStatus } from "src/api/api_put_Appointment";
-
+import Toast from "react-native-toast-message";
+import { apiGetAppointmentById } from "src/api/api_get_appointmentById";
 interface NotificationItemProps {
   item: NotificationModelType;
+  onPress?: ()=>void
 }
-const NotificationItem: React.FC<NotificationItemProps> = (
-  NotificationItemProps
-) => {
-  const { item } = NotificationItemProps;
+const NotificationItem: React.FC<NotificationItemProps> = ({
+  item,
+  onPress
+})  => {
   const [user, setUser] = useState<any>();
+  const [appointment, setAppointment] = useState<any>();
 
   useEffect(() => {
     apiGetUserById(item.fromUserId).then((res: any) => {
       setUser(res.data);
     });
-  }, [item.fromUserId]);
+    apiGetAppointmentById(Number(item.appointmentId)).then((res: any) => {
+      if (res.statusCode === 200) {
+        setAppointment(res.data);
+      }
+    });
+  }, [item.fromUserId, appointment]);
 
   const handleRemoveNotification = async () => {
-    // try {
-    //   const res:any = await apiPutAppointmentWithStatus(
-    //     Number(item.appointmentId),
-    //     item.fromUserId,
-    //     Number(item.toUserId),
-    //     3
-    //   );
-    //   console.log(res)
+    try {
+      const res: any = await apiPutAppointmentWithStatus(
+        Number(item.appointmentId),
+        item.fromUserId,
+        Number(item.toUserId),
+        3
+      );
+      console.log(res);
 
-    // if (res.statusCode === 200) {
-    await firestore()
-      .collection("notification")
-      .doc(item.id) // Ensure document ID is a string if necessary
-      .delete();
-
-    // } else {
-    // }
-
-    console.log(item.appointmentId);
+      if (res.statusCode === 200) {
+        await firestore()
+          .collection("notification")
+          .doc(item.id) // Ensure document ID is a string if necessary
+          .delete();
+      } else {
+        Toast.show({
+          type: "error",
+          text1: "Xảy ra lỗi",
+          text2: res.message,
+        });
+      }
+    } catch (error: any) {
+      Toast.show({
+        type: "error",
+        text1: "Xảy ra lỗi",
+        text2: error.toString(),
+      });
+    }
   };
 
-  const handleAccpet = async () => {
-    await firestore().collection("notification").doc(item.id).update({
-      isRead: true,
-    });
+  const handleAccept = async () => {
+    console.log('item.id', item.id)
+    try {
+      const res: any = await apiPutAppointmentWithStatus(
+        Number(item.appointmentId),
+        item.fromUserId,
+        Number(item.toUserId),
+        1
+      );
+      console.log(res);
+
+      if (res.statusCode === 200) {
+        await firestore().collection("notification").doc(item.id).update({
+          isRead: true,
+        });
+      } else {
+        Toast.show({
+          type: "error",
+          text1: "Xảy ra lỗi",
+          text2: res.message,
+        });
+      }
+    } catch (error: any) {
+      Toast.show({
+        type: "error",
+        text1: "Xảy ra lỗi",
+        text2: error.toString(),
+      });
+    }
   };
 
   return (
-    <View
+    <TouchableOpacity
       style={{
         flexDirection: "row",
         alignItems: "flex-start",
@@ -60,6 +102,7 @@ const NotificationItem: React.FC<NotificationItemProps> = (
         marginBottom: 20,
         marginVertical: 12,
       }}
+      onPress={onPress}
     >
       {user?.avatar ? (
         <Image
@@ -97,7 +140,7 @@ const NotificationItem: React.FC<NotificationItemProps> = (
           </Text>
         </Text>
         <SpaceComponent height={16} />
-        {!item.isRead ? (
+        {!item.isRead || appointment?.status === 0 ? (
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
@@ -108,7 +151,7 @@ const NotificationItem: React.FC<NotificationItemProps> = (
               styleText={{ color: "grey" }}
             />
             <ButtonText
-              onPress={handleAccpet}
+              onPress={handleAccept}
               text="Chấp nhận"
               styleContainer={styles.acceptButton}
               styleText={{ fontWeight: "bold" }}
@@ -116,15 +159,15 @@ const NotificationItem: React.FC<NotificationItemProps> = (
           </View>
         ) : null}
       </View>
-      <View >
-      <Text style={{ fontSize: 16, color: "grey" }}>
-        {getElapsedTime(item?.createdAt)}
-      </Text>
-      <Text style={{ fontSize: 16, color: "grey", textAlign:'right' }}>
-        {item.isRead&&'Chấp nhận'}
-      </Text>
+      <View>
+        <Text style={{ fontSize: 16, color: "grey" }}>
+          {getElapsedTime(item?.createdAt)}
+        </Text>
+        <Text style={{ fontSize: 16, color: "grey", textAlign: "right" }}>
+          {item.isRead && "Chấp nhận"}
+        </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -132,7 +175,6 @@ export default NotificationItem;
 
 const styles = StyleSheet.create({
   contentContainer: {
-    // flexDirection: ,
     paddingHorizontal: 4,
     flex: 1,
   },

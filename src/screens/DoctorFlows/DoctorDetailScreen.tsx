@@ -48,23 +48,32 @@ const DoctorDetailScreen = () => {
   const [price, setPrice] = useState<number>(0);
   const [currentMonth, setCurrentMonth] = useState(month + 1);
   const [canGoForward, setCanGoForward] = useState(true);
+  
+  
   const handlePressDateSlider = (index: number, date: number) => {
     setSelectedDateIndex(index);
     setSelectedDate(date);
     setSelectedTimeIndex(-1);
-
+  
     const formattedDate = `${String(date).padStart(2, "0")}-${String(
-      month + 1
+      currentMonth
     ).padStart(2, "0")}-${year}`;
+    console.log('Selected date:', formattedDate);
+  
     const scheduleForDate = schedules?.find(
       (schedule: any) => schedule.date === formattedDate
     );
+  
+    console.log('Schedule for date:', scheduleForDate);
+  
     if (scheduleForDate) {
       setSelectedTimes(scheduleForDate.time);
     } else {
       setSelectedTimes([]);
     }
   };
+  
+  
 
   function formatDate(dateString: any) {
     const date = new Date(dateString);
@@ -91,15 +100,15 @@ const DoctorDetailScreen = () => {
       };
       week.push(dayObject);
       current.setDate(current.getDate() + 1);
-
+  
       if (Number(formattedDate) === date) {
         setSelectedDateIndex(i + 1);
       }
     }
-
+  
     return week;
   }
-
+  
   const handlePressTimeSlot = (index: number, time: string) => {
     setSelectedTimeIndex(index === selectedTimeIndex ? -1 : index);
     console.log("time", time);
@@ -124,7 +133,7 @@ const DoctorDetailScreen = () => {
 
   useEffect(() => {
     apiGetScheduleById(emloyeeId).then((res: any) => {
-      // console.log("schedules", res.data);
+      console.log("user data", res.data);
       setSchedules(res?.data?.weekSchedule);
     });
 
@@ -133,11 +142,11 @@ const DoctorDetailScreen = () => {
       setEmployeeData(res.data);
       setImgUrl(res?.data?.avatar);
       setPrice(res?.data?.workProfile?.price);
-      console.log("user data");
+  
     });
     apiGetUserById(userId).then((res: any) => {
       setUserData(res.data);
-      console.log("user data");
+   
     });
   }, []);
 
@@ -158,10 +167,9 @@ const DoctorDetailScreen = () => {
  
   const onPressConfirm = () => {
     const formattedDate = `${String(selectedDate).padStart(2, "0")}-${String(
-      month + 1
-    ).padStart(2, "0")}-${year}`;
-    
-  
+      currentMonth
+    ).padStart(2, "0")}-${moment().year()}`;
+      console.log(formattedDate)
     navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTSCREEN, {
       employee: {
         employeeId: employeeData?.id,
