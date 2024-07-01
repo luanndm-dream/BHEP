@@ -46,7 +46,7 @@ const PaymentScreen = () => {
     setVisible(!visible);
   };
 
-  console.log('userId', userId)
+  console.log("userId", userId);
   const onConfirm = () => {
     const numericValue = inputValue.replace(/[^0-9]/g, "");
     const paymentAmount = Number(numericValue);
@@ -57,6 +57,7 @@ const PaymentScreen = () => {
         setPaymentId(res?.data?.id);
       });
     } else if (selectedMethod.trim() === "Thanh toán qua PayOS") {
+      console.log(paymentAmount);
       apiPostPaymentPayOS(
         userId,
         paymentAmount,
@@ -65,29 +66,39 @@ const PaymentScreen = () => {
           {
             name: "Nạp tiền hệ thống",
             quantity: 1,
-            price: 2000,
+            price: paymentAmount,
           },
         ],
         "https://www.google.com/",
         "https://www.google.com/",
         Math.floor(Date.now() / 1000) + 600
       ).then((res: any) => {
-        console.log('payOS', res);
-        setPaymentUrl(res?.data?.checkoutUrl);
-        setPaymentId(res.data.id)
+        if (res.statusCode === 200) {
+          setPaymentUrl(res?.data?.checkoutUrl);
+          setPaymentId(res.data.id);
+        } else {
+          Toast.show({
+            type: "success",
+            text1: "Thanh toán thất bại",
+            text2: `Thanh toán thất bại, vui lòng liên hệ đội ngũ quản lí`, // Định dạng số tiền theo VND
+          });
+          navigate.goBack();
+        }
       });
     }
   };
 
-  
   const onNavigationStateChange = (navState: any) => {
     const { url } = navState;
     console.log(navState);
-    if (url.includes("vnp_TransactionStatus=00") || navState.canGoBack === true) {
+    if (
+      url.includes("vnp_TransactionStatus=00") ||
+      navState.canGoBack === true
+    ) {
       const amount = Number(inputValue.replace(/[^0-9]/g, ""));
       const formattedAmount = amount.toLocaleString("vi-VN");
-      apiPutPayment(paymentId,2).then((res:any)=>{
-        console.log('res update balance', res)
+      apiPutPayment(paymentId, 2).then((res: any) => {
+        console.log("res update balance", res);
       });
       Toast.show({
         type: "success",
@@ -98,7 +109,7 @@ const PaymentScreen = () => {
       navigate.goBack();
       setPaymentUrl("");
     } else {
-      apiPutPayment(paymentId,1);
+      apiPutPayment(paymentId, 1);
     }
   };
 
@@ -125,7 +136,7 @@ const PaymentScreen = () => {
                 <TextInput
                   ref={textInputRef}
                   placeholder="₫"
-                  placeholderTextColor={'black'}
+                  placeholderTextColor={"black"}
                   autoFocus
                   style={styles.textInput}
                   maxLength={15}
@@ -133,7 +144,6 @@ const PaymentScreen = () => {
                   value={inputValue}
                   onChangeText={onChangeValue}
                 />
-                {/* <Text style={styles.currencySymbol}>đ</Text> */}
               </View>
               <TouchableOpacity
                 style={styles.methodButton}
@@ -143,6 +153,9 @@ const PaymentScreen = () => {
                   Chọn phương thức thanh toán
                 </Text>
               </TouchableOpacity>
+              <Text style={{ color: "black", marginVertical: 6 }}>
+                Vui lòng nạp giá trị lớn hơn 50.000đ
+              </Text>
             </View>
             {selectedMethod && (
               <View style={styles.methodContainer}>
@@ -156,14 +169,14 @@ const PaymentScreen = () => {
               text={`Thanh toán ${inputValue}`}
               styleContainer={{
                 backgroundColor: globalColor.secondaryColor,
-                margin: 16,
+
                 padding: 16,
                 borderRadius: 8,
               }}
               styleText={{ fontWeight: "bold" }}
               disabled={
                 !selectedMethod ||
-                Number(inputValue.replace(/[^0-9]/g, "")) < 1000
+                Number(inputValue.replace(/[^0-9]/g, "")) < 50000
               }
             />
           </View>
@@ -189,6 +202,7 @@ export default PaymentScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    margin: 8
   },
   content: {
     flex: 1,
@@ -199,9 +213,9 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   inputContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   textInput: {
     height: 100,
@@ -212,7 +226,7 @@ const styles = StyleSheet.create({
   },
   currencySymbol: {
     fontSize: 40,
-    color: 'grey',
+    color: "grey",
     marginLeft: -10, // Adjust as needed
   },
   methodContainer: {
