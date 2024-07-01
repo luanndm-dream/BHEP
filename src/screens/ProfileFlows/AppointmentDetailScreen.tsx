@@ -10,6 +10,7 @@ import useLoading from "src/hook/useLoading";
 import { apiPutAppointmentWithStatus } from "src/api/api_put_Appointment";
 import firestore from "@react-native-firebase/firestore";
 import Toast from "react-native-toast-message";
+import formatCurrencyVND from "src/constants/Curentcy";
 const AppointmentDetailScreen = () => {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
@@ -50,7 +51,7 @@ const AppointmentDetailScreen = () => {
     },
     {
       label: "Giá tiền",
-      value: appointment?.price,
+      value: formatCurrencyVND(appointment?.price),
     },
     {
       label: "Ghi chú",

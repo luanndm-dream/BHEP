@@ -23,6 +23,7 @@ import { globalColor } from "src/constants/color";
 import { apiGetUserById } from "src/api/api_getUserById";
 import { apiGetScheduleById } from "src/api/api_get_scheduleById";
 import { useAppSelector } from "@/redux";
+import formatCurrencyVND from "src/constants/Curentcy";
 
 const DoctorDetailScreen = () => {
   const route = useRoute<any>();
@@ -347,7 +348,7 @@ const DoctorDetailScreen = () => {
       <View style={styles.priceContainer}>
         <Text style={globalStyle.titleText}>
           {selectedDate && selectedTimeIndex !== -1
-            ? `Chi phí: ${price}`
+            ? `Chi phí: ${formatCurrencyVND(price)}`
             : undefined}
         </Text>
       </View>

@@ -161,7 +161,8 @@ const ServiceDetailScreen = () => {
                 </Text>
               </View>
               <View style={styles.textInput}>
-                <TextInput placeholder="Mã family" style={{marginLeft: 6, color: 'black'}} 
+                <TextInput placeholder="Mã family" style={{marginLeft: 6, color: 'black'}}
+                placeholderTextColor={'grey'} 
                 onChangeText={handleFamilyCodeChange}
                 />
               </View>
@@ -292,6 +293,7 @@ const styles = StyleSheet.create({
   requirementItem: {
     fontSize: 14,
     marginBottom: 10,
+    color: 'black'
   },
   requirementTitle: {
     fontSize: 16,

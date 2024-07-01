@@ -83,7 +83,6 @@ const PaymentScreen = () => {
   const onNavigationStateChange = (navState: any) => {
     const { url } = navState;
     console.log(navState);
-    // Kiểm tra URL để xác định thanh toán thành công
     if (url.includes("vnp_TransactionStatus=00") || navState.canGoBack === true) {
       const amount = Number(inputValue.replace(/[^0-9]/g, ""));
       const formattedAmount = amount.toLocaleString("vi-VN");
@@ -126,6 +125,7 @@ const PaymentScreen = () => {
                 <TextInput
                   ref={textInputRef}
                   placeholder="₫"
+                  placeholderTextColor={'black'}
                   autoFocus
                   style={styles.textInput}
                   maxLength={15}

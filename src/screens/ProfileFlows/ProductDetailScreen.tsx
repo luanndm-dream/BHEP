@@ -125,6 +125,7 @@ const ProductDetailScreen = () => {
                   maxLength={50}
                   style={{ color: "black" }}
                   onChangeText={handleChange("name")}
+                  placeholderTextColor={"grey"}
                   onBlur={handleBlur("name")}
                   value={values.name}
                 />
@@ -135,6 +136,7 @@ const ProductDetailScreen = () => {
                   label="Số điện thoại"
                   placeholder="+84"
                   maxLength={10}
+                  placeholderTextColor={"grey"}
                   style={{ color: "black" }}
                   onChangeText={handleChange("phone")}
                   onBlur={handleBlur("phone")}

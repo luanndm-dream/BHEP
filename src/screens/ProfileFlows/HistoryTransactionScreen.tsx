@@ -8,6 +8,7 @@ import { globalColor } from "src/constants/color";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useNavigation } from "@react-navigation/native";
 import { STACK_NAVIGATOR_SCREENS } from "src/constants";
+import formatCurrencyVND from "src/constants/Curentcy";
 
 const HistoryTransactionScreen = () => {
   const userId = useAppSelector((state) => state.user.userData.id);
@@ -47,7 +48,7 @@ const HistoryTransactionScreen = () => {
       </View>
       <View>
         <Text style={[styles.amount, { color: item.isMinus ? "red" : "green" }]}>
-          {item.isMinus ? "-" : "+"}{item.amount}đ
+          {item.isMinus ? "-" : "+"}{formatCurrencyVND(item.amount)}đ
         </Text>
       </View>
     </TouchableOpacity>
@@ -113,6 +114,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 4,
+    color: 'black'
   },
   amount: {
     fontSize: 14,

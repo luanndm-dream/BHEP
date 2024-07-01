@@ -187,7 +187,7 @@ const ScheduleScreen = () => {
                 text={fromTime ? fromTime : "Từ giờ"}
                 onPress={() => onPressTimePicker("fromTime")}
               />
-              <MaterialCommunityIcons name="arrow-right" size={30} />
+              <MaterialCommunityIcons name="arrow-right" size={30} color={'black'} />
               <TimeBox
                 text={toTime ? toTime : "Đến giờ"}
                 onPress={() => onPressTimePicker("toTime")}

@@ -70,6 +70,7 @@ const PolicyScreen = () => {
   );
 };
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -83,22 +84,27 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: '#333',
   },
   subTitle: {
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: 20,
     marginBottom: 10,
+    color: '#555',
   },
   paragraph: {
     fontSize: 16,
     marginBottom: 10,
+    color: '#666', 
   },
   listItem: {
     fontSize: 16,
     marginLeft: 20,
     marginBottom: 5,
+    color: '#777', 
   },
 });
+
 
 export default PolicyScreen;
