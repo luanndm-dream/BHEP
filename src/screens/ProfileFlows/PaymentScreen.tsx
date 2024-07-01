@@ -78,7 +78,7 @@ const PaymentScreen = () => {
           setPaymentId(res.data.id);
         } else {
           Toast.show({
-            type: "success",
+            type: "error",
             text1: "Thanh toán thất bại",
             text2: `Thanh toán thất bại, vui lòng liên hệ đội ngũ quản lí`, // Định dạng số tiền theo VND
           });
