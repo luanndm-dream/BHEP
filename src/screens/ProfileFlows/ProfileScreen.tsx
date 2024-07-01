@@ -159,7 +159,7 @@ const ProfileScreen = () => {
             style={styles.image}
           />
         </View>
-        <StatsBox valueOfPosts={12} valueOfRank={1} valueOfOrders={100} />
+        <StatsBox valueOfPosts={1} valueOfRank={1} valueOfOrders={1} />
         <View style={styles.featureContainer}>
           <FlatList
             data={resultData}

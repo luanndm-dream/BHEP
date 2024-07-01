@@ -47,6 +47,20 @@ export const getFeatureProfileData = () => {
             color: '#39a6b8',
             screen: STACK_NAVIGATOR_SCREENS.HISTORYTRANSACTIONSCREEN,
         },
+        {
+            id: 8,
+            name: 'Chính sách & Bảo mật',
+            iconName: "book-open",
+            color: '#ffda00',
+            screen: STACK_NAVIGATOR_SCREENS.POLICYSCREEN,
+        },
+        {
+            id: 9,
+            name: 'Về chúng tôi',
+            iconName: "information",
+            color: '#3ea2f5',
+            screen: STACK_NAVIGATOR_SCREENS.ABOUTUSSCREEN,
+        },
     ];
     
     if (roleId === 3) {

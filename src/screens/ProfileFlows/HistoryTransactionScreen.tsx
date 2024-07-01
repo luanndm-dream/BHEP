@@ -6,9 +6,12 @@ import { useAppSelector } from "@/redux";
 import useLoading from "src/hook/useLoading";
 import { globalColor } from "src/constants/color";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from "@react-navigation/native";
+import { STACK_NAVIGATOR_SCREENS } from "src/constants";
 
 const HistoryTransactionScreen = () => {
   const userId = useAppSelector((state) => state.user.userData.id);
+  const navigation = useNavigation<any>()
   const [transactions, setTransactions] = useState([]);
   const { showLoading, hideLoading } = useLoading();
 
@@ -25,8 +28,14 @@ const HistoryTransactionScreen = () => {
     });
   }, []);
 
+  const handleItemPress = (item: any) => {
+    navigation.navigate(STACK_NAVIGATOR_SCREENS.COINTRANSACTIONDETAIL, {
+      data: item
+    })
+  }
+
   const renderItem = ({ item }: { item: any }) => (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={()=>handleItemPress(item)}>
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <View style={styles.iconContainer}>
           <MaterialCommunityIcons name="wallet" size={40} color={"white"} />

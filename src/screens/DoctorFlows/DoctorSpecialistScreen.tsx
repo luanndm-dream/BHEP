@@ -63,7 +63,7 @@ const DoctorSpecialistScreen = () => {
               <SuggestDoctorItem
                 name={item?.fullName}
                 onPress={() => onPressDoctorSuggest(item.id)}
-                specialistId={nameHeader}
+                specialistId={specialistId}
                 image={item?.avatar}
                 rate={item?.rate}
               />

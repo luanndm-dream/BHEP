@@ -302,12 +302,14 @@ const styles = StyleSheet.create({
   },
   inforContainer: {
     width: "80%",
+
   },
   labelContainer: {
     flexDirection: "row",
     width: "80%",
     alignItems: "center",
-    marginTop: 6,
+    marginTop: 12,
+    marginLeft: 12
   },
   labelText: {
     marginLeft: 5,

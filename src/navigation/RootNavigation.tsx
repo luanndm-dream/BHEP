@@ -9,6 +9,7 @@ import {
   AppointmentDetailScreen,
   AppointmentScreen,
   ChangePasswordScreen,
+  CoinTransactionDetailScreen,
   CommunityScreen,
   DoctorDetailScreen,
   DoctorScreen,
@@ -25,10 +26,12 @@ import {
   OnBoardingScreen,
   PartnerScreen,
   PaymentScreen,
+  PolicyScreen,
   ProductDetailScreen,
   ProductScreen,
   ProfileScreen,
   QuestionnaireScreen,
+  RatingScreen,
   RegisterScreen,
   ScheduleScreen,
   ServiceDetailScreen,
@@ -52,6 +55,7 @@ import {
   STACK_NAVIGATOR_SCREENS,
 } from "src/constants";
 import NotificationScreen from "src/screens/HomeFlows/NotificationScreen";
+import AboutUsScreen from "src/screens/ProfileFlows/AboutUsScreen";
 
 const myNavigationTheme = {
   ...DefaultTheme,
@@ -208,10 +212,11 @@ const RootNavigation = () => {
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.DOCTORDETAILSCREEN}
         component={DoctorDetailScreen}
-      /><Stack.Screen
-      name={STACK_NAVIGATOR_SCREENS?.DOCTORSPECIALISTSCREEN}
-      component={DoctorSpecialistScreen}
-    />
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.DOCTORSPECIALISTSCREEN}
+        component={DoctorSpecialistScreen}
+      />
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.MYHEALTHSCREEN}
         component={MyHealthScreen}
@@ -276,7 +281,22 @@ const RootNavigation = () => {
         name={STACK_NAVIGATOR_SCREENS?.HISTORYTRANSACTIONSCREEN}
         component={HistoryTransactionScreen}
       />
-
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.POLICYSCREEN}
+        component={PolicyScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.ABOUTUSSCREEN}
+        component={AboutUsScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.COINTRANSACTIONDETAIL}
+        component={CoinTransactionDetailScreen}
+      />
+       <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.RATINGSCREEN}
+        component={RatingScreen}
+      />
     </Stack.Navigator>
   );
 

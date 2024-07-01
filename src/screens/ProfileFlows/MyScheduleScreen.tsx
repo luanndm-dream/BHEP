@@ -1,11 +1,11 @@
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useAppSelector } from "@/redux";
 import { apiGetUserById } from "src/api/api_getUserById";
 import { Header } from "@/components";
 import useLoading from "src/hook/useLoading";
 import ScheduleItem from "./ScheduleItem";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { STACK_NAVIGATOR_SCREENS } from "src/constants";
 
 const MySchedule = () => {
@@ -13,17 +13,25 @@ const MySchedule = () => {
   const navigation = useNavigation<any>()
   const { showLoading, hideLoading } = useLoading();
   const [appointment, setAppointment] = useState<any[]>([]);
-  useEffect(() => {
+
+  
+  const loadAppointments = useCallback(() => {
     showLoading();
     apiGetUserById(userData.id).then((res: any) => {
       if (res.statusCode === 200) {
-        hideLoading();
         setAppointment(userData.roleId === 3 ? res?.data?.appointmentsReceived : res?.data?.appointments);
-        console.log("appointment", appointment)
       }
       hideLoading();
     });
-  }, [userData]);
+  }, [userData.id]);
+
+  useFocusEffect(
+    useCallback(() => {
+      loadAppointments();
+    }, [loadAppointments])
+  );
+
+
   const onPressItemHandle = (id: number,index: number) => {
     console.log('id',id)
     navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTDETAILSCREEN, {
