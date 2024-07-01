@@ -34,6 +34,11 @@ const TrackingHealthScreen = () => {
     });
   }, [userId]);
 
+
+
+  console.log(user?.deviceCodes)
+
+
   useEffect(() => {
     const query = ref(realtimeDb, "Device1");
 
@@ -93,7 +98,7 @@ const TrackingHealthScreen = () => {
     <Header headerTitle="Kiểm tra sức khoẻ" />
     <View style={styles.container}>
     
-      {user?.deviceCodes ? (
+      {user?.deviceCodes.lenght >0 ? (
         <View style={styles.content}>
           <PulseIndicator isDataNew={isDataNew} />
           {!isDataNew ? (
