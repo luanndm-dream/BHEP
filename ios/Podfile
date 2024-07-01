@@ -5,6 +5,8 @@ require_relative '../node_modules/react-native-permissions/scripts/setup'
 pod 'react-native-geolocation-service', path: '../node_modules/react-native-geolocation-service'
 platform :ios, '12.4'
 prepare_react_native_project!
+use_frameworks! :linkage => :static
+$RNFirebaseAsStaticFramework = true
 
 setup_permissions([
   # 'AppTrackingTransparency',
@@ -16,7 +18,7 @@ setup_permissions([
   # 'FaceID',
   # 'LocationAccuracy',
   # 'LocationAlways',
-   'LocationWhenInUse',
+  #'LocationWhenInUse',
   # 'MediaLibrary',
   # 'Microphone',
   # 'Motion',
@@ -30,6 +32,8 @@ setup_permissions([
 ])
 
 flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
+
+
 
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
@@ -54,7 +58,7 @@ target 'BHEP_Mobile_Demo_V1' do
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
     # you should disable the next line.
-    :flipper_configuration => flipper_config,
+    # :flipper_configuration => flipper_config,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
@@ -75,3 +79,5 @@ target 'BHEP_Mobile_Demo_V1' do
   end
 end
 
+pod 'React-RCTSettings', :path => '../node_modules/react-native/Libraries/Settings'
+pod 'React-CoreModules', :path => '../node_modules/react-native/React/CoreModules'

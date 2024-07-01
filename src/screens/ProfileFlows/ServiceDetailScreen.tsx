@@ -6,6 +6,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  TextInput,
 } from "react-native";
 import React, { useState } from "react";
 import { ButtonText, Header } from "@/components";
@@ -20,48 +21,85 @@ import Toast from "react-native-toast-message";
 
 const ServiceDetailScreen = () => {
   const route = useRoute<any>();
-  const navigate = useNavigation<any>()
+  const navigate = useNavigation<any>();
   const userId = Number(useAppSelector((state) => state.user.userData.id));
   const data = route?.params.data;
   const type = route?.params.type;
+  const [isChecked, setIsChecked] = useState(false);
+  const [familyCode, setFamilyCode] = useState("");
+
+
+
   const [selectedItem, setSelectedItem] = useState<any>();
+  console.log('ROUTE DATA', selectedItem?.id)
   const description = data[1]?.description
     ?.split(".")
     .filter((item: any) => item.trim() !== "");
-  console.log(data);
   const onPressItem = (item: any) => {
     setSelectedItem(item);
-    console.log(item);
   };
-  const onConfirm = () => {
-    apiPostCoinTransaction({
-      userId,
-      amount: selectedItem?.price,
-      isMinus: true,
-      title: selectedItem?.name,
-      description: selectedItem?.name,
-      isGenerateCode: type === 1 ? false : true,
-      services: [data.id],
-    }).then((res: any) => {
-      console.log("res mua hàng", res);
-      if (res.statusCode === 200) {
-        Toast.show({
-          type: "success",
-          text1: "Đặt lịch thành công",
-          text2: "BHEP chúc bạn thật nhiều sức khoẻ!",
-        });
-        navigate.goBack()
+  const onConfirm = () => {  
+    if (selectedItem) {
+      let apiParams: any = {
+        userId,
+        amount: selectedItem?.price,
+        isMinus: true,
+        title: selectedItem?.name,
+        description: selectedItem?.name,
+        serviceId: selectedItem.id,
+        code: familyCode? familyCode : "",
+        vouchers: [],
+        products: []
+      };
+  
+      if (type === 1) {
+        apiParams.isGenerateCode = false;
       } else {
-        Toast.show({
-          type: "error",
-          text1: "Mua gói thất bại",
-          text2: ` Xảy ra lỗi khi mua hàng ${res.message}`,
-        });
+        if (isChecked) {
+          apiParams.isGenerateCode = true;
+        }
+        if (familyCode.trim() !== "") {
+          apiParams.code = familyCode.trim();
+        }
       }
-    });
+  
+      apiPostCoinTransaction(apiParams).then((res: any) => {
+        console.log("api", apiParams);
+        console.log("res", res.data);
+        if (res.statusCode === 200) {
+          Toast.show({
+            type: "success",
+            text1: "Mua dịch vụ thành công",
+            text2: "BHEP chúc bạn thật nhiều sức khoẻ!",
+          });
+          navigate.goBack();
+        } else {
+          Toast.show({
+            type: "error",
+            text1: "Mua gói thất bại",
+            text2: ` Xảy ra lỗi khi mua hàng ${res.message}`,
+          });
+        }
+      });
+    } else {
+      Toast.show({
+        type: "error",
+        text1: "Vui lòng chọn gói và nhập mã Family (nếu cần)",
+        text2: "",
+      });
+    }
   };
+  
+  const toggleCheckbox = () => {
+    setIsChecked(!isChecked);
+    setFamilyCode(""); 
+  };
+  const handleFamilyCodeChange = (text: string) => {
+    setFamilyCode(text);
+  };
+
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('vi-VN').format(price);
+    return new Intl.NumberFormat("vi-VN").format(price);
   };
   return (
     <>
@@ -69,7 +107,12 @@ const ServiceDetailScreen = () => {
         source={require("../../assets/image/backgroundService.png")}
         style={styles.backgroundImage}
       >
-        <TouchableOpacity style={styles.buttonContainer} onPress={()=>{navigate.goBack()}}>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => {
+            navigate.goBack();
+          }}
+        >
           <MaterialCommunityIcons name="chevron-left" size={40} color="black" />
         </TouchableOpacity>
       </ImageBackground>
@@ -99,6 +142,38 @@ const ServiceDetailScreen = () => {
             }}
           />
           <View style={styles.dashedLine} />
+          {type === 2 && (
+            <View>
+              <Text style={styles.requirementTitle}>
+                Bắt buộc phải có Family mới được sử dụng gói gia đình
+              </Text>
+              <View style={styles.requirementContainer}>
+                <Text style={styles.requirementItem}>
+                  • Nếu bạn chưa có Family. Phí thành lập 500.000đ/ 1 năm. Mua 1
+                  lần sử dụng cho cả Family.
+                </Text>
+                <Text style={styles.requirementItem}>
+                  • Nếu bạn đã có Family. Vui lòng nhập Mã Family (do chủ Family
+                  cung cấp) vào bên dưới.
+                </Text>
+                <Text style={styles.codeRequired}>
+                  Điền mã Family của bạn nếu có.
+                </Text>
+              </View>
+              <View style={styles.textInput}>
+                <TextInput placeholder="Mã family" style={{marginLeft: 6, color: 'black'}}
+                placeholderTextColor={'grey'} 
+                onChangeText={handleFamilyCodeChange}
+                />
+              </View>
+              <TouchableOpacity style={styles.checkboxContainer} onPress={toggleCheckbox}>
+            <View style={[styles.checkbox, isChecked ? styles.checked : null]}>
+              {isChecked && <MaterialCommunityIcons name="check-circle-outline" size={24} color="white" />}
+            </View>
+            <Text style={styles.textAfterCheckbox}>Tạo mã Family (500.000đ)</Text>
+          </TouchableOpacity>
+            </View>
+          )}
 
           <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
             {data?.map((item: any, index: any) => (
@@ -108,7 +183,7 @@ const ServiceDetailScreen = () => {
                   styles.itemContainer,
                   {
                     backgroundColor:
-                      selectedItem === item ? "#3FD69F" : "#a6a6a6",
+                      selectedItem === item ? "#85c4ee" : "#a6a6a6",
                   },
                 ]}
                 onPress={() => onPressItem(item)}
@@ -126,7 +201,7 @@ const ServiceDetailScreen = () => {
         <ButtonText
           text="Mua gói"
           onPress={onConfirm}
-          disabled={!selectedItem}
+          disabled={!selectedItem || (type === 2 && !isChecked && familyCode.trim() === "")}
           styleContainer={{
             marginHorizontal: 12,
             backgroundColor: globalColor.primaryColor,
@@ -205,7 +280,58 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginTop: 40,
     marginLeft: 20,
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  noteText: {
+    fontSize: 14,
+    color: "black",
+  },
+  requirementContainer: {
+    marginBottom: 10,
+  },
+  requirementItem: {
+    fontSize: 14,
+    marginBottom: 10,
+    color: 'black'
+  },
+  requirementTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginVertical: 10,
+  },
+  codeRequired: {
+    color: "red",
+    fontSize: 18,
+  },
+  textInput: {
+    height: 40,
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: globalColor.secondaryColor,
+    width: 150,
+    justifyContent: 'center',
+    marginVertical: 6
+  },
+  checkbox: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#555",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 10,
+  },
+  checked: {
+    backgroundColor: globalColor.primaryColor, // Color when checked
+  },
+  textAfterCheckbox: {
+    marginLeft: 10,
+  },
+  checkboxContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 10,
   },
 });

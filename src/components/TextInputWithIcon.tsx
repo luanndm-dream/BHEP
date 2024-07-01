@@ -13,14 +13,17 @@ interface TextInputWithIconProps extends TextInputProps {
   placeholderText?: string;
   onChangeText?: (text:any) => void,
   isNumber?: boolean;
-  isPassword?: boolean
+  isPassword?: boolean, 
+  height?: number
 }
 const TextInputWithIcon: React.FC<TextInputWithIconProps> = ({
   label,
   onChangeText,
   isNumber,
   placeholderText,
-  isPassword
+  isPassword,
+  height,
+  ...props
 }) => {
   return (
     <View style={styles.container}>
@@ -29,12 +32,13 @@ const TextInputWithIcon: React.FC<TextInputWithIconProps> = ({
       </View>
       <View style={styles.inputContainer}>
         <TextInput
-        style={{height: 60, color: 'black'}}
+        style={{height: height? height : 60, color: 'black'}}
         autoCapitalize="none"
         secureTextEntry={isPassword}
           placeholder={placeholderText}
           keyboardType={isNumber ? "numeric" : "default"}
           onChangeText={onChangeText}
+          {...props}
         />
       </View>
     </View>
@@ -47,8 +51,7 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: 15,
   },
-  labelContainer: {
-    backgroundColor: globalColor.backgroundColor, // Same color as background
+  labelContainer: { // Same color as background
     alignSelf: "flex-start", // Have View be same width as Text inside
     paddingHorizontal: 3, // Amount of spacing between border and first/last letter
     marginStart: 10, // How far right do you want the label to start
@@ -56,7 +59,8 @@ const styles = StyleSheet.create({
     elevation: 0.5, // Needed for android
     shadowColor: "white", // Same as background color because elevation: 1 creates a shadow that we don't want
     position: "absolute", // Needed to be able to precisely overlap label with border
-    top: -12, // Vertical
+    top: -12,
+    backgroundColor: globalColor.backgroundColor // Vertical
   },
   inputContainer: {
     borderWidth: 1, // Create border
@@ -65,6 +69,5 @@ const styles = StyleSheet.create({
     zIndex: 0,
     height: 55,
     justifyContent: "center",
-    // Ensure border has z-index of 0
   },
 });

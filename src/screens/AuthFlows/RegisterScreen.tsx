@@ -121,7 +121,7 @@ const RegisterScreen = () => {
             }}
             keyboardVerticalOffset={height + 47}
           >
-            <ScrollView>
+            <ScrollView style={{backgroundColor: globalColor.backgroundColor}}>
               <Text style={{ color: globalColor.grey }}>
                 Vui lòng điền đầy đủ thông tin để hồ sơ của bạn tốt hơn. Mọi dữ
                 liệu cá nhân của bạn sẽ được bảo mật.
@@ -164,7 +164,7 @@ const RegisterScreen = () => {
                 <Text style={styles.errorText}>{errors.password}</Text>
               )}
               <TextInputWithIcon
-                label="Xác nhân mật khẩu"
+                label="Xác nhận mật khẩu"
                 isPassword={true}
                 value={values.confirmPassword}
                 onChangeText={(text) => {

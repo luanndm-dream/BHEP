@@ -1,11 +1,12 @@
 #import "AppDelegate.h"
-
+#import <Firebase.h>
 #import <React/RCTBundleURLProvider.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [FIRApp configure];
   self.moduleName = @"BHEP_Mobile_Demo_V1";
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }

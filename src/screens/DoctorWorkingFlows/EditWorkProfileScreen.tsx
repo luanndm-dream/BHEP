@@ -39,7 +39,8 @@ const EditWorkProfileScreen = () => {
     setEditable(false);
     apiUpdateWorkProfile(
       userData?.data.id,
-      userId,
+      userId, 
+      userData?.data?.workProfile?.majorId,
       userData?.data.workPlace,
       userData?.data.certificate,
       userData?.data.experienceYear,

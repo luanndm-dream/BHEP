@@ -6,4 +6,16 @@ export async function apiGetDoctors(pageSize? : number) {
     PageSize : pageSize,
   };
   return publicAxios.get(url, { params });
+  
+}
+
+
+export async function apiGetDoctorsWithSpecialistId(SpecialistId: number,pageSize? : number) {
+  const url = `User/Doctors`;
+  const params = {
+    SpecialistId,
+    PageSize : pageSize,
+  };
+  return publicAxios.get(url, { params });
+  
 }

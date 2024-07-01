@@ -7,9 +7,8 @@ import {
 } from "src/constants/size";
 import Animated, {
   interpolate,
-  Extrapolate,
-  useAnimatedStyle,
   Extrapolation,
+  useAnimatedStyle,
 } from "react-native-reanimated";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Text } from "react-native";
@@ -48,8 +47,6 @@ const ItemDoctor: React.FC<ItemDoctorProps> = ({
       inputRange,
       [0.8, 1, 0.8],
       Extrapolation.CLAMP
-      // Extrapolate.CLAMP
-      
     );
     return {
       transform: [{ scaleY: scale }],
@@ -57,12 +54,11 @@ const ItemDoctor: React.FC<ItemDoctorProps> = ({
   });
 
   useEffect(() => {
-    apiGetSpecialist().then((res: any) => {
-      console.log(res.data);
-      if (res.statusCodde === 200) {
+    apiGetSpecialist().then((res:any)=>{
+      if (res.statusCode === 200) {
         setSpecialist(res.data.items);
       }
-    });
+    })
   }, []);
 
   const getSpecialistName = (id: number): string => {
@@ -93,7 +89,7 @@ const ItemDoctor: React.FC<ItemDoctorProps> = ({
         <Image
           source={{ uri: imgUrl }}
           style={styles.image}
-          // resizeMode="contain"
+          resizeMode="cover"
         />
         <View style={styles.inforContainer}>
           <Text style={[globalStyle.textNormal, styles.fullName]}>
@@ -112,20 +108,22 @@ export default ItemDoctor;
 
 const styles = StyleSheet.create({
   card: {
-    height: 220,
+    height: 280,
     overflow: "hidden",
     borderRadius: 12,
     backgroundColor: "#EFF9FB",
     position: "relative",
     alignItems: "center",
     justifyContent: "center",
+    paddingBottom: 8
   },
   image: {
-    height: "80%",
+    height: "100%",
     width: "100%",
     alignSelf: "center",
     padding: 8,
-    borderRadius: 12, // Add padding here
+    borderRadius: 12,
+    flex: 1 // Add padding here
   },
   rateContainer: {
     position: "absolute",

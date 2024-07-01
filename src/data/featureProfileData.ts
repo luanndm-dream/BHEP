@@ -3,7 +3,7 @@ import { STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { globalColor } from "src/constants/color";
 
 export const getFeatureProfileData = () => {
-    const roleId = useAppSelector(state=>state.user.userData.roleId);
+    const roleId = useAppSelector(state => state.user.userData.roleId);
     const data = [
         {
             id: 1,
@@ -35,15 +35,36 @@ export const getFeatureProfileData = () => {
         },
         {
             id: 6,
-            name: 'Mua gói dịch vụ',
+            name: 'Mua dịch vụ',
             iconName: "cart-outline",
             color: '#e0afd1',
             screen: STACK_NAVIGATOR_SCREENS.SERVICESCREEN,
         },
+        {
+            id: 7,
+            name: 'Lịch sử giao dịch',
+            iconName: "history",
+            color: '#39a6b8',
+            screen: STACK_NAVIGATOR_SCREENS.HISTORYTRANSACTIONSCREEN,
+        },
+        {
+            id: 8,
+            name: 'Chính sách & Bảo mật',
+            iconName: "book-open",
+            color: '#ffda00',
+            screen: STACK_NAVIGATOR_SCREENS.POLICYSCREEN,
+        },
+        {
+            id: 9,
+            name: 'Về chúng tôi',
+            iconName: "information",
+            color: '#3ea2f5',
+            screen: STACK_NAVIGATOR_SCREENS.ABOUTUSSCREEN,
+        },
     ];
     
     if (roleId === 3) {
-        data.push({
+        data.unshift({
             id: 2,
             name: 'Làm việc',
             iconName: "calendar-check",

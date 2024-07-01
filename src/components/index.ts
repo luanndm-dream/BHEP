@@ -24,3 +24,5 @@ export { default as DatePicker } from "./DatePicker";
 export { default as ButtonComponent } from "./ButtonComponent";
 export { default as TimePickerComponent } from "./TimePickerComponent";
 export { default as LabelComponent } from "./LabelComponent";
+export { default as CircleComponent } from "./CircleComponent";
+export { default as SpaceComponent } from "./SpaceComponent";

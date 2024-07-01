@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>46057334140-ukivnjhcqh05btu8pmcinu1c833o47n0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.46057334140-ukivnjhcqh05btu8pmcinu1c833o47n0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD2561n6ClHtGG_Ul61L6VPTY_XD7lEpGA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>46057334140</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.BHEP-Mobile-Demo-V1</string>
+	<key>PROJECT_ID</key>
+	<string>bhep-iot</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bhep-iot.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:46057334140:ios:8166a71ea4a6e0f0e430f9</string>
+	<key>DATABASE_URL</key>
+	<string>https://bhep-iot-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>

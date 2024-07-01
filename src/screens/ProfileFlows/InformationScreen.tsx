@@ -13,23 +13,39 @@ import { globalStyle, STACK_NAVIGATOR_SCREENS } from "src/constants";
 import { globalColor } from "src/constants/color";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { apiUpdateUser } from "src/api/api_put_user";
-
+import Toast from "react-native-toast-message";
+import { useAppDispatch } from "@/redux";
+import { changeInfo, setUserInfo } from "src/redux/slice";
 const InformationScreen = () => {
   const route = useRoute<any>();
   const data = route?.params?.data;
   const [isEdit, setIsEdit] = useState<boolean>(false);
-  
   const [isChangePassword, setIsChangePassWord] = useState<boolean>(false);
   const [fullName, setFullName] = useState<string>(data?.fullName);
   const [email, setEmail] = useState<string>(data?.email);
   const [phoneNumber, setPhoneNumber] = useState<string>(data?.phoneNumber);
-  const navigate = useNavigation<any>()
-
+  const navigate = useNavigation<any>();
+  const dispatch = useAppDispatch();
   const editHandle = () => {
     if (isEdit) {
       apiUpdateUser(data?.id, fullName, email, phoneNumber, data?.gender).then(
         (res: any) => {
-          console.log(res);
+          console.log(res?.daata)
+          if (res.statusCode === 200) {
+            // dispatch(changeInfo(res?.data));
+            Toast.show({
+              type: "success",
+              text1: "Thay đổi thông tin thành công",
+              text2: "BHEP chúc bạn thật nhiều sức khoẻ!",
+            });
+            navigate.goBack();
+          } else {
+            Toast.show({
+              type: "error",
+              text1: "Thay đổi thông tin thất bại",
+              text2: `Đã xảy ra lỗi ${res.message}`,
+            });
+          }
         }
       );
 
@@ -39,7 +55,7 @@ const InformationScreen = () => {
   };
   const onChangePassword = () => {
     // setIsChangePassWord(!isChangePassword);
-    navigate.navigate(STACK_NAVIGATOR_SCREENS.CHANGEPASSWORDSCREEN)
+    navigate.navigate(STACK_NAVIGATOR_SCREENS.CHANGEPASSWORDSCREEN);
   };
   return (
     <>
@@ -137,7 +153,7 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     paddingHorizontal: 12,
     fontSize: 20,
-    color: globalColor.grey,
+    color: "black",
   },
   buttonContainer: {
     margin: 16,

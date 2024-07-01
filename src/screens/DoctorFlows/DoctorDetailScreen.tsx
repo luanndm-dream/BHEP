@@ -22,12 +22,16 @@ import moment from "moment";
 import { globalColor } from "src/constants/color";
 import { apiGetUserById } from "src/api/api_getUserById";
 import { apiGetScheduleById } from "src/api/api_get_scheduleById";
+import { useAppSelector } from "@/redux";
+import formatCurrencyVND from "src/constants/Curentcy";
 
 const DoctorDetailScreen = () => {
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
-  const userId = route.params.userId;
+  const emloyeeId = route.params.userId;
+  const userId = useAppSelector(state => state.user.userData.id)
   const location = route?.params?.location;
+  const [employeeData, setEmployeeData] = useState<any>();
   const [userData, setUserData] = useState<any>();
   const [imgUrl, setImgUrl] = useState<string>("");
   const [dateInWeeks, setDateInWeek] = useState<any>();
@@ -41,25 +45,36 @@ const DoctorDetailScreen = () => {
   const [selectedTimes, setSelectedTimes] = useState<any[]>([]);
   const [selectedTime, setSelectedTime] = useState<any>();
   const [selectedTimeIndex, setSelectedTimeIndex] = useState<number>(-1);
+  const [isNextWeekPressed, setIsNextWeekPressed] = useState<boolean>(false);
   const [price, setPrice] = useState<number>(0);
-
+  const [currentMonth, setCurrentMonth] = useState(month + 1);
+  const [canGoForward, setCanGoForward] = useState(true);
+  
+  
   const handlePressDateSlider = (index: number, date: number) => {
     setSelectedDateIndex(index);
     setSelectedDate(date);
     setSelectedTimeIndex(-1);
-
+  
     const formattedDate = `${String(date).padStart(2, "0")}-${String(
-      month + 1
+      currentMonth
     ).padStart(2, "0")}-${year}`;
+    console.log('Selected date:', formattedDate);
+  
     const scheduleForDate = schedules?.find(
       (schedule: any) => schedule.date === formattedDate
     );
+  
+    console.log('Schedule for date:', scheduleForDate);
+  
     if (scheduleForDate) {
       setSelectedTimes(scheduleForDate.time);
     } else {
       setSelectedTimes([]);
     }
   };
+  
+  
 
   function formatDate(dateString: any) {
     const date = new Date(dateString);
@@ -72,8 +87,9 @@ const DoctorDetailScreen = () => {
 
   function dates(current: any) {
     var week = [];
-    // Starting Monday not Sunday
     current.setDate(current.getDate() - current.getDay() + 1);
+    const firstDayOfWeek = new Date(current);
+    setCurrentMonth(firstDayOfWeek.getMonth() + 1);
     for (var i = 0; i < 7; i++) {
       const dayIndex = i === 6 ? 1 : i + 2; // Nếu i là 6 (Chủ Nhật), dayIndex sẽ là 1 (Thứ Hai)
       const formattedDate = formatDate(new Date(current));
@@ -85,34 +101,53 @@ const DoctorDetailScreen = () => {
       };
       week.push(dayObject);
       current.setDate(current.getDate() + 1);
-
+  
       if (Number(formattedDate) === date) {
         setSelectedDateIndex(i + 1);
       }
     }
-
+  
     return week;
   }
-
+  
   const handlePressTimeSlot = (index: number, time: string) => {
     setSelectedTimeIndex(index === selectedTimeIndex ? -1 : index);
     console.log("time", time);
-    setSelectedTime(time)
+    setSelectedTime(time);
     // setSelectedTimes(time) // Nếu đã chọn thì hủy chọn, nếu chưa chọn thì chọn
+  };
+  const handleNextWeek = () => {
+    const nextWeekStartDate = new Date(year, month, date + 7);
+    setDateInWeek(dates(nextWeekStartDate));
+    setSelectedDateIndex(1);
+    setSelectedTimes([]);
+    setSelectedTimeIndex(-1);
+    setIsNextWeekPressed(true);
+    setCanGoForward(false); // Disable nút "Next Week" sau khi ấn
+  };
+  const handleReturn = () => {
+    const currentWeekStartDate = new Date(year, month, date - 1);
+    setDateInWeek(dates(currentWeekStartDate));
+    setIsNextWeekPressed(false);
+    setCanGoForward(true); // Enable lại nút "Next Week"
   };
 
   useEffect(() => {
-    apiGetScheduleById(userId).then((res: any) => {
-      // console.log("schedules", res.data);
+    apiGetScheduleById(emloyeeId).then((res: any) => {
+      console.log("user data", res.data);
       setSchedules(res?.data?.weekSchedule);
     });
 
     setDateInWeek(dates(new Date(year, month, date - 1)));
+    apiGetUserById(emloyeeId).then((res: any) => {
+      setEmployeeData(res.data);
+      setImgUrl(res?.data?.avatar);
+      setPrice(res?.data?.workProfile?.price);
+  
+    });
     apiGetUserById(userId).then((res: any) => {
       setUserData(res.data);
-      setImgUrl(res?.data?.avatar);
-      setPrice(res?.data?.workProfile?.price)
-      console.log("user data", );
+   
     });
   }, []);
 
@@ -130,21 +165,22 @@ const DoctorDetailScreen = () => {
 
     Linking.openURL(url);
   };
+ 
   const onPressConfirm = () => {
     const formattedDate = `${String(selectedDate).padStart(2, "0")}-${String(
-      month + 1
-    ).padStart(2, "0")}-${year}`;
+      currentMonth
+    ).padStart(2, "0")}-${moment().year()}`;
+      console.log(formattedDate)
     navigation.navigate(STACK_NAVIGATOR_SCREENS.APPOINTMENTSCREEN, {
       employee: {
-        employeeId: userData?.id,
-        employeeName: userData?.fullName,
+        employeeId: employeeData?.id,
+        employeeName: employeeData?.fullName,
         price: price,
         date: formattedDate,
         time: selectedTime,
       },
     });
   };
-
   return (
     <>
       <View style={{ flex: 1 }}>
@@ -178,8 +214,8 @@ const DoctorDetailScreen = () => {
               style={styles.avatar}
             />
             <View style={styles.nameBox}>
-              <Text style={styles.name}>{userData?.fullName}</Text>
-              <Text style={styles.description}>{userData?.description}</Text>
+              <Text style={styles.name}>{employeeData?.fullName}</Text>
+              <Text style={styles.description}>{employeeData?.description}</Text>
             </View>
           </View>
           <Image
@@ -209,7 +245,49 @@ const DoctorDetailScreen = () => {
           </View>
           <View style={styles.scheduleContainer}>
             <View style={{}}>
-              <Text style={globalStyle.titleText}>Lịch trình làm việc</Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Text style={globalStyle.titleText}>
+                  {`Lịch trình làm việc tháng ${currentMonth}`}
+                </Text>
+                <View style={{ flexDirection: "row" }}>
+                  <TouchableOpacity
+                    style={
+                      isNextWeekPressed
+                        ? styles.nextWeekButton
+                        : styles.notEnableWeekButton
+                    }
+                    onPress={handleReturn}
+                    disabled={!isNextWeekPressed}
+                  >
+                    <MaterialCommunityIcons
+                      name="chevron-left"
+                      size={20}
+                      color={"white"}
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={
+                      canGoForward
+                        ? styles.nextWeekButton
+                        : styles.notEnableWeekButton
+                    }
+                    onPress={handleNextWeek}
+                    disabled={!canGoForward}
+                  >
+                    <MaterialCommunityIcons
+                      name="chevron-right"
+                      size={20}
+                      color={"white"}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
               <FlatList
                 scrollEnabled={false}
                 //   numColumns={7}
@@ -270,13 +348,17 @@ const DoctorDetailScreen = () => {
       <View style={styles.priceContainer}>
         <Text style={globalStyle.titleText}>
           {selectedDate && selectedTimeIndex !== -1
-            ? `Chi phí: ${price}`
+            ? `Chi phí: ${formatCurrencyVND(price)}`
             : undefined}
         </Text>
       </View>
       <ButtonText
-        disabled={!selectedDate || selectedTimeIndex === -1}
-        text="Đặt lịch"
+        disabled={
+          !selectedDate ||
+          selectedTimeIndex === -1 ||
+          (userData?.balance < price)
+        }
+        text={(userData?.balance < price) ? "Không đủ tiền" : "Đặt lịch"}
         onPress={() => onPressConfirm()}
         styleContainer={{
           height: 60,
@@ -384,8 +466,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "grey",
     paddingVertical: 4,
-    textAlign: 'center',
-    justifyContent: 'center'
+    textAlign: "center",
+    justifyContent: "center",
   },
   timeLabel: {
     height: 40,
@@ -400,5 +482,24 @@ const styles = StyleSheet.create({
   priceContainer: {
     alignItems: "flex-end",
     marginRight: 20,
+  },
+  nextWeekButton: {
+    // alignSelf: "center",
+    marginVertical: 6,
+    backgroundColor: globalColor.primaryColor,
+    paddingHorizontal: 6,
+    borderRadius: 8,
+  },
+  notEnableWeekButton: {
+    // alignSelf: "center",
+    marginVertical: 6,
+    backgroundColor: "grey",
+    paddingHorizontal: 6,
+    borderRadius: 8,
+  },
+  nextWeekButtonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

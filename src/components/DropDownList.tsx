@@ -107,6 +107,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
                           <Text
                             style={[
                               styles.item,
+                              styles.itemId,
                               isSelected && styles.selectedItem,
                             ]}
                           >
@@ -115,6 +116,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
                           <Text
                             style={[
                               styles.item,
+                              styles.itemName,
                               isSelected && styles.selectedItem,
                             ]}
                           >
@@ -176,17 +178,28 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   itemContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 6,
   },
   itemBox: {
-    flexDirection: "row",
-    marginVertical: 6,
+    flex: 1,
+    flexDirection: 'row',
+    // alignItems: 'center',
+    marginRight: 10,
+  },
+  itemId: {
+    minWidth: 30, // Điều chỉnh theo nhu cầu
+    marginRight: 5,
   },
   item: {
     fontSize: globalFontSize.lableFont,
-    fontWeight: "bold",
-    color: "black",
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  itemName: {
+    flex: 1,
   },
   labelSearch: {
     height: 50,

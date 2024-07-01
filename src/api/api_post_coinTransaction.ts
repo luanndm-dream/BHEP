@@ -2,15 +2,15 @@ import { publicAxios } from "./api_config";
 
 interface CoinTransactionConfig {
     userId: number;
-    amount: number;
+    amount: number; 
     isMinus: boolean;
     title?: string;
     description?: string;
     isGenerateCode?: boolean;
     code?: string;
     vouchers?: number[];
-    services?: number[];
-    products?: number[];
+    serviceId?: number;
+    products?: { id: number; quantity: number }[];
   }
   
   export async function apiPostCoinTransaction(config: CoinTransactionConfig) {
@@ -24,7 +24,7 @@ interface CoinTransactionConfig {
       isGenerateCode: config.isGenerateCode,
       code: config.code,
       vouchers: config.vouchers,
-      services: config.services,
+      serviceId: config.serviceId,
       products: config.products,
     };
     return publicAxios.post(url, dataSend, { headers: { "Content-Type": "application/json" } });

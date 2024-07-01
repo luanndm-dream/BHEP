@@ -83,7 +83,7 @@ const ChangePasswordScreen = () => {
             <>
               <View>
                 <Text
-                  style={[globalStyle.titleText, { color: globalColor.grey }]}
+                  style={globalStyle.titleText}
                 >
                   Mật khẩu cũ
                 </Text>
@@ -102,7 +102,7 @@ const ChangePasswordScreen = () => {
               </View>
               <View>
                 <Text
-                  style={[globalStyle.titleText, { color: globalColor.grey }]}
+                  style={globalStyle.titleText}
                 >
                   Mật khẩu mới
                 </Text>
@@ -119,7 +119,7 @@ const ChangePasswordScreen = () => {
               </View>
               <View>
                 <Text
-                  style={[globalStyle.titleText, { color: globalColor.grey }]}
+                  style={globalStyle.titleText}
                 >
                   Xác nhận mật khẩu mới
                 </Text>

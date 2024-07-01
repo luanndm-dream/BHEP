@@ -32,8 +32,6 @@ const ProfileScreen = () => {
   const { showLoading, hideLoading } = useLoading();
   const userData = useAppSelector((state) => state.user.userData);
   const navigation = useNavigation<any>();
-  const form = new FormData();
-  const os = Platform.OS;
   const dispatch = useAppDispatch();
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [data, setData] = useState<any>();
@@ -95,17 +93,15 @@ const ProfileScreen = () => {
       });
     });
   };
-
   useFocusEffect(
-    
     useCallback(() => {
-      // showLoading();
-      apiGetUserById(Number(userData.id)).then((res:any) => {
-        if(res.statusCode === 200){
+      apiGetUserById(Number(userData.id)).then((res: any) => {
+        showLoading();
+        if (res.statusCode === 200) {
           setData(res?.data);
-          hideLoading()
+          hideLoading();
         }
-        hideLoading()
+        hideLoading();
       });
     }, [data, handleChangeAvatar])
   );
@@ -142,12 +138,20 @@ const ProfileScreen = () => {
                   color={"white"}
                 />
               </View>
-
-              {/* Logic nguyên bản */}
             </TouchableOpacity>
+
             <View style={styles.nameBox}>
-              <Text style={styles.name}>{data?.fullName}</Text>
-              <Text style={styles.description}>{data?.description}</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={styles.name}>{data?.fullName}</Text>
+                {/* {data.} */}
+                {/* <MaterialCommunityIcons
+                  name="crown-circle"
+                  color={"yellow"}
+                  size={30}
+                /> */}
+              </View>
+
+              {/* <Text style={styles.description}>{data?.description}</Text> */}
             </View>
           </View>
           <Image
@@ -155,7 +159,7 @@ const ProfileScreen = () => {
             style={styles.image}
           />
         </View>
-        <StatsBox valueOfPosts={12} valueOfRank={1} valueOfOrders={100} />
+        <StatsBox valueOfPosts={1} valueOfRank={1} valueOfOrders={1} />
         <View style={styles.featureContainer}>
           <FlatList
             data={resultData}
@@ -198,6 +202,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  vipText: {
+    color: "white",
+    textAlign: "center",
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 8,
+    marginTop: 8,
+    fontWeight: "bold",
+    fontSize: 16,
+  },
   image: {
     borderBottomLeftRadius: 180,
     borderBottomRightRadius: 180,
@@ -222,6 +236,7 @@ const styles = StyleSheet.create({
     fontSize: globalFontSize.name,
     fontWeight: "bold",
     color: "white",
+    marginRight: 6
   },
   nameBox: {
     marginTop: 10,

@@ -22,6 +22,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import Toast from "react-native-toast-message";
 import { setUserChecking, setUserHealthRecord } from "src/redux/slice/userHealthRecordSlice";
 import { useAppDispatch } from "@/redux";
+import { STACK_NAVIGATOR_SCREENS } from "src/constants";
 const QuestionnaireScreen = () => {
   const data = ListQuestion;
   const dispatch = useAppDispatch();
@@ -34,8 +35,6 @@ const QuestionnaireScreen = () => {
   const handleAnswerPress = (questionId: number, answerId: number) => {
     setAnswers((prevAnswers) => {
       const updatedAnswers = { ...prevAnswers };
-
-      // Kiểm tra nếu questionId đã tồn tại trong answers
       if (questionId in updatedAnswers) {
         const answerIndex = updatedAnswers[questionId].indexOf(answerId);
 
@@ -60,19 +59,13 @@ const QuestionnaireScreen = () => {
   };
   const onPressConfirm = () => {
     setIsVisible(false);
-    navigation.reset({
-      index: 0,
-      routes: [{ name: "MainFlows" }],
-    });
+    navigation.navigate(STACK_NAVIGATOR_SCREENS.MAINFLOWS);
     dispatch(setUserHealthRecord(answers));
     dispatch(setUserChecking(false));
   };
   const onPressDone = () => {
-    console.log(answers)
-    navigation.reset({
-      index: 0,
-      routes: [{ name: "MainFlows" }],
-    });
+    dispatch(setUserChecking(true));
+    navigation.navigate(STACK_NAVIGATOR_SCREENS.MAINFLOWS)
     dispatch(setUserHealthRecord(answers));
   }
 

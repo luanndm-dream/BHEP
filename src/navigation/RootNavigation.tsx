@@ -9,11 +9,14 @@ import {
   AppointmentDetailScreen,
   AppointmentScreen,
   ChangePasswordScreen,
+  CoinTransactionDetailScreen,
   CommunityScreen,
   DoctorDetailScreen,
   DoctorScreen,
+  DoctorSpecialistScreen,
   EditWorkProfileScreen,
   FindLocationScreen,
+  HistoryTransactionScreen,
   HomeScreen,
   InformationScreen,
   LoginScreen,
@@ -23,8 +26,12 @@ import {
   OnBoardingScreen,
   PartnerScreen,
   PaymentScreen,
+  PolicyScreen,
+  ProductDetailScreen,
+  ProductScreen,
   ProfileScreen,
   QuestionnaireScreen,
+  RatingScreen,
   RegisterScreen,
   ScheduleScreen,
   ServiceDetailScreen,
@@ -47,6 +54,8 @@ import {
   BOTTOM_NAVIGATOR_SCREENS,
   STACK_NAVIGATOR_SCREENS,
 } from "src/constants";
+import NotificationScreen from "src/screens/HomeFlows/NotificationScreen";
+import AboutUsScreen from "src/screens/ProfileFlows/AboutUsScreen";
 
 const myNavigationTheme = {
   ...DefaultTheme,
@@ -119,10 +128,16 @@ const RootNavigation = () => {
   const [isShowSplash, setIsShowPlash] = useState<boolean>(
     useAppSelector((state) => state.user.isSplash)
   );
+  const [isChecking, setIsChecking] = useState<boolean>(
+    useAppSelector((state) => state.userHealthRecord.isChecking)
+  );
+
   const accessToken = useAppSelector((state) => state.user.accessToken);
 
-    console.log(isShowSplash)
-
+  const initialRouteName =
+    isChecking === false
+      ? STACK_NAVIGATOR_SCREENS.QUESTIONNAIRESCREEN
+      : STACK_NAVIGATOR_SCREENS.MAINFLOWS;
 
   useEffect(() => {
     checkLogin();
@@ -143,12 +158,10 @@ const RootNavigation = () => {
         headerShown: false,
       }}
     >
-    {isShowSplash && (
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS.ONBOARDINGSCREEN}
         component={OnBoardingScreen}
       />
-    )}
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.LOGINSCREEN}
         component={LoginScreen}
@@ -156,10 +169,6 @@ const RootNavigation = () => {
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.REGISTERSCREEN}
         component={RegisterScreen}
-      />
-      <Stack.Screen
-        name={STACK_NAVIGATOR_SCREENS?.QUESTIONNAIRESCREEN}
-        component={QuestionnaireScreen}
       />
     </Stack.Navigator>
   );
@@ -169,7 +178,13 @@ const RootNavigation = () => {
       screenOptions={{
         headerShown: false,
       }}
+      initialRouteName={initialRouteName}
     >
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.QUESTIONNAIRESCREEN}
+        component={QuestionnaireScreen}
+      />
+
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.MAINFLOWS}
         component={BottomTabNavigation}
@@ -197,6 +212,10 @@ const RootNavigation = () => {
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.DOCTORDETAILSCREEN}
         component={DoctorDetailScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.DOCTORSPECIALISTSCREEN}
+        component={DoctorSpecialistScreen}
       />
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.MYHEALTHSCREEN}
@@ -239,12 +258,44 @@ const RootNavigation = () => {
         component={ServiceScreen}
       />
       <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.PRODUCTSCREEN}
+        component={ProductScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.PRODUCTDETAILSCREEN}
+        component={ProductDetailScreen}
+      />
+      <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.SERVICEDETAILSCREEN}
         component={ServiceDetailScreen}
       />
       <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.CHANGEPASSWORDSCREEN}
         component={ChangePasswordScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.NOTIFICATIONSCREEN}
+        component={NotificationScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.HISTORYTRANSACTIONSCREEN}
+        component={HistoryTransactionScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.POLICYSCREEN}
+        component={PolicyScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.ABOUTUSSCREEN}
+        component={AboutUsScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.COINTRANSACTIONDETAIL}
+        component={CoinTransactionDetailScreen}
+      />
+       <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.RATINGSCREEN}
+        component={RatingScreen}
       />
     </Stack.Navigator>
   );

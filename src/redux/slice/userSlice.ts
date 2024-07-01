@@ -5,15 +5,15 @@ import { Platform } from "react-native";
 // import { RootState } from "redux/store";
 
 const initialState = {
-   accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJzdGFmZjFAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiU3RhZmYiLCJleHAiOjE3NDAyMDM3MTksImlzcyI6ImJ1c2RlbGl2ZXJ5LWF1dGgtYXBpIiwiYXVkIjoiYnVzZGVsaXZlcnktY2xpZW50In0.lCo_zLaOpRLinbowy5z02ozSr9GBkwRcsEDcYhh7kPM",
-  // accessToken: undefined,
+  //  accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJzdGFmZjFAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiU3RhZmYiLCJleHAiOjE3NDAyMDM3MTksImlzcyI6ImJ1c2RlbGl2ZXJ5LWF1dGgtYXBpIiwiYXVkIjoiYnVzZGVsaXZlcnktY2xpZW50In0.lCo_zLaOpRLinbowy5z02ozSr9GBkwRcsEDcYhh7kPM",
+  accessToken: undefined,
   refreshToken: undefined,
   refreshTokenExpiryTime: undefined,
   userData: {
       id: 5,
       roleId: Platform.OS === 'android'? 2 : 3,
       geoLocationId: undefined,
-      fullName: 'Thành Phú',
+      fullName: 'David Phú',
       email: undefined,
       identify: undefined,
       phoneNumber: undefined,
@@ -57,12 +57,15 @@ const userSlice = createSlice({
       // Reset all user info to initial state
       Object.assign(state, initialState);
     },
+    changeInfo: (state, action: PayloadAction<any>) =>{
+      state.userData = action.payload.user;
+    }
   },
 });
 
 // Corrected userType
 type UserType = typeof userSlice.actions.setUserInfo;
 
-export const { setUserInfo, resetUserInfo, setUserIsSplash } = userSlice.actions;
+export const { setUserInfo, resetUserInfo, setUserIsSplash,changeInfo } = userSlice.actions;
 export const userSelector = (state: RootState) => state.user;
 export default userSlice.reducer;
