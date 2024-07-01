@@ -82,7 +82,7 @@ const RatingScreen = () => {
         <ButtonText
           onPress={handleRatingSubmit}
           styleContainer={{
-            backgroundColor: isButtonEnabled ? globalColor.primaryColor : globalColor.disableColor,
+            backgroundColor: isButtonEnabled ? globalColor.primaryColor : 'grey',
             height: 60,
             marginBottom: 12,
             borderRadius: 8,
