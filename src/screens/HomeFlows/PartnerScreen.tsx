@@ -8,7 +8,7 @@ import {
   Image,
   StatusBar,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import {
   ButtonText,
@@ -29,8 +29,9 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { useAppSelector } from "@/redux";
-import { MajorData } from "src/data/majorData";
 import Toast from "react-native-toast-message";
+import { apiGetMajor } from "src/api/api_get_Major";
+import { apiGetSpecialist } from "src/api/api_get_Specialist";
 
 const PartnerSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -48,14 +49,13 @@ const PartnerSchema = Yup.object().shape({
 
 const PartnerScreen = () => {
   const keyboardVerticalOffset = Platform.OS === "ios" ? 40 : 0;
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisibleMajorList, setIsVisibleMajorList] = useState<boolean>(false);
   const navigation = useNavigation<any>();
-  // const customerId = 11;
-  const [fullName, setFullName] = useState<string>("");
-  const [certification, setCertification] = useState<string>("");
+  const [isVisibleSpecialist, setIsVisibleSpecialist] = useState<boolean>(false);
   const [major, setMajor] = useState<any>();
-  const [workplace, setWorkplace] = useState<string>("");
-  const [experienceYear, setExperienceYear] = useState<number>(0);
+  const [specialist, setSpecialist] = useState<any>();
+  const [specialistData, setSpecialistData] = useState<any>();
+  const [majorData, setMajorData] = useState<any>();
   const [avatar, setAvatar] = useState<any>();
   const [imageBase64, setImageBase64]= useState<string>("")
   const { showLoading, hideLoading } = useLoading();
@@ -65,6 +65,32 @@ const PartnerScreen = () => {
     const selectedMajor = { id: majorId, name: majorName };
     setMajor(selectedMajor);
   };
+  const handleSelectSpecialist = (specialistId: number, specialistName: string) => {
+    const selectedSpecialist = { id: specialistId, name: specialistName };
+    setSpecialist(selectedSpecialist);
+  };
+
+
+  useEffect(() => {
+    Promise.all([apiGetMajor(), apiGetSpecialist()])
+      .then(([majorRes, specialistRes]: [any, any]) => {
+        if (majorRes.statusCode === 200) {
+          const sortedMajorData = [...majorRes.data.items].sort((a, b) => a.id - b.id);
+          setMajorData(sortedMajorData);
+        }
+        if (specialistRes.statusCode === 200) {
+          const sortedSpecialistData = [...specialistRes.data.items].sort((a, b) => a.id - b.id);
+          setSpecialistData(sortedSpecialistData);
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+  
+  
+
+
   const choosePhoto = () => {
     ImagePicker.openPicker({
       width: 300,
@@ -90,11 +116,12 @@ const PartnerScreen = () => {
     workplace: string,
     experienceYear: number
   ) => {
+    let certificationWithSpecialist = `${specialist.name}: ${certification}` 
     showLoading();
     apiPostApplicationJob(
       customerId,
       fullName,
-      certification,
+      certificationWithSpecialist,
       major?.id,
       avatar,
       workplace,
@@ -233,7 +260,14 @@ const PartnerScreen = () => {
                   label="Vị trí ứng tuyển"
                   value={major?.name ? major?.name : "Ấn vào để chọn"}
                   onPress={() => {
-                    setIsVisible(!isVisible);
+                    setIsVisibleMajorList(!isVisibleMajorList);
+                  }}
+                />
+                 <DropDownLabel
+                  label="Chuyên khoa"
+                  value={specialist?.name ? specialist?.name : "Ấn vào để chọn"}
+                  onPress={() => {
+                    setIsVisibleSpecialist(!isVisibleSpecialist);
                   }}
                 />
                 <TextInputWithIcon
@@ -303,10 +337,19 @@ const PartnerScreen = () => {
           {/* DropDownList */}
           <View style={styles.dropDownListContainer}>
             <DropDownList
-              dataList={MajorData}
-              visible={isVisible}
-              onCancel={() => setIsVisible(!isVisible)}
+              dataList={majorData}
+              visible={isVisibleMajorList}
+              onCancel={() => setIsVisibleMajorList(!isVisibleMajorList)}
               onSelectMajor={handleSelectMajor}
+              placeholderText="Tìm kiếm vị trí"
+            />
+          </View>
+          <View style={styles.dropDownListContainer}>
+            <DropDownList
+              dataList={specialistData}
+              visible={isVisibleSpecialist}
+              onCancel={() => setIsVisibleSpecialist(!isVisibleSpecialist)}
+              onSelectMajor={handleSelectSpecialist}
               placeholderText="Tìm kiếm vị trí"
             />
           </View>

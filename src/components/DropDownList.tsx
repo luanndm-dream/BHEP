@@ -80,7 +80,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
       >
         <View style={styles.container}>
           <View style={styles.indicatorTop} />
-          <View>
+          <View style={{ flex: 1 }}>
             <TextInput
               placeholder={placeholderText}
               onChangeText={(text) => setSearchValue(text)}
@@ -88,13 +88,9 @@ const DropDownList: React.FC<DropDownListProps> = ({
               style={styles.labelSearch}
             />
 
-            <SafeAreaView>
+            <SafeAreaView style={{ flex: 1 }}>
               <FlatList
-                style={
-                  multiSelect
-                    ? { height: 230, marginBottom: 10 }
-                    : { height: 200 }
-                }
+                style={{ flex: 1 }}
                 data={filterData(dataList, searchValue)}
                 renderItem={({ item }) => {
                   const isSelected = selectedItems.includes(item.id);
@@ -131,6 +127,7 @@ const DropDownList: React.FC<DropDownListProps> = ({
                     </TouchableOpacity>
                   );
                 }}
+                keyExtractor={(item) => item.id.toString()}
               />
               {multiSelect && (
                 <ButtonText
@@ -167,7 +164,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     paddingHorizontal: 12,
-    height: 400,
+    height: 400
   },
   indicatorTop: {
     width: 60,
@@ -181,16 +178,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 6,
+    paddingVertical: 16,
+    flex: 1,
   },
   itemBox: {
     flex: 1,
     flexDirection: 'row',
-    // alignItems: 'center',
     marginRight: 10,
   },
   itemId: {
-    minWidth: 30, // Điều chỉnh theo nhu cầu
+    minWidth: 30,
     marginRight: 5,
   },
   item: {

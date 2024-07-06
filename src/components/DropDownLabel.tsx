@@ -7,7 +7,7 @@ interface DropDownLabelProps {
     label?: string,
     value?: any,
     onPress?: ()=>void,
-    onChangeValue?: ()=>void
+    onChangeValue?: (id: number, name: string)=>void
 }
 const DropDownLabel:React.FC<DropDownLabelProps> = ({label,value, onPress,onChangeValue}) => {
   return (
