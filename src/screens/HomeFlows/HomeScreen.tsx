@@ -68,7 +68,12 @@ const HomeScreen = () => {
       return () => unsubscribe();
     }, [userData])
   );
-  console.log(unReadNotifications);
+  
+  const getLastWord = (fullName: string) => {
+    const words = fullName.split(' ');
+    return words[words.length - 1];
+  };
+  
 
   const onPressNotification = () => {
     navigation.navigate(STACK_NAVIGATOR_SCREENS.NOTIFICATIONSCREEN);
@@ -90,7 +95,7 @@ const HomeScreen = () => {
           <View style={styles.titleContainer}>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text style={{ fontSize: 18, color: "black" }}>Xin chào </Text>
-              <Text style={styles.welcomeText}>{user?.fullName}</Text>
+              <Text style={styles.welcomeText}>{getLastWord(user?.fullName)}</Text>
             </View>
             <View style={{ flexDirection: "row" }}>
               <View style={styles.balanceContainer}>
