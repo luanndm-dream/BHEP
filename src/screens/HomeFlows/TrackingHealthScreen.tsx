@@ -36,7 +36,7 @@ const TrackingHealthScreen = () => {
 
 
 
-  console.log(user?.deviceCodes)
+  console.log(user?.deviceCodes.length >0)
 
 
   useEffect(() => {
@@ -98,7 +98,7 @@ const TrackingHealthScreen = () => {
     <Header headerTitle="Kiểm tra sức khoẻ" />
     <View style={styles.container}>
     
-      {user?.deviceCodes.lenght >0 ? (
+      {user?.deviceCodes.length >0 ? (
         <View style={styles.content}>
           <PulseIndicator isDataNew={isDataNew} />
           {!isDataNew ? (
