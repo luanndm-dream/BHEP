@@ -22,6 +22,7 @@ import { apiGetUserById } from "src/api/api_getUserById";
 import Toast from "react-native-toast-message";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import firestore from "@react-native-firebase/firestore";
+import formatCurrencyVND from "src/constants/Curentcy";
 
 const HomeScreen = () => {
   const navigation = useNavigation<any>();
@@ -98,7 +99,7 @@ const HomeScreen = () => {
                   style={styles.bhepCoin}
                 />
                 <Text style={{ color: "white", fontWeight: "bold" }}>
-                  {user?.balance ? user?.balance : 0}
+                  {user?.balance ? formatCurrencyVND(user?.balance)  : 0}
                 </Text>
               </View>
               <View style={styles.notificationIconContainer}>
