@@ -17,9 +17,11 @@ interface MessagePopupProps {
   iconColor?: any;
   onDelete?: any;
   onEdit?: any;
+  backgroundColorButton? : any,
   confirmText?: string;
   onPressCancel: () => void;
   onPressConfirm: () => void;
+  
 }
 
 const MessagePopup: React.FC<MessagePopupProps> = ({
@@ -34,7 +36,8 @@ const MessagePopup: React.FC<MessagePopupProps> = ({
   onEdit,
   confirmText,
   onPressCancel,
-  onPressConfirm
+  onPressConfirm,
+  backgroundColorButton
 }) => {
   return (
     <View>
@@ -53,7 +56,7 @@ const MessagePopup: React.FC<MessagePopupProps> = ({
             <ButtonText
               text={confirmText}
               onPress={onPressConfirm}
-              styleContainer={styles.confirmButtonContainer}
+              styleContainer={[styles.confirmButtonContainer,{backgroundColor: backgroundColorButton? backgroundColorButton:globalColor.primaryColor }]}
               styleText={styles.confirmText}
             />
           </View>

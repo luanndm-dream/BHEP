@@ -24,7 +24,7 @@ const InformationScreen = () => {
   const [fullName, setFullName] = useState<string>(data?.fullName);
   const [email, setEmail] = useState<string>(data?.email);
   const [phoneNumber, setPhoneNumber] = useState<string>(data?.phoneNumber);
-  const navigate = useNavigation<any>();
+  const navigation = useNavigation<any>();
   const dispatch = useAppDispatch();
   const editHandle = () => {
     if (isEdit) {
@@ -38,7 +38,7 @@ const InformationScreen = () => {
               text1: "Thay đổi thông tin thành công",
               text2: "BHEP chúc bạn thật nhiều sức khoẻ!",
             });
-            navigate.goBack();
+            navigation.goBack();
           } else {
             Toast.show({
               type: "error",
@@ -55,7 +55,7 @@ const InformationScreen = () => {
   };
   const onChangePassword = () => {
     // setIsChangePassWord(!isChangePassword);
-    navigate.navigate(STACK_NAVIGATOR_SCREENS.CHANGEPASSWORDSCREEN);
+    navigation.navigate(STACK_NAVIGATOR_SCREENS.CHANGEPASSWORDSCREEN);
   };
   return (
     <>
@@ -119,6 +119,10 @@ const InformationScreen = () => {
           <Text style={[globalStyle.titleText, {color: globalColor.grey}]}>Giới thiệu bản thân</Text>
           <TextInput style={styles.textInput} />
         </View> */}
+        <ButtonText styleContainer={styles.disableAccountButton}
+        onPress={()=>navigation.navigate(STACK_NAVIGATOR_SCREENS.DISABLEACCOUNTSCREEN)}
+        text="Vô hiệu hoá tài khoản"
+        />
       </ScrollView>
       <View style={{ backgroundColor: "white" }}>
         <ButtonText
@@ -170,6 +174,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginHorizontal: 30,
     height: 60,
+    borderRadius: 16,
+  },
+  disableAccountButton: {
+    backgroundColor: '#ff9b9b',
+    marginTop: 50,
+    marginHorizontal: 40,
+    height: 40,
     borderRadius: 16,
   },
   password: {

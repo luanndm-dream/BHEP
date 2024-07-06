@@ -11,6 +11,7 @@ import {
   ChangePasswordScreen,
   CoinTransactionDetailScreen,
   CommunityScreen,
+  DisableAccountScreen,
   DoctorDetailScreen,
   DoctorScreen,
   DoctorSpecialistScreen,
@@ -296,6 +297,10 @@ const RootNavigation = () => {
        <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.RATINGSCREEN}
         component={RatingScreen}
+      />
+       <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.DISABLEACCOUNTSCREEN}
+        component={DisableAccountScreen}
       />
     </Stack.Navigator>
   );

@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
     height: 24,
     borderRadius: 12,
     borderColor: "black",
-    borderWidth: 1,
+    borderWidth: StyleSheet.hairlineWidth,
     marginRight: 10,
     marginVertical: 20,
   },

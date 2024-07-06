@@ -26,3 +26,4 @@ export { default as TimePickerComponent } from "./TimePickerComponent";
 export { default as LabelComponent } from "./LabelComponent";
 export { default as CircleComponent } from "./CircleComponent";
 export { default as SpaceComponent } from "./SpaceComponent";
+export { default as CustomKeyboard } from "./CustomKeyboard";
