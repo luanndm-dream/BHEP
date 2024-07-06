@@ -160,3 +160,5 @@ Pods/
 .circleci/generated_config.yml
 
 /log
+android/app/my-bhep-key.keystore
+android/app/google-services.json
