@@ -27,6 +27,7 @@
 		0F08F8EE2BCE177900586064 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F08F8DB2BCE177900586064 /* SimpleLineIcons.ttf */; };
 		0F08F8EF2BCE177900586064 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F08F8DC2BCE177900586064 /* FontAwesome6_Brands.ttf */; };
 		0F08F8F02BCE177900586064 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F08F8DD2BCE177900586064 /* MaterialIcons.ttf */; };
+		0F5DFDC52C3BAF9D002E95A4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5DFDC42C3BAF9D002E95A4 /* StoreKit.framework */; };
 		0FF502C72C30015000A900AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FF502C62C30015000A900AE /* GoogleService-Info.plist */; };
 		0FF502C82C30015000A900AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FF502C62C30015000A900AE /* GoogleService-Info.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
@@ -70,6 +71,7 @@
 		0F08F8DB2BCE177900586064 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		0F08F8DC2BCE177900586064 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		0F08F8DD2BCE177900586064 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		0F5DFDC42C3BAF9D002E95A4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0FF502C62C30015000A900AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* BHEP_Mobile_Demo_V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BHEP_Mobile_Demo_V1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = BHEP_Mobile_Demo_V1/AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28BFA6561E5E59A7043D77C9 /* Pods_BHEP_Mobile_Demo_V1.framework in Frameworks */,
+				0F5DFDC52C3BAF9D002E95A4 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +171,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F5DFDC42C3BAF9D002E95A4 /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				4869DBB4748FA3654E1A69E3 /* Pods_BHEP_Mobile_Demo_V1.framework */,
 				6F60B7402BD89425278BB007 /* Pods_BHEP_Mobile_Demo_V1_BHEP_Mobile_Demo_V1Tests.framework */,

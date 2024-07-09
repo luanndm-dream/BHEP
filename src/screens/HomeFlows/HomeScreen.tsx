@@ -69,11 +69,14 @@ const HomeScreen = () => {
     }, [userData])
   );
   
-  const getLastWord = (fullName: string) => {
-    const words = fullName.split(' ');
-    return words[words.length - 1];
-  };
-  
+  const getLastWord = (fullName: string | undefined | null) => {
+  if (!fullName) {
+    return '';
+  }
+  const words = fullName.split(' ');
+  return words[words.length - 1];
+};
+
 
   const onPressNotification = () => {
     navigation.navigate(STACK_NAVIGATOR_SCREENS.NOTIFICATIONSCREEN);

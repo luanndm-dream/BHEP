@@ -170,7 +170,7 @@ const ServiceDetailScreen = () => {
             <View style={[styles.checkbox, isChecked ? styles.checked : null]}>
               {isChecked && <MaterialCommunityIcons name="check-circle-outline" size={24} color="white" />}
             </View>
-            <Text style={styles.textAfterCheckbox}>Tạo mã Family (500.000đ)</Text>
+            <Text style={styles.textAfterCheckbox}>Tạo mã Family (499.000đ)</Text>
           </TouchableOpacity>
             </View>
           )}
