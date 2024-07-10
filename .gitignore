@@ -162,3 +162,4 @@ Pods/
 /log
 android/app/my-bhep-key.keystore
 android/app/google-services.json
+.env

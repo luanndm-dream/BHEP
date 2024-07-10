@@ -61,6 +61,13 @@ export const getFeatureProfileData = () => {
             color: '#3ea2f5',
             screen: STACK_NAVIGATOR_SCREENS.ABOUTUSSCREEN,
         },
+        {
+            id: 10,
+            name: 'Test',
+            iconName: "information",
+            color: '#3ea2f5',
+            screen: STACK_NAVIGATOR_SCREENS.SUBCRIPTIONSCREEN,
+        },
     ];
     
     if (roleId === 3) {

@@ -5,6 +5,7 @@ import {
   NavigationContainer,
   createNavigationContainerRef,
 } from "@react-navigation/native";
+import { withIAPContext } from "react-native-iap";
 import {
   AppointmentDetailScreen,
   AppointmentScreen,
@@ -38,6 +39,7 @@ import {
   ServiceDetailScreen,
   ServiceScreen,
   SplashScreen,
+  SubscriptionScreen,
   TestScreen,
   TrackingHealthScreen,
   WebViewScreen,
@@ -301,6 +303,10 @@ const RootNavigation = () => {
        <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.DISABLEACCOUNTSCREEN}
         component={DisableAccountScreen}
+      />
+       <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.SUBCRIPTIONSCREEN}
+        component={withIAPContext(SubscriptionScreen)}
       />
     </Stack.Navigator>
   );
