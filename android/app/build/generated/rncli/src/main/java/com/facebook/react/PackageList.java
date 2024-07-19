@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import com.oblador.vectoricons.VectorIconsPackage;
 // @react-native-async-storage/async-storage
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+// @react-native-community/slider
+import com.reactnativecommunity.slider.ReactSliderPackage;
 // @react-native-firebase/app
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 // @react-native-firebase/firestore
@@ -39,8 +41,6 @@ import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.imagepicker.ImagePickerPackage;
 // react-native-permissions
 import com.zoontek.rnpermissions.RNPermissionsPackage;
-// react-native-quick-base64
-import com.reactnativequickbase64.QuickBase64Package;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -98,6 +98,7 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new VectorIconsPackage(),
       new AsyncStoragePackage(),
+      new ReactSliderPackage(),
       new ReactNativeFirebaseAppPackage(),
       new ReactNativeFirebaseFirestorePackage(),
       new RNCMaskedViewPackage(),
@@ -110,7 +111,6 @@ public class PackageList {
       new PickerPackage(),
       new ImagePickerPackage(),
       new RNPermissionsPackage(),
-      new QuickBase64Package(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

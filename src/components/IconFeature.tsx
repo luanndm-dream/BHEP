@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     width:90,
+    marginVertical: 8
   },
   iconContainer: {
     width: 60,

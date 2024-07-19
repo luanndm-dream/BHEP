@@ -962,26 +962,26 @@ PODS:
     - React-Core (= 0.71.0)
     - React-jsi (= 0.71.0)
     - ReactCommon/turbomodule/core (= 0.71.0)
-  - Firebase/CoreOnly (10.27.0):
-    - FirebaseCore (= 10.27.0)
-  - Firebase/Firestore (10.27.0):
+  - Firebase/CoreOnly (10.29.0):
+    - FirebaseCore (= 10.29.0)
+  - Firebase/Firestore (10.29.0):
     - Firebase/CoreOnly
-    - FirebaseFirestore (~> 10.27.0)
-  - FirebaseAppCheckInterop (10.28.0)
-  - FirebaseCore (10.27.0):
+    - FirebaseFirestore (~> 10.29.0)
+  - FirebaseAppCheckInterop (10.29.0)
+  - FirebaseCore (10.29.0):
     - FirebaseCoreInternal (~> 10.0)
     - GoogleUtilities/Environment (~> 7.12)
     - GoogleUtilities/Logger (~> 7.12)
-  - FirebaseCoreExtension (10.28.0):
+  - FirebaseCoreExtension (10.29.0):
     - FirebaseCore (~> 10.0)
-  - FirebaseCoreInternal (10.28.0):
+  - FirebaseCoreInternal (10.29.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
-  - FirebaseFirestore (10.27.0):
+  - FirebaseFirestore (10.29.0):
     - FirebaseCore (~> 10.0)
     - FirebaseCoreExtension (~> 10.0)
-    - FirebaseFirestoreInternal (= 10.27.0)
+    - FirebaseFirestoreInternal (= 10.29.0)
     - FirebaseSharedSwift (~> 10.0)
-  - FirebaseFirestoreInternal (10.27.0):
+  - FirebaseFirestoreInternal (10.29.0):
     - abseil/algorithm (~> 1.20240116.1)
     - abseil/base (~> 1.20240116.1)
     - abseil/container/flat_hash_map (~> 1.20240116.1)
@@ -996,7 +996,7 @@ PODS:
     - gRPC-Core (~> 1.62.0)
     - leveldb-library (~> 1.22)
     - nanopb (< 2.30911.0, >= 2.30908.0)
-  - FirebaseSharedSwift (10.28.0)
+  - FirebaseSharedSwift (10.29.0)
   - fmt (6.2.1)
   - glog (0.3.5)
   - GoogleUtilities/Environment (7.13.3):
@@ -1329,7 +1329,7 @@ PODS:
   - React-jsinspector (0.71.0)
   - React-logger (0.71.0):
     - glog
-  - react-native-ble-plx (3.2.0):
+  - react-native-ble-plx (3.2.1):
     - MultiplatformBleAdapter (= 0.2.0)
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
@@ -1340,12 +1340,12 @@ PODS:
   - react-native-image-picker (7.1.2):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
-  - react-native-quick-base64 (2.1.2):
+  - react-native-safe-area-context (4.9.0):
+    - React-Core
+  - react-native-slider (4.5.2):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
-  - react-native-safe-area-context (4.10.7):
-    - React-Core
-  - react-native-webview (13.10.4):
+  - react-native-webview (13.10.5):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
   - React-perflogger (0.71.0)
@@ -1429,7 +1429,7 @@ PODS:
     - React-jsi (= 0.71.0)
     - React-logger (= 0.71.0)
     - React-perflogger (= 0.71.0)
-  - RNCAsyncStorage (1.23.1):
+  - RNCAsyncStorage (1.24.0):
     - React-Core
   - RNCMaskedView (0.3.1):
     - React-Core
@@ -1439,11 +1439,11 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBApp (20.1.0):
-    - Firebase/CoreOnly (= 10.27.0)
+  - RNFBApp (20.2.1):
+    - Firebase/CoreOnly (= 10.29.0)
     - React-Core
-  - RNFBFirestore (20.1.0):
-    - Firebase/Firestore (= 10.27.0)
+  - RNFBFirestore (20.2.1):
+    - Firebase/Firestore (= 10.29.0)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - React-Core
     - RNFBApp
@@ -1471,7 +1471,7 @@ PODS:
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
     - React-RCTImage
-  - RNSVG (15.3.0):
+  - RNSVG (15.4.0):
     - React-Core
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
@@ -1509,8 +1509,8 @@ DEPENDENCIES:
   - react-native-date-picker (from `../node_modules/react-native-date-picker`)
   - react-native-geolocation-service (from `../node_modules/react-native-geolocation-service`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
-  - react-native-quick-base64 (from `../node_modules/react-native-quick-base64`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -1615,10 +1615,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-geolocation-service"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
-  react-native-quick-base64:
-    :path: "../node_modules/react-native-quick-base64"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-slider:
+    :path: "../node_modules/@react-native-community/slider"
   react-native-webview:
     :path: "../node_modules/react-native-webview"
   React-perflogger:
@@ -1683,14 +1683,14 @@ SPEC CHECKSUMS:
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 61839cba7a48c570b7ac3e1cd8a4d0948382202f
   FBReactNativeSpec: 5a14398ccf5e27c1ca2d7109eb920594ce93c10d
-  Firebase: 26b040b20866a55f55eb3611b9fcf3ae64816b86
-  FirebaseAppCheckInterop: 5315f40293191bfec04b2cfab0215760e441540a
-  FirebaseCore: a2b95ae4ce7c83ceecfbbbe3b6f1cddc7415a808
-  FirebaseCoreExtension: f63147b723e2a700fe0f34ec6fb7f358d6fe83e0
-  FirebaseCoreInternal: 58d07f1362fddeb0feb6a857d1d1d1c5e558e698
-  FirebaseFirestore: 7169b75e7db8f9796d4130e3c2157ed444f100d4
-  FirebaseFirestoreInternal: 7ba63f170a554ae49392da44f9430e5b7915a7ff
-  FirebaseSharedSwift: 48de4aec81a6b79bb30404e5e6db43ea74848fed
+  Firebase: cec914dab6fd7b1bd8ab56ea07ce4e03dd251c2d
+  FirebaseAppCheckInterop: 6a1757cfd4067d8e00fccd14fcc1b8fd78cfac07
+  FirebaseCore: 30e9c1cbe3d38f5f5e75f48bfcea87d7c358ec16
+  FirebaseCoreExtension: 705ca5b14bf71d2564a0ddc677df1fc86ffa600f
+  FirebaseCoreInternal: df84dd300b561c27d5571684f389bf60b0a5c934
+  FirebaseFirestore: f258936f52d712337233182b90042a76ff48dce0
+  FirebaseFirestoreInternal: f43d25cc04835ec3aa1885f4fc946a1a4f9e1c56
+  FirebaseSharedSwift: 20530f495084b8d840f78a100d8c5ee613375f6e
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
@@ -1717,13 +1717,13 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 060dd495f1e2af3d87216f7ca8a94c55ec885b4f
   React-jsinspector: 5061fcbec93fd672183dfb39cc2f65e55a0835db
   React-logger: a6c0b3a807a8e81f6d7fea2e72660766f55daa50
-  react-native-ble-plx: 296222927fb3120679d9b0aade7061c46154b2d1
+  react-native-ble-plx: 9017ec5c13d1d77e864011991a969617ed498b5d
   react-native-date-picker: 6891317e850deae5b53d51355226e07a495aba61
   react-native-geolocation-service: 608e1da71a1ac31b4de64d9ef2815f697978c55b
   react-native-image-picker: 51fdb07f7ef722988c8a219e1416153760a25e4d
-  react-native-quick-base64: 61228d753294ae643294a75fece8e0e80b7558a6
-  react-native-safe-area-context: 422017db8bcabbada9ad607d010996c56713234c
-  react-native-webview: cb4732211015baecadd7866d43508b662cc12d5b
+  react-native-safe-area-context: b97eb6f9e3b7f437806c2ce5983f479f8eb5de4b
+  react-native-slider: 593253eb5fbc6ea519290e812bd477fc6abafd5a
+  react-native-webview: f817a7bfd394634877638019ceac547996561372
   React-perflogger: e5fc4149e9bbb972b8520277f3b23141faa47a36
   React-RCTActionSheet: 991de88216bf03ab9bb1d213d73c62ecbe64ade7
   React-RCTAnimation: b74e3d1bf5280891a573e447b487fa1db0713b5b
@@ -1737,24 +1737,24 @@ SPEC CHECKSUMS:
   React-RCTVibration: 55c91eccdbd435d7634efbe847086944389475b0
   React-runtimeexecutor: ac80782d9d76ba2b0f709f4de0c427fe33c352dc
   ReactCommon: 7fa51a84874559b7177b0bacb92d331a6f788912
-  RNCAsyncStorage: 826b603ae9c0f88b5ac4e956801f755109fa4d5c
+  RNCAsyncStorage: ec53e44dc3e75b44aa2a9f37618a49c3bc080a7a
   RNCMaskedView: 090213d32d8b3bb83a4dcb7d12c18f0152591906
   RNDeviceInfo: 59344c19152c4b2b32283005f9737c5c64b42fba
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
-  RNFBApp: 9acbe359ef3559d6f8ca5c350db471f2b352f98a
-  RNFBFirestore: a60f00920799fa7bb71a1ecb682e4e6918f6f2b0
+  RNFBApp: 428a5d3adcc61fe352653c4d2090ab092650616e
+  RNFBFirestore: cc34a73c44daf3abff7d2d9e6e2f3dd0ff5e41e0
   RNGestureHandler: bbb8e17b10afdafc5cc5746e8f60772236e7e2ca
   RNIap: 17583f958d35788a87948e94072ff6edd3580497
   RNImageCropPicker: e7ab6fb43d2fc3e84651e786ef4a080d63b0ed3d
   RNPermissions: 88cb833d70198c254e3ea7ccc4179fde91670700
   RNReanimated: f6463b3375b827547336016ce5516fb933a373b6
   RNScreens: 0bd9eec783bed1032e02a4db9976dae1664a5c7b
-  RNSVG: a48668fd382115bc89761ce291a81c4ca5f2fd2e
+  RNSVG: cb24fb322de8c1ebf59904e7aca0447bb8dbed5a
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
   TOCropViewController: 80b8985ad794298fb69d3341de183f33d1853654
   Yoga: c618b544ff8bd8865cdca602f00cbcdb92fd6d31
 
-PODFILE CHECKSUM: dc285924b05af2edcbcd9b19e0b8b7eb13743719
+PODFILE CHECKSUM: b312a64dc52daa2b15a46d99298ae8dd1a99414f
 
 COCOAPODS: 1.14.3

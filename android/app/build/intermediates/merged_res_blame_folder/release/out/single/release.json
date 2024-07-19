@@ -64,6 +64,10 @@
         "source": "com.bhep_mobile_demo_v1.app-react-37:/drawable-mdpi/src_assets_image_nonotification.png"
     },
     {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/drawable-mdpi_src_assets_icons_bmilevel.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-37:/drawable-mdpi/src_assets_icons_bmilevel.png"
+    },
+    {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-main-43:/mipmap-hdpi/ic_launcher_round.png"
     },
@@ -120,16 +124,20 @@
         "source": "com.bhep_mobile_demo_v1.app-react-37:/drawable-xxxhdpi/node_modules_reactnativecalendars_src_img_up.png"
     },
     {
-        "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/drawable-mdpi_src_assets_image_bannerdevice.png.flat",
-        "source": "com.bhep_mobile_demo_v1.app-react-37:/drawable-mdpi/src_assets_image_bannerdevice.png"
-    },
-    {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-main-43:/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/drawable-mdpi_src_assets_icons_default.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-react-37:/drawable-mdpi/src_assets_icons_default.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/drawable-mdpi_src_assets_icons_man.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-37:/drawable-mdpi/src_assets_icons_man.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/drawable-mdpi_src_assets_icons_bmi.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-37:/drawable-mdpi/src_assets_icons_bmi.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/drawable-xxxhdpi_node_modules_reactnativecalendars_src_img_down.png.flat",
@@ -330,6 +338,10 @@
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "com.bhep_mobile_demo_v1.app-main-43:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/drawable-mdpi_src_assets_icons_woman.png.flat",
+        "source": "com.bhep_mobile_demo_v1.app-react-37:/drawable-mdpi/src_assets_icons_woman.png"
     },
     {
         "merged": "com.bhep_mobile_demo_v1.app-merged_res-42:/mipmap-hdpi_ic_launcher.png.flat",

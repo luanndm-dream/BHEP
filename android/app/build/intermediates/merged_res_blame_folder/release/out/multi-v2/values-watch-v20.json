@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/res/values-watch-v20/values.xml",
+                    "source": "/Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/res/values-watch-v20/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

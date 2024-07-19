@@ -15,9 +15,9 @@ export const OutstandingFunciton  = [
     },
     {
         id: 3,
-        name: 'Sức khoẻ của tôi',
-        imgName: require('../assets/icons/medical-report.png'),
-        screen: STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN
+        name: 'BMI',
+        imgName: require('../assets/icons/bmi.png'),
+        screen: STACK_NAVIGATOR_SCREENS.BMICALCULATORSCREEN
     },
     {
         id: 5,
@@ -25,12 +25,12 @@ export const OutstandingFunciton  = [
         imgName: require('../assets/icons/monitor.png'),
         screen: STACK_NAVIGATOR_SCREENS.TRACKINGHEALTHSCREEN
     },
-    // {
-    //     id: 4,
-    //     name: 'Test',
-    //     imgName: require('../assets/icons/medical-report.png'),
-    //     screen: STACK_NAVIGATOR_SCREENS.TESTSCREEN
-    // },
+    {
+        id: 4,
+        name: 'Kết quả đo',
+        imgName: require('../assets/icons/medical-report.png'),
+        screen: STACK_NAVIGATOR_SCREENS.HEALTHRECORDSCREEN
+    },
 ]
 
 export const specialistData  = [

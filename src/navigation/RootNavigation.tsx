@@ -5,10 +5,12 @@ import {
   NavigationContainer,
   createNavigationContainerRef,
 } from "@react-navigation/native";
-import { withIAPContext } from "react-native-iap";
+// import { withIAPContext } from "react-native-iap";
 import {
   AppointmentDetailScreen,
   AppointmentScreen,
+  BMICalculatorScreen,
+  BMIResultScreen,
   ChangePasswordScreen,
   CoinTransactionDetailScreen,
   CommunityScreen,
@@ -18,6 +20,7 @@ import {
   DoctorSpecialistScreen,
   EditWorkProfileScreen,
   FindLocationScreen,
+  HealthRecordScreen,
   HistoryTransactionScreen,
   HomeScreen,
   InformationScreen,
@@ -304,9 +307,21 @@ const RootNavigation = () => {
         name={STACK_NAVIGATOR_SCREENS?.DISABLEACCOUNTSCREEN}
         component={DisableAccountScreen}
       />
-       <Stack.Screen
+       {/* <Stack.Screen
         name={STACK_NAVIGATOR_SCREENS?.SUBCRIPTIONSCREEN}
         component={withIAPContext(SubscriptionScreen)}
+      /> */}
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.BMICALCULATORSCREEN}
+        component={BMICalculatorScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.BMIRESULTSCREEN}
+        component={BMIResultScreen}
+      />
+      <Stack.Screen
+        name={STACK_NAVIGATOR_SCREENS?.HEALTHRECORDSCREEN}
+        component={HealthRecordScreen}
       />
     </Stack.Navigator>
   );

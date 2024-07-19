@@ -6,9 +6,9 @@
     maven="BHEP_Mobile_Demo_V1:app:"
     gradle="7.3.1"
     buildFolder="build"
-    bootClassPath="/Users/luan/Library/Android/sdk/platforms/android-33/android.jar:/Users/luan/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    bootClassPath="/Users/luan/Library/Android/sdk/platforms/android-34/android.jar:/Users/luan/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
-    compileTarget="android-33"
+    compileTarget="android-34"
     neverShrinking="true">
   <lintOptions
       abortOnError="true"

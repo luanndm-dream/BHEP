@@ -1104,7 +1104,7 @@ library {
   maven_library {
     groupId: "com.google.firebase"
     artifactId: "firebase-bom"
-    version: "33.1.0"
+    version: "33.1.2"
   }
   repo_index {
     value: 2
@@ -1465,10 +1465,10 @@ library {
   maven_library {
     groupId: "com.google.android.gms"
     artifactId: "play-services-auth"
-    version: "21.1.1"
+    version: "21.2.0"
   }
   digests {
-    sha256: "\3271U\350>\227\207^\223cL\251\375\'\320\025\236\"\030\3634|S\256\252\360\372\242\357\252(\017"
+    sha256: "&[~4$\315\006\274\230\350\333t\245\270K\231\254:\005\265j\200\312i1\235x5\302\203\026\320"
   }
   repo_index {
     value: 2

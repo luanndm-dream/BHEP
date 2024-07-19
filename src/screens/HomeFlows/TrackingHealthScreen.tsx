@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { onValue, ref } from "firebase/database";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { Header } from "@/components";
+import { ButtonText, Header } from "@/components";
 import PulseIndicator from "./PulseIndicator"; // Import PulseIndicator từ PulseIndicator.tsx
 import { realtimeDb } from "src/services/firebase-iot";
 import { globalColor } from "src/constants/color";
@@ -9,6 +9,7 @@ import { useAppSelector } from "@/redux";
 import { apiGetUserById } from "src/api/api_getUserById";
 import { useNavigation } from "@react-navigation/native";
 import { STACK_NAVIGATOR_SCREENS } from "src/constants";
+import { apiPostHealthRecord } from "src/api/api_post_healthRecord";
 
 export interface DeviceData {
   HeartBeat: number;
@@ -25,22 +26,38 @@ const TrackingHealthScreen = () => {
   const isFirstFetchRef = useRef<boolean>(true);
   const lastUpdateTimeRef = useRef<number>(Date.now());
   const [user, setUser] = useState<any>();
+  const hasCalledAPIRef = useRef<boolean>(false);
+  const [isUserLoaded, setIsUserLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     apiGetUserById(userId).then((res: any) => {
       if (res.statusCode === 200) {
         setUser(res.data);
+        setIsUserLoaded(true);
       }
     });
   }, [userId]);
 
+  const updateRecord = () => {
+    if (!hasCalledAPIRef.current && isUserLoaded && data) {
+      const deviceId = user?.deviceCodes[0]?.id?.toString(); // Chuyển đổi deviceCode thành chuỗi
+      apiPostHealthRecord(userId, deviceId, [
+        {
+          temp: data.Temperature,
+          heartBeat: data.HeartBeat,
+          eSpO2: data.SpO2
+        }
+      ]).then((res: any) => {
+        console.log("res", res);
+      });
+      hasCalledAPIRef.current = true; 
+    }
+  };
 
 
-  console.log(user?.deviceCodes.length >0)
-
-
+  console.log('Codes', user?.deviceCodes[0]?.code?.toString())
   useEffect(() => {
-    const query = ref(realtimeDb, "Device1");
+    const query = ref(realtimeDb, "Device2");
 
     const unsubscribe = onValue(query, (snapshot) => {
       const dataSnap = snapshot.val();
@@ -57,6 +74,7 @@ const TrackingHealthScreen = () => {
           setIsDataNew(true);
         }
         lastUpdateTimeRef.current = Date.now();
+        hasCalledAPIRef.current = false; // Reset API call flag when new data is received
       } else {
         setData(null);
         previousDataRef.current = null;
@@ -68,16 +86,16 @@ const TrackingHealthScreen = () => {
     // Set up a timer to check for updates every 5 seconds
     const timer = setInterval(() => {
       const currentTime = Date.now();
-      if (currentTime - lastUpdateTimeRef.current > 5000) {
+      if (currentTime - lastUpdateTimeRef.current > 3000) {
         setIsDataNew(false);
       }
-    }, 5000);
+    }, 3000);
 
     return () => {
       unsubscribe();
       clearInterval(timer);
     };
-  }, []);
+  }, [data]);
 
   const compareData = (prevData: DeviceData, newData: DeviceData) => {
     return (
@@ -86,6 +104,7 @@ const TrackingHealthScreen = () => {
       prevData.Temperature === newData.Temperature
     );
   };
+
   const roundToThreeDecimalPlaces = (number: number | undefined) => {
     if (number !== undefined) {
       return Number(number.toFixed(3));
@@ -95,49 +114,75 @@ const TrackingHealthScreen = () => {
 
   return (
     <>
-    <Header headerTitle="Kiểm tra sức khoẻ" />
-    <View style={styles.container}>
-    
-      {user?.deviceCodes.length >0 ? (
-        <View style={styles.content}>
-          <PulseIndicator isDataNew={isDataNew} />
-          {!isDataNew ? (
-            <View style={styles.alertContainer}>
-              <Text style={styles.alertText}>
-                Giữ tay của bạn vào vị trí kiểm tra
-              </Text>
-            </View>
-          ) : null}
-          <View style={styles.dataContainer}>
-            <View style={styles.dataRow}>
-              <Text style={styles.labelText}>Nhịp tim</Text>
-              <Text style={styles.dataText}>{roundToThreeDecimalPlaces(data?.HeartBeat) ?? "N/A"}</Text>
-            </View>
-            <View style={styles.dataRow}>
-              <Text style={styles.labelText}>Nồng độ Oxy</Text>
-              <Text style={styles.dataText}>{roundToThreeDecimalPlaces(data?.SpO2) ?? "N/A"}</Text>
-            </View>
-            <View style={styles.dataRow}>
-              <Text style={styles.labelText}>Nhiệt độ</Text>
-              <Text style={styles.dataText}>{roundToThreeDecimalPlaces(data?.Temperature) ?? "N/A"}</Text>
+      <Header headerTitle="Kiểm tra sức khoẻ" />
+      <View style={styles.container}>
+        {user?.deviceCodes?.length > 0 ? (
+          <View style={styles.content}>
+            <PulseIndicator isDataNew={isDataNew} />
+            {!isDataNew ? (
+              <View style={styles.alertContainer}>
+                <Text style={styles.alertText}>
+                  Giữ tay của bạn vào vị trí kiểm tra
+                </Text>
+              </View>
+            ) : null}
+            <View style={styles.dataContainer}>
+              <View style={styles.dataRow}>
+                <Text style={styles.labelText}>Nhịp tim</Text>
+                <Text style={styles.dataText}>
+                  {roundToThreeDecimalPlaces(data?.HeartBeat) ?? "N/A"}
+                </Text>
+              </View>
+              <View style={styles.dataRow}>
+                <Text style={styles.labelText}>Nồng độ Oxy</Text>
+                <Text style={styles.dataText}>
+                  {roundToThreeDecimalPlaces(data?.SpO2) ?? "N/A"}
+                </Text>
+              </View>
+              <View style={styles.dataRow}>
+                <Text style={styles.labelText}>Nhiệt độ</Text>
+                <Text style={styles.dataText}>
+                  {roundToThreeDecimalPlaces(data?.Temperature) ?? "N/A"}
+                </Text>
+              </View>
             </View>
           </View>
-        </View>
-      ) : (
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
-          <View style={{ width: "80%" }}>
-            <TouchableOpacity onPress={()=>navigation.navigate(STACK_NAVIGATOR_SCREENS.SERVICESCREEN)}>
-              <Text style={{ textAlign: "center", color: globalColor.primaryColor, fontSize: 16, fontWeight: 'bold' }}>
-                Chức năng yêu cầu người dùng phải có thiết bị. Vui lòng xem thêm
-                tại đây.
-              </Text>
-            </TouchableOpacity>
+        ) : (
+          <View
+            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+          >
+            <View style={{ width: "80%" }}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate(STACK_NAVIGATOR_SCREENS.SERVICESCREEN)
+                }
+              >
+                <Text
+                  style={{
+                    textAlign: "center",
+                    color: globalColor.primaryColor,
+                    fontSize: 16,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Chức năng yêu cầu người dùng phải có thiết bị. Vui lòng xem
+                  thêm tại đây.
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
-      )}
-    </View>
+        )}
+        {!isDataNew && data && (
+          <View>
+          <ButtonText
+            text="Lưu kết quả"
+            onPress={updateRecord}
+            styleContainer={styles.buttonContainer}
+            styleText={{fontWeight: 'bold', paddingHorizontal: 12}}
+          />
+          </View>
+        )}
+      </View>
     </>
   );
 };
@@ -159,8 +204,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 24,
-    position: 'absolute',
-    bottom: 0
+    position: "absolute",
+    bottom: 0,
   },
   dataRow: {
     flexDirection: "column",
@@ -179,13 +224,13 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   alertContainer: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     zIndex: 1,
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 10,
-    width: '100%',
+    width: "100%",
   },
   alertText: {
     fontSize: 20,
@@ -203,6 +248,22 @@ const styles = StyleSheet.create({
     color: globalColor.primaryColor,
     fontSize: 16,
     fontWeight: "bold",
+  },
+  updateButton: {
+    backgroundColor: globalColor.primaryColor,
+    padding: 15,
+    borderRadius: 10,
+    marginTop: 20,
+  },
+  buttonContainer: {
+    backgroundColor: globalColor.primaryColor,
+    height: 60,
+    borderRadius: 16,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 40,
+    width: '90%',
+    marginTop: 30
   },
 });
 

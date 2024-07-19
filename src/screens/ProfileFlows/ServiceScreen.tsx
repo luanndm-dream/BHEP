@@ -85,7 +85,7 @@ const ServiceScreen = () => {
             </View>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.section} onPress={onPressItemSpirit}>
+        {/* <TouchableOpacity style={styles.section} onPress={onPressItemSpirit}>
           <View style={styles.imageContainer}>
             <Image
               source={require("../../assets/image/bannerDevice.png")}
@@ -93,7 +93,7 @@ const ServiceScreen = () => {
               // resizeMode="contain"
             />
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </SafeAreaView>
     </>
   );

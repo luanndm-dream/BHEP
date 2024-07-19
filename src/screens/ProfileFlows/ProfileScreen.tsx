@@ -131,13 +131,13 @@ const ProfileScreen = () => {
                   style={styles.avatar}
                 />
               )}
-              <View style={styles.camera}>
+              {/* <View style={styles.camera}>
                 <MaterialCommunityIcons
                   name="camera"
                   size={30}
                   color={"white"}
                 />
-              </View>
+              </View> */}
             </TouchableOpacity>
 
             <View style={styles.nameBox}>

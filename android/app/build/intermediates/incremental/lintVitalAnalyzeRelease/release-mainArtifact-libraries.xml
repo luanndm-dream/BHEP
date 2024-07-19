@@ -1,5 +1,18 @@
 <libraries>
   <library
+      name="/Users/luan/Documents/GitHub/BHEP/android@@:react-native-community_slider::release"
+      jars="/Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-community/slider/android/build/.transforms/b3a90bd093a98e5b3fca2fee3f343073/transformed/out/jars/classes.jar:/Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-community/slider/android/build/.transforms/b3a90bd093a98e5b3fca2fee3f343073/transformed/out/jars/libs/R.jar"
+      resolved="BHEP_Mobile_Demo_V1:react-native-community_slider:unspecified"
+      folder="/Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-community/slider/android/build/.transforms/b3a90bd093a98e5b3fca2fee3f343073/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="/Users/luan/Documents/GitHub/BHEP/android@@:react-native-firebase_firestore::release"
       jars="/Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/firestore/android/build/.transforms/12977f62aa1a9e2da7b503fc2e0e3c5d/transformed/out/jars/classes.jar:/Users/luan/Documents/GitHub/BHEP/node_modules/@react-native-firebase/firestore/android/build/.transforms/12977f62aa1a9e2da7b503fc2e0e3c5d/transformed/out/jars/libs/R.jar"
       resolved="BHEP_Mobile_Demo_V1:react-native-firebase_firestore:unspecified"
@@ -264,19 +277,6 @@
       jars="/Users/luan/Documents/GitHub/BHEP/node_modules/react-native-permissions/android/build/.transforms/5873468084e8bed4b03391b5ebeac9ca/transformed/out/jars/classes.jar:/Users/luan/Documents/GitHub/BHEP/node_modules/react-native-permissions/android/build/.transforms/5873468084e8bed4b03391b5ebeac9ca/transformed/out/jars/libs/R.jar"
       resolved="BHEP_Mobile_Demo_V1:react-native-permissions:unspecified"
       folder="/Users/luan/Documents/GitHub/BHEP/node_modules/react-native-permissions/android/build/.transforms/5873468084e8bed4b03391b5ebeac9ca/transformed/out"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="/Users/luan/Documents/GitHub/BHEP/android@@:react-native-quick-base64::release"
-      jars="/Users/luan/Documents/GitHub/BHEP/node_modules/react-native-quick-base64/android/build/.transforms/ca540c0b06277f3b9938c809364c7009/transformed/out/jars/classes.jar:/Users/luan/Documents/GitHub/BHEP/node_modules/react-native-quick-base64/android/build/.transforms/ca540c0b06277f3b9938c809364c7009/transformed/out/jars/libs/R.jar"
-      resolved="BHEP_Mobile_Demo_V1:react-native-quick-base64:unspecified"
-      folder="/Users/luan/Documents/GitHub/BHEP/node_modules/react-native-quick-base64/android/build/.transforms/ca540c0b06277f3b9938c809364c7009/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1002,10 +1002,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.android.gms:play-services-auth:21.1.1@aar"
-      jars="/Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/jars/classes.jar"
-      resolved="com.google.android.gms:play-services-auth:21.1.1"
-      folder="/Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1"
+      name="com.google.android.gms:play-services-auth:21.2.0@aar"
+      jars="/Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/jars/classes.jar"
+      resolved="com.google.android.gms:play-services-auth:21.2.0"
+      folder="/Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

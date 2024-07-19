@@ -1,12 +1,12 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.bhep_mobile_demo_v1"
-4    android:versionCode="1"
-5    android:versionName="1.0" >
+4    android:versionCode="2"
+5    android:versionName="2.1" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-9        android:targetSdkVersion="33" />
+9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 11-->/Users/luan/Documents/GitHub/BHEP/android/app/src/debug/AndroidManifest.xml:5:5-77
@@ -266,29 +266,29 @@
 140        </provider>
 141
 142        <activity
-142-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:23:9-27:75
+142-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:23:9-27:75
 143            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-143-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:24:13-93
+143-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:24:13-93
 144            android:excludeFromRecents="true"
-144-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:25:13-46
+144-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:25:13-46
 145            android:exported="false"
-145-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:26:13-37
+145-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:26:13-37
 146            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-146-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:27:13-72
+146-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:27:13-72
 147        <!--
 148            Service handling Google Sign-In user revocation. For apps that do not integrate with
 149            Google Sign-In, this service will never be started.
 150        -->
 151        <service
-151-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:33:9-37:51
+151-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:33:9-37:51
 152            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-152-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:34:13-89
+152-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:34:13-89
 153            android:exported="true"
-153-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:35:13-36
+153-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:35:13-36
 154            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-154-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:36:13-107
+154-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:36:13-107
 155            android:visibleToInstantApps="true" />
-155-->[com.google.android.gms:play-services-auth:21.1.1] /Users/luan/.gradle/caches/transforms-3/7e3a23e82362fef9c28aa46e841c4825/transformed/jetified-play-services-auth-21.1.1/AndroidManifest.xml:37:13-48
+155-->[com.google.android.gms:play-services-auth:21.2.0] /Users/luan/.gradle/caches/transforms-3/87d53bd7354eda29911d8c4d26485918/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:37:13-48
 156
 157        <meta-data
 157-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/luan/.gradle/caches/transforms-3/8ba485cacaf5af10f15738d7959f232f/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:11:9-13:43

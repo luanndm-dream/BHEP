@@ -328,6 +328,7 @@ const styles = StyleSheet.create({
   },
   textAfterCheckbox: {
     marginLeft: 10,
+    color: 'black'
   },
   checkboxContainer: {
     flexDirection: "row",

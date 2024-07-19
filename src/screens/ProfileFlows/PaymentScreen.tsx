@@ -64,13 +64,13 @@ const PaymentScreen = () => {
         "Nạp tiền hệ thống",
         [
           {
-            name: "Nạp tiền hệ thống",
+            name: "Nạp tiền hệ thống BHEP",
             quantity: 1,
             price: paymentAmount,
           },
         ],
-        "https://www.google.com/",
-        "https://www.google.com/",
+        "https://www.bhep.vn/success-payment",
+        "https://www.bhep.vn/fail-payment",
         Math.floor(Date.now() / 1000) + 600
       ).then((res: any) => {
         if (res.statusCode === 200) {
@@ -92,9 +92,7 @@ const PaymentScreen = () => {
     const { url } = navState;
     console.log(navState);
     if (
-      url.includes("vnp_TransactionStatus=00") ||
-      navState.canGoBack === true
-    ) {
+      url.includes( "success")) {
       const amount = Number(inputValue.replace(/[^0-9]/g, ""));
       const formattedAmount = amount.toLocaleString("vi-VN");
       apiPutPayment(paymentId, 2).then((res: any) => {
