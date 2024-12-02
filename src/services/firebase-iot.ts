@@ -4,15 +4,15 @@ import { getFirestore } from "firebase/firestore";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCUJOl5jkzMIO1KRxgJyEPtiipPNzgccEg",
-  authDomain: "bhep-iot.firebaseapp.com",
+  apiKey: "**************************************",
+  authDomain: "**************************************",
   databaseURL:
-    "https://bhep-iot-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "**************************************",
   projectId: "bhep-iot",
   storageBucket: "bhep-iot.appspot.com",
-  messagingSenderId: "46057334140",
-  appId: "1:46057334140:web:0005a64d92084ecae430f9",
-  measurementId: "G-FY45GCZ5GH",
+  messagingSenderId: "**************************************",
+  appId: "**************************************",
+  measurementId: "**************************************",
 };
 
 // Initialize Firebase
